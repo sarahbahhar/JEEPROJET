@@ -1,4 +1,6 @@
-package Model;public class Admin {
+package Model;
+
+public class Admin {
     private String email;
 
     public String getEmail() {

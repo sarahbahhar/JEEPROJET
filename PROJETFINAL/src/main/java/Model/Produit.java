@@ -1,4 +1,6 @@
-package Model;public class Produit {
+package Model;
+
+public class Produit {
     private int id;
     private String titre;
     private String description;

@@ -1,4 +1,6 @@
-package Model;public class Client {
+package Model;
+
+public class Client {
     private String email;
     private Integer pointsFidelite;
 

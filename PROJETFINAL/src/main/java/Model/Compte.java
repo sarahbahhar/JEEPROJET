@@ -1,4 +1,6 @@
-package Model;public class Compte {
+package Model;
+
+public class Compte {
     private String email;
     private String motDePasse;
 
