@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Model.Moderateur" table="moderateur" schema="projet_jee">
+        <id name="email" column="email"/>
+        <property name="peutAjouterProduit" column="peut_ajouter_produit"/>
+        <property name="peutSupprimerProduit" column="peut_supprimer_produit"/>
+        <property name="maxProduitsLigne" column="max_produits_ligne"/>
+    </class>
+</hibernate-mapping>
