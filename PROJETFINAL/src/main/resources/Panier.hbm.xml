@@ -5,9 +5,17 @@
 <hibernate-mapping>
 
     <class name="Model.Panier" table="panier" schema="projet_jee">
-        <id name="email" column="email"/>
-        <property name="ht" column="HT"/>
-        <property name="tva" column="TVA"/>
-        <property name="ttc" column="TTC"/>
+        <id name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
+        </id>
+        <property name="ht">
+            <column name="HT" sql-type="decimal(10,2)" precision="10" scale="2"/>
+        </property>
+        <property name="tva">
+            <column name="TVA" sql-type="decimal(10,2)" precision="10" scale="2"/>
+        </property>
+        <property name="ttc">
+            <column name="TTC" sql-type="decimal(10,2)" precision="10" scale="2"/>
+        </property>
     </class>
 </hibernate-mapping>

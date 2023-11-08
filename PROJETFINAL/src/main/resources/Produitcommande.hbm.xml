@@ -6,9 +6,15 @@
 
     <class name="Model.Produitcommande" table="produitcommande" schema="projet_jee">
         <composite-id mapped="true" class="Model.ProduitcommandePK">
-            <key-property name="produitId" column="produit_id"/>
-            <key-property name="commandeNumero" column="commande_numero"/>
+            <key-property name="produitId">
+                <column name="produit_id" sql-type="int"/>
+            </key-property>
+            <key-property name="commandeNumero">
+                <column name="commande_numero" sql-type="int"/>
+            </key-property>
         </composite-id>
-        <property name="quantite" column="quantite"/>
+        <property name="quantite">
+            <column name="quantite" sql-type="int" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

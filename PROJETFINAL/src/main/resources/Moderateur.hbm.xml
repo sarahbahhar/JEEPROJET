@@ -5,9 +5,17 @@
 <hibernate-mapping>
 
     <class name="Model.Moderateur" table="moderateur" schema="projet_jee">
-        <id name="email" column="email"/>
-        <property name="peutAjouterProduit" column="peut_ajouter_produit"/>
-        <property name="peutSupprimerProduit" column="peut_supprimer_produit"/>
-        <property name="maxProduitsLigne" column="max_produits_ligne"/>
+        <id name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
+        </id>
+        <property name="peutAjouterProduit">
+            <column name="peut_ajouter_produit" sql-type="tinyint(1)" not-null="true"/>
+        </property>
+        <property name="peutSupprimerProduit">
+            <column name="peut_supprimer_produit" sql-type="tinyint(1)" not-null="true"/>
+        </property>
+        <property name="maxProduitsLigne">
+            <column name="max_produits_ligne" sql-type="int" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

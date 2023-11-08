@@ -5,11 +5,23 @@
 <hibernate-mapping>
 
     <class name="Model.Comptebancaire" table="comptebancaire" schema="projet_jee">
-        <id name="identifiant" column="identifiant"/>
-        <property name="nom" column="nom"/>
-        <property name="numero" column="numero"/>
-        <property name="date" column="date"/>
-        <property name="cvv" column="cvv"/>
-        <property name="email" column="email"/>
+        <id name="identifiant">
+            <column name="identifiant" sql-type="int"/>
+        </id>
+        <property name="nom">
+            <column name="nom" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="numero">
+            <column name="numero" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="date">
+            <column name="date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="cvv">
+            <column name="cvv" sql-type="varchar(3)" length="3" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

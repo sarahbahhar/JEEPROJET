@@ -5,7 +5,11 @@
 <hibernate-mapping>
 
     <class name="Model.Compte" table="compte" schema="projet_jee">
-        <id name="email" column="email"/>
-        <property name="motDePasse" column="mot_de_passe"/>
+        <id name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
+        </id>
+        <property name="motDePasse">
+            <column name="mot_de_passe" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

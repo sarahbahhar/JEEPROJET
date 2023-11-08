@@ -5,9 +5,17 @@
 <hibernate-mapping>
 
     <class name="Model.Commande" table="commande" schema="projet_jee">
-        <id name="numero" column="numero"/>
-        <property name="dateDePaiement" column="dateDePaiement"/>
-        <property name="total" column="total"/>
-        <property name="email" column="email"/>
+        <id name="numero">
+            <column name="numero" sql-type="int"/>
+        </id>
+        <property name="dateDePaiement">
+            <column name="dateDePaiement" sql-type="date" not-null="true"/>
+        </property>
+        <property name="total">
+            <column name="total" sql-type="decimal(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
+        </property>
     </class>
 </hibernate-mapping>

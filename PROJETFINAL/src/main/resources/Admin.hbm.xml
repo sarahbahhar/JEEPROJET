@@ -5,6 +5,8 @@
 <hibernate-mapping>
 
     <class name="Model.Admin" table="admin" schema="projet_jee">
-        <id name="email" column="email"/>
+        <id name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
+        </id>
     </class>
 </hibernate-mapping>
