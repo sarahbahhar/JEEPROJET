@@ -10,26 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f95042c-9763-4c80-8586-8f35f74fe062" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/addModeratorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addModerator.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Compte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Produit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produitcommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Produitcommande.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Commande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Commande.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Compte.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Compte.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Comptebancaire.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Comptebancaire.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Infocompte.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Infocompte.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Moderateur.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Moderateur.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Panier.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Panier.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Produit.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Produit.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Produitcommande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Produitcommande.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/moderatorList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/moderatorList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +85,10 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\Vue" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="Model" />
       <recent name="Entity" />
@@ -202,7 +193,11 @@
       <workItem from="1699288758325" duration="1223000" />
       <workItem from="1699290006300" duration="94000" />
       <workItem from="1699290108750" duration="1366000" />
-      <workItem from="1699435134805" duration="1036000" />
+      <workItem from="1699435134805" duration="3014000" />
+      <workItem from="1699446293194" duration="1114000" />
+      <workItem from="1699463779082" duration="4862000" />
+      <workItem from="1699469120401" duration="156000" />
+      <workItem from="1699469493061" duration="3905000" />
     </task>
     <servers />
   </component>
