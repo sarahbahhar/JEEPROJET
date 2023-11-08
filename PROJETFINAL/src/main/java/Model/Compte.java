@@ -1,8 +1,29 @@
 package Model;
 
-public class Compte {
+import jakarta.persistence.*;
+
+import java.io.Serializable;
+
+@Entity
+@Table(name = "compte")
+public class Compte implements Serializable {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "email")
     private String email;
+
+    @Basic
+    @Column(name = "mot_de_passe")
     private String motDePasse;
+
+    public Compte(){
+    }
+
+    public Compte(String email, String mdp){
+        this.email=email;
+        this.motDePasse=mdp;
+    }
 
     public String getEmail() {
         return email;
