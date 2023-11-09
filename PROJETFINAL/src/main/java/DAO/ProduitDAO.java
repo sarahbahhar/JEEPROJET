@@ -1,0 +1,38 @@
+package DAO;
+
+import java.util.List;
+
+import Model.Compte;
+import Model.Produit;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+
+
+public class ProduitDAO
+{
+
+
+    public static void addProduit(Produit p)
+    {
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(p);
+        session.getTransaction().commit();
+        session.close();
+    }
+    public static List<Produit> getListProduit()
+    {
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        List<Produit> result = session.createQuery("from Produit").list();
+        session.close();
+        return result;
+    }
+
+
+
+
+
+}
+

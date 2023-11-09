@@ -2,8 +2,6 @@ package DAO;
 
 import Model.Moderateur;
 import org.hibernate.Session;
-
-
 import java.util.List;
 
 public class ModeratorDAO {

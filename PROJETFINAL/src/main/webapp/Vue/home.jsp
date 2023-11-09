@@ -22,8 +22,30 @@
         <option value="Vue/moderatorList.jsp">Moderator List</option>
     </select>
 </form>
+
+
 <button type="button" onclick="window.location.href='Vue/signIn.jsp'">Sign In</button>
 <button type="button" onclick="window.location.href='Vue/signUp.jsp'">Sign Up</button>
 <button type="button" onclick="window.location.href='Vue/shoppingCart.jsp'">Shopping Cart</button>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>titre</th>
+
+    </tr>
+
+    <c:forEach items="${produits}" var="produit">
+    <tr>
+        <td>${produit.id}</td>
+        <td>  ${produit.titre}  </td>
+
+        </c:forEach>
+</table>
+
+
+
+
+
 </body>
 </html>
