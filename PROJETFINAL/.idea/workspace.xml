@@ -9,15 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f95042c-9763-4c80-8586-8f35f74fe062" name="Changes" comment="" />
     <list default="true" id="5f95042c-9763-4c80-8586-8f35f74fe062" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/addModeratorServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addModerator.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editModerator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CompteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CompteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Produit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/moderatorList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/moderatorList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/addModeratorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/AddModeratorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Produit.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Produit.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addModerator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addModerator.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +70,12 @@
     "JPA.DatabaseSchemaImportDialog": "8d06ae5d-700f-4934-9312-7137f8fd4a4b",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "dev",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/Users/CYTech Student/JEEPROJET/PROJETFINAL/src/main/java",
-    "last_opened_file_path": "H:/Documents/cours/ing2/JEE1/JEEPROJET/PROJETFINAL",
+    "last_opened_file_path": "C:/Users/CYTech Student/JEEPROJET/PROJETFINAL",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -199,6 +205,7 @@
       <workItem from="1699463779082" duration="4862000" />
       <workItem from="1699469120401" duration="156000" />
       <workItem from="1699469493061" duration="3905000" />
+      <workItem from="1699516399407" duration="6650000" />
     </task>
     <servers />
   </component>
