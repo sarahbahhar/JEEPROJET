@@ -2,7 +2,6 @@ package DAO;
 
 import java.util.List;
 
-import Model.Compte;
 import Model.Produit;
 import org.hibernate.Session;
 
@@ -29,9 +28,14 @@ public class ProduitDAO
     }
 
 
+    public Produit getProduitById(int productId) {
+        return null;
+    }
+
+    public void updateProduit(Produit produit) {
 
 
 
-
+    }
 }
 

@@ -24,7 +24,5 @@ public class ModeratorServlet extends HttpServlet {
         } catch (ServletException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }

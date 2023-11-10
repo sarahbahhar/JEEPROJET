@@ -2,12 +2,10 @@ package DAO;
 
 import java.util.List;
 
-import com.sun.source.tree.CompilationUnitTree;
+import Model.Compte;
+import Model.Produit;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-import Model.Compte;
-import DAO.HibernateUtil;
 
 
 public class CompteDAO
@@ -90,5 +88,12 @@ public class CompteDAO
     }
 
 
+    public List<Compte> getListCompte() {
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        List<Compte> result = session.createQuery("from Compte").list();
+        session.close();
+        return result;
+    }
 }
 

@@ -4,6 +4,10 @@ public class Client {
     private String email;
     private Integer pointsFidelite;
 
+    public void setPointsFidelite(int pointsFidelite) {
+        this.pointsFidelite = pointsFidelite;
+    }
+
     public String getEmail() {
         return email;
     }
