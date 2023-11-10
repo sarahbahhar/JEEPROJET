@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.List;
+import Model.Moderateur;
 
 @WebServlet(name = "moderatorServlet", value = "/moderator-servlet")
 public class ModeratorServlet extends HttpServlet {

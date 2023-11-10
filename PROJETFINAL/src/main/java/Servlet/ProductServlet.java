@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
 
 import DAO.ProduitDAO;
+import Model.Produit;
 
 @WebServlet(name = "ProductServlet", value = "/product-servlet")
 public class ProductServlet extends HttpServlet{

@@ -3,7 +3,7 @@ package DAO;
 import java.util.List;
 
 import org.hibernate.Session;
-
+import Model.Produit;
 
 public class ProduitDAO
 {

@@ -2,6 +2,7 @@ package DAO;
 
 import org.hibernate.Session;
 import java.util.List;
+import Model.Moderateur;
 
 public class ModeratorDAO {
     public List<Moderateur> getListModerateur() {
