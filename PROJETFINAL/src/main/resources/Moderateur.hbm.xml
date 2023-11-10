@@ -9,13 +9,13 @@
             <column name="email" sql-type="varchar(100)" length="100"/>
         </id>
         <property name="peutAjouterProduit">
-            <column name="peut_ajouter_produit" sql-type="tinyint(1)" not-null="true"/>
+            <column name="peut_ajouter_produit" sql-type="tinyint(1)"/>
         </property>
         <property name="peutSupprimerProduit">
-            <column name="peut_supprimer_produit" sql-type="tinyint(1)" not-null="true"/>
+            <column name="peut_supprimer_produit" sql-type="tinyint(1)"/>
         </property>
         <property name="maxProduitsLigne">
-            <column name="max_produits_ligne" sql-type="int" not-null="true"/>
+            <column name="max_produits_ligne" sql-type="int"/>
         </property>
     </class>
 </hibernate-mapping>
