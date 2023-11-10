@@ -22,7 +22,7 @@ public class ProductServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProduitDAO test = new ProduitDAO();
-        List<Produit> listProduit = test.getListProduit();
+        List<Produit> listProduit = ProduitDAO.getListProduit();
         request.setAttribute("produits",listProduit);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/productList.jsp");
         try {
