@@ -34,6 +34,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Infocompte.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Infocompte.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Moderateur.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Moderateur.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Panier.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Panier.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Produit.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Produit.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Compte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/InscriptionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/InscriptionServlet.java" afterDir="false" />
@@ -241,6 +250,7 @@
       <workItem from="1699516399407" duration="7396000" />
       <workItem from="1699606737156" duration="2824000" />
       <workItem from="1699617435257" duration="3298000" />
+      <workItem from="1699621397259" duration="700000" />
     </task>
     <servers />
   </component>
