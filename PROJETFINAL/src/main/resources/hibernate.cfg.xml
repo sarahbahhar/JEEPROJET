@@ -13,6 +13,7 @@
       <mapping resource="Commande.hbm.xml"/>
       <mapping resource="Compte.hbm.xml"/>
       <mapping resource="Comptebancaire.hbm.xml"/>
+    <mapping resource="Demandemoderateur.hbm.xml"/>
     <mapping resource="Infocompte.hbm.xml"/>
     <mapping resource="Moderateur.hbm.xml"/>
     <mapping resource="Panier.hbm.xml"/>

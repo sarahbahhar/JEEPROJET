@@ -1,6 +1,8 @@
 package Servlet;
 
+import DAO.DemandeModerateurDAO;
 import DAO.ModeratorDAO;
+import Model.Demandemoderateur;
 import Model.Moderateur;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -12,13 +14,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "moderatorServlet", value = "/moderator-servlet")
-public class ModeratorServlet extends HttpServlet {
+@WebServlet(name = "inWaitingModServlet", value = "/in-waiting-mod-servlet")
+public class InWaitingValidationModServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        ModeratorDAO test = new ModeratorDAO();
-        List<Moderateur> listModerator = test.getListModerateur();
+        DemandeModerateurDAO test = new DemandeModerateurDAO();
+        List<Demandemoderateur> listModerator = test.getListModerateurWaiting();
         request.setAttribute("moderators",listModerator);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/moderatorList.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/moderatorWaitingList.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

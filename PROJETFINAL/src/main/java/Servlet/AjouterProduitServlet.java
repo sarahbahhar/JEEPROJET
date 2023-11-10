@@ -1,6 +1,8 @@
 package Servlet;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
+import Model.Produit;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,9 +10,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.math.BigDecimal;
+import java.nio.file.Paths;
 
 import DAO.ProduitDAO;
+import jakarta.servlet.http.Part;
 
 @WebServlet(name = "ajouterProduitServlet", value = "/ajouter-produit-servlet")
 public class AjouterProduitServlet extends HttpServlet{
@@ -77,8 +83,6 @@ public class AjouterProduitServlet extends HttpServlet{
                 p.setDescription(request.getParameter("description"));
                 p.setStock(stock);
                 p.setEmail(request.getParameter("email"));
-
-
 
                 ProduitDAO.addProduct(p);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/produitList.jsp");
