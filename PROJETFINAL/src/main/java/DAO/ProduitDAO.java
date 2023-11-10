@@ -28,9 +28,14 @@ public class ProduitDAO
     }
 
 
+    public Produit getProduitById(int productId) {
+        return null;
+    }
+
+    public void updateProduit(Produit produit) {
 
 
 
-
+    }
 }
 
