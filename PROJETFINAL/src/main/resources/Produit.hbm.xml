@@ -21,7 +21,7 @@
             <column name="email" sql-type="varchar(100)" length="100"/>
         </property>
         <property name="nomImage">
-            <column name="nomImage" sql-type="varchar(50)" length="50"/>
+            <column name="nomImage" sql-type="varchar(250)" length="50"/>
         </property>
         <property name="miniDescription">
             <column name="miniDescription" sql-type="varchar(200)" length="200"/>
