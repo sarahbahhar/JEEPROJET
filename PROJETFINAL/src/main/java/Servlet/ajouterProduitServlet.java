@@ -7,16 +7,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.math.BigDecimal;
-import org.hibernate.Session;
 
-import Model.Produit;
+import java.math.BigDecimal;
+
 import DAO.ProduitDAO;
 
 @WebServlet(name = "ajouterProduitServlet", value = "/ajouter-produit-servlet")
-public class ajouterProduitServlet extends HttpServlet{
+public class AjouterProduitServlet extends HttpServlet{
     private ProduitDAO ProduitDAO=new ProduitDAO();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("addProduct.jsp");
@@ -46,16 +43,42 @@ public class ajouterProduitServlet extends HttpServlet{
 
             if(true){
                 // Créez d'abord un objet Produit en utilisant le constructeur vide
+
+                Part filePart = request.getPart("image");
+                String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+
+                // Valider que c'est bien une image
+                if (!fileName.toLowerCase().endsWith(".jpg") && !fileName.toLowerCase().endsWith(".jpeg") &&
+                        !fileName.toLowerCase().endsWith(".png") && !fileName.toLowerCase().endsWith(".gif")) {
+
+                    response.sendRedirect(request.getContextPath() + "/erreur.jsp");
+                    return;
+                }
+
+                // Enregistrer l'image dans le répertoire ./img
+                try (InputStream fileContent = filePart.getInputStream();
+                     OutputStream outputStream = new FileOutputStream("./img/" + fileName)) {
+                    int read;
+                    byte[] bytes = new byte[1024];
+                    while ((read = fileContent.read(bytes)) != -1) {
+                        outputStream.write(bytes, 0, read);
+                    }
+                } catch (IOException e) {
+                    // Gérer les erreurs d'écriture du fichier, par exemple, rediriger vers une page d'erreur
+                    response.sendRedirect(request.getContextPath() + "/erreur.jsp");
+                    return;
+                }
+
                 Produit p = new Produit();
                 p.setTitre(request.getParameter("titre"));
-                p.setNomImage(request.getParameter("nomImage"));
+                p.setNomImage(fileName);
                 p.setMiniDescription(request.getParameter("miniDescription"));
                 p.setPrix(prix);
                 p.setDescription(request.getParameter("description"));
                 p.setStock(stock);
                 p.setEmail(request.getParameter("email"));
 
-// Vous avez maintenant un objet Produit (p) avec tous les attributs remplis.
+
 
                 ProduitDAO.addProduct(p);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/produitList.jsp");

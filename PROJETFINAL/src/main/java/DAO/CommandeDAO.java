@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import Model.Commande;
-
 public class CommandeDAO {
 
     private Connection connection;

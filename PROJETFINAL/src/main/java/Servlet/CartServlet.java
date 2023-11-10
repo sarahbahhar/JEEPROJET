@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import DAO.ProduitDAO;
-import Model.Produit;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "CartServlet", value = "/cart-servlet")

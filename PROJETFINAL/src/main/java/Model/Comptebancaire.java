@@ -3,19 +3,19 @@ package Model;
 import java.sql.Date;
 
 public class Comptebancaire {
-    private int identifiant;
+    private int id;
     private String nom;
     private String numero;
     private Date date;
     private String cvv;
     private String email;
 
-    public int getIdentifiant() {
-        return identifiant;
+    public int getId() {
+        return id;
     }
 
-    public void setIdentifiant(int identifiant) {
-        this.identifiant = identifiant;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNom() {
@@ -65,7 +65,7 @@ public class Comptebancaire {
 
         Comptebancaire that = (Comptebancaire) o;
 
-        if (identifiant != that.identifiant) return false;
+        if (id != that.id) return false;
         if (nom != null ? !nom.equals(that.nom) : that.nom != null) return false;
         if (numero != null ? !numero.equals(that.numero) : that.numero != null) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
@@ -77,22 +77,12 @@ public class Comptebancaire {
 
     @Override
     public int hashCode() {
-        int result = identifiant;
+        int result = id;
         result = 31 * result + (nom != null ? nom.hashCode() : 0);
         result = 31 * result + (numero != null ? numero.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (cvv != null ? cvv.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
-    }
-
-    private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

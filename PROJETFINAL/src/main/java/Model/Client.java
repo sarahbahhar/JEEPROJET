@@ -2,11 +2,7 @@ package Model;
 
 public class Client {
     private String email;
-    private Integer pointsFidelite;
-
-    public void setPointsFidelite(int pointsFidelite) {
-        this.pointsFidelite = pointsFidelite;
-    }
+    private int pointsFidelite;
 
     public String getEmail() {
         return email;
@@ -16,11 +12,11 @@ public class Client {
         this.email = email;
     }
 
-    public Integer getPointsFidelite() {
+    public int getPointsFidelite() {
         return pointsFidelite;
     }
 
-    public void setPointsFidelite(Integer pointsFidelite) {
+    public void setPointsFidelite(int pointsFidelite) {
         this.pointsFidelite = pointsFidelite;
     }
 
@@ -31,9 +27,8 @@ public class Client {
 
         Client client = (Client) o;
 
+        if (pointsFidelite != client.pointsFidelite) return false;
         if (email != null ? !email.equals(client.email) : client.email != null) return false;
-        if (pointsFidelite != null ? !pointsFidelite.equals(client.pointsFidelite) : client.pointsFidelite != null)
-            return false;
 
         return true;
     }
@@ -41,7 +36,7 @@ public class Client {
     @Override
     public int hashCode() {
         int result = email != null ? email.hashCode() : 0;
-        result = 31 * result + (pointsFidelite != null ? pointsFidelite.hashCode() : 0);
+        result = 31 * result + pointsFidelite;
         return result;
     }
 }

@@ -11,6 +11,11 @@
     <title>Moderator</title>
 </head>
 <body>
-
+<form action="/add-moderator-servlet" method="get">
+    <label for="motivation">Motivation :</label>
+    <input type="text" id="motivation" name="motivation" required>
+    <br>
+    <input type="submit" value="Soumettre">
+</form>
 </body>
 </html>

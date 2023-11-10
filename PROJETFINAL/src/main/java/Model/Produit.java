@@ -6,7 +6,7 @@ public class Produit {
     private int id;
     private String titre;
     private String description;
-    private Integer stock;
+    private int stock;
     private String email;
     private String nomImage;
     private String miniDescription;
@@ -36,11 +36,11 @@ public class Produit {
         this.description = description;
     }
 
-    public Integer getStock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setStock(Integer stock) {
+    public void setStock(int stock) {
         this.stock = stock;
     }
 
@@ -84,9 +84,9 @@ public class Produit {
         Produit produit = (Produit) o;
 
         if (id != produit.id) return false;
+        if (stock != produit.stock) return false;
         if (titre != null ? !titre.equals(produit.titre) : produit.titre != null) return false;
         if (description != null ? !description.equals(produit.description) : produit.description != null) return false;
-        if (stock != null ? !stock.equals(produit.stock) : produit.stock != null) return false;
         if (email != null ? !email.equals(produit.email) : produit.email != null) return false;
         if (nomImage != null ? !nomImage.equals(produit.nomImage) : produit.nomImage != null) return false;
         if (miniDescription != null ? !miniDescription.equals(produit.miniDescription) : produit.miniDescription != null)
@@ -101,7 +101,7 @@ public class Produit {
         int result = id;
         result = 31 * result + (titre != null ? titre.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (stock != null ? stock.hashCode() : 0);
+        result = 31 * result + stock;
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (nomImage != null ? nomImage.hashCode() : 0);
         result = 31 * result + (miniDescription != null ? miniDescription.hashCode() : 0);
