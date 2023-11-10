@@ -85,4 +85,14 @@ public class Comptebancaire {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
+
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

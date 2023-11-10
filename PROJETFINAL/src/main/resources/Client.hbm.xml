@@ -9,7 +9,7 @@
             <column name="email" sql-type="varchar(100)" length="100"/>
         </id>
         <property name="pointsFidelite">
-            <column name="points_fidelite" sql-type="int" not-null="true"/>
+            <column name="points_fidelite" sql-type="int"/>
         </property>
     </class>
 </hibernate-mapping>

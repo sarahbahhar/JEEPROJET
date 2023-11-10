@@ -10,12 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f95042c-9763-4c80-8586-8f35f74fe062" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Demandemoderateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/formAddModerator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CompteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CompteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Compte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/InscriptionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/InscriptionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Comptebancaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Comptebancaire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Commande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Commande.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Compte.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Compte.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Comptebancaire.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Comptebancaire.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addModerator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addModerator.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -92,6 +103,7 @@
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="Model" />
+      <recent name="" />
       <recent name="Entity" />
     </key>
   </component>
@@ -200,7 +212,8 @@
       <workItem from="1699469120401" duration="156000" />
       <workItem from="1699469493061" duration="3905000" />
       <workItem from="1699516399407" duration="7396000" />
-      <workItem from="1699606737156" duration="506000" />
+      <workItem from="1699606737156" duration="2824000" />
+      <workItem from="1699617435257" duration="3298000" />
     </task>
     <servers />
   </component>

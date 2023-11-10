@@ -9,10 +9,10 @@
             <column name="numero" sql-type="int"/>
         </id>
         <property name="dateDePaiement">
-            <column name="dateDePaiement" sql-type="date" not-null="true"/>
+            <column name="dateDePaiement" sql-type="date"/>
         </property>
         <property name="total">
-            <column name="total" sql-type="decimal(10,2)" precision="10" scale="2" not-null="true"/>
+            <column name="total" sql-type="decimal(10,2)" precision="10" scale="2"/>
         </property>
         <property name="email">
             <column name="email" sql-type="varchar(100)" length="100"/>
