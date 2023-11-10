@@ -30,8 +30,8 @@
                     <img src="./img/${produit.nomImage}" alt="${produit.titre}" style="width: 100px; height: 100px; margin-right: 10px;">
                     <div>
                         <h5>${produit.titre}</h5>
-                        <p>Voici une mini description</p>
-                        <p>Prix : Le PRIX €</p>
+                        <p>${produit.miniDescription}</p>
+                        <p>Prix : ${produit.prix} €</p>
                     </div>
                 </button>
                 <input type="hidden" name="produit_id" value="${produit.id}">
