@@ -16,7 +16,10 @@
 
 </head>
 <body>
-<h1>Produit List</h1>
+
+<jsp:include page="/Vue/header.jsp" />
+
+
 
 <div class="box">
     <c:forEach items="${produits}" var="produit">

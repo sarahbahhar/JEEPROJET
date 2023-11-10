@@ -20,7 +20,7 @@
     padding: 10px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    height: 200px;
+    height: 100px;
 }
 
 .article:hover {
