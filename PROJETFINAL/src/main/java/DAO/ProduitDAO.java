@@ -5,15 +5,13 @@ import java.util.List;
 import Model.Compte;
 import Model.Produit;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 
 
 public class ProduitDAO
 {
 
 
-    public static void addProduit(Produit p)
+    public static void addProduct(Produit p)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -29,6 +27,7 @@ public class ProduitDAO
         session.close();
         return result;
     }
+
 
 
 
