@@ -4,12 +4,4 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="Model.Demandemoderateur" table="demandemoderateur" schema="projet_jee">
-        <id name="email">
-            <column name="email" sql-type="varchar(100)" length="100"/>
-        </id>
-        <property name="message">
-            <column name="message" sql-type="text"/>
-        </property>
-    </class>
 </hibernate-mapping>

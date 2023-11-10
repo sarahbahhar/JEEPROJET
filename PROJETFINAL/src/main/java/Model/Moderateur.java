@@ -3,22 +3,8 @@ package Model;
 public class Moderateur {
     private String email;
     private Byte peutAjouterProduit;
-
-    public void setPeutAjouterProduit(byte peutAjouterProduit) {
-        this.peutAjouterProduit = peutAjouterProduit;
-    }
-
     private Byte peutSupprimerProduit;
-
-    public void setPeutSupprimerProduit(byte peutSupprimerProduit) {
-        this.peutSupprimerProduit = peutSupprimerProduit;
-    }
-
     private Integer maxProduitsLigne;
-
-    public void setMaxProduitsLigne(int maxProduitsLigne) {
-        this.maxProduitsLigne = maxProduitsLigne;
-    }
 
     public String getEmail() {
         return email;
