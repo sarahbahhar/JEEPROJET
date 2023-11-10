@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import DAO.CompteDAO;
+import Model.Compte;
 
 @WebServlet("/inscription")
 public class InscriptionServlet extends HttpServlet{

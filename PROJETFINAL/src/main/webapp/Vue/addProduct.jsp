@@ -11,7 +11,7 @@
     <title>Add Product</title>
 </head>
 <body>
-<form method="POST" action="<%=request.getContextPath()%>/ajouter-produit-servlet">
+<form method="POST" action="<%=request.getContextPath()%>/add-product-servlet">
 
     <label for="titre">Titre</label>
     <input type="text" id="titre" name="titre"><br>
