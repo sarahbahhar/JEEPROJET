@@ -1,38 +1,36 @@
 package Servlet;
-import java.io.IOException;
 
+import Model.Compte;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.http.HttpSession;
 
-import DAO.CompteDAO;
-import Model.Compte;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-@WebServlet("/inscription")
-public class InscriptionServlet extends HttpServlet{
-    private CompteDAO signUpDAO=new CompteDAO();
+@WebServlet("/infoCompteServlet")
+public class infoCompteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("signUp.jsp");
+        response.sendRedirect("infoCompte.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            String email=request.getParameter("email");
-            String password= request.getParameter("password");
-            if(signUpDAO.isUniqueEmail(email)){
-                Compte c=new Compte();
-                c.setEmail(email);
-                c.setMotDePasse(password);
+        //try {
+            PrintWriter out= response.getWriter();
+            HttpSession session = request.getSession();
+            String email=(String) session.getAttribute("email");
+            out.println(email);
+            out.close();
+            /*if(signUpDAO.isUniqueEmail(email)){
+                Compte c=new Compte(email,password);
                 signUpDAO.addCompte(c);
-                HttpSession session = request.getSession();
+
                 session.setAttribute("email", email);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/infoCompte.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/login-success.jsp");
                 dispatcher.forward(request, response);
             }
             else{
@@ -44,6 +42,7 @@ public class InscriptionServlet extends HttpServlet{
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-    }
+        }*/
+    //}
+}
 }

@@ -1,0 +1,36 @@
+html{
+    margin-right: 10px;
+    margin-left: 5px;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: #f9f7f7;
+    color: #2E3F58;
+}
+
+hr{
+    border-color: #2E3F58;
+}
+
+/*Changement de la font du texte */
+
+h1,h2,h3,h4,h5 {
+    font-family: Arial, sans-serif;
+}
+
+/* Style pour le bouton "Supprimer mon compte" */
+.bouton-golden {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #a7976a;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px; /* Ajouter de l'espace en bas */
+}
