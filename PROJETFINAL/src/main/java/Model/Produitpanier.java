@@ -1,8 +1,7 @@
 package Model;
 
-public class Produitcommande {
+public class Produitpanier {
     private int produitId;
-    private int commandeNumero;
     private int quantite;
 
     public int getProduitId() {
@@ -11,14 +10,6 @@ public class Produitcommande {
 
     public void setProduitId(int produitId) {
         this.produitId = produitId;
-    }
-
-    public int getCommandeNumero() {
-        return commandeNumero;
-    }
-
-    public void setCommandeNumero(int commandeNumero) {
-        this.commandeNumero = commandeNumero;
     }
 
     public int getQuantite() {
@@ -34,10 +25,9 @@ public class Produitcommande {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Produitcommande that = (Produitcommande) o;
+        Produitpanier that = (Produitpanier) o;
 
         if (produitId != that.produitId) return false;
-        if (commandeNumero != that.commandeNumero) return false;
         if (quantite != that.quantite) return false;
 
         return true;
@@ -46,7 +36,6 @@ public class Produitcommande {
     @Override
     public int hashCode() {
         int result = produitId;
-        result = 31 * result + commandeNumero;
         result = 31 * result + quantite;
         return result;
     }

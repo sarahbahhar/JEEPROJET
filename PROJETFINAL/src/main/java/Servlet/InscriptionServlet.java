@@ -7,12 +7,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.http.HttpSession;
 
 import DAO.CompteDAO;
-import Model.Compte;
 
 @WebServlet("/inscription")
 public class InscriptionServlet extends HttpServlet{
