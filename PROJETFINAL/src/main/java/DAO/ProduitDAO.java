@@ -2,7 +2,6 @@ package DAO;
 
 import java.util.List;
 
-import Model.Compte;
 import Model.Produit;
 import org.hibernate.Session;
 
