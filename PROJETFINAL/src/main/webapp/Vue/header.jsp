@@ -41,10 +41,10 @@
 
             <c:choose>
                 <c:when test="${empty sessionScope.email}">
-                    <li class='style'><a href='about.jsp' class='lien'>A propos</a></li>
+                    <li class='style'><a href='#' class='lien'>A propos</a></li>
                 </c:when>
                 <c:when test="${sessionScope.role == 0}">
-                    <li class='style'><a href='about.jsp' class='lien'>A propos</a></li>
+                    <li class='style'><a href='#' class='lien'>A propos</a></li>
                 </c:when>
                 <c:when test="${sessionScope.role == 1}">
                     <li class='style'><a href='#' class='lien'>Gérer Produit</a></li>
