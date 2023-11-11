@@ -87,7 +87,7 @@ CREATE TABLE Produit (
     description TEXT NOT NULL,
     stock INT NOT NULL,
     email VARCHAR(100) NOT NULL,
-    nomImage VARCHAR(50) NOT NULL,
+    nomImage VARCHAR(250) NOT NULL,
     miniDescription VARCHAR(200) NOT NULL,
     prix decimal(10,2) NOT NULL,
     FOREIGN KEY (email) REFERENCES Moderateur(email)
