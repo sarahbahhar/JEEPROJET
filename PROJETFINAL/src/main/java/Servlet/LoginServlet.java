@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import DAO.CompteDAO;
+import jakarta.servlet.http.HttpSession;
+
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet{
     private CompteDAO loginDAO;
@@ -44,6 +46,13 @@ public class LoginServlet extends HttpServlet{
         out.println(email);
 
         if (loginDAO.validate(email, password)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("email",email);
+
+
+            
+
+
             RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/login-success.jsp");
             dispatcher.forward(request, response);
         } else {
