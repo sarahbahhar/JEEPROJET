@@ -32,10 +32,6 @@ public class AddModeratorServlet extends HttpServlet {
                 ModDAO.addModerator(m);
                 response.sendRedirect(request.getContextPath() + "/moderator-servlet");
             }
-
-
-
-
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
