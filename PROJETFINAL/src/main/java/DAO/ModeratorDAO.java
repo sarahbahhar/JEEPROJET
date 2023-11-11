@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.Client;
+import Model.Infocompte;
 import Model.Moderateur;
 import org.hibernate.Session;
 import java.util.List;
@@ -63,4 +64,33 @@ public class ModeratorDAO {
         session.getTransaction().commit();
         session.close();
     }
+    public static int[] getAllPermissionsByEmail(String email) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        int[] allPermissions = new int[3]; // Utilisation d'un tableau d'entiers pour les autorisations
+
+        try {
+            Moderateur moderator = (Moderateur) session.createQuery("FROM Moderateur I WHERE I.email = :email")
+                    .setParameter("email", email)
+                    .uniqueResult();
+
+            if (moderator != null) {
+                allPermissions[0] = moderator.getMaxProduitsLigne();
+                allPermissions[1] = moderator.getPeutAjouterProduit();
+                allPermissions[2] = moderator.getPeutSupprimerProduit();
+            }
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            if (session.getTransaction() != null) {
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return allPermissions;
+    }
+
 }

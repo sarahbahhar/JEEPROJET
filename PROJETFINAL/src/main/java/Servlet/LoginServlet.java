@@ -60,6 +60,11 @@ public class LoginServlet extends HttpServlet{
 
             }else if (ModeratorDAO.emailExists(email)) {
                 session.setAttribute("role", 1); // 1 pour moderateur
+                int[] allPermissions = ModeratorDAO.getAllPermissionsByEmail(email);
+                session.setAttribute("maxProductsPerLine",allPermissions[0]);
+                session.setAttribute("canAddProduct",allPermissions[1] == 1);
+                session.setAttribute("canDeleteProduct",allPermissions[2] == 1);
+
 
             }else if (CustomerDAO.emailExists(email)) {
                 session.setAttribute("role", 0); // 0 pour client
