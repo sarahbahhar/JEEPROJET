@@ -67,7 +67,7 @@
                     <li class='style'><a href='<%=request.getContextPath()%>/sign-out-servlet' class='lien'>Se Déconnecter</a></li>
                 </c:when>
                 <c:otherwise>
-                    <li class='style'><a href='./Vue/signIn.jsp' class='lien'>Se Connecter</a></li>
+                    <li class='style'><a href='./WEB-INF/signIn.jsp' class='lien'>Se Connecter</a></li>
                 </c:otherwise>
             </c:choose>
 

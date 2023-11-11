@@ -32,20 +32,20 @@
     <label for="menu">Admin Menu</label>
     <select id="menu" onchange="window.location.href = this.value;">
         <option>-----------</option>
-        <option value="WEB-INF/clientList.jsp">Client List</option>
-        <option value="Vue/productList.jsp">Product List</option>
-        <option value="WEB-INF/moderatorList.jsp">Moderator List</option>
+        <option value="WEB-INF/Vue/clientList.jsp">Client List</option>
+        <option value="WEB-INF/Vue/productList.jsp">Product List</option>
+        <option value="WEB-INF/Vue/moderatorList.jsp">Moderator List</option>
     </select>
 </form>
 
 
-<button type="button" onclick="window.location.href='signIn.jsp'">Sign In</button>
-<button type="button" onclick="window.location.href='signUp.jsp'">Sign Up</button>
-<button type="button" onclick="window.location.href='Vue/shoppingCart.jsp'">Shopping Cart</button>
-<button type="button" onclick="window.location.href='addProduct.jsp'">add Product</button>
-<button type="button" onclick="window.location.href='Vue/formAddModerator.jsp'">add Moderator</button>
-<button type="button" onclick="window.location.href='Vue/addProduct.jsp'">add Product</button>
-<button type="button" onclick="window.location.href='Vue/myProfile.jsp'">My Profile</button>
+<button type="button" onclick="window.location.href='WEB-INF/Vue/signIn.jsp'">Sign In</button>
+<button type="button" onclick="window.location.href='WEB-INF/Vue/signUp.jsp'">Sign Up</button>
+<button type="button" onclick="window.location.href='WEB-INF/Vue/shoppingCart.jsp'">Shopping Cart</button>
+<button type="button" onclick="window.location.href='WEB-INF/Vue/addProduct.jsp'">add Product</button>
+<button type="button" onclick="window.location.href='WEB-INF/Vue/formAddModerator.jsp'">add Moderator</button>
+<button type="button" onclick="window.location.href='WEB-INF/Vue/addProduct.jsp'">add Product</button>
+<button type="button" onclick="window.location.href='WEB-INF/Vue/myProfile.jsp'">My Profile</button>
 
 
 </div>
