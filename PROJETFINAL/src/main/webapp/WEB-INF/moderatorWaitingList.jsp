@@ -1,5 +1,5 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Moderator Waiting List</title>
@@ -16,8 +16,16 @@
     <tr>
         <td>${moderator.email}</td>
         <td>  ${moderator.message}  </td>
-        <td><button>Accept</button></td>
-        <td><button>Refuse</button></td>
+        <td><form action="${pageContext.request.contextPath}/add-moderator-servlet" method="post">
+            <input type="hidden" name="email" value="${moderator.email}" />
+            <button type="submit">Accept</button>
+        </form></td>
+        <td><form action="${pageContext.request.contextPath}/delete-dismissed-mod-servlet" method="post">
+            <input type="hidden" name="email" value="${moderator.email}" />
+            <button type="submit">Refuse</button>
+        </form>
+
+        </td>
         </c:forEach>
 </table>
 </body>

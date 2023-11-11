@@ -1,8 +1,11 @@
 package DAO;
 
 import Model.Client;
+import Model.Demandemoderateur;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import java.util.List;
 
 public class CustomerDAO {
 
@@ -34,6 +37,26 @@ public class CustomerDAO {
             e.printStackTrace();
         }
         return false;
+    }
+    public static void removeCustomer(String email)
+    {
+        Client c;
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        c = (Client) session.createQuery("FROM Client c WHERE c.email = :email").setParameter("email", email).uniqueResult();
+        List list = session.createQuery("from Client").list();
+        session.delete(c);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    public static void addCustomer(Model.Client c)
+    {
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(c);
+        session.getTransaction().commit();
+        session.close();
     }
 
 

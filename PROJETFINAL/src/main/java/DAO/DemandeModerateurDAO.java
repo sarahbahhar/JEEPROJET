@@ -22,4 +22,16 @@ public class DemandeModerateurDAO {
         session.close();
         return result;
     }
+    public static void removeDissmissedModerator(String email)
+    {
+        Demandemoderateur dM;
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        dM = (Demandemoderateur) session.createQuery("FROM Demandemoderateur W WHERE W.email = :email").setParameter("email", email).uniqueResult();
+        List list = session.createQuery("from Demandemoderateur").list();
+        session.delete(dM);
+        session.getTransaction().commit();
+        session.close();
+
+    }
 }

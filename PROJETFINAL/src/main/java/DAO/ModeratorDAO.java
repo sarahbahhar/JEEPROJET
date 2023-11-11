@@ -1,5 +1,6 @@
 package DAO;
 
+import Model.Client;
 import Model.Moderateur;
 import org.hibernate.Session;
 import java.util.List;
@@ -50,5 +51,16 @@ public class ModeratorDAO {
             e.printStackTrace();
         }
         return false;
+    }
+    public static void removeModerator(String email)
+    {
+        Moderateur m;
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        m = (Moderateur) session.createQuery("FROM Moderateur m WHERE m.email = :email").setParameter("email", email).uniqueResult();
+        List list = session.createQuery("from Moderateur").list();
+        session.delete(m);
+        session.getTransaction().commit();
+        session.close();
     }
 }
