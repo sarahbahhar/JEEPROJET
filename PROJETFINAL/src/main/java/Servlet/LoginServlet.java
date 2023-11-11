@@ -86,7 +86,6 @@ public class LoginServlet extends HttpServlet{
             response.sendRedirect(request.getContextPath());
 
             Infocompte ic=infocompteDAO.getInfoCompte(email);
-            HttpSession session= request.getSession();
 
             session.setAttribute("InfoCompte", ic);
             /*session.setAttribute("email", email);

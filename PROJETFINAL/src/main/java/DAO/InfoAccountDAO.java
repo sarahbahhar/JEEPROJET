@@ -3,6 +3,9 @@ package DAO;
 import Model.Infocompte;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import java.util.List;
+
+
 
 public class InfoAccountDAO {
 
@@ -25,49 +28,6 @@ public class InfoAccountDAO {
         } catch (Exception e) {
             if (session.getTransaction() != null) {
                 session.getTransaction().rollback();
-import java.util.List;
-
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
-import Model.Infocompte;
-
-
-public class InfoAccountDAO
-{
-    public static void addInfoCompte(Infocompte ic)
-    {
-        Session session= HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        session.save(ic);
-        session.getTransaction().commit();
-        session.close();
-    }
-
-    public static void removeFirstCompte()
-    {
-        Session session= HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-
-        List list = session.createQuery("from Infocompte").list();
-
-        session.delete(list.get( list.size() -1 ));
-        session.getTransaction().commit();
-        session.close();
-
-    }
-
-    public Infocompte getInfoCompte(String email){
-        Infocompte ic=null;
-        Session session= HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction=null;
-        try{
-            transaction=session.beginTransaction();
-            ic= (Infocompte) session.createQuery("FROM Infocompte WHERE email = :email").setParameter("email", email).uniqueResult();
-            transaction.commit();}
-        catch(Exception e){
-            if (transaction != null) {
-                transaction.rollback();
             }
             e.printStackTrace();
         } finally {
@@ -77,15 +37,40 @@ public class InfoAccountDAO
         return fullName;
     }
 
-}
+    public static void addInfoCompte(Infocompte ic) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(ic);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+
+    public Infocompte getInfoCompte(String email) {
+        Infocompte ic = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            ic = (Infocompte) session.createQuery("FROM Infocompte WHERE email = :email").setParameter("email", email).uniqueResult();
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
 
         return ic;
     }
 
-    public void updateInfoCompte(String email, Infocompte updated){
+    public void updateInfoCompte(String email, Infocompte updated) {
         //Session session = HibernateUtil.getSessionFactory().openSession();;
-        Session session=null;
-        Transaction transaction=null;
+        Session session = null;
+        Transaction transaction = null;
         //Transaction transaction = null;
         //Infocompte toChange;
         /*try{
@@ -148,9 +133,6 @@ public class InfoAccountDAO
             }
         }
     }
-
-
-
-
 }
+
 

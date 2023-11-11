@@ -1,7 +1,9 @@
 package DAO;
 
+import java.io.File;
 import java.util.List;
 
+import Model.Moderateur;
 import Model.Produit;
 import org.hibernate.Session;
 import Model.Produit;
@@ -34,6 +36,18 @@ public class ProduitDAO
                 .setParameter("email", email).list();
         session.close();
         return result;
+    }
+
+    public static void removeProduct(String email)
+    {
+        Produit p;
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        p = (Produit) session.createQuery("FROM Produit m WHERE m.email = :email").setParameter("email", email).uniqueResult();
+        List list = session.createQuery("from Produit").list();
+        session.delete(p);
+        session.getTransaction().commit();
+        session.close();
     }
 
 
