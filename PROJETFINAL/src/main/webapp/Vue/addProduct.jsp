@@ -11,9 +11,6 @@
     <title>Add Product</title>
 </head>
 <body>
-<c:if test="${not empty image}">
-    <p>Fichier non null</p>
-</c:if>
 <form method="POST" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
 
     <label for="titre">Titre</label>

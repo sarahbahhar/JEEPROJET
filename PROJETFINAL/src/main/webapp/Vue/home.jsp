@@ -8,11 +8,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Home Marketplace</title>
+    <meta charset="utf-8">
+    <meta name="viewport">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+    <link rel="shortcut icon"  href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-<h1>MARKETPLACE</h1>
-<a href="home.jsp">Home</a>
+<jsp:include page="/Vue/header.jsp" />
+
+
+
+<div>
+<a href=<%=request.getContextPath()%>>Home</a>
+
+
 <form>
     <label for="menu">Admin Menu</label>
     <select id="menu" onchange="window.location.href = this.value;">
@@ -29,7 +39,7 @@
 <button type="button" onclick="window.location.href='Vue/shoppingCart.jsp'">Shopping Cart</button>
 <button type="button" onclick="window.location.href='Vue/addProduct.jsp'">add Product</button>
 
-
+</div>
 
 
 
