@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
 import java.text.SimpleDateFormat;
 import java.io.IOException;
 
@@ -14,19 +15,22 @@ import java.io.IOException;
 import DAO.InfoAccountDAO;
 import Model.Infocompte;
 
-@WebServlet("/infoCompteServlet")
-public class infoCompteServlet extends HttpServlet {
+
+@WebServlet("/ModifyInfoServlet")
+public class ModifyInfoServlet extends HttpServlet {
     private InfoAccountDAO infocompteDAO=new InfoAccountDAO();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("infoCompte.jsp");
+        response.sendRedirect("myProfile.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             //PrintWriter out= response.getWriter();
             HttpSession session = request.getSession();
-
-            String email=(String) session.getAttribute("email");
+            Infocompte ic=(Infocompte) session.getAttribute("InfoCompte");
+            String nom= request.getParameter("nom");
+            String prenom= request.getParameter("prenom");
+            String email=ic.getEmail();
             String dateString= request.getParameter("date");
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
             java.util.Date utilDate = dateFormat.parse(dateString);
@@ -36,21 +40,22 @@ public class infoCompteServlet extends HttpServlet {
             String ville=request.getParameter("ville");
             Integer codePostal= Integer.parseInt(request.getParameter("codePostal"));
             String pays=request.getParameter("pays");
-            String nom=(String) session.getAttribute("nom");
-            String prenom=(String) session.getAttribute("prenom");
+
+
             //out.println(email);
             //out.close();
-            Infocompte infocompte=new Infocompte();
-            infocompte.setEmail(email);
-            infocompte.setDateNaissance((java.sql.Date) sqlDate);
-            infocompte.setTelephone(telephone);
-            infocompte.setAdresse(adresse);
-            infocompte.setVille(ville);
-            infocompte.setCodePostal(codePostal);
-            infocompte.setPays(pays);
-            infocompte.setNom(nom);
-            infocompte.setPrenom(prenom);
-            infocompteDAO.addInfoCompte(infocompte);
+
+            Infocompte updated=new Infocompte();
+            updated.setEmail(email);
+            updated.setDateNaissance((java.sql.Date) sqlDate);
+            updated.setTelephone(telephone);
+            updated.setAdresse(adresse);
+            updated.setVille(ville);
+            updated.setCodePostal(codePostal);
+            updated.setPays(pays);
+            updated.setNom(nom);
+            updated.setPrenom(prenom);
+            infocompteDAO.updateInfoCompte(email,updated);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/home.jsp");
             dispatcher.forward(request, response);
 
@@ -61,4 +66,3 @@ public class infoCompteServlet extends HttpServlet {
         }
     }
 }
-

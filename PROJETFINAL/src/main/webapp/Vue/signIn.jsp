@@ -13,9 +13,9 @@
 <body>
 <form action="<%=request.getContextPath()%>/login" method="post">
     <label for="email">Email</label>
-    <input type="text" id="email" name="email"><br>
+    <input type="text" id="email" name="email" required><br>
     <label for="password">password</label>
-    <input type="password" id="password" name="password">
+    <input type="password" id="password" name="password" required>
 
     <input type="submit" value="se connecter">
 

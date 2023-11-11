@@ -12,10 +12,14 @@
 </head>
 <body>
     <form method="POST" action="<%=request.getContextPath()%>/inscription">
+        <label for="nom">nom</label>
+        <input type="text" id="nom" name="nom" required><br>
+        <label for="prenom">prénom</label>
+        <input type="prenom" id="prenom" name="prenom" required><br>
         <label for="email">Email</label>
-        <input type="text" id="email" name="email"><br>
+        <input type="text" id="email" name="email" required><br>
         <label for="password">password</label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password" name="password" required>
 
 
 

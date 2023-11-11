@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import DAO.CompteDAO;
+import Model.Compte;
 
 @WebServlet("/inscription")
 public class InscriptionServlet extends HttpServlet{
@@ -22,6 +23,8 @@ public class InscriptionServlet extends HttpServlet{
         try {
             String email=request.getParameter("email");
             String password= request.getParameter("password");
+            String nom= request. getParameter("nom");
+            String prenom=request.getParameter("prenom");
             if(signUpDAO.isUniqueEmail(email)){
                 Compte c=new Compte();
                 c.setEmail(email);
@@ -29,6 +32,8 @@ public class InscriptionServlet extends HttpServlet{
                 signUpDAO.addCompte(c);
                 HttpSession session = request.getSession();
                 session.setAttribute("email", email);
+                session.setAttribute("nom", nom);
+                session.setAttribute("prenom", prenom);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/infoCompte.jsp");
                 dispatcher.forward(request, response);
             }

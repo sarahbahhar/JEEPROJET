@@ -12,22 +12,19 @@
 </head>
 <body>
 <form method="POST" action="<%=request.getContextPath()%>/infoCompteServlet">
-    <label for="prenom">prenom</label>
-    <input type="text" id="prenom" name="prenom"><br>
-    <label for="nom">nom</label>
-    <input type="text" id="nom" name="nom"><br>
+
     <label for="date">date</label>
-    <input type="date" id="date" name="date"><br>
+    <input type="date" id="date" name="date" required><br>
     <label for="telephone">n° téléphone</label>
-    <input type="text" id="telephone" name="telephone"><br>
+    <input type="text" id="telephone" name="telephone" required><br>
     <label for="adresse">adresse</label>
-    <input type="text" id="adresse" name="adresse"><br>
+    <input type="text" id="adresse" name="adresse" required><br>
     <label for="ville">ville</label>
-    <input type="text" id="ville" name="ville"><br>
+    <input type="text" id="ville" name="ville" required><br>
     <label for="codePostal">codePostal</label>
-    <input type="number" id="codePostal" name="codePostal"><br>
+    <input type="number" id="codePostal" name="codePostal" required><br>
     <label for="pays">pays</label>
-    <input type="text" id="pays" name="pays"><br>
+    <input type="text" id="pays" name="pays" required><br>
 
 
 

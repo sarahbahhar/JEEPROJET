@@ -28,6 +28,7 @@
 <button type="button" onclick="window.location.href='Vue/signUp.jsp'">Sign Up</button>
 <button type="button" onclick="window.location.href='Vue/shoppingCart.jsp'">Shopping Cart</button>
 <button type="button" onclick="window.location.href='Vue/addProduct.jsp'">add Product</button>
+<button type="button" onclick="window.location.href='Vue/myProfile.jsp'">My Profile</button>
 
 
 
