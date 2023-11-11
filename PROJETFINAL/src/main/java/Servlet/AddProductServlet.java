@@ -9,18 +9,18 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-<<<<<<<< HEAD:PROJETFINAL/src/main/java/Servlet/AjouterProduitServlet.java
+
 
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.nio.file.Paths;
-========
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 import org.hibernate.Session;
->>>>>>>> 14277a59ee74490cc31a9c50fe2c911711429b21:PROJETFINAL/src/main/java/Servlet/AddProductServlet.java
+
 
 import Model.Produit;
 import DAO.ProduitDAO;
@@ -61,11 +61,9 @@ public class AddProductServlet extends HttpServlet{
                 p.setStock(Integer.parseInt(request.getParameter("stock")));
                 p.setEmail(request.getParameter("email"));
 
-<<<<<<<< HEAD:PROJETFINAL/src/main/java/Servlet/AjouterProduitServlet.java
-========
+
 // Vous avez maintenant un objet Produit (p) avec tous les attributs remplis.
 
->>>>>>>> 14277a59ee74490cc31a9c50fe2c911711429b21:PROJETFINAL/src/main/java/Servlet/AddProductServlet.java
                 ProduitDAO.addProduct(p);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/productList.jsp");
                 dispatcher.forward(request, response);
