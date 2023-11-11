@@ -21,4 +21,8 @@
         <servlet-name>moderatorServlet</servlet-name>
         <url-pattern>/moderator-servlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demandeModeratorServlet</servlet-name>
+        <url-pattern>/demande-moderator-servlet</url-pattern>
+    </servlet-mapping>
 </web-app>

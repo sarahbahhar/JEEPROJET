@@ -1,6 +1,7 @@
 package Servlet;
 import java.io.IOException;
 
+import Model.Compte;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

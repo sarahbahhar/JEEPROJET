@@ -1,6 +1,7 @@
 package Servlet;
 import java.io.*;
 
+import Model.Produit;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -8,6 +9,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
+
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.math.BigDecimal;
+import java.nio.file.Paths;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Paths;
@@ -16,8 +24,10 @@ import java.util.UUID;
 import jakarta.servlet.http.Part;
 import org.hibernate.Session;
 
+
 import Model.Produit;
 import DAO.ProduitDAO;
+import jakarta.servlet.http.Part;
 
 @WebServlet(name = "AddProductServlet", value = "/add-product-servlet")
 @MultipartConfig(
@@ -76,6 +86,7 @@ public class AddProductServlet extends HttpServlet {
                 p.setDescription(request.getParameter("description"));
                 p.setStock(Integer.parseInt(request.getParameter("stock")));
                 p.setEmail(request.getParameter("email"));
+
 
 // Vous avez maintenant un objet Produit (p) avec tous les attributs remplis.
 
