@@ -25,7 +25,7 @@
                 </div>
             </li>
             <li class='style'></li>
-            <li class='style'><a href='about.jsp' class='lien'>A propos</a></li>
+            <li class='style'><a href='about.jsp' class='lien'>A ${sessionScope.lastName}</a></li>
             <c:choose>
                 <c:when test="${!empty sessionScope.email}">
                     <li class='style'><a href='./Vue/signOut.jsp' class='lien'>Se Déconnecter</a></li>
