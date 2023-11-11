@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: CYTech Student
@@ -16,6 +17,10 @@
 </head>
 <body>
 <jsp:include page="/Vue/header.jsp" />
+
+<c:if test="${!empty sessionScope.firstName && !empty sessionScope.lastName}">
+    <div><h1>Bienvenue ${sessionScope.firstName} ${sessionScope.lastName}</h1></div>
+</c:if>
 
 
 

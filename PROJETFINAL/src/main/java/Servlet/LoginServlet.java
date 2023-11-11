@@ -75,8 +75,8 @@ public class LoginServlet extends HttpServlet{
 
 
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/login-success.jsp");
-            dispatcher.forward(request, response);
+            response.sendRedirect(request.getContextPath());
+
         } else {
             throw new Exception("Login not successful..");
         }
