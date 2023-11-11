@@ -17,7 +17,7 @@ import Model.Compte;
 public class InscriptionServlet extends HttpServlet{
     private CompteDAO signUpDAO=new CompteDAO();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("signUp.jsp");
+        response.sendRedirect("WEB-INF/Vue/signUp.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
