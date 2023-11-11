@@ -1,6 +1,7 @@
 package Servlet;
 import java.io.IOException;
 
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,11 +12,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import DAO.CompteDAO;
+import DAO.CustomerDAO;
+import DAO.ModeratorDAO;
+import DAO.AdminDAO;
+import DAO.InfoAccountDAO;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet{
     private CompteDAO loginDAO;
+
 
     public void init(){
         loginDAO=new CompteDAO();
@@ -49,8 +55,24 @@ public class LoginServlet extends HttpServlet{
             HttpSession session = request.getSession();
             session.setAttribute("email",email);
 
+            if (AdminDAO.emailExists(email)) {
+                session.setAttribute("role", 2); // 2 pour admin
 
-            
+            }else if (ModeratorDAO.emailExists(email)) {
+                session.setAttribute("role", 1); // 1 pour moderateur
+
+            }else if (CustomerDAO.emailExists(email)) {
+                session.setAttribute("role", 0); // 0 pour client
+
+            }
+            String[] fullName = InfoAccountDAO.getFullNameByEmail(email);
+            session.setAttribute("firstName",fullName[0]);
+            session.setAttribute("lastName",fullName[1]);
+
+
+
+
+
 
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/login-success.jsp");
