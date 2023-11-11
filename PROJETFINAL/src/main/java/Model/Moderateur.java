@@ -2,23 +2,9 @@ package Model;
 
 public class Moderateur {
     private String email;
-    private Byte peutAjouterProduit;
-
-    public void setPeutAjouterProduit(byte peutAjouterProduit) {
-        this.peutAjouterProduit = peutAjouterProduit;
-    }
-
-    private Byte peutSupprimerProduit;
-
-    public void setPeutSupprimerProduit(byte peutSupprimerProduit) {
-        this.peutSupprimerProduit = peutSupprimerProduit;
-    }
-
-    private Integer maxProduitsLigne;
-
-    public void setMaxProduitsLigne(int maxProduitsLigne) {
-        this.maxProduitsLigne = maxProduitsLigne;
-    }
+    private byte peutAjouterProduit;
+    private byte peutSupprimerProduit;
+    private int maxProduitsLigne;
 
     public String getEmail() {
         return email;
@@ -28,27 +14,27 @@ public class Moderateur {
         this.email = email;
     }
 
-    public Byte getPeutAjouterProduit() {
+    public byte getPeutAjouterProduit() {
         return peutAjouterProduit;
     }
 
-    public void setPeutAjouterProduit(Byte peutAjouterProduit) {
+    public void setPeutAjouterProduit(byte peutAjouterProduit) {
         this.peutAjouterProduit = peutAjouterProduit;
     }
 
-    public Byte getPeutSupprimerProduit() {
+    public byte getPeutSupprimerProduit() {
         return peutSupprimerProduit;
     }
 
-    public void setPeutSupprimerProduit(Byte peutSupprimerProduit) {
+    public void setPeutSupprimerProduit(byte peutSupprimerProduit) {
         this.peutSupprimerProduit = peutSupprimerProduit;
     }
 
-    public Integer getMaxProduitsLigne() {
+    public int getMaxProduitsLigne() {
         return maxProduitsLigne;
     }
 
-    public void setMaxProduitsLigne(Integer maxProduitsLigne) {
+    public void setMaxProduitsLigne(int maxProduitsLigne) {
         this.maxProduitsLigne = maxProduitsLigne;
     }
 
@@ -59,13 +45,10 @@ public class Moderateur {
 
         Moderateur that = (Moderateur) o;
 
+        if (peutAjouterProduit != that.peutAjouterProduit) return false;
+        if (peutSupprimerProduit != that.peutSupprimerProduit) return false;
+        if (maxProduitsLigne != that.maxProduitsLigne) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (peutAjouterProduit != null ? !peutAjouterProduit.equals(that.peutAjouterProduit) : that.peutAjouterProduit != null)
-            return false;
-        if (peutSupprimerProduit != null ? !peutSupprimerProduit.equals(that.peutSupprimerProduit) : that.peutSupprimerProduit != null)
-            return false;
-        if (maxProduitsLigne != null ? !maxProduitsLigne.equals(that.maxProduitsLigne) : that.maxProduitsLigne != null)
-            return false;
 
         return true;
     }
@@ -73,9 +56,9 @@ public class Moderateur {
     @Override
     public int hashCode() {
         int result = email != null ? email.hashCode() : 0;
-        result = 31 * result + (peutAjouterProduit != null ? peutAjouterProduit.hashCode() : 0);
-        result = 31 * result + (peutSupprimerProduit != null ? peutSupprimerProduit.hashCode() : 0);
-        result = 31 * result + (maxProduitsLigne != null ? maxProduitsLigne.hashCode() : 0);
+        result = 31 * result + (int) peutAjouterProduit;
+        result = 31 * result + (int) peutSupprimerProduit;
+        result = 31 * result + maxProduitsLigne;
         return result;
     }
 }

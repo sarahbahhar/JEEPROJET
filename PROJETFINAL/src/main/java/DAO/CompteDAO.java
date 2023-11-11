@@ -3,9 +3,9 @@ package DAO;
 import java.util.List;
 
 import Model.Compte;
-import Model.Produit;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import Model.Compte;
 
 
 public class CompteDAO

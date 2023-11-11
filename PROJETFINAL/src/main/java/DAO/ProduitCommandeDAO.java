@@ -1,10 +1,10 @@
 package DAO;
 
+import Model.Produitcommande;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import Model.Produitcommande;
 
 public class ProduitCommandeDAO {
 

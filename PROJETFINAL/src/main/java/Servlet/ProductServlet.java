@@ -1,16 +1,18 @@
 package Servlet;
 import java.io.IOException;
 
+import Model.Produit;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import Model.Produit;
+
 import java.util.List;
 
 import DAO.ProduitDAO;
+import Model.Produit;
 
 @WebServlet(name = "ProductServlet", value = "/product-servlet")
 public class ProductServlet extends HttpServlet{

@@ -1,7 +1,5 @@
 package Servlet;
 
-import Model.Compte;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet("/infoCompteServlet")
-public class infoCompteServlet extends HttpServlet {
+public class InfoCompteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("infoCompte.jsp");
     }

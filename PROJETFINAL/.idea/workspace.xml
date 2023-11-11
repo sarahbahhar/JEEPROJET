@@ -9,18 +9,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f95042c-9763-4c80-8586-8f35f74fe062" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Infocompte.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Infocompte.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Moderateur.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Moderateur.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Panier.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Panier.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Produit.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Produit.hbm.xml" afterDir="false" />
+    <list default="true" id="7cd87718-06ae-4964-9c52-928e4989f181" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/DemandeModerateurDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/DemandeModerateurServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/InWaitingValidationModServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/moderatorWaitingList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CommandeDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CompteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CompteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProduitCommandeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProduitCommandeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produitpanier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/CartServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/InscriptionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/InscriptionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/OrderServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ajouterProduitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/AjouterProduitServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/infoCompteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/InfoCompteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Commande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Commande.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Produitpanier.hbm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/formAddModerator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/formAddModerator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/creationTable.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/creationTable.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,17 +63,10 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
+  &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2XoHx2uAcCnIF0T558DCfID5tLX" />
+  <component name="ProjectId" id="2XzeFlc7QO5nWFZzZs6GgdWLbyA" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -68,41 +79,32 @@
     "JPA.DatabaseSchemaImportDialog": "8d06ae5d-700f-4934-9312-7137f8fd4a4b",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "dev",
     "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/Users/CYTech Student/JEEPROJET/PROJETFINAL/src/main/java",
     "last_opened_file_path": "C:/Users/CYTech Student/JEEPROJET/PROJETFINAL",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
-    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\Vue" />
+      <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\WEB-INF" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="Model" />
-      <recent name="" />
-      <recent name="Entity" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 10.1.15" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.15" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="PROJETFINAL:war exploded">
           <settings>
@@ -111,7 +113,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="2870225e-e61d-497a-ae34-561d1ef675ff" />
+        <option name="BASE_DIRECTORY_NAME" value="b20eb828-cc64-43ed-9e47-901d124391fe" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -119,7 +121,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64133" />
+        <option name="DEBUG_PORT" value="49857" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -192,28 +194,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5f95042c-9763-4c80-8586-8f35f74fe062" name="Changes" comment="" />
-      <created>1699288757275</created>
+      <changelist id="7cd87718-06ae-4964-9c52-928e4989f181" name="Changes" comment="" />
+      <created>1699636237283</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1699288757275</updated>
-      <workItem from="1699288758325" duration="1223000" />
-      <workItem from="1699290006300" duration="94000" />
-      <workItem from="1699290108750" duration="1366000" />
-      <workItem from="1699435134805" duration="3014000" />
-      <workItem from="1699446293194" duration="1114000" />
-      <workItem from="1699463779082" duration="4862000" />
-      <workItem from="1699469120401" duration="156000" />
-      <workItem from="1699469493061" duration="3905000" />
-      <workItem from="1699516399407" duration="6650000" />
-      <workItem from="1699542708274" duration="7335000" />
-      <workItem from="1699553200092" duration="3955000" />
-      <workItem from="1699608581456" duration="382000" />
-      <workItem from="1699618906592" duration="1267000" />
-      <workItem from="1699516399407" duration="7396000" />
-      <workItem from="1699606737156" duration="2824000" />
-      <workItem from="1699617435257" duration="3298000" />
-      <workItem from="1699621397259" duration="700000" />
+      <updated>1699636237283</updated>
+      <workItem from="1699636242312" duration="326000" />
+      <workItem from="1699636581686" duration="9356000" />
     </task>
     <servers />
   </component>

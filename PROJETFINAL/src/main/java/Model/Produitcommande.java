@@ -3,7 +3,7 @@ package Model;
 public class Produitcommande {
     private int produitId;
     private int commandeNumero;
-    private Integer quantite;
+    private int quantite;
 
     public int getProduitId() {
         return produitId;
@@ -21,11 +21,11 @@ public class Produitcommande {
         this.commandeNumero = commandeNumero;
     }
 
-    public Integer getQuantite() {
+    public int getQuantite() {
         return quantite;
     }
 
-    public void setQuantite(Integer quantite) {
+    public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
 
@@ -38,7 +38,7 @@ public class Produitcommande {
 
         if (produitId != that.produitId) return false;
         if (commandeNumero != that.commandeNumero) return false;
-        if (quantite != null ? !quantite.equals(that.quantite) : that.quantite != null) return false;
+        if (quantite != that.quantite) return false;
 
         return true;
     }
@@ -47,7 +47,7 @@ public class Produitcommande {
     public int hashCode() {
         int result = produitId;
         result = 31 * result + commandeNumero;
-        result = 31 * result + (quantite != null ? quantite.hashCode() : 0);
+        result = 31 * result + quantite;
         return result;
     }
 }
