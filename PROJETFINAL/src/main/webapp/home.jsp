@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-<jsp:include page="/Vue/header.jsp" />
+<jsp:include page="/header.jsp" />
 
 <c:if test="${!empty sessionScope.firstName && !empty sessionScope.lastName}">
     <div><h1>Bienvenue ${sessionScope.firstName} ${sessionScope.lastName}</h1></div>

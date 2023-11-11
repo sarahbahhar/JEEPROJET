@@ -17,6 +17,7 @@ import Model.Infocompte;
 
 
 @WebServlet("/ModifyInfoServlet")
+
 public class ModifyInfoServlet extends HttpServlet {
     private InfoAccountDAO infocompteDAO=new InfoAccountDAO();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
