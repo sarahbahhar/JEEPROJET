@@ -20,7 +20,7 @@ public class InWaitingValidationModServlet extends HttpServlet {
         DemandeModerateurDAO test = new DemandeModerateurDAO();
         List<Demandemoderateur> listModerator = test.getListModerateurWaiting();
         request.setAttribute("moderators",listModerator);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/moderatorWaitingList.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/moderatorWaitingList.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
