@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<jsp:include page="/Vue/header.jsp" />
+
 
 
 

@@ -12,15 +12,23 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
 
 import DAO.ProduitDAO;
+import Model.Produit;
 
 @WebServlet(name = "ProductServlet", value = "/product-servlet")
 public class ProductServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Retrieve the email parameter from the request
+        String email = request.getParameter("email");
 
-        ProduitDAO test = new ProduitDAO();
-        List<Produit> listProduit = ProduitDAO.getListProduit();
-        request.setAttribute("produits",listProduit);
+        if (email != null && !email.isEmpty()) {
+            // Fetch the list of products associated with the email
+            List<Produit> listProduit = ProduitDAO.getListProduitByEmail(email);
+
+            // Set the list of products as an attribute in the request
+            request.setAttribute("produits", listProduit);
+        }
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/productList.jsp");
         try {
             dispatcher.forward(request, response);

@@ -11,7 +11,7 @@
     <title>Add Product</title>
 </head>
 <body>
-<form method="POST" action="<%=request.getContextPath()%>/ajouter-produit-servlet">
+<form method="POST" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
 
     <label for="titre">Titre</label>
     <input type="text" id="titre" name="titre"><br>
@@ -25,14 +25,14 @@
     <label for="email">Email</label>
     <input type="text" id="email" name="email"><br>
 
-    <label for="nomImage">Nom de l'image</label>
-    <input type="text" id="nomImage" name="nomImage"><br>
-
     <label for="miniDescription">Mini Description</label>
     <textarea id="miniDescription" name="miniDescription"></textarea><br>
 
-    <label for="prix">Prix</label>
-    <input type="text" id="prix" name="prix"><br>
+    <label for="price">Prix</label>
+    <input type="text" id="price" name="price"><br>
+
+    <label for="image">Image</label>
+    <input type="file" id="image" name="image"><br>
 
     <input type="submit" value="Ajouter Produit">
 </form>

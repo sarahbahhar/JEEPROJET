@@ -4,7 +4,7 @@ import java.util.List;
 
 import Model.Produit;
 import org.hibernate.Session;
-
+import Model.Produit;
 
 public class ProduitDAO
 {
@@ -26,6 +26,17 @@ public class ProduitDAO
         session.close();
         return result;
     }
+    public static List<Produit> getListProduitByEmail(String email)
+    {
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        List<Produit> result = session.createQuery("FROM Produit P WHERE P.email = :email")
+                .setParameter("email", email).list();
+        session.close();
+        return result;
+    }
+
+
 
 
     public Produit getProduitById(int productId) {

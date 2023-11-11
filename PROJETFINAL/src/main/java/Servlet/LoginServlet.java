@@ -10,6 +10,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import DAO.CompteDAO;
+import DAO.CustomerDAO;
+import DAO.ModeratorDAO;
+import DAO.AdminDAO;
+import DAO.InfoAccountDAO;
 import DAO.InfoAccountDAO;
 import Model.Infocompte;
 import jakarta.servlet.http.HttpSession;
@@ -18,6 +22,7 @@ import jakarta.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet{
     private CompteDAO loginDAO;
     private InfoAccountDAO infocompteDAO;
+
 
     public void init(){
         loginDAO=new CompteDAO();
@@ -50,6 +55,36 @@ public class LoginServlet extends HttpServlet{
 
 
         if (loginDAO.validate(email, password)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("email",email);
+
+            if (AdminDAO.emailExists(email)) {
+                session.setAttribute("role", 2); // 2 pour admin
+
+            }else if (ModeratorDAO.emailExists(email)) {
+                session.setAttribute("role", 1); // 1 pour moderateur
+                int[] allPermissions = ModeratorDAO.getAllPermissionsByEmail(email);
+                session.setAttribute("maxProductsPerLine",allPermissions[0]);
+                session.setAttribute("canAddProduct",allPermissions[1] == 1);
+                session.setAttribute("canDeleteProduct",allPermissions[2] == 1);
+
+
+            }else if (CustomerDAO.emailExists(email)) {
+                session.setAttribute("role", 0); // 0 pour client
+
+            }
+            String[] fullName = InfoAccountDAO.getFullNameByEmail(email);
+            session.setAttribute("firstName",fullName[0]);
+            session.setAttribute("lastName",fullName[1]);
+
+
+
+
+
+
+
+            response.sendRedirect(request.getContextPath());
+
             Infocompte ic=infocompteDAO.getInfoCompte(email);
             HttpSession session= request.getSession();
 

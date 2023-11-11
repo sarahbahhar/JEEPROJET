@@ -11,9 +11,11 @@
     <title>Moderator</title>
 </head>
 <body>
-<form action="/add-moderator-servlet" method="get">
-    <label for="motivation">Motivation :</label>
-    <input type="text" id="motivation" name="motivation" required>
+<form action="${pageContext.request.contextPath}/demande-moderator-servlet" method="post">
+    <label>Email :</label>
+    <input type="text" id="email" name="email" required>
+    <label>Motivation :</label>
+    <input type="text" id="description" name="description" required>
     <br>
     <input type="submit" value="Soumettre">
 </form>

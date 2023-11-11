@@ -24,7 +24,10 @@
             <td>  ${moderator.peutSupprimerProduit}  </td>
             <td>  ${moderator.maxProduitsLigne}  </td>
             <td><button>EDIT</button></td>
-            <td><button>DELETE</button></td>
+            <td><form action="${pageContext.request.contextPath}/delete-moderator-servlet" method="post">
+                <input type="hidden" name="email" value="${moderator.email}" />
+                <button type="submit">Delete</button>
+            </form></td>
     </c:forEach>
 </table>
 <br>
