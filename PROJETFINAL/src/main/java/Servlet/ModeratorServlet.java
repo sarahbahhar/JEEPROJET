@@ -19,7 +19,7 @@ public class ModeratorServlet extends HttpServlet {
         ModeratorDAO test = new ModeratorDAO();
         List<Moderateur> listModerator = test.getListModerateur();
         request.setAttribute("moderators",listModerator);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/moderatorList.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/moderatorList.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

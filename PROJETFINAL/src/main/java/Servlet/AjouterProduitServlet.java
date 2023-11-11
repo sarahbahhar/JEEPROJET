@@ -64,7 +64,7 @@ public class AjouterProduitServlet extends HttpServlet{
 // Vous avez maintenant un objet Produit (p) avec tous les attributs remplis.
 
                 ProduitDAO.addProduct(p);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/productList.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/productList.jsp");
                 dispatcher.forward(request, response);
             }
             else{

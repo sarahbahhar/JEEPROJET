@@ -15,7 +15,7 @@ import java.io.IOException;
 public class DemandeModerateurServlet extends HttpServlet {
     private DemandeModerateurDAO formModeratorDAO=new DemandeModerateurDAO();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("Vue/formAddModerator.jsp");
+        response.sendRedirect("WEB-INF/Vue/formAddModerator.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class DemandeModerateurServlet extends HttpServlet {
             dM.setEmail(email);
             dM.setMessage(description);
             formModeratorDAO.addModerator(dM);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/formAddModerator.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/Vue/formAddModerator.jsp");
             dispatcher.forward(request, response);
 
 
