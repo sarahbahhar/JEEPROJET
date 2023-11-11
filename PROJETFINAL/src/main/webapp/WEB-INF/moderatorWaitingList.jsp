@@ -16,7 +16,7 @@
     <tr>
         <td>${moderator.email}</td>
         <td>  ${moderator.message}  </td>
-        <td><form action="acceptModerator" method="post">
+        <td><form action="${pageContext.request.contextPath}/add-moderator-servlet" method="post">
             <input type="hidden" name="email" value="${moderator.email}" />
             <button type="submit">Accept</button>
         </form></td>
