@@ -10,35 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd87718-06ae-4964-9c52-928e4989f181" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/DemandeModerateurDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/DemandeModerateurServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/InWaitingValidationModServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/moderatorWaitingList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CommandeDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CompteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CompteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProduitCommandeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProduitCommandeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProduitDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produitpanier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/CartServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/InscriptionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/InscriptionServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/ModeratorServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/OrderServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/ajouterProduitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/AjouterProduitServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/infoCompteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/InfoCompteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Commande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Commande.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Produitpanier.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/formAddModerator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/formAddModerator.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/creationTable.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/creationTable.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DemandeModerateurDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DemandeModerateurDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/moderatorWaitingList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/moderatorWaitingList.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,25 +49,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JPA.DatabaseSchemaImportDialog": "8d06ae5d-700f-4934-9312-7137f8fd4a4b",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/CYTech Student/JEEPROJET/PROJETFINAL",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;8d06ae5d-700f-4934-9312-7137f8fd4a4b&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CYTech Student/JEEPROJET/PROJETFINAL&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\Vue" />
@@ -200,7 +175,9 @@
       <option name="presentableId" value="Default" />
       <updated>1699636237283</updated>
       <workItem from="1699636242312" duration="326000" />
-      <workItem from="1699636581686" duration="9356000" />
+      <workItem from="1699636581686" duration="9504000" />
+      <workItem from="1699703940086" duration="3146000" />
+      <workItem from="1699708884169" duration="2369000" />
     </task>
     <servers />
   </component>
