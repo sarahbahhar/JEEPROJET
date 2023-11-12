@@ -38,7 +38,7 @@
 
         <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
             <input type="hidden" name="path" value="signUp.jsp" />
-            <button class="bouton-golden type="submit">S'inscrire</button>
+            <button class="bouton-golden" type="submit">S'inscrire</button>
         </form>
     </div>
 </div>

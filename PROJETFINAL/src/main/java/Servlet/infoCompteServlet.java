@@ -51,7 +51,8 @@ public class infoCompteServlet extends HttpServlet {
             infocompte.setNom(nom);
             infocompte.setPrenom(prenom);
             infocompteDAO.addInfoCompte(infocompte);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/home.jsp");
+            session.setAttribute("InfoCompte", infocompte);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
             dispatcher.forward(request, response);
 
 

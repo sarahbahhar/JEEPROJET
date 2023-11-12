@@ -35,6 +35,8 @@
 
 
         <input type="submit" value="verifier">
+        <a href="home.jsp">Annuler</a>
+
     </form>
 
 </body>

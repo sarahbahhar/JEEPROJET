@@ -1,6 +1,6 @@
 package Servlet;
 import java.io.IOException;
-
+import Util.EmailSender;
 import Model.Compte;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import DAO.CompteDAO;
-import Model.Compte;
 
 @WebServlet("/inscriptionServlet")
 public class InscriptionServlet extends HttpServlet{
@@ -35,7 +34,9 @@ public class InscriptionServlet extends HttpServlet{
                 session.setAttribute("email", email);
                 session.setAttribute("nom", nom);
                 session.setAttribute("prenom", prenom);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/infoCompte.jsp");
+                //EmailSender emailSender=new EmailSender();
+                //emailSender.sendMessage("rensimon@cy-tech.fr", email);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/Vue/infoCompte.jsp");
                 dispatcher.forward(request, response);
             }
             else{
