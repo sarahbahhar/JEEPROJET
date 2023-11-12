@@ -12,7 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 @WebServlet(name = "DeleteModeratorServlet", value = "/delete-moderator-servlet")
-public class DeleteModeratorServlet extends HttpServlet {
+public class
+DeleteModeratorServlet extends HttpServlet {
     private ModeratorDAO ModDAO=new ModeratorDAO();
     private CustomerDAO CustomDAO=new CustomerDAO();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

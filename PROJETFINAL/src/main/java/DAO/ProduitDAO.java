@@ -6,10 +6,10 @@ import java.util.List;
 import Model.Moderateur;
 import Model.Produit;
 import org.hibernate.Session;
-import Model.Produit;
-
+import org.hibernate.Transaction;
 public class ProduitDAO
 {
+    public static final String PATH_IMAGE = "/img/";
 
 
     public static void addProduct(Produit p)
@@ -38,13 +38,12 @@ public class ProduitDAO
         return result;
     }
 
-    public static void removeProduct(String email)
+    public static void removeProductById(int id)
     {
         Produit p;
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        p = (Produit) session.createQuery("FROM Produit m WHERE m.email = :email").setParameter("email", email).uniqueResult();
-        List list = session.createQuery("from Produit").list();
+        p = getProduitById(id);
         session.delete(p);
         session.getTransaction().commit();
         session.close();
@@ -57,6 +56,8 @@ public class ProduitDAO
         session.close();
         return result;
     }
+
+
 
     public static Produit getProduitById(int produitId) {
         Produit produit = null;
