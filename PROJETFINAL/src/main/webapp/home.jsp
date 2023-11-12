@@ -17,8 +17,8 @@
 </head>
 <body>
 
-<c:if test="${!empty sessionScope.firstName && !empty sessionScope.lastName}">
-    <div><h1>Bienvenue ${sessionScope.firstName} ${sessionScope.lastName}</h1></div>
+<c:if test="${!empty sessionScope.InfoCompte.prenom && !empty sessionScope.InfoCompte.nom}">
+    <div><h1>Bienvenue ${sessionScope.InfoCompte.prenom} ${sessionScope.InfoCompte.nom}</h1></div>
 </c:if>
 
 
