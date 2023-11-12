@@ -39,7 +39,7 @@
                 <c:when test="${sessionScope.role == 0}">
                     <li class='style'>
                         <form class="style">
-                        <button class="lien" type="submit"></button>
+                            <button class="lien" type="submit"></button>
                         </form>
                     </li>
                 </c:when>
@@ -95,18 +95,18 @@
                 </c:when>
                 <c:otherwise>
                     <li >
-                    <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                        <input type="hidden" name="path" value="signIn.jsp" />
-                        <button class='lien' type='submit'>Se Connecter</button>
-                    </form>
+                        <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <input type="hidden" name="path" value="signIn.jsp" />
+                            <button class='lien' type='submit'>Se Connecter</button>
+                        </form>
                     </li>
 
                 </c:otherwise>
             </c:choose>
             <div class="test">
                 <li class='style'>
-                    <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                        <input type="hidden" name="path" value="/WEB-INF/Vue/signIn.jsp" />
+                    <form class="style" action="${pageContext.request.contextPath}/panier-servlet" method="get">
+                        <input type="hidden" name="email" value="${sessionScope.email}" />
                         <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
                     </form>
                 </li>

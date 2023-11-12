@@ -59,7 +59,7 @@ public class ModeratorDAO {
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         m = (Moderateur) session.createQuery("FROM Moderateur m WHERE m.email = :email").setParameter("email", email).uniqueResult();
-        List list = session.createQuery("from Moderateur").list();
+        List list = session.createQuery("from Moderateur").list(); // a revoir
         session.delete(m);
         session.getTransaction().commit();
         session.close();
