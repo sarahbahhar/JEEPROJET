@@ -118,14 +118,6 @@
                 </c:when>
             </c:choose>
 
-            <div class="test">
-                <li class='style'>
-                    <form class="style" action="${pageContext.request.contextPath}/panier-servlet" method="get">
-                        <input type="hidden" name="email" value="${sessionScope.email}" />
-                        <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
-                    </form>
-                </li>
-            </div>
         </ul>
     </nav>
 </header>
