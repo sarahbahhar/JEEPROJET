@@ -23,7 +23,6 @@
             <td>  ${moderator.peutAjouterProduit}  </td>
             <td>  ${moderator.peutSupprimerProduit}  </td>
             <td>  ${moderator.maxProduitsLigne}  </td>
-            <td><button>EDIT</button></td>
             <td><form action="${pageContext.request.contextPath}/delete-moderator-servlet" method="post">
                 <input type="hidden" name="email" value="${moderator.email}" />
                 <button type="submit">Delete</button>
@@ -32,6 +31,9 @@
 </table>
 <br>
 <br>
-<button>ADD NEW MODERATOR</button>
+<form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+    <input type="hidden" name="path" value="editModerator.jsp" />
+    <button class="lien" type="submit">Edit Moderators</button>
+</form>
 </body>
 </html>

@@ -1,6 +1,5 @@
 package Servlet;
 import java.io.IOException;
-import Util.EmailSender;
 import Model.Compte;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
