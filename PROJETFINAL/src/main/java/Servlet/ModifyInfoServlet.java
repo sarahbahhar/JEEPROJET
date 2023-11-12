@@ -57,6 +57,7 @@ public class ModifyInfoServlet extends HttpServlet {
             updated.setNom(nom);
             updated.setPrenom(prenom);
             infocompteDAO.updateInfoCompte(email,updated);
+            session.setAttribute("InfoCompte", updated);
             RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
             dispatcher.forward(request, response);
 
