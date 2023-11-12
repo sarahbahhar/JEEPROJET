@@ -10,8 +10,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd87718-06ae-4964-9c52-928e4989f181" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/EditModeratorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Commande.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Compte.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Comptebancaire.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Infocompte.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Moderateur.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Panier.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Produit.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Produitcommande.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ModeratorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Compte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Demandemoderateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Demandemoderateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produitcommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Produitcommande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produitpanier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ProduitpanierPK.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/RedirectServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/RedirectServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Commande.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Compte.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Comptebancaire.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Demandemoderateur.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Infocompte.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Moderateur.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Panier.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Produit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Produitcommande.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Produitpanier.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/editModerator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/editModerator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/moderatorList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/moderatorList.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +213,7 @@
       <workItem from="1699636581686" duration="9504000" />
       <workItem from="1699703940086" duration="3146000" />
       <workItem from="1699708884169" duration="16904000" />
+      <workItem from="1699788889434" duration="6059000" />
     </task>
     <servers />
   </component>

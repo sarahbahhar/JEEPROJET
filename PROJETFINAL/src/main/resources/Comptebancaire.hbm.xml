@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Model.Comptebancaire" table="comptebancaire" schema="projet_jee">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="nom">
+            <column name="nom" sql-type="varchar(255)"/>
+        </property>
+        <property name="numero">
+            <column name="numero" sql-type="varchar(255)"/>
+        </property>
+        <property name="date">
+            <column name="date" sql-type="date"/>
+        </property>
+        <property name="cvv">
+            <column name="cvv" sql-type="varchar(3)" length="3"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>
