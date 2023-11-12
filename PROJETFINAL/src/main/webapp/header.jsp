@@ -35,6 +35,26 @@
                             <button class="lien" type="submit"></button>
                         </form>
                     </li>
+                    <li class="style">
+                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <input type="hidden" name="path" value="about.jsp" />
+                            <button class="lien" type="submit">A propos</button>
+                        </form>
+                    </li>
+                    <li >
+                        <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <input type="hidden" name="path" value="signIn.jsp" />
+                            <button class='lien' type='submit'>Se Connecter</button>
+                        </form>
+                    </li>
+                    <div class="test">
+                        <li class='style'>
+                            <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                                <input type="hidden" name="path" value="/WEB-INF/Vue/signIn.jsp" />
+                                <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
+                            </form>
+                        </li>
+                    </div>
                 </c:when>
                 <c:when test="${sessionScope.role == 0}">
                     <li class='style'>
@@ -42,6 +62,25 @@
                             <button class="lien" type="submit"></button>
                         </form>
                     </li>
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <input type="hidden" name="path" value="myProfile.jsp" />
+                            <button class="lien" type="submit">Profil</button>
+                        </form>
+                    </li>
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
+                            <button class="lien" type="submit">Se Déconnecter</button>
+                        </form>
+                    </li>
+                    <div class="test">
+                        <li class='style'>
+                            <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                                <input type="hidden" name="path" value="/WEB-INF/Vue/signIn.jsp" />
+                                <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
+                            </form>
+                        </li>
+                    </div>
                 </c:when>
                 <c:when test="${sessionScope.role == 1}">
                     <li class='style'>
@@ -50,6 +89,25 @@
                             <button class="lien" type="submit">Gérer Produit</button>
                         </form>
                     </li>
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <input type="hidden" name="path" value="myProfile.jsp" />
+                            <button class="lien" type="submit">Profil</button>
+                        </form>
+                    </li>
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
+                            <button class="lien" type="submit">Se Déconnecter</button>
+                        </form>
+                    </li>
+                    <div class="test">
+                        <li class='style'>
+                            <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                                <input type="hidden" name="path" value="/WEB-INF/Vue/signIn.jsp" />
+                                <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
+                            </form>
+                        </li>
+                    </div>
                 </c:when>
                 <c:when test="${sessionScope.role == 2}">
                     <li class='style'>
@@ -64,59 +122,23 @@
                             <button class="lien" type="submit">Liste Moderateur</button>
                         </form>
                     </li>
-                </c:when>
-            </c:choose>
-
-
-            <c:choose>
-                <c:when test="${empty sessionScope.email}">
-                    <li class="style">
-                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                            <input type="hidden" name="path" value="about.jsp" />
-                            <button class="lien" type="submit">A propos</button>
-                        </form>
-                    </li>
-                </c:when>
-                <c:otherwise>
                     <li class='style'>
                         <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                             <input type="hidden" name="path" value="myProfile.jsp" />
                             <button class="lien" type="submit">Profil</button>
                         </form>
                     </li>
-                </c:otherwise>
-            </c:choose>
-
-            <c:choose>
-                <c:when test="${!empty sessionScope.email}">
                     <li class='style'>
                         <form class="style" action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
                             <button class="lien" type="submit">Se Déconnecter</button>
                         </form>
                     </li>
                 </c:when>
-                <c:otherwise>
-                    <li >
-                        <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                            <input type="hidden" name="path" value="signIn.jsp" />
-                            <button class='lien' type='submit'>Se Connecter</button>
-                        </form>
-                    </li>
+            </c:choose>
 
-                </c:otherwise>
-            </c:choose>
-            <c:choose>
-                <c:when test="${sessionScope.role != 2}">
-                    <div class="test">
-                        <li class='style'>
-                            <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                                <input type="hidden" name="path" value="/WEB-INF/Vue/signIn.jsp" />
-                                <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
-                            </form>
-                        </li>
-                    </div>
-                </c:when>
-            </c:choose>
+
+
+
 
         </ul>
     </nav>
