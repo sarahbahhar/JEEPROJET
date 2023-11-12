@@ -58,10 +58,18 @@ public class ProduitDAO
         return result;
     }
 
+    public static Produit getProduitById(int produitId) {
+        Produit produit = null;
 
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+            produit = session.get(Produit.class, produitId);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-    public Produit getProduitById(int productId) {
-        return null;
+        return produit;
     }
 
     public void updateProduit(Produit produit) {
