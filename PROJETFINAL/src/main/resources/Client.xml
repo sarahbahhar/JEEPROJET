@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="Model.Client">
+        <table name="client" schema="projet_jee" catalog=""/>
+        <attributes>
+            <id name="email">
+                <column name="email" length="100"/>
+            </id>
+            <basic name="pointsFidelite">
+                <column name="points_fidelite" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
