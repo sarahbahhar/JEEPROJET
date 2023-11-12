@@ -71,32 +71,7 @@ public class InfoAccountDAO {
         //Session session = HibernateUtil.getSessionFactory().openSession();;
         Session session = null;
         Transaction transaction = null;
-        //Transaction transaction = null;
-        //Infocompte toChange;
-        /*try{
 
-            transaction = session.beginTransaction();
-            toChange= (Infocompte) session.createQuery("FROM Infocompte WHERE email = :email").setParameter("email", email).uniqueResult();
-            toChange.setPrenom(updated.getPrenom());
-            toChange.setNom(updated.getNom());
-            toChange.setDateNaissance(updated.getDateNaissance());
-            toChange.setTelephone(updated.getTelephone());
-            toChange.setAdresse(updated.getAdresse());
-            toChange.setVille(updated.getVille());
-            toChange.setCodePostal(updated.getCodePostal());
-            toChange.setPays(updated.getPays());
-            transaction.commit();
-
-        }catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }*/
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             transaction = session.beginTransaction();
@@ -105,10 +80,7 @@ public class InfoAccountDAO {
             Infocompte toChange = (Infocompte) session.get(Infocompte.class, email);
 
             // Mettre à jour les champs de l'Infocompte existant avec les nouvelles valeurs
-            /*existingInfocompte.setPrenom(updated.getPrenom());
-            existingInfocompte.setNom(updated.getNom());
-            existingInfocompte.setEmail(updated.getEmail());*/
-            // ... (mettez à jour d'autres champs au besoin)
+
             toChange.setPrenom(updated.getPrenom());
             toChange.setNom(updated.getNom());
             toChange.setDateNaissance(updated.getDateNaissance());

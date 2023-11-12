@@ -78,7 +78,7 @@
                 <c:otherwise>
                     <li class='style'>
                         <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                            <input type="hidden" name="path" value="infoCompte.jsp" />
+                            <input type="hidden" name="path" value="myProfile.jsp" />
                             <button class="lien" type="submit">Profil</button>
                         </form>
                     </li>
