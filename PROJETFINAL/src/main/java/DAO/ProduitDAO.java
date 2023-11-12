@@ -49,12 +49,27 @@ public class ProduitDAO
         session.getTransaction().commit();
         session.close();
     }
+    public static List<Produit> getListProductByTitre(String titre) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        List<Produit> result = session.createQuery("FROM Produit P WHERE P.titre LIKE :titre")
+                .setParameter("titre", "%" + titre + "%").list();
+        session.close();
+        return result;
+    }
 
+    public static Produit getProduitById(int produitId) {
+        Produit produit = null;
 
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+            produit = session.get(Produit.class, produitId);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-
-    public Produit getProduitById(int productId) {
-        return null;
+        return produit;
     }
 
     public void updateProduit(Produit produit) {

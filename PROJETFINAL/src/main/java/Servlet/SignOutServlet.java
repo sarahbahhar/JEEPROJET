@@ -14,9 +14,10 @@ public class SignOutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récupérer la session
         HttpSession session = request.getSession();
-        session.removeAttribute("email");
-        session.removeAttribute("fisrtName");
-        session.removeAttribute("lastName");
+        if (session != null) {
+            // Supprimez toutes les variables de session
+            session.invalidate();
+        }
         response.sendRedirect(request.getContextPath());
 
     }

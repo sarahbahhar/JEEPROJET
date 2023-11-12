@@ -19,6 +19,7 @@
     <mapping resource="Panier.hbm.xml"/>
     <mapping resource="Produit.hbm.xml"/>
     <mapping resource="Produitcommande.hbm.xml"/>
+    <mapping resource="Produitpanier.hbm.xml"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
