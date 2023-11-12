@@ -49,7 +49,14 @@ public class ProduitDAO
         session.getTransaction().commit();
         session.close();
     }
-
+    public static List<Produit> getListProductByTitre(String titre) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        List<Produit> result = session.createQuery("FROM Produit P WHERE P.titre LIKE :titre")
+                .setParameter("titre", "%" + titre + "%").list();
+        session.close();
+        return result;
+    }
 
 
 
