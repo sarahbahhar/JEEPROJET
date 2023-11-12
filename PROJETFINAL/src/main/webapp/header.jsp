@@ -20,8 +20,8 @@
             </li>
             <li class="search">
                 <div class="search-container">
-                    <form class="search-form" method="get">
-                        <input type="text" name="query" placeholder="Rechercher sur Milango.com">
+                    <form class="search-form" action="${pageContext.request.contextPath}/research-product-servlet" method="get">
+                        <input type="text" id="query" name="query" placeholder="Rechercher sur Milango.com">
                         <button type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
@@ -53,13 +53,15 @@
                 </c:when>
                 <c:when test="${sessionScope.role == 2}">
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                            <select id="menu" onchange="window.location.href = this.value;">
-                                <option>Gérer</option>
-                                <option value="#">Liste de modérateur</option>
-                                <option value="#">Liste de demande</option>
-                            </select>
-                            <button class="lien" type="submit"></button>
+                        <form class="style" action="${pageContext.request.contextPath}/in-waiting-mod-servlet" method="get">
+                            <input type="hidden" name="email" value="${sessionScope.email}" />
+                            <button class="lien" type="submit">Demande Moderateur</button>
+                        </form>
+                    </li>
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/moderator-servlet" method="get">
+                            <input type="hidden" name="email" value="${sessionScope.email}" />
+                            <button class="lien" type="submit">Liste Moderateur</button>
                         </form>
                     </li>
                 </c:when>
@@ -103,14 +105,19 @@
 
                 </c:otherwise>
             </c:choose>
-            <div class="test">
-                <li class='style'>
-                    <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                        <input type="hidden" name="path" value="/WEB-INF/Vue/signIn.jsp" />
-                        <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
-                    </form>
-                </li>
-            </div>
+            <c:choose>
+                <c:when test="${sessionScope.role != 2}">
+                    <div class="test">
+                        <li class='style'>
+                            <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                                <input type="hidden" name="path" value="/WEB-INF/Vue/signIn.jsp" />
+                                <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
+                            </form>
+                        </li>
+                    </div>
+                </c:when>
+            </c:choose>
+
         </ul>
     </nav>
 </header>
