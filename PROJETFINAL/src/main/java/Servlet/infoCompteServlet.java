@@ -18,7 +18,7 @@ import Model.Infocompte;
 public class infoCompteServlet extends HttpServlet {
     private InfoAccountDAO infocompteDAO=new InfoAccountDAO();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("WEB-INF/Vue/infoCompte.jsp");
+        response.sendRedirect("/WEB-INF/Vue/infoCompte.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

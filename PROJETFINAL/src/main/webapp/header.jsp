@@ -8,16 +8,16 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css">
     <script src="https://kit.fontawesome.com/33e6d2f05c.js" crossorigin="anonymous"></script>
-
-
 </head>
-
 <body>
 <header>
-
     <nav class="header-nav">
-        <ul class ="ulMain">
-            <li class="logo"><a href="<%=request.getContextPath()%>"><img src="<%=request.getContextPath()%>/img/logo_page.png" alt="logo_du_site" width="250px"></a></li>
+        <ul class="ulMain">
+            <li class="logo">
+                <a href="<%=request.getContextPath()%>">
+                    <img src="<%=request.getContextPath()%>/img/logo_page.png" alt="logo_du_site" width="250px">
+                </a>
+            </li>
             <li class="search">
                 <div class="search-container">
                     <form class="search-form" method="get">
@@ -28,52 +28,88 @@
             </li>
 
 
-
             <c:choose>
-                <c:when test="${empty sessionScope.email} || ">
-                    <li class='style'></li>
+                <c:when test="${empty sessionScope.email}">
+                    <li class="style">
+                        <form class="style">
+                            <button class="lien" type="submit"></button>
+                        </form>
+                    </li>
                 </c:when>
-                <c:otherwise>
-                    <li class='style' ><a href="#" class='lien'>Profil</a></li>
-                </c:otherwise>
-
+                <c:when test="${sessionScope.role == 0}">
+                    <li class='style'>
+                        <form class="style">
+                        <button class="lien" type="submit"></button>
+                        </form>
+                    </li>
+                </c:when>
+                <c:when test="${sessionScope.role == 1}">
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/product-servlet" method="get">
+                            <input type="hidden" name="email" value="${sessionScope.email}" />
+                            <button class="lien" type="submit">Gérer Produit</button>
+                        </form>
+                    </li>
+                </c:when>
+                <c:when test="${sessionScope.role == 2}">
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <select id="menu" onchange="window.location.href = this.value;">
+                                <option>Gérer</option>
+                                <option value="#">Liste de modérateur</option>
+                                <option value="#">Liste de demande</option>
+                            </select>
+                            <button class="lien" type="submit"></button>
+                        </form>
+                    </li>
+                </c:when>
             </c:choose>
+
 
             <c:choose>
                 <c:when test="${empty sessionScope.email}">
-                    <li class='style'><a href='#' class='lien'>A propos</a></li>
-                </c:when>
-                <c:when test="${sessionScope.role == 0}">
-                    <li class='style'><a href='#' class='lien'>A propos</a></li>
-                </c:when>
-                <c:when test="${sessionScope.role == 1}">
-                    <li class='style'><a href='#' class='lien'>Gérer Produit</a></li>
-                </c:when>
-
-                <c:when test="${sessionScope.role == 2}">
-                    <li class='style' ><select id="menu" onchange="window.location.href = this.value;">
-                        <option>Gérer</option>
-                        <option value="#">Liste de modérateur </option>
-                        <option value="#">Liste de demande</option>
-                    </select><a href="#" class='lien'></a>
+                    <li class="style">
+                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <input type="hidden" name="path" value="about.jsp" />
+                            <button class="lien" type="submit">A propos</button>
+                        </form>
                     </li>
-
-
-                </c:when>
-            </c:choose>
-
-             <c:choose>
-                <c:when test="${!empty sessionScope.email}">
-                    <li class='style'><a href='<%=request.getContextPath()%>/sign-out-servlet' class='lien'>Se Déconnecter</a></li>
                 </c:when>
                 <c:otherwise>
-                    <li class='style'><a href='./WEB-INF/signIn.jsp' class='lien'>Se Connecter</a></li>
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <input type="hidden" name="path" value="infoCompte.jsp" />
+                            <button class="lien" type="submit">Profil</button>
+                        </form>
+                    </li>
                 </c:otherwise>
             </c:choose>
 
+            <c:choose>
+                <c:when test="${!empty sessionScope.email}">
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
+                            <button class="lien" type="submit">Se Déconnecter</button>
+                        </form>
+                    </li>
+                </c:when>
+                <c:otherwise>
+                    <li >
+                    <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                        <input type="hidden" name="path" value="signIn.jsp" />
+                        <button class='lien' type='submit'>Se Connecter</button>
+                    </form>
+                    </li>
+
+                </c:otherwise>
+            </c:choose>
             <div class="test">
-                <li class="style"><a href="panier.jsp" class="lien">
-                    <i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</a></li>
+                <li class='style'>
+                    <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                        <input type="hidden" name="path" value="/WEB-INF/Vue/signIn.jsp" />
+                        <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
+                    </form>
+                </li>
             </div>
         </ul>
     </nav>

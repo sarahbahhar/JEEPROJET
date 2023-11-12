@@ -35,6 +35,15 @@ header{
     margin-top : 15px;
 }
 
+.header-nav form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:55px;
+    text-align: center;
+    margin-top : 15px;
+}
+
 
 
 
@@ -51,6 +60,7 @@ header{
     font-weight: bold;
     text-decoration: none;
     transition: font-size 0.2s ease-in-out;
+
 }
 
 .style:hover {
@@ -58,20 +68,27 @@ header{
     border: 2px solid #a7976a;
     border-radius: 5px;
     padding: 3px 4px;
+    background-color: white;
 }
 
 .lien {
     padding: 10px;
     color: #2E3F58;
-    text-decoration: none;
     font-size: 18px;
     border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
 }
 
 .lien:hover {
     background-color: #a7976a;
     font-size: 20px;
     color: #2E3F58;
+
 }
 
 /* Permet d'aligné l'image avec panier */
@@ -133,3 +150,4 @@ header{
 .search-form input[type="text"]::placeholder {
     color: #555;
 }
+

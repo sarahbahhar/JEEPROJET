@@ -29,7 +29,7 @@ public class ProductServlet extends HttpServlet{
             request.setAttribute("produits", listProduit);
         }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/productList.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/productList.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

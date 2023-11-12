@@ -15,6 +15,8 @@ public class SignOutServlet extends HttpServlet {
         // Récupérer la session
         HttpSession session = request.getSession();
         session.removeAttribute("email");
+        session.removeAttribute("fisrtName");
+        session.removeAttribute("lastName");
         response.sendRedirect(request.getContextPath());
 
     }

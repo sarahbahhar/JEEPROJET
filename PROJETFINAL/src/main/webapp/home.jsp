@@ -16,39 +16,11 @@
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-<jsp:include page="/header.jsp" />
 
 <c:if test="${!empty sessionScope.firstName && !empty sessionScope.lastName}">
     <div><h1>Bienvenue ${sessionScope.firstName} ${sessionScope.lastName}</h1></div>
 </c:if>
 
-
-
-<div>
-<a href=<%=request.getContextPath()%>>Home</a>
-
-
-<form>
-    <label for="menu">Admin Menu</label>
-    <select id="menu" onchange="window.location.href = this.value;">
-        <option>-----------</option>
-        <option value="WEB-INF/Vue/clientList.jsp">Client List</option>
-        <option value="WEB-INF/Vue/productList.jsp">Product List</option>
-        <option value="WEB-INF/Vue/moderatorList.jsp">Moderator List</option>
-    </select>
-</form>
-
-
-<button type="button" onclick="window.location.href='WEB-INF/Vue/signIn.jsp'">Sign In</button>
-<button type="button" onclick="window.location.href='WEB-INF/Vue/signUp.jsp'">Sign Up</button>
-<button type="button" onclick="window.location.href='WEB-INF/Vue/shoppingCart.jsp'">Shopping Cart</button>
-<button type="button" onclick="window.location.href='WEB-INF/Vue/addProduct.jsp'">add Product</button>
-<button type="button" onclick="window.location.href='WEB-INF/Vue/formAddModerator.jsp'">add Moderator</button>
-<button type="button" onclick="window.location.href='WEB-INF/Vue/addProduct.jsp'">add Product</button>
-<button type="button" onclick="window.location.href='WEB-INF/Vue/myProfile.jsp'">My Profile</button>
-
-
-</div>
 
 
 

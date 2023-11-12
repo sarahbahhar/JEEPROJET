@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpSession;
 import DAO.CompteDAO;
 import Model.Compte;
 
-@WebServlet("/inscription")
+@WebServlet("/inscriptionServlet")
 public class InscriptionServlet extends HttpServlet{
     private CompteDAO signUpDAO=new CompteDAO();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
