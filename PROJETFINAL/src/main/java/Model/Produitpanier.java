@@ -1,4 +1,6 @@
-package Model;public class Produitpanier {
+package Model;
+
+public class Produitpanier {
     private String email;
     private int produitId;
     private int quantite;
