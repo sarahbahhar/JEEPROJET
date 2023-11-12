@@ -21,11 +21,7 @@ public class RedirectServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getParameter("path");
-
-
-
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/"+path);
-
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
