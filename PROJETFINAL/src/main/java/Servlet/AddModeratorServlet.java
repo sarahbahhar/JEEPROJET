@@ -16,7 +16,6 @@ package Servlet;
 public class AddModeratorServlet extends HttpServlet {
     private DemandeModerateurDAO DModeratorDAO=new DemandeModerateurDAO();
     private ModeratorDAO ModDAO=new ModeratorDAO();
-    private CustomerDAO CustomDAO=new CustomerDAO();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("moderatorWaitingList.jsp");
     }
@@ -26,7 +25,6 @@ public class AddModeratorServlet extends HttpServlet {
 
             if(email != null && !email.isEmpty()){
                 DModeratorDAO.removeDissmissedModerator(email);
-                CustomDAO.removeCustomer(email);
                 Moderateur m=new Moderateur();
                 m.setEmail(email);
                 ModDAO.addModerator(m);
