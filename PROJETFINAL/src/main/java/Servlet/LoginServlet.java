@@ -77,12 +77,6 @@ public class LoginServlet extends HttpServlet{
             session.setAttribute("firstName",fullName[0]);
             session.setAttribute("lastName",fullName[1]);
 
-
-
-
-
-
-
             response.sendRedirect(request.getContextPath());
 
             Infocompte ic=infocompteDAO.getInfoCompte(email);
@@ -97,8 +91,8 @@ public class LoginServlet extends HttpServlet{
             session.setAttribute("ville", ic.getVille());
             session.setAttribute("code", ic.getCodePostal());
             session.setAttribute("pays", ic.getPays());*/
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/home.jsp");
-            dispatcher.forward(request, response);
+            //RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/home.jsp");
+            //dispatcher.forward(request, response);
         } else {
             throw new Exception("Login not successful..");
         }
