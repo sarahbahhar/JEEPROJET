@@ -23,7 +23,7 @@
 
 <div class="box">
     <c:forEach items="${produits}" var="produit">
-        <form>
+        <form action="${pageContext.request.contextPath}/product-details" method="post">
             <div class="produit">
                 <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;" >
 
@@ -35,6 +35,8 @@
                     </div>
                 </button>
                 <input type="hidden" name="produit_id" value="${produit.id}">
+                <input type="hidden" name="type" value="pageProduit">
+
             </div>
 
         </form>
