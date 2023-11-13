@@ -18,7 +18,8 @@ import Model.Produit;
 public class ProductServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Retrieve the email parameter from the request
+
+
         String email = request.getParameter("email");
 
 
@@ -31,7 +32,10 @@ public class ProductServlet extends HttpServlet{
 
 
         try {
+
             dispatcher.forward(request, response);
+
+
         } catch (ServletException e) {
             throw new RuntimeException(e);
         }

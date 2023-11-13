@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -7,11 +8,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:if test="${empty produits}">
+    <script type="text/javascript">
+        window.location.href = '<%= request.getContextPath() %>/product-servlet';
+    </script>
+</c:if>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport">
     <title>Accueil</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
@@ -19,10 +27,20 @@
 
 
 
+
+
+
 <c:if test="${!empty sessionScope.InfoCompte.prenom && !empty sessionScope.InfoCompte.nom}">
     <div><h1>Bienvenue ${sessionScope.InfoCompte.prenom} ${sessionScope.InfoCompte.nom}</h1></div>
 </c:if>
 
+
+
+
+
+
+
+<p><%=request.getContextPath()%></p>
 
 
 
