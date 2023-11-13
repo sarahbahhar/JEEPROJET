@@ -28,6 +28,7 @@
             <url-pattern>*.jsp</url-pattern>
             <include-prelude>/header.jsp</include-prelude>
             <include-prelude>/WEB-INF/Vue/taglibs.jsp</include-prelude>
+            <include-coda>/footer.jsp</include-coda>
         </jsp-property-group>
     </jsp-config>
 </web-app>

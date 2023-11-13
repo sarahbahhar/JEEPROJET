@@ -8,11 +8,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<c:if test="${empty produits}">
-    <script type="text/javascript">
-        window.location.href = '<%= request.getContextPath() %>/product-servlet';
-    </script>
-</c:if>
 <html>
 <head>
 
@@ -29,6 +24,11 @@
 
 
 
+<c:if test="${empty produits}">
+    <script type="text/javascript">
+        window.location.href = '<%= request.getContextPath() %>/product-servlet';
+    </script>
+</c:if>
 
 <c:if test="${!empty sessionScope.InfoCompte.prenom && !empty sessionScope.InfoCompte.nom}">
     <div><h1>Bienvenue ${sessionScope.InfoCompte.prenom} ${sessionScope.InfoCompte.nom}</h1></div>
