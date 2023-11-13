@@ -1,6 +1,7 @@
 package Servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import DAO.ProduitDAO;
@@ -25,6 +26,7 @@ public class PanierServlet extends HttpServlet {
         String email = request.getParameter("email");
         ProduitDAO prduitDAO = new ProduitDAO();
         List<Produitpanier> panier = PanierDAO.getListProduitpanier(email);
+        List<Produit> produitsDansPanier = new ArrayList<>();
 
         double total = 0.0;
 
@@ -35,11 +37,14 @@ public class PanierServlet extends HttpServlet {
             // Vérifiez si le produit existe avant de l'utiliser
             if (produit != null) {
                 total += produit.getPrix().doubleValue() * produitpanier.getQuantite();
+
+                produitsDansPanier.add(produit);
             }
         }
 
         request.setAttribute("panier", panier);
         request.setAttribute("total", total);
+        request.setAttribute("produitsDansPanier", produitsDansPanier);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/panier.jsp");
         try {
