@@ -3,6 +3,7 @@ package Servlet;
 
 import DAO.ProduitDAO;
 import Model.Produit;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -32,7 +33,12 @@ public class DeleteProductServlet extends HttpServlet {
 
                 ProduitDAO.removeProductById(id);
 
-                response.sendRedirect(request.getContextPath() + "/home.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/gererProduit.jsp");
+                try {
+                    dispatcher.forward(request, response);
+                } catch (ServletException e) {
+                    throw new RuntimeException(e);
+                }
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
