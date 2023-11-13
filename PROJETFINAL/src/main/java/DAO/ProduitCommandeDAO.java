@@ -1,10 +1,13 @@
 package DAO;
 
 import Model.Produitcommande;
+import Model.Produitpanier;
+import org.hibernate.Session;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ProduitCommandeDAO {
 
@@ -12,6 +15,15 @@ public class ProduitCommandeDAO {
 
     public ProduitCommandeDAO() {
         this.connection = connection;
+    }
+    public static List<Produitcommande> getListProduitCommande(int idCommande) {
+
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        List<Produitcommande> result = session.createQuery("FROM Produitcommande P WHERE P.id = :idCommande")
+                .setParameter("idCommande", idCommande).list();
+        session.close();
+        return result;
     }
 
     public void insertProduitCommande(Produitcommande produitCommande) throws SQLException {

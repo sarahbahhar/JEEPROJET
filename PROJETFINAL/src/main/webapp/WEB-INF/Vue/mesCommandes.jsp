@@ -18,7 +18,7 @@
     <div class="global">
         <div class="box">
             <c:forEach items="${commandes}" var="commande">
-                <form action="${pageContext.request.contextPath}/produit-commandes-servlet" method="post">
+                <form action="${pageContext.request.contextPath}/commande-detail-servlet" method="post">
                     <div class="article">
                         <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">
                             <div>
