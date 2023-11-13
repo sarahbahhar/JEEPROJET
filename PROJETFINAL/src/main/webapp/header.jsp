@@ -58,8 +58,9 @@
                 </c:when>
                 <c:when test="${sessionScope.role == 0}">
                     <li class='style'>
-                        <form class="style">
-                            <button class="lien" type="submit"></button>
+                        <form class="style" action="${pageContext.request.contextPath}/mes-commandes-servlet" method="post">
+                            <input type="hidden" name="email" value="${sessionScope.email}" />
+                            <button class="lien" type="submit">Mes Commandes</button>
                         </form>
                     </li>
                     <li class='style'>
@@ -83,6 +84,12 @@
                     </div>
                 </c:when>
                 <c:when test="${sessionScope.role == 1}">
+                    <li class='style'>
+                        <form class="style" action="${pageContext.request.contextPath}/mes-commande-servlet" method="post">
+                            <input type="hidden" name="email" value="${sessionScope.email}" />
+                            <button class="lien" type="submit">Mes Commandes</button>
+                        </form>
+                    </li>
                     <li class='style'>
                         <form class="style" action="${pageContext.request.contextPath}/product-servlet" method="post">
                             <input type="hidden" name="email" value="${sessionScope.email}" />
