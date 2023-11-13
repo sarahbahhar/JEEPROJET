@@ -44,8 +44,12 @@ public class AddProductServlet extends HttpServlet {
     private ProduitDAO ProduitDAO = new ProduitDAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("addProduct.jsp");
-    }
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/addProduct.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        }    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {

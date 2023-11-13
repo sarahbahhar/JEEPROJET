@@ -21,22 +21,15 @@ public class ProductServlet extends HttpServlet{
         // Retrieve the email parameter from the request
         String email = request.getParameter("email");
 
-        if (email != null) {
-            // Fetch the list of products associated with the email
-            List<Produit> listProduit = ProduitDAO.getListProduitByEmail(email);
+
+        List<Produit> listProduit = ProduitDAO.getListProduit();
 
             // Set the list of products as an attribute in the request
-            request.setAttribute("produits", listProduit);
-        }
-        else {
-
-            List<Produit> listProduit = ProduitDAO.getListProduit();
-
-            // Set the list of products as an attribute in the request
-            request.setAttribute("produits", listProduit);
-        }
-
+        request.setAttribute("produits", listProduit);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+
+
+
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
@@ -44,9 +37,25 @@ public class ProductServlet extends HttpServlet{
         }
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+            String email = request.getParameter("email");
+
+            if (email != null) {
+                List<Produit> listProduit = ProduitDAO.getListProduitByEmail(email);
+
+                // Set the list of products as an attribute in the request
+                request.setAttribute("produits", listProduit);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/gererProduit.jsp");
+                try {
+                    dispatcher.forward(request, response);
+                } catch (ServletException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+            }
+
+            }
 
 
 
-    }
-}
