@@ -38,12 +38,12 @@
             </c:otherwise>
         </c:choose>
     </div>
-    <div class="bouton-golden">
-        <form method="post" action="modifProduitVendeur">
+    <div class="bouton">
+        <form class="bouton-golden" method="post" action="modifProduitVendeur">
             <input type="hidden" name="id" value="${produit.id}">
             <input type="submit" name="modifier_un_produit" value="Modifier ce produit">
         </form>
-        <form method="post" action="${pageContext.request.contextPath}/delete-product-servlet">
+        <form  class="bouton-golden" method="post" action="${pageContext.request.contextPath}/delete-product-servlet">
             <input type="hidden" name="id" value="${produit.id}">
             <input type="submit" name="supprimer_un_produit" value="Supprimer ce produit">
         </form>
