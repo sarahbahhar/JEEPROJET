@@ -43,6 +43,11 @@ public class ProduitDAO
         Produit p;
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
+
+        session.createQuery("DELETE FROM Produitpanier WHERE produitId = :id")
+                .setParameter("id", id)
+                .executeUpdate();
+
         p = getProduitById(id);
         session.delete(p);
         session.getTransaction().commit();
