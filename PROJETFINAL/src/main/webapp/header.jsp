@@ -84,7 +84,7 @@
                 </c:when>
                 <c:when test="${sessionScope.role == 1}">
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/product-servlet" method="get">
+                        <form class="style" action="${pageContext.request.contextPath}/product-servlet" method="post">
                             <input type="hidden" name="email" value="${sessionScope.email}" />
                             <button class="lien" type="submit">Gérer Produit</button>
                         </form>
