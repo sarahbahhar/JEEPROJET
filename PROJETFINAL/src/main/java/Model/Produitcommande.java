@@ -1,16 +1,20 @@
 package Model;
 
+import java.math.BigDecimal;
+
 public class Produitcommande {
-    private int produitId;
+    private int id;
     private int commandeNumero;
     private int quantite;
+    private String titre;
+    private BigDecimal prix;
 
-    public int getProduitId() {
-        return produitId;
+    public int getId() {
+        return id;
     }
 
-    public void setProduitId(int produitId) {
-        this.produitId = produitId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getCommandeNumero() {
@@ -29,6 +33,22 @@ public class Produitcommande {
         this.quantite = quantite;
     }
 
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public BigDecimal getPrix() {
+        return prix;
+    }
+
+    public void setPrix(BigDecimal prix) {
+        this.prix = prix;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -36,18 +56,22 @@ public class Produitcommande {
 
         Produitcommande that = (Produitcommande) o;
 
-        if (produitId != that.produitId) return false;
+        if (id != that.id) return false;
         if (commandeNumero != that.commandeNumero) return false;
         if (quantite != that.quantite) return false;
+        if (titre != null ? !titre.equals(that.titre) : that.titre != null) return false;
+        if (prix != null ? !prix.equals(that.prix) : that.prix != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = produitId;
+        int result = id;
         result = 31 * result + commandeNumero;
         result = 31 * result + quantite;
+        result = 31 * result + (titre != null ? titre.hashCode() : 0);
+        result = 31 * result + (prix != null ? prix.hashCode() : 0);
         return result;
     }
 }

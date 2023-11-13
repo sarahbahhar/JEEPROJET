@@ -68,11 +68,12 @@ CREATE TABLE Admin (
 
 -- Table CompteBancaire
 CREATE TABLE CompteBancaire (
+                                
                                 nom VARCHAR(255) NOT NULL,
-                                numero VARCHAR(255) NOT NULL,
-                                date DATE NOT NULL,
-                                cvv VARCHAR(3) NOT NULL,
-                                email VARCHAR(100) NOT NULL PRIMARY KEY,
+                                numero INT(16) NOT NULL PRIMARY KEY,
+                                date VARCHAR(5) NOT NULL,
+                                cvv INT(3) NOT NULL,
+                                email VARCHAR(100) NOT NULL,
                                 FOREIGN KEY (email) REFERENCES Client(email)
 );
 
@@ -120,12 +121,12 @@ CREATE TABLE Commande (
 
 -- Table ProduitCommande
 CREATE TABLE ProduitCommande (
-                                 produit_id INT NOT NULL,
-                                 commande_numero INT NOT NULL,
-                                 quantite INT NOT NULL,
-                                 FOREIGN KEY (produit_id) REFERENCES Produit(id),
-                                 FOREIGN KEY (commande_numero) REFERENCES Commande(numero),
-                                 PRIMARY KEY (produit_id, commande_numero)
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    commande_numero INT NOT NULL,
+    quantite INT NOT NULL,
+    titre VARCHAR(255) NOT NULL,
+    prix decimal(10,2) NOT NULL,
+    FOREIGN KEY (commande_numero) REFERENCES Commande(numero)
 );
 
 CREATE TABLE ProduitPanier (

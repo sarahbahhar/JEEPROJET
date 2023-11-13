@@ -5,16 +5,20 @@
 <hibernate-mapping>
 
     <class name="Model.Produitcommande" table="produitcommande" schema="projet_jee">
-        <composite-id mapped="true" class="Model.ProduitcommandePK">
-            <key-property name="produitId">
-                <column name="produit_id" sql-type="int"/>
-            </key-property>
-            <key-property name="commandeNumero">
-                <column name="commande_numero" sql-type="int"/>
-            </key-property>
-        </composite-id>
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="commandeNumero">
+            <column name="commande_numero" sql-type="int"/>
+        </property>
         <property name="quantite">
             <column name="quantite" sql-type="int"/>
+        </property>
+        <property name="titre">
+            <column name="titre" sql-type="varchar(255)"/>
+        </property>
+        <property name="prix">
+            <column name="prix" sql-type="decimal(10,2)" precision="10" scale="2"/>
         </property>
     </class>
 </hibernate-mapping>
