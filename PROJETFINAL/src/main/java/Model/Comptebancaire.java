@@ -1,8 +1,10 @@
-package Model;public class Comptebancaire {
+package Model;
+
+public class Comptebancaire {
     private String nom;
-    private String numero;
+    private int numero;
     private String date;
-    private String cvv;
+    private int cvv;
     private String email;
 
     public String getNom() {
@@ -13,11 +15,11 @@ package Model;public class Comptebancaire {
         this.nom = nom;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
@@ -29,11 +31,11 @@ package Model;public class Comptebancaire {
         this.date = date;
     }
 
-    public String getCvv() {
+    public int getCvv() {
         return cvv;
     }
 
-    public void setCvv(String cvv) {
+    public void setCvv(int cvv) {
         this.cvv = cvv;
     }
 
@@ -52,10 +54,10 @@ package Model;public class Comptebancaire {
 
         Comptebancaire that = (Comptebancaire) o;
 
+        if (numero != that.numero) return false;
+        if (cvv != that.cvv) return false;
         if (nom != null ? !nom.equals(that.nom) : that.nom != null) return false;
-        if (numero != null ? !numero.equals(that.numero) : that.numero != null) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
-        if (cvv != null ? !cvv.equals(that.cvv) : that.cvv != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
 
         return true;
@@ -64,9 +66,9 @@ package Model;public class Comptebancaire {
     @Override
     public int hashCode() {
         int result = nom != null ? nom.hashCode() : 0;
-        result = 31 * result + (numero != null ? numero.hashCode() : 0);
+        result = 31 * result + numero;
         result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (cvv != null ? cvv.hashCode() : 0);
+        result = 31 * result + cvv;
         result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
