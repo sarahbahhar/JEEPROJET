@@ -44,7 +44,7 @@ CREATE TABLE Client (
                         points_fidelite INT NOT NULL DEFAULT 0,
                         FOREIGN KEY (email) REFERENCES Compte(email)
 );
--- Table ModÃ©rateur avec les droits intÃ©grÃ©s
+-- Table Modérateur avec les droits intégrés
 CREATE TABLE Moderateur (
                             email VARCHAR(100) PRIMARY KEY NOT NULL,
                             peut_ajouter_produit BOOLEAN NOT NULL DEFAULT TRUE,
@@ -52,7 +52,7 @@ CREATE TABLE Moderateur (
                             max_produits_ligne INT NOT NULL DEFAULT 10,
                             FOREIGN KEY (email) REFERENCES Compte(email)
 );
--- Table Demande Moderateur avec les droits intÃ©grÃ©s
+-- Table Demande Moderateur avec les droits intégrés
 CREATE TABLE DemandeModerateur (
                                    email VARCHAR(100) PRIMARY KEY NOT NULL,
                                    message TEXT NOT NULL,
@@ -68,12 +68,11 @@ CREATE TABLE Admin (
 
 -- Table CompteBancaire
 CREATE TABLE CompteBancaire (
-                                id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
                                 nom VARCHAR(255) NOT NULL,
                                 numero VARCHAR(255) NOT NULL,
                                 date DATE NOT NULL,
                                 cvv VARCHAR(3) NOT NULL,
-                                email VARCHAR(100) NOT NULL,
+                                email VARCHAR(100) NOT NULL PRIMARY KEY,
                                 FOREIGN KEY (email) REFERENCES Client(email)
 );
 
@@ -153,7 +152,7 @@ INSERT INTO Compte (email, mot_de_passe) VALUES ('sarah.bahhar@gmail.com', '1234
 -- Ajout des informations du client dans la table Client
 INSERT INTO Client (email, points_fidelite) VALUES ('abdellah.hassani@gmail.com', 0);
 
--- Ajout du modÃ©rateur dans la table Moderateur
+-- Ajout du modérateur dans la table Moderateur
 INSERT INTO Admin (email) VALUES ('simon.ren@gmail.com');
 
 -- Ajout des vendeurs dans la table Moderateur
@@ -161,21 +160,21 @@ INSERT INTO Moderateur (email, peut_ajouter_produit, peut_supprimer_produit, max
 VALUES ('loucas.terchani@gmail.com', TRUE, FALSE, 50),
        ('sarah.bahhar@gmail.com', TRUE, TRUE, 100);
 
--- Ajout des informations supplÃ©mentaires dans la table infocompte
+-- Ajout des informations supplémentaires dans la table infocompte
 INSERT INTO infocompte (email, prenom, nom, dateNaissance, telephone, adresse, ville, codePostal, pays)
 VALUES ('abdellah.hassani@gmail.com', 'Abdellah', 'Hassani', '2002-06-15', '0702030405', '123 Rue Fictive', 'Paris', 75001, 'France'),
        ('simon.ren@gmail.com', 'Simon', 'Ren', '2002-12-01', '0706070809', '456 Rue Imaginaire', 'Lyon', 69001, 'France'),
        ('loucas.terchani@gmail.com', 'Loucas', 'Terchani', '2002-03-20', '0708091011', '789 Rue Inexistante', 'Marseille', 13001, 'France'),
-       ('sarah.bahhar@gmail.com', 'Sarah', 'Bahhar', '1985-08-25', '012131415', '101 Rue InventÃ©e', 'Toulouse', 31000, 'France');
+       ('sarah.bahhar@gmail.com', 'Sarah', 'Bahhar', '1985-08-25', '012131415', '101 Rue Inventée', 'Toulouse', 31000, 'France');
 
--- Ajout de 5 produits vendus par des vendeurs diffÃ©rents en une seule requÃªte
+-- Ajout de 5 produits vendus par des vendeurs différents en une seule requête
 INSERT INTO Produit (titre, nomImage, miniDescription, prix, description, stock, email)
 VALUES
-    ('Casque audio', 'casque.png', 'Casque audio de haute qualitÃ©', 59.99, 'Ce casque audio de haute qualitÃ© offre une expÃ©rience sonore exceptionnelle. Profitez de votre musique prÃ©fÃ©rÃ©e avec une clartÃ© audio inÃ©galÃ©e.', 100, 'loucas.terchani@gmail.com'),
-    ('Casquette de baseball', 'casquette.jpg', 'Casquette tendance pour tous les styles', 19.99, 'La casquette de baseball parfaite pour complÃ©ter votre look. Disponible en plusieurs couleurs, elle est idÃ©ale pour toutes les occasions.', 150, 'sarah.bahhar@gmail.com'),
-    ('Chaussettes de sport', 'chaussette.jpg', 'Chaussettes confortables pour le sport', 9.99, 'Ces chaussettes de sport vous offrent un confort ultime pendant vos sÃ©ances d entraÃ®nement. Respirantes et durables, elles sont un choix idÃ©al pour les athlÃ¨tes.', 200, 'loucas.terchani@gmail.com'),
-    ('Claquettes de plage', 'claquette.jpg', 'Claquettes lÃ©gÃ¨res pour lÃ©tÃ©', 14.99, 'Les claquettes de plage sont essentielles pour lÃ©tÃ©. LÃ©gÃ¨res et confortables, elles sont parfaites pour se dÃ©tendre Ã  la plage ou Ã  la piscine.', 250, 'sarah.bahhar@gmail.com'),
-    ('Clavier mÃ©canique', 'clavier.jpg', 'Clavier mÃ©canique rÃ©actif', 79.99, 'Ce clavier mÃ©canique est conÃ§u pour les joueurs exigeants. Avec des touches rÃ©actives et un Ã©clairage RGB personnalisable, il amÃ©liorera votre expÃ©rience de jeu.', 300, 'loucas.terchani@gmail.com');
+    ('Casque audio', 'casque.png', 'Casque audio de haute qualité', 59.99, 'Ce casque audio de haute qualité offre une expérience sonore exceptionnelle. Profitez de votre musique préférée avec une clarté audio inégalée.', 100, 'loucas.terchani@gmail.com'),
+    ('Casquette de baseball', 'casquette.jpg', 'Casquette tendance pour tous les styles', 19.99, 'La casquette de baseball parfaite pour compléter votre look. Disponible en plusieurs couleurs, elle est idéale pour toutes les occasions.', 150, 'sarah.bahhar@gmail.com'),
+    ('Chaussettes de sport', 'chaussette.jpg', 'Chaussettes confortables pour le sport', 9.99, 'Ces chaussettes de sport vous offrent un confort ultime pendant vos séances d entraînement. Respirantes et durables, elles sont un choix idéal pour les athlètes.', 200, 'loucas.terchani@gmail.com'),
+    ('Claquettes de plage', 'claquette.jpg', 'Claquettes légères pour lété', 14.99, 'Les claquettes de plage sont essentielles pour lété. Légères et confortables, elles sont parfaites pour se détendre à la plage ou à la piscine.', 250, 'sarah.bahhar@gmail.com'),
+    ('Clavier mécanique', 'clavier.jpg', 'Clavier mécanique réactif', 79.99, 'Ce clavier mécanique est conçu pour les joueurs exigeants. Avec des touches réactives et un éclairage RGB personnalisable, il améliorera votre expérience de jeu.', 300, 'loucas.terchani@gmail.com');
 
 -- Ajout de 3 enregistrements dans la table ProduitCommande avec NULL comme commande_numero
 INSERT INTO ProduitPanier (email, produit_id, quantite)
@@ -183,6 +182,3 @@ VALUES
     ("abdellah.hassani@gmail.com",1, 2),
     ("abdellah.hassani@gmail.com",2, 3),
     ("abdellah.hassani@gmail.com",3, 1);
-
-
-
