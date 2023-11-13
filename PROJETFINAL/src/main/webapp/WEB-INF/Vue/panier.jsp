@@ -19,23 +19,22 @@
     <c:forEach items="${panier}" var="produitPanier">
         <div class="produit">
 
+
+            <c:forEach var="produit" items="${produitsDansPanier}">
+                <c:if test="${produit.id eq produitPanier.produitId}">
+                    <p>Titre : ${produit.titre}</p>
+                    <p>Prix : ${produit.prix} €</p>
+                </c:if>
+            </c:forEach>
             <div>
-                <h5>${ProduitPanier}</h5>
-                <p>Id : ${produitPanier.produitId}</p>
                 <p>Quantite : ${produitPanier.quantite}</p>
-
-
-
-
-
-
             </div>
         </div>
     </c:forEach>
 
     <div>
         <h2>Total</h2>
-        <p id="total-amount">${panier.total} €</p>
+        <p id="total-amount">${total} €</p>
     </div>
 
 

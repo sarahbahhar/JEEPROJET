@@ -5,20 +5,20 @@
 <hibernate-mapping>
 
     <class name="Model.Comptebancaire" table="comptebancaire" schema="projet_jee">
-        <id name="email">
-            <column name="email" sql-type="varchar(100)" length="100"/>
+        <id name="numero">
+            <column name="numero" sql-type="int"/>
         </id>
         <property name="nom">
             <column name="nom" sql-type="varchar(255)"/>
         </property>
-        <property name="numero">
-            <column name="numero" sql-type="varchar(255)"/>
-        </property>
         <property name="date">
-            <column name="date" sql-type="date"/>
+            <column name="date" sql-type="varchar(5)" length="5"/>
         </property>
         <property name="cvv">
-            <column name="cvv" sql-type="varchar(3)" length="3"/>
+            <column name="cvv" sql-type="int"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
         </property>
     </class>
 </hibernate-mapping>
