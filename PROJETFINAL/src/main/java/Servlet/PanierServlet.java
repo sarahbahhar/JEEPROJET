@@ -16,6 +16,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "PanierServlet", value = "/panier-servlet")
 public class PanierServlet extends HttpServlet {
@@ -53,24 +54,20 @@ public class PanierServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
-/*
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String action = request.getParameter("action");
 
-        if (action != null && action.equals("ajouterPanierProduit")) {
-            // Récupérez l'ID du produit et la quantité à ajouter au panier depuis le formulaire
-            int produitId = Integer.parseInt(request.getParameter("produitId"));
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+            int produitId = Integer.parseInt(request.getParameter("produit_id"));
             int quantite = Integer.parseInt(request.getParameter("quantite"));
+            String email = request.getParameter("email");
 
-            // Ajoutez le produit au panier (ajustez cela en fonction de votre logique)
-            PanierDAO.ajouterProduitAuPanier(produitId, quantite);
 
-            // Redirigez vers la page d'affichage des produits ou une autre page selon vos besoins
-            response.sendRedirect("/votre-contexte/affichageProduits.jsp");
-        } else {
-            // Logique de traitement du formulaire POST (si nécessaire)
-        }
+
+            PanierDAO.ajouterProduitAuPanier(email, produitId, quantite);
+
+            response.sendRedirect(request.getContextPath()+"/product-details?type=pageProduit&produit_id="+produitId);
+
     }
 
- */
+
 }

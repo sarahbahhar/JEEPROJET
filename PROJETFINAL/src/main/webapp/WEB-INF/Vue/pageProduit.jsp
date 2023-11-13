@@ -33,7 +33,7 @@
                 <div class="info">
                     <div class="prix">${produit.prix} €</div>
                     <div class="stock">${produit.stock > 0 ? 'En stock' : 'Rupture de stock'}</div>
-                    <form method="post" action="panier">
+                    <form method="post" action="${pageContext.request.contextPath}/panier-servlet">
                         <div class="quantite">
                             <label for="qty">Quantité :</label>
                             <input type="number" name="quantite" id="qty" min="1" max="${produit.stock}" value="1">
@@ -41,6 +41,7 @@
                         <input type="hidden" name="produit_id" value="${produit.id}">
                         <input type="hidden" name="produit_nom" value="${produit.titre}">
                         <input type="hidden" name="prix_produit" value="${produit.prix}">
+                        <input type="hidden" name="email" value="${sessionScope.email}">
                         <input type="submit" name="ajouter_au_panier" value="Ajouter au panier">
                     </form>
                 </div>

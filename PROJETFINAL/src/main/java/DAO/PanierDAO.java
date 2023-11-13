@@ -1,6 +1,7 @@
 package DAO;
 import java.util.List;
 
+import Model.Client;
 import Model.Commande;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -22,29 +23,68 @@ public class PanierDAO {
         return result;
     }
 
-    /*
 
-    // Méthode pour ajouter un produit au panier avec une quantité spécifiée
-    public static void ajouterProduitAuPanier(int produitId, int quantite) {
+    public static void ajouterProduitAuPanier(String email, int produitId, int quantite) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            Transaction transaction = session.beginTransaction();
+            session.beginTransaction();
 
-            Produit produit = session.get(Produit.class, produitId);
+            Produit produit = ProduitDAO.getProduitById(produitId);
 
-            if (produit != null) {
-                ProduitPanier produitPanier = new ProduitPanier();
-                produitPanier.setProduitId(produit);
-                produitPanier.setQuantite(quantite);
 
-                session.save(produitPanier);
+            if (produit != null && produit.getStock() >= quantite) {
+                produit.setStock(produit.getStock() - quantite);
+                Produitpanier produitPanier = produitPanierExists(produit.getId() , email);
+
+                if (produitPanier==null) {
+
+                    produitPanier = new Produitpanier();
+                    produitPanier.setEmail(email);
+                    produitPanier.setProduitId(produitId);
+                    produitPanier.setQuantite(quantite);
+                    session.save(produitPanier);
+                }
+                    else{
+                    produitPanier.setQuantite(quantite+produitPanier.getQuantite());
+                    session.update(produitPanier);
+                }
+                }
+                session.update(produit);
+
+                session.getTransaction().commit();
+                session.close();
+
             }
-
-            transaction.commit();
-        } catch (Exception e) {
+         catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+
+    public static Produitpanier produitPanierExists(Integer produitId, String email) {
+
+        Transaction transaction = null;
+        Produitpanier produitpanier = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            // Démarrez une transaction
+            transaction = session.beginTransaction();
+            // Obtenez un objet Client en recherchant par e-mail
+            produitpanier = (Produitpanier) session.createQuery("FROM Produitpanier P WHERE P.email = :email AND P.produitId = :produitId ")
+                    .setParameter("email", email)
+                    .setParameter("produitId", produitId)
+                    .uniqueResult();
+
+            // Commit la transaction
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                // En cas d'erreur, vous pouvez effectuer un rollback de la transaction ici si nécessaire
+            }
+            e.printStackTrace();
+        }
+        return produitpanier;
+    }
+
+/*
     public static void passerCommande(Commande commande, List<Produitcommande> produitsCommandes) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
