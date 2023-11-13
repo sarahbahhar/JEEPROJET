@@ -7,30 +7,39 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panier</title>
-  <link rel="stylesheet" href="../../css/panier.css">
+  <link rel="stylesheet" href="./css/vendeur.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" href="./img/logo2.png">
 </head>
 <body>
-<header>
-  <h1>Panier</h1>
-</header>
 
-<div class="box">
+<div>
+  <div class="global">
+    <div class="box">
   <c:forEach items="${produitcommandes}" var="produitCommande">
-    <div class="produit">
 
 
-      <p>Titre : ${produitCommande.titre}</p>
-      <p>Prix : ${produitCommande.prix} €</p>
+    <form class="style" action="${pageContext.request.contextPath}/redirect-product-order-servlet" method="post">
+      <div class="article">
+        <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">
 
-      <div>
-        <p>Quantite : ${produitCommande.quantite}</p>
+
+          <div>
+              <h1>Titre : ${produitCommande.titre}</h1>
+              <p>Prix : ${produitCommande.prix} €</p>
+              <p>Quantite : ${produitCommande.quantite}</p>
+          </div>
+        </button>
+
+
       </div>
-    </div>
+      <input type="hidden" name="produit_id" value="${produitCommande.id}" />
+
+    </form>
   </c:forEach>
 
-
-
+    </div>
+  </div>
 
 
 </div>

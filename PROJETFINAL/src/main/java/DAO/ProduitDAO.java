@@ -78,6 +78,7 @@ public class ProduitDAO
         return produit;
     }
 
+
     public void updateProduit(Produit produit) {
 
 
