@@ -27,7 +27,7 @@ public class ProductServlet extends HttpServlet{
 
             // Set the list of products as an attribute in the request
         request.setAttribute("produits", listProduit);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/productList.jsp");
 
 
 
