@@ -21,7 +21,7 @@
             <c:choose>
                 <c:when test="${empty commandes}">
                     <div class="no-commandes">
-                        <p>Vous n'avez pas de commande en cours.</p>
+                        <h1>Vous n'avez pas de commande en cours.</h1>
                     </div>
                 </c:when>
                 <c:otherwise>

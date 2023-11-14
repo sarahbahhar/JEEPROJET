@@ -32,3 +32,4 @@ public class ErrorServlet extends HttpServlet {
 }
 
 //dans les catchs ou on veut renvoyer vers la servlet error utiliser : response.sendRedirect("/error")
+

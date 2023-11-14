@@ -31,6 +31,7 @@
                         <input type="hidden" name="produit_id" value="${produit.id}">
                         <input type="hidden" name="type" value="pageProduitVendeur">
 
+
                     </div>
                 </form>
             </c:forEach>
