@@ -30,6 +30,15 @@
             <include-prelude>/WEB-INF/Vue/taglibs.jsp</include-prelude>
             <include-coda>/footer.jsp</include-coda>
         </jsp-property-group>
+
+        <filter>
+            <filter-name>NoCacheFilter</filter-name>
+            <filter-class>com.example.NoCacheFilter</filter-class>
+        </filter>
+        <filter-mapping>
+            <filter-name>NoCacheFilter</filter-name>
+            <url-pattern>/*</url-pattern>
+        </filter-mapping>
     </jsp-config>
 </web-app>
 

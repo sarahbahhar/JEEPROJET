@@ -10,6 +10,22 @@
     <script src="https://kit.fontawesome.com/33e6d2f05c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownBtn = document.querySelector(".dropdown-btn");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        dropdownBtn.addEventListener("mouseover", function() {
+            dropdownContent.style.display = "block";
+        });
+
+        dropdownBtn.addEventListener("mouseout", function() {
+            dropdownContent.style.display = "none";
+        });
+    });
+
+</script>
 <header>
     <nav class="header-nav">
         <ul class="ulMain">
@@ -31,12 +47,12 @@
             <c:choose>
                 <c:when test="${empty sessionScope.email}">
                     <li class="style">
-                        <form class="style">
+                        <form >
                             <button class="lien" type="submit"></button>
                         </form>
                     </li>
                     <li class="style">
-                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                        <form  action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                             <input type="hidden" name="path" value="about.jsp" />
                             <button class="lien" type="submit">A propos</button>
                         </form>
@@ -49,7 +65,7 @@
                     </li>
                     <div class="test">
                         <li class='style'>
-                            <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <form  action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                                 <input type="hidden" name="path" value="signIn.jsp" />
                                 <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
                             </form>
@@ -58,25 +74,25 @@
                 </c:when>
                 <c:when test="${sessionScope.role == 0}">
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/mes-commandes-servlet" method="post">
+                        <form  action="${pageContext.request.contextPath}/mes-commandes-servlet" method="post">
                             <input type="hidden" name="email" value="${sessionScope.email}" />
                             <button class="lien" type="submit">Mes Commandes</button>
                         </form>
                     </li>
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                        <form  action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                             <input type="hidden" name="path" value="myProfile.jsp" />
                             <button class="lien" type="submit">Profil</button>
                         </form>
                     </li>
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
+                        <form  action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
                             <button class="lien" type="submit">Se Déconnecter</button>
                         </form>
                     </li>
                     <div class="test">
                         <li class='style'>
-                            <form class="style" action="${pageContext.request.contextPath}/panier-servlet" method="get">
+                            <form  action="${pageContext.request.contextPath}/panier-servlet" method="get">
                                 <input type="hidden" name="email" value="${sessionScope.email}" />
                                 <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
                             </form>
@@ -84,32 +100,54 @@
                     </div>
                 </c:when>
                 <c:when test="${sessionScope.role == 1}">
+
+                    <li class="style">
+
+                        <form class="dropdown-btn" class="style">
+                            <button class="lien"  type="submit">Gerer</button>
+                            <div class="dropdown-content" style="display: none;" >
+                                <form  action="${pageContext.request.contextPath}/product-servlet" method="post">
+                                    <input type="hidden" name="email" value="${sessionScope.email}" />
+                                    <button class="lien" type="submit">Gérer Produit</button>
+                                </form>
+                                <form   action="${pageContext.request.contextPath}/mes-commandes-servlet" method="post">
+                                    <input type="hidden" name="email" value="${sessionScope.email}" />
+                                    <button class="lien" type="submit">Mes Commandes</button>
+                                </form>
+                            </div>
+                        </form>
+
+
+                    </li>
+
+
+
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/mes-commande-servlet" method="post">
+                        <form action="${pageContext.request.contextPath}/mes-commande-servlet" method="post">
                             <input type="hidden" name="email" value="${sessionScope.email}" />
                             <button class="lien" type="submit">Mes Commandes</button>
                         </form>
                     </li>
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/product-servlet" method="post">
+                        <form  action="${pageContext.request.contextPath}/product-servlet" method="post">
                             <input type="hidden" name="email" value="${sessionScope.email}" />
                             <button class="lien" type="submit">Gérer Produit</button>
                         </form>
                     </li>
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                        <form  action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                             <input type="hidden" name="path" value="myProfile.jsp" />
                             <button class="lien" type="submit">Profil</button>
                         </form>
                     </li>
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
+                        <form  action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
                             <button class="lien" type="submit">Se Déconnecter</button>
                         </form>
                     </li>
                     <div class="test">
                         <li class='style'>
-                            <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                            <form  action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                                 <input type="hidden" name="path" value="panier.jsp" />
                                 <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
                             </form>
@@ -118,25 +156,25 @@
                 </c:when>
                 <c:when test="${sessionScope.role == 2}">
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/in-waiting-mod-servlet" method="get">
+                        <form  action="${pageContext.request.contextPath}/in-waiting-mod-servlet" method="get">
                             <input type="hidden" name="email" value="${sessionScope.email}" />
                             <button class="lien" type="submit">Demande Moderateur</button>
                         </form>
                     </li>
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/moderator-servlet" method="get">
+                        <form  action="${pageContext.request.contextPath}/moderator-servlet" method="get">
                             <input type="hidden" name="email" value="${sessionScope.email}" />
                             <button class="lien" type="submit">Liste Moderateur</button>
                         </form>
                     </li>
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                        <form  action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                             <input type="hidden" name="path" value="myProfile.jsp" />
                             <button class="lien" type="submit">Profil</button>
                         </form>
                     </li>
                     <li class='style'>
-                        <form class="style" action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
+                        <form  action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
                             <button class="lien" type="submit">Se Déconnecter</button>
                         </form>
                     </li>
