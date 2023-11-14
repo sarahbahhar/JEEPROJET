@@ -1,11 +1,11 @@
 /* Header */
-header{
-    width:100%;
-    height: 85px;
+header {
+    width: 100%;
+    height: 150px;
 }
 
 
-.header-nav{
+.header-nav {
     padding: 0;
     height: 5px;
     position: relative;
@@ -14,7 +14,7 @@ header{
     z-index: 999;
 }
 
-.header-nav ul{
+.header-nav ul {
     list-style: none;
     display: grid;
     grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
@@ -22,84 +22,66 @@ header{
     padding: 0;
 }
 
-
-
-
-
-.header-nav li{
+.header-nav li {
     display: flex;
     justify-content: center;
     align-items: center;
-    height:55px;
     text-align: center;
-    margin-top : 15px;
+    margin-top: 15px;
+
 }
 
-.header-nav form{
+.header-nav form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height:55px;
     text-align: center;
-    margin-top : 15px;
+    margin-top: 15px;
 }
-
-
-
-
-
-
-
-
-
-
 
 .style {
     display: inline-block;
-    font-size: 20px;
     font-weight: bold;
     text-decoration: none;
-    transition: font-size 0.2s ease-in-out;
+    padding: 3px 4px;
+
+
 
 }
 
 .style:hover {
-    font-size: 12px;
     border: 2px solid #a7976a;
     border-radius: 5px;
-    padding: 3px 4px;
     background-color: white;
 }
 
 .lien {
     padding: 10px;
     color: #2E3F58;
-    font-size: 18px;
     border-radius: 5px;
     border: none;
     background-color: transparent;
     background: none;
     font: inherit;
+    font-size: 25px;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
+
+
 }
 
 .lien:hover {
     background-color: #a7976a;
-    font-size: 20px;
     color: #2E3F58;
-
 }
 
-/* Permet d'aligné l'image avec panier */
+/* Permet d'aligner l'image avec le panier */
 .test svg {
     vertical-align: middle;
     margin-right: 10px;
 }
 
-
 /* Barre de recherche */
-
 .search-container {
     display: flex;
     justify-content: center;
@@ -149,5 +131,76 @@ header{
 
 .search-form input[type="text"]::placeholder {
     color: #555;
+}
+
+/* Menu déroulant */
+.menu-deroulant {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 3px 4px;
+}
+
+.menu-deroulant:hover {
+    border: 2px solid #a7976a;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.sous-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0; /* Ajoutez cette ligne pour centrer horizontalement */
+    border: 2px solid #a7976a;
+    border-radius: 5px;
+    background-color: white;
+    border-top: none;
+    max-height: 10000px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.menu-deroulant:hover .sous-menu {
+    display: block;
+    max-height: 200px;
+}
+
+/* Ajoutez cette règle pour masquer les sous-menus lorsque la souris ne les survole pas */
+.menu-deroulant:not(:hover) .sous-menu {
+    display: none;
+    max-height: 0;
+}
+
+.menu-deroulant form {
+    display: block;
+    margin-left: 0;
+
+}
+
+.menu-deroulant form button {
+    display: block;
+    padding: 10px;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-deroulant form button:hover {
+    background-color: #a7976a;
+
+}
+
+.menu-deroulant:hover .sous-menu {
+    display: block;
+    max-height: 200px;
+    width: 100%; /* Ajoutez cette ligne pour ajuster la largeur */
 }
 

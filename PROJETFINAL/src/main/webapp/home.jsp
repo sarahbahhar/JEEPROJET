@@ -14,10 +14,18 @@
     <meta charset="utf-8">
     <meta name="viewport">
     <title>Accueil</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownBtn = document.querySelector(".dropdown-btn");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        dropdownBtn.addEventListener("click", function() {
+            dropdownContent.classList.toggle("show");
+        });
+    });</script>
 <body>
 
 
