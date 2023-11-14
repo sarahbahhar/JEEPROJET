@@ -14,6 +14,10 @@
         <property name="quantite">
             <column name="quantite" sql-type="int"/>
         </property>
+        <property name="emailVendeur">
+            <column name="emailVendeur" sql-type="varchar(100)"/>
+        </property>
+
         <property name="titre">
             <column name="titre" sql-type="varchar(255)"/>
         </property>

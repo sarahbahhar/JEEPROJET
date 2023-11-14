@@ -91,11 +91,17 @@
                             <form class='style' action="${pageContext.request.contextPath}/mes-commandes-servlet" method="post">
                                 <input type="hidden" name="email" value="${sessionScope.email}" />
                                 <button class="lien" type="submit">Mes Commandes</button>
+
+                            </form>
+                            <form class='style' action="${pageContext.request.contextPath}/my-sales-servlet" method="post">
+                                <input type="hidden" name="email" value="${sessionScope.email}" />
+                                <button class="lien" type="submit">Mes Ventes</button>
                             </form>
                             <form class='style' action="${pageContext.request.contextPath}/product-servlet" method="post">
                                 <input type="hidden" name="email" value="${sessionScope.email}" />
                                 <button class="lien" type="submit">Gérer Produit</button>
                             </form>
+
 
                         </div>
                     </li>

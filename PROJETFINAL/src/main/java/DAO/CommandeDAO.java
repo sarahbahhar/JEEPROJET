@@ -31,6 +31,19 @@ public class CommandeDAO
         session.close();
         return result;
     }
+    public static List<Commande> getListOrderByEmailSeller(String email) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+
+        List<Commande> result = session.createQuery(
+                        "SELECT DISTINCT C FROM Commande C " +
+                                "WHERE C.numero IN (SELECT PC.commandeNumero FROM Produitcommande PC WHERE PC.emailVendeur = :email)")
+                .setParameter("email", email)
+                .list();
+
+        session.close();
+        return result;
+    }
 /*
     public static void removeProductById(int id)
     {
