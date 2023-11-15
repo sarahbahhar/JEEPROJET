@@ -13,11 +13,11 @@
     <br>
 
     <label>Numéro de Carte:</label>
-    <input type="text" id="numero" name="numero" pattern="[0-9]{16}" required>
+    <input type="text" id="numero" name="numero" pattern="[0-9]{1}" required>
     <br>
 
-    <label >Date d'Expiration (MM/AAAA):</label>
-    <input type="text" id="expiration" name="expiration" pattern="(0[1-9]|1[0-2])\/[0-9]{4}" required>
+    <label >Date d'Expiration (MM/AA):</label>
+    <input type="text" id="expiration" name="expiration" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" required>
     <br>
 
     <label>CVV:</label>

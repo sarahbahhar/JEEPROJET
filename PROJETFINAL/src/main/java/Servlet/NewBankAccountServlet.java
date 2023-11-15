@@ -1,16 +1,16 @@
 
 package Servlet;
 
-        import DAO.BankAccountDAO;
-        import Model.Comptebancaire;
-        import jakarta.servlet.ServletException;
-        import jakarta.servlet.annotation.WebServlet;
-        import jakarta.servlet.http.HttpServlet;
-        import jakarta.servlet.http.HttpServletRequest;
-        import jakarta.servlet.http.HttpServletResponse;
-        import jakarta.servlet.http.HttpSession;
+import DAO.BankAccountDAO;
+import Model.Comptebancaire;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-        import java.io.IOException;
+import java.io.IOException;
 
 
 @WebServlet(name = "NewBankAccountServlet", value = "/new-bank-account-servlet")
@@ -26,15 +26,16 @@ public class NewBankAccountServlet extends HttpServlet {
         Comptebancaire cB = new Comptebancaire();
 
             try {
-                if(email!=null&&name!=null&&expiration!=null&&cvvS!=null&&numero!=null){
+                if(email!=null && name!=null && expiration!=null && cvvS!= null && numero!=null){
                     cB.setEmail(email);
                     cB.setNom(name);
                     cB.setDate(expiration);
                     cB.setNumero(numero);
                     cB.setCvv(cvvS);
                     bAccountDAO.addBankAccount(cB);
-                             }
-                response.sendRedirect(request.getContextPath() + "/product-servlet");
+                    response.sendRedirect(request.getContextPath() + "/product-servlet");
+            }
+
             }catch(Exception e){
                 // TODO Auto-generated catch block
                 e.printStackTrace();
