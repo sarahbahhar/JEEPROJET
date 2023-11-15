@@ -3,6 +3,7 @@ USE projet_jee;
  
 
 -- Supprimer les tables si elles existent
+DROP TABLE IF EXISTS Commentaire;
 DROP TABLE IF EXISTS DemandeModerateur;
 DROP TABLE IF EXISTS ProduitCommande;
 DROP TABLE IF EXISTS ProduitPanier;
@@ -68,11 +69,11 @@ CREATE TABLE Admin (
 
 -- Table CompteBancaire
 CREATE TABLE CompteBancaire (
-                                id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+                                
                                 nom VARCHAR(255) NOT NULL,
-                                numero VARCHAR(255) NOT NULL,
-                                date DATE NOT NULL,
-                                cvv VARCHAR(3) NOT NULL,
+                                numero INT(16) NOT NULL PRIMARY KEY,
+                                date VARCHAR(5) NOT NULL,
+                                cvv INT(3) NOT NULL,
                                 email VARCHAR(100) NOT NULL,
                                 FOREIGN KEY (email) REFERENCES Client(email)
 );
@@ -113,30 +114,27 @@ CREATE TABLE Commande (
                           dateDePaiement DATE NOT NULL,
                           total DECIMAL(10,2) NOT NULL,
                           email VARCHAR(100) NOT NULL,
-                          FOREIGN KEY (email) REFERENCES Compte(email)
+                          FOREIGN KEY (email) REFERENCES Compte(email),
+                          FOREIGN KEY (email) REFERENCES Panier(email)
 );
 
 
 
 -- Table ProduitCommande
 CREATE TABLE ProduitCommande (
-                                 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-                                 commande_numero INT NOT NULL,
-                                 quantite INT NOT NULL,
-                                 emailVendeur VARCHAR(100) NOT NULL,
-                                 titre VARCHAR(255) NOT NULL,
-                                 prix decimal(10,2) NOT NULL,
-
-                                 FOREIGN KEY (commande_numero) REFERENCES Commande(numero),
-                                 FOREIGN KEY (emailVendeur) REFERENCES compte(email)
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    commande_numero INT NOT NULL,
+    quantite INT NOT NULL,
+    titre VARCHAR(255) NOT NULL,
+    prix decimal(10,2) NOT NULL,
+    FOREIGN KEY (commande_numero) REFERENCES Commande(numero)
 );
 
-CREATE TABLE Produitpanier (
+CREATE TABLE ProduitPanier (
 
                                email VARCHAR(100) NOT NULL,
                                produit_id INT NOT NULL,
                                quantite INT NOT NULL,
-
 
 
                                FOREIGN KEY (produit_id) REFERENCES Produit(id),
@@ -180,24 +178,9 @@ VALUES
     ('Claquettes de plage', 'claquette.jpg', 'Claquettes légères pour lété', 14.99, 'Les claquettes de plage sont essentielles pour lété. Légères et confortables, elles sont parfaites pour se détendre à la plage ou à la piscine.', 250, 'sarah.bahhar@gmail.com'),
     ('Clavier mécanique', 'clavier.jpg', 'Clavier mécanique réactif', 79.99, 'Ce clavier mécanique est conçu pour les joueurs exigeants. Avec des touches réactives et un éclairage RGB personnalisable, il améliorera votre expérience de jeu.', 300, 'loucas.terchani@gmail.com');
 
-
 -- Ajout de 3 enregistrements dans la table ProduitCommande avec NULL comme commande_numero
 INSERT INTO ProduitPanier (email, produit_id, quantite)
 VALUES
     ("abdellah.hassani@gmail.com",1, 2),
     ("abdellah.hassani@gmail.com",2, 3),
     ("abdellah.hassani@gmail.com",3, 1);
-
-
--- Insérer la première commande
-INSERT INTO Commande (numero,dateDePaiement, total, email)
-VALUES (1,'2023-11-12', 99.99, 'abdellah.hassani@gmail.com'),
-       (2,'2023-11-13', 149.99, 'abdellah.hassani@gmail.com');
-
-INSERT INTO ProduitCommande (commande_numero, quantite,emailVendeur, titre, prix)
-VALUES (1, 2,'sarah.bahhar@gmail.com', 'Casque audio', 59.99),
-       (2, 3,'loucas.terchani@gmail.com', 'Casquette de baseball', 19.99);
-
-
-
-
