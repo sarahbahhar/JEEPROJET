@@ -1,4 +1,6 @@
-package Model;public class Comptebancaire {
+package Model;
+
+public class Comptebancaire {
     private String nom;
     private String numero;
     private String date;

@@ -18,8 +18,6 @@
 <div class="box">
     <c:forEach items="${panier}" var="produitPanier">
         <div class="produit">
-
-
             <c:forEach var="produit" items="${produitsDansPanier}">
                 <c:if test="${produit.id eq produitPanier.produitId}">
                     <p>Titre : ${produit.titre}</p>

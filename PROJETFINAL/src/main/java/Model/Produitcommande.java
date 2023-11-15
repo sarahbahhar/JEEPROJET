@@ -6,6 +6,7 @@ public class Produitcommande {
     private int id;
     private int commandeNumero;
     private int quantite;
+    private String emailVendeur;
     private String titre;
     private BigDecimal prix;
 
@@ -31,6 +32,14 @@ public class Produitcommande {
 
     public void setQuantite(int quantite) {
         this.quantite = quantite;
+    }
+
+    public String getEmailVendeur() {
+        return emailVendeur;
+    }
+
+    public void setEmailVendeur(String emailVendeur) {
+        this.emailVendeur = emailVendeur;
     }
 
     public String getTitre() {
@@ -59,6 +68,7 @@ public class Produitcommande {
         if (id != that.id) return false;
         if (commandeNumero != that.commandeNumero) return false;
         if (quantite != that.quantite) return false;
+        if (emailVendeur != null ? !emailVendeur.equals(that.emailVendeur) : that.emailVendeur != null) return false;
         if (titre != null ? !titre.equals(that.titre) : that.titre != null) return false;
         if (prix != null ? !prix.equals(that.prix) : that.prix != null) return false;
 
@@ -70,6 +80,7 @@ public class Produitcommande {
         int result = id;
         result = 31 * result + commandeNumero;
         result = 31 * result + quantite;
+        result = 31 * result + (emailVendeur != null ? emailVendeur.hashCode() : 0);
         result = 31 * result + (titre != null ? titre.hashCode() : 0);
         result = 31 * result + (prix != null ? prix.hashCode() : 0);
         return result;
