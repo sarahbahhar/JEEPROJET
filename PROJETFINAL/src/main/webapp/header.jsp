@@ -7,6 +7,9 @@
     <meta name="viewport">
     <title>Accueil</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+
     <script src="https://kit.fontawesome.com/33e6d2f05c.js" crossorigin="anonymous"></script>
 </head>
 <body>
