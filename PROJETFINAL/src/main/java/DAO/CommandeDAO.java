@@ -1,17 +1,15 @@
 package DAO;
 
-import java.io.File;
 import java.util.List;
 
-import Model.Moderateur;
-import Model.Produit;
+
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-public class ProduitDAO
+import Model.Commande;
+public class CommandeDAO
+
 {
-    public static final String PATH_IMAGE = "/img/";
 
-
+/*
     public static void addProduct(Produit p)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -20,24 +18,33 @@ public class ProduitDAO
         session.getTransaction().commit();
         session.close();
     }
-    public static List<Produit> getListProduit()
+    */
+
+
+    public static List<Commande> getListProduitByEmail(String email)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        List<Produit> result = session.createQuery("from Produit").list();
-        session.close();
-        return result;
-    }
-    public static List<Produit> getListProduitByEmail(String email)
-    {
-        Session session= HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        List<Produit> result = session.createQuery("FROM Produit P WHERE P.email = :email")
+
+        List result = session.createQuery("FROM Commande C WHERE C.email = :email")
                 .setParameter("email", email).list();
         session.close();
         return result;
     }
+    public static List<Commande> getListOrderByEmailSeller(String email) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
 
+        List<Commande> result = session.createQuery(
+                        "SELECT DISTINCT C FROM Commande C " +
+                                "WHERE C.numero IN (SELECT PC.commandeNumero FROM Produitcommande PC WHERE PC.emailVendeur = :email)")
+                .setParameter("email", email)
+                .list();
+
+        session.close();
+        return result;
+    }
+/*
     public static void removeProductById(int id)
     {
         Produit p;
@@ -52,7 +59,8 @@ public class ProduitDAO
         session.delete(p);
         session.getTransaction().commit();
         session.close();
-    }
+    }*/
+    /*
     public static List<Produit> getListProductByTitre(String titre) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -60,14 +68,16 @@ public class ProduitDAO
                 .setParameter("titre", "%" + titre + "%").list();
         session.close();
         return result;
-    }
+    }*/
 
 
-//
+    //
+    /*
     public static Produit getProduitById(int produitId) {
         Produit produit = null;
 
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try
+                (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
             produit = session.get(Produit.class, produitId);
             session.getTransaction().commit();
@@ -76,13 +86,8 @@ public class ProduitDAO
         }
 
         return produit;
-    }
+    }*/
 
 
-    public void updateProduit(Produit produit) {
-
-
-
-    }
 }
 

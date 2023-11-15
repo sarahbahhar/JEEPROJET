@@ -1,6 +1,9 @@
 package Servlet;
 import java.io.IOException;
 
+import DAO.AdminDAO;
+import DAO.CustomerDAO;
+import DAO.ModeratorDAO;
 import Model.Compte;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -37,6 +40,9 @@ public class InscriptionServlet extends HttpServlet{
                 session.setAttribute("email", email);
                 session.setAttribute("nom", nom);
                 session.setAttribute("prenom", prenom);
+
+
+
                 //EmailSender emailSender=new EmailSender();
                 //emailSender.sendMessage("rensimon@cy-tech.fr", email);
                 sendConfirmationEmail(email);

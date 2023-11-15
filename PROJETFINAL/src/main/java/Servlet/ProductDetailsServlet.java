@@ -15,8 +15,7 @@ import Model.Produit;
 @WebServlet(name = "ProductDetailsServlet", value = "/product-details")
 public class ProductDetailsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/home.jsp");
-
+        doPost(request, response);
     }
 
 

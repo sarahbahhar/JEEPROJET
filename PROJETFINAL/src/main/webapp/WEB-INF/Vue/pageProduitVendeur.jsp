@@ -33,16 +33,15 @@
                 <div class="info">
                     <div class="prix">${produit.prix} €</div>
                     <div class="stock">${produit.stock > 0 ? 'En stock' : 'Rupture de stock'}</div>
-                    <!-- Ajoutez ici la logique pour ajouter l'article au panier -->
                 </div>
             </c:otherwise>
         </c:choose>
     </div>
     <div class="bouton">
-        <form class="bouton-golden" method="post" action="modifProduitVendeur">
-            <input type="hidden" name="id" value="${produit.id}">
-            <input type="submit" name="modifier_un_produit" value="Modifier ce produit">
+        <form class="bouton-golden" action="${pageContext.request.contextPath}/servlet-de-Loucas" method="post">
+            <input type="number" name="produit_id" id="${produit.id}"  value="${produit.stock}" min="${produit.stock}"/>
         </form>
+
         <form  class="bouton-golden" method="post" action="${pageContext.request.contextPath}/delete-product-servlet">
             <input type="hidden" name="id" value="${produit.id}">
             <input type="submit" name="supprimer_un_produit" value="Supprimer ce produit">
