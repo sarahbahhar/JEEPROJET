@@ -79,10 +79,16 @@ public class ProduitDAO
     }
 
 
-    public void updateProduit(Produit produit) {
+    public static void updateProduct(Produit produit) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
 
+            session.update(produit); // Met à jour le produit dans la base de données
 
-
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-}
+    }
 
