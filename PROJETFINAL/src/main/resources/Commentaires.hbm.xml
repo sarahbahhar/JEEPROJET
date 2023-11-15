@@ -4,24 +4,21 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="Model.Produitcommande" table="produitcommande" schema="projet_jee">
+    <class name="Model.Commentaires" table="commentaires" schema="projet_jee">
         <id name="id">
             <column name="id" sql-type="int"/>
         </id>
-        <property name="commandeNumero">
-            <column name="commande_numero" sql-type="int"/>
+        <property name="idProduit">
+            <column name="idProduit" sql-type="int" not-null="true"/>
         </property>
-        <property name="quantite">
-            <column name="quantite" sql-type="int"/>
+        <property name="note">
+            <column name="note" sql-type="int"/>
         </property>
         <property name="emailVendeur">
             <column name="emailVendeur" sql-type="varchar(100)" length="100" not-null="true"/>
         </property>
-        <property name="titre">
-            <column name="titre" sql-type="varchar(255)"/>
-        </property>
-        <property name="prix">
-            <column name="prix" sql-type="decimal(10,2)" precision="10" scale="2"/>
+        <property name="commentaire">
+            <column name="commentaire" sql-type="text" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

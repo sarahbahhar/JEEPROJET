@@ -142,6 +142,13 @@ CREATE TABLE ProduitPanier (
                                PRIMARY KEY (email, produit_id)
 
 );
+CREATE TABLE commentaire (
+							id INT PRIMARY KEY,
+                            id_prod INT,
+                            note decimal(10,2),
+                            emailVendeur varchar(100),
+                            commentaire TEXT
+);
 
 
 
