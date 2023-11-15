@@ -1,7 +1,7 @@
 
 package Servlet;
 
-import DAO.BankAccountDAO;
+import DAO.ComptebancaireDAO;
 import Model.Comptebancaire;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,7 +15,7 @@ import java.io.IOException;
 
 @WebServlet(name = "NewBankAccountServlet", value = "/new-bank-account-servlet")
 public class NewBankAccountServlet extends HttpServlet {
-    private BankAccountDAO bAccountDAO=new BankAccountDAO();
+    private ComptebancaireDAO bAccountDAO=new ComptebancaireDAO();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(); // Retrieve the session
         String email = (String) ((HttpSession) session).getAttribute("email");
@@ -32,7 +32,7 @@ public class NewBankAccountServlet extends HttpServlet {
                     cB.setDate(expiration);
                     cB.setNumero(numero);
                     cB.setCvv(cvvS);
-                    bAccountDAO.addBankAccount(cB);
+                    bAccountDAO.addComptebancaire(cB);
                     response.sendRedirect(request.getContextPath() + "/product-servlet");
             }
 
