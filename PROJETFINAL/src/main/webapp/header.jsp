@@ -63,11 +63,24 @@
                             <button class="lien" type="submit">Mes Commandes</button>
                         </form>
 
+                    <li class="menu-deroulant">
+                        <button class="lien" type="submit">Mon Profil</button>
 
-                        <form   class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                            <input type="hidden" name="path" value="myProfile.jsp" />
-                            <button class="lien" type="submit">Profil</button>
-                        </form>
+                        <div class="sous-menu">
+
+                            <form   class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                                <input type="hidden" name="path" value="myProfile.jsp" />
+                                <button class="lien" type="submit">Profil</button>
+                            </form>
+                            <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                                <input type="hidden" name="path" value="addPaymentMode.jsp" />
+                                <button class="lien" type="submit">Ajouter Carte</button>
+                            </form>
+
+
+                        </div>
+                    </li>
+
 
 
                         <form class='style' action="${pageContext.request.contextPath}/sign-out-servlet" method="get">
