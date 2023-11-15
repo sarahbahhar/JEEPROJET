@@ -65,7 +65,9 @@ public class VerifyBankServlet extends HttpServlet{
 
 
         } else {
+            response.sendRedirect(request.getContextPath() +"/error");
             throw new Exception("payment not successful..");
+
         }
         //out.close();
     }
