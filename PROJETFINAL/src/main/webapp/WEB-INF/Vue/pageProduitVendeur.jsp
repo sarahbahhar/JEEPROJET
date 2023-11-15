@@ -38,8 +38,10 @@
         </c:choose>
     </div>
     <div class="bouton">
-        <form class="bouton-golden" action="${pageContext.request.contextPath}/servlet-de-Loucas" method="post">
-            <input type="number" name="produit_id" id="${produit.id}"  value="${produit.stock}" min="${produit.stock}"/>
+        <form class="bouton-golden" action="${pageContext.request.contextPath}/modify-stock-servlet" method="post">
+            <input type="hidden" name="produit_id" value="${produit.id}">
+            <input type="number" name="stock" value="${produit.stock}" min="0"> <!-- Champ pour le nouveau stock -->
+            <input type="submit" name="gerer_stock_produit" value="Modifier le stock">
         </form>
 
         <form  class="bouton-golden" method="post" action="${pageContext.request.contextPath}/delete-product-servlet">
