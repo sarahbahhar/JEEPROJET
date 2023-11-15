@@ -37,7 +37,10 @@
         <p id="total-amount">${total} €</p>
     </div>
 
-
+    <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+        <input type="hidden" name="path" value="payment.jsp" />
+        <button class="bouton-golden" type="submit">valider</button>
+    </form>
 
 </div>
 </body>

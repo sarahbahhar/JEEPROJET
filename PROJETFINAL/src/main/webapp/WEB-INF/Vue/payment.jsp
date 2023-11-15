@@ -44,17 +44,7 @@
 
 
 
-    <!-- Faire en sorte que les boutons soient sur la même ligne -->
-    <div>
 
-        <a class="bouton-golden" href="${pageContext.request.contextPath}">Retour à l'accueil</a>
-        <span style="padding-left: 35px;">Pas de compte ?</span>
-
-        <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-            <input type="hidden" name="path" value="signUp.jsp" />
-            <button class="bouton-golden" type="submit">S'inscrire</button>
-        </form>
-    </div>
 </div>
 </body>
 </html>

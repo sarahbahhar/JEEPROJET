@@ -28,7 +28,8 @@ public class VerifyBankServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("WEB-INF/Vue/payment.jsp");
+        //response.sendRedirect("WEB-INF/Vue/payment.jsp");
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -58,9 +59,9 @@ public class VerifyBankServlet extends HttpServlet{
         if (CBDAO.validate(numero, cvv, date)) {
             //HttpSession session = request.getSession();
             //session.setAttribute("email",email);
-
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/confirmationCommande.jsp");
-            dispatcher.forward(request, response);
+            response.sendRedirect(request.getContextPath() +"/CreateCommandeServlet");
+            //RequestDispatcher dispatcher = request.getRequestDispatcher("/CreateCommandeServlet");
+            //dispatcher.forward(request, response);
 
 
         } else {

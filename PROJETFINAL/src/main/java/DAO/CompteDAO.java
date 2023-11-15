@@ -5,7 +5,7 @@ import java.util.List;
 import Model.Compte;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import Model.Compte;
+
 
 
 public class CompteDAO

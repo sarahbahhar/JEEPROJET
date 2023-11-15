@@ -16,6 +16,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "PanierServlet", value = "/panier-servlet")
 public class PanierServlet extends HttpServlet {
@@ -45,7 +46,8 @@ public class PanierServlet extends HttpServlet {
         request.setAttribute("panier", panier);
         request.setAttribute("total", total);
         request.setAttribute("produitsDansPanier", produitsDansPanier);
-
+        HttpSession session = request.getSession();
+        session.setAttribute("total",total);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/panier.jsp");
         try {
             dispatcher.forward(request, response);
