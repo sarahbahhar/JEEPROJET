@@ -10,10 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35573922-8f04-425f-84e1-8e242c3366fb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/logo_onglet.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/logo_onglet.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/logo_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/logo_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Comptebancaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Comptebancaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produitcommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Produitcommande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Comptebancaire.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Comptebancaire.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Produitcommande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Produitcommande.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/creationTable.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/creationTable.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -37,10 +43,10 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2Y7CbHksWYrDHcMorQS0gqWAQpM" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,6 +57,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JPA.DatabaseSchemaImportDialog": "8d06ae5d-700f-4934-9312-7137f8fd4a4b",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "dev",
     "last_opened_file_path": "C:/Users/CYTech Student/JEEPROJET/PROJETFINAL/src/main/webapp/img",
@@ -169,7 +176,10 @@
       <workItem from="1699867304121" duration="2632000" />
       <workItem from="1699883391700" duration="2760000" />
       <workItem from="1699999796988" duration="1673000" />
-      <workItem from="1700035956232" duration="4915000" />
+      <workItem from="1700035956232" duration="5535000" />
+      <workItem from="1700050132667" duration="6557000" />
+      <workItem from="1700066326066" duration="2743000" />
+      <workItem from="1700083426363" duration="674000" />
     </task>
     <servers />
   </component>
