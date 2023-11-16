@@ -23,22 +23,26 @@
         <url-pattern>/moderator-servlet</url-pattern>
     </servlet-mapping>
 
-    <jsp-config>
-        <jsp-property-group>
-            <url-pattern>*.jsp</url-pattern>
-            <include-prelude>/header.jsp</include-prelude>
-            <include-prelude>/WEB-INF/Vue/taglibs.jsp</include-prelude>
-            <include-coda>/footer.jsp</include-coda>
-        </jsp-property-group>
+     <jsp-config>
+         <jsp-property-group>
+             <url-pattern>/WEB-INF/Vue/*</url-pattern>
+             <url-pattern>/home.jsp</url-pattern>
+             <url-pattern>/productList.jsp</url-pattern>
+             <include-prelude>/header.jsp</include-prelude>
+             <include-prelude>/WEB-INF/Vue/taglibs.jsp</include-prelude>
+             <include-coda>/footer.jsp</include-coda>
+         </jsp-property-group>
 
-        <filter>
-            <filter-name>NoCacheFilter</filter-name>
-            <filter-class>com.example.NoCacheFilter</filter-class>
-        </filter>
-        <filter-mapping>
-            <filter-name>NoCacheFilter</filter-name>
-            <url-pattern>/*</url-pattern>
-        </filter-mapping>
-    </jsp-config>
+         <jsp-property-group>
+             <url-pattern>/mail/*</url-pattern>
+             <include-prelude>/WEB-INF/Vue/taglibs.jsp</include-prelude>
+         </jsp-property-group>
+
+
+
+
+
+
+     </jsp-config>
 </web-app>
 

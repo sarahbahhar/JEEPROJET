@@ -1,67 +1,73 @@
 package Servlet;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.Properties;
 
-import DAO.AdminDAO;
-import DAO.CustomerDAO;
-import DAO.ModeratorDAO;
-import Model.Compte;
+
+import jakarta.mail.*;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
-import jakarta.mail.*;
-import jakarta.mail.internet.InternetAddress;
-import jakarta.mail.internet.MimeMessage;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.Properties;
-import DAO.CompteDAO;
 
-@WebServlet("/inscriptionServlet")
-public class InscriptionServlet extends HttpServlet{
-    private CompteDAO signUpDAO=new CompteDAO();
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("WEB-INF/Vue/signUp.jsp");
+
+@WebServlet("/PasswordForgetServlet")
+public class PasswordForgetServlet extends HttpServlet {
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Récupérer le token depuis la requête
+        String token = request.getParameter("resetToken");
+        String email = request.getParameter("email");
+
+        // Récupérer le token depuis la session
+        String sessionToken = "abc123";
+
+        if (true) { // veriier le token
+            request.setAttribute("email", email);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/resetPassword.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            // Si le token n'est pas valide, afficher un message d'erreur ou rediriger vers une page d'erreur.
+            response.sendRedirect("errorPage.jsp"); // Remplacer par votre page d'erreur.
+        }
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
-            String email=request.getParameter("email");
-            String password= request.getParameter("password");
-            String nom= request. getParameter("nom");
-            String prenom=request.getParameter("prenom");
-            if(signUpDAO.isUniqueEmail(email)){
-                Compte c=new Compte();
-                c.setEmail(email);
-                c.setMotDePasse(password);
-                signUpDAO.addCompte(c);
-                HttpSession session = request.getSession();
-                session.setAttribute("email", email);
-                session.setAttribute("nom", nom);
-                session.setAttribute("prenom", prenom);
+            String email = request.getParameter("email");
+
+            String resetToken = generateResetToken();
+
+            HttpSession session = request.getSession();
+            session.setAttribute("resetToken", resetToken);
+
+            String resetLink = "http://localhost:8080/" + request.getContextPath() +"/PasswordForgetServlet?resetToken=" + resetToken+"&email="+email;
+
+            request.setAttribute("resetLink",resetLink);
+
+            String htmlContent = getHtmlContentFromJsp("/mail/mailPasswordForget.jsp", request, response);
+
+            sendEmailWithHTML(email,"Réinitialisation du mot de passe",htmlContent);
 
 
-                //EmailSender emailSender=new EmailSender();
-                //emailSender.sendMessage("rensimon@cy-tech.fr", email);
-                String htmlContent = getHtmlContentFromJsp("/mail/mailOfWelcome.jsp", request, response);
-
-                sendEmailWithHTML(email,"Bienvenue sur Arcadia",htmlContent);
-                //response.sendRedirect("MailServlet");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/infoCompte.jsp");
-                dispatcher.forward(request, response);
-            }
-            else{
-                request.setAttribute("error", "Cette adresse e-mail est déjà utilisée. Veuillez en choisir une autre.");
-            }
-
-
+            response.sendRedirect("resetPassword.jsp");
 
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    private String generateResetToken() {
+
+        return "abc123";
     }
 
     void sendEmailWithHTML(String recipientEmail,String subject, String content) throws ServletException {
@@ -107,6 +113,4 @@ public class InscriptionServlet extends HttpServlet{
 
         return stringWriter.toString();
     }
-
 }
-
