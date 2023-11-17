@@ -10,15 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35573922-8f04-425f-84e1-8e242c3366fb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d06ae5d-700f-4934-9312-7137f8fd4a4b/storage_v2/_src_/schema/projet_jee.l9B6iw.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Commentaires.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Commentaires.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Compte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Comptebancaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Comptebancaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produitcommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Produitcommande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Demandemoderateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Demandemoderateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Moderateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Produitpanier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Produitpanier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Comptebancaire.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Comptebancaire.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Produitcommande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Produitcommande.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/creationTable.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/creationTable.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,25 +59,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JPA.DatabaseSchemaImportDialog": "8d06ae5d-700f-4934-9312-7137f8fd4a4b",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "C:/Users/CYTech Student/JEEPROJET/PROJETFINAL/src/main/webapp/img",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;8d06ae5d-700f-4934-9312-7137f8fd4a4b&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CYTech Student/JEEPROJET/PROJETFINAL&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\img" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="Model" />
+      <recent name="" />
     </key>
   </component>
   <component name="RunManager">
@@ -180,6 +185,11 @@
       <workItem from="1700050132667" duration="6557000" />
       <workItem from="1700066326066" duration="2743000" />
       <workItem from="1700083426363" duration="674000" />
+      <workItem from="1700084517464" duration="327000" />
+      <workItem from="1700167831886" duration="282000" />
+      <workItem from="1700209053068" duration="648000" />
+      <workItem from="1700214624481" duration="789000" />
+      <workItem from="1700228354154" duration="378000" />
     </task>
     <servers />
   </component>
