@@ -1,14 +1,11 @@
 package DAO;
+import java.math.BigDecimal;
 import java.util.List;
 
-import Model.Client;
-import Model.Commande;
+import Model.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-
-import Model.Produit;
-import Model.Produitpanier;
 
 public class PanierDAO {
 
@@ -32,7 +29,7 @@ public class PanierDAO {
 
 
             if (produit != null && produit.getStock() >= quantite) {
-                produit.setStock(produit.getStock() - quantite);
+                produit.setStock(produit.getStock() - quantite);///////
                 Produitpanier produitPanier = produitPanierExists(produit.getId() , email);
 
                 if (produitPanier==null) {
@@ -105,5 +102,61 @@ public class PanierDAO {
     }
 */
     // Pouvoir supprimer des produits du panier regarder ModeratorDAO
+
+
+    public static void resetPanier(String email){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+
+            // Exécuter la requête pour obtenir l'objet panier
+            Panier p = (Panier) session.createQuery("FROM Panier P WHERE P.email = :email")
+                    .setParameter("email", email)
+                    .uniqueResult();
+
+            p.setHt(BigDecimal.valueOf(0));
+            p.setTva(BigDecimal.valueOf(0));
+            p.setTtc(BigDecimal.valueOf(0));
+
+
+
+            // Enregistrer les modifications dans la base de données
+            session.update(p);
+            transaction.commit();
+
+            //le panier doit exister pour tous les utilisateurs
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
+    public static void removeProduitPanier(String email) {
+
+
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+
+        session.createQuery("DELETE FROM Produitpanier WHERE email = :email")
+                .setParameter("email", email)
+                .executeUpdate();
+
+
+
+        session.getTransaction().commit();
+
+        session.close();
+
+
+    }
 }
+
+
 

@@ -27,13 +27,19 @@ public class ProduitCommandeDAO {
     }
 
     public void insertProduitCommande(Produitcommande produitCommande) throws SQLException {
-        String query = "INSERT INTO produit_commande (produit_id, commande_numero, quantite) VALUES (?, ?, ?)";
+        /*String query = "INSERT INTO produit_commande (produit_id, commande_numero, quantite) VALUES (?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, produitCommande.getId());
             preparedStatement.setInt(2, produitCommande.getCommandeNumero());
             preparedStatement.setInt(3, produitCommande.getQuantite());
 
             preparedStatement.executeUpdate();
-        }
+        }*/
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(produitCommande);
+        session.getTransaction().commit();
+        session.close();
     }
 }

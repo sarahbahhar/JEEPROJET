@@ -1,5 +1,6 @@
 package Servlet;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -44,7 +45,14 @@ public class CreateCommandeServlet  extends HttpServlet{
             commande.setTotal(totalBigDecimal);
             commande.setDateDePaiement(sqlDate);
             commandeDAO.addCommande(commande);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/confirmationCommande.jsp");
+            int nCommande=commandeDAO.getLastCommandeIdByEmail(email);
+
+            request.setAttribute("nCommande", nCommande);
+            /*PrintWriter out=response.getWriter();
+            out.println(nCommande);
+            out.close();*/
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("AddProductCommandeServlet");///WEB-INF/Vue/confirmationCommande.jsp
             dispatcher.forward(request, response);
 
         } catch (Exception e) {
