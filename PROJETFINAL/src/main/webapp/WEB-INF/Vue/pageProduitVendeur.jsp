@@ -40,7 +40,7 @@
     <div class="bouton">
         <form class="bouton-golden" action="${pageContext.request.contextPath}/modify-stock-servlet" method="post">
             <input type="hidden" name="produit_id" value="${produit.id}">
-            <input type="number" name="stock" value="${produit.stock}" min="0"> <!-- Champ pour le nouveau stock -->
+            <input type="number" name="stock" value="${produit.stock}" min="${produit.stock}"> <!-- Champ pour le nouveau stock -->
             <input type="submit" name="gerer_stock_produit" value="Modifier le stock">
         </form>
 

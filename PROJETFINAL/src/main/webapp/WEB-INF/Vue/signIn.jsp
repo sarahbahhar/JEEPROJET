@@ -28,7 +28,11 @@
         </fieldset>
     </form>
 
-    <div style="text-align: right;"><a class="bouton-golden" href="forgotPassword.jsp">Mot de passe oublié ?</a></div>
+
+    <form action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+        <input type="hidden" name="path" value="askMailForResetPassword.jsp" />
+        <button class="bouton-golden" type="submit">Mot de passe oublié ?</button>
+    </form>
 
     <!-- Faire en sorte que les boutons soient sur la même ligne -->
     <div>
