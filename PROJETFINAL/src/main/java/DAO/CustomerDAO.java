@@ -59,7 +59,24 @@ public class CustomerDAO {
         session.close();
     }
 
-
+    public static void addPointFidelite(String email, int point){
+        Transaction transaction = null;
+        Client client = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            client = (Client) session.createQuery("FROM Client C WHERE C.email = :email")
+                    .setParameter("email", email)
+                    .uniqueResult();
+            client.setPointsFidelite((client.getPointsFidelite()+point));
+            session.update(client);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
 
     // Other generic DAO methods to manage entities
 }

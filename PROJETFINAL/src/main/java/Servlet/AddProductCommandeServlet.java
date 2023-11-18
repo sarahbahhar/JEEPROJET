@@ -1,5 +1,6 @@
 package Servlet;
 
+import DAO.CustomerDAO;
 import DAO.ProduitDAO; //import temporaire
 import Model.Produit;
 import DAO.ProduitCommandeDAO;
@@ -67,6 +68,7 @@ public class AddProductCommandeServlet extends HttpServlet {
             }
             PanierDAO.resetPanier(email);
             PanierDAO.removeProduitPanier(email);
+            CustomerDAO.addPointFidelite(email,(int) totalDouble);
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/confirmationCommande.jsp");
             dispatcher.forward(request, response);
