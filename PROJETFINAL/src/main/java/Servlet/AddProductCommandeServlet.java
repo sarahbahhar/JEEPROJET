@@ -50,20 +50,29 @@ public class AddProductCommandeServlet extends HttpServlet {
             int nCommande= (int) request.getAttribute("nCommande");
             List<Produitpanier> list=PanierDAO.getListProduitpanier(email);
             Produitcommande pc= new Produitcommande();
-
-
+            //premiere boucle pour verifier le stock
+            //methode a modifier
+            for( Produitpanier pp : list){
+                Produit p=ProduitDAO.getProduitById(pp.getProduitId());
+                if(p.getStock()-pp.getQuantite()<0){
+                    response.sendRedirect(request.getContextPath()+"/error");
+                    return;
+                }
+            }
 
             for( Produitpanier pp : list){
-                //appel temporaire a corriger
+
                 Produit p=ProduitDAO.getProduitById(pp.getProduitId());
+
+                p.setStock(p.getStock()-pp.getQuantite());//update the stock of the product
+                ProduitDAO.updateProduct(p);
+
                 pc.setCommandeNumero(nCommande);
                 pc.setQuantite(pp.getQuantite());
-                pc.setEmailVendeur(pp.getEmail());
+                pc.setEmailVendeur(p.getEmail());
                 pc.setTitre(p.getTitre());
                 pc.setPrix(p.getPrix());
                 produitCommandeDAO.insertProduitCommande(pc);
-                p.setStock(p.getStock()-pc.getQuantite());//update the stock of the product
-                ProduitDAO.updateProduct(p);
 
             }
             PanierDAO.resetPanier(email);
