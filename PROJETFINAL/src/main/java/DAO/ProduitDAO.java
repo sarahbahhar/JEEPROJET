@@ -79,6 +79,7 @@ public class ProduitDAO
     }
 
 
+
     public static void updateProduct(Produit produit) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();

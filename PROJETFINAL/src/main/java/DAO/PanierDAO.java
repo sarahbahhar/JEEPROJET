@@ -29,7 +29,7 @@ public class PanierDAO {
 
 
             if (produit != null && produit.getStock() >= quantite) {
-                produit.setStock(produit.getStock() - quantite);///////
+                //produit.setStock(produit.getStock() - quantite);
                 Produitpanier produitPanier = produitPanierExists(produit.getId() , email);
 
                 if (produitPanier==null) {

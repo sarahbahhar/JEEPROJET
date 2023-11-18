@@ -61,6 +61,8 @@ public class AddProductCommandeServlet extends HttpServlet {
                 pc.setTitre(p.getTitre());
                 pc.setPrix(p.getPrix());
                 produitCommandeDAO.insertProduitCommande(pc);
+                p.setStock(p.getStock()-pc.getQuantite());//update the stock of the product
+                ProduitDAO.updateProduct(p);
 
             }
             PanierDAO.resetPanier(email);
