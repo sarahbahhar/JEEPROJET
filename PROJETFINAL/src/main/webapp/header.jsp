@@ -26,7 +26,7 @@
             <li class="search">
                 <div class="search-container">
                     <form class="search-form" action="${pageContext.request.contextPath}/research-product-servlet" method="get">
-                        <input type="text" id="query" name="query" placeholder="Rechercher sur Milango.com">
+                        <input type="text" id="query" name="query" placeholder="Rechercher sur Divan.com">
                         <button type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
