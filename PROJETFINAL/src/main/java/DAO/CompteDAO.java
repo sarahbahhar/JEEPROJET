@@ -3,6 +3,7 @@ package DAO;
 import java.util.List;
 
 import Model.Compte;
+import Model.Token;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -17,6 +18,20 @@ public class CompteDAO
         session.save(c);
         session.getTransaction().commit();
         session.close();
+    }
+    public static void changePasswordByEmail(String email, String password) {
+        Compte compte = null;
+
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+            compte = session.get(Compte.class, email);
+            compte.setMotDePasse(password);
+            session.getTransaction().commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void removeFirstCompte()

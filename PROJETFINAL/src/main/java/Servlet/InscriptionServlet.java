@@ -1,10 +1,9 @@
 package Servlet;
 import java.io.IOException;
 
-import DAO.AdminDAO;
-import DAO.CustomerDAO;
-import DAO.ModeratorDAO;
+import DAO.*;
 import Model.Compte;
+import DAO.TokenDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -17,7 +16,6 @@ import jakarta.mail.internet.MimeMessage;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Properties;
-import DAO.CompteDAO;
 
 @WebServlet("/inscriptionServlet")
 public class InscriptionServlet extends HttpServlet{
@@ -37,6 +35,7 @@ public class InscriptionServlet extends HttpServlet{
                 c.setEmail(email);
                 c.setMotDePasse(password);
                 signUpDAO.addCompte(c);
+                TokenDAO.addToken(email);
                 HttpSession session = request.getSession();
                 session.setAttribute("email", email);
                 session.setAttribute("nom", nom);
