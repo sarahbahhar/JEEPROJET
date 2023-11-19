@@ -49,21 +49,16 @@ header {
 
 }
 
-.style:hover {
-    border: 2px solid #a7976a;
-    border-radius: 5px;
-    background-color: white;
-}
 
 .lien {
-    padding: 10px;
-    color: #2E3F58;
-    border-radius: 5px;
+    padding: 15px;
+    color: #0d6735;
+    font-family: Helvetica,sans-serif;
+    border-radius: 30px;
     border: none;
     background-color: transparent;
     background: none;
-    font: inherit;
-    font-size: 25px;
+    font-size: 15px;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 
@@ -71,8 +66,8 @@ header {
 }
 
 .lien:hover {
-    background-color: #a7976a;
-    color: #2E3F58;
+    background-color: #0d6735;
+    color: #f7f6f2;
 }
 
 /* Permet d'aligner l'image avec le panier */
@@ -101,7 +96,7 @@ header {
     border: none;
     border-radius: 30px;
     width: 300px;
-    background-color: #C0C0C0;
+    background-color: #f7f6f2;
     transition: all 0.3s ease-in-out;
 }
 
@@ -124,7 +119,7 @@ header {
 
 .search-form input[type="text"]:focus {
     width: 400px;
-    background-color: #fff;
+    background-color: #f7f6f2;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
     outline: none;
 }
@@ -145,7 +140,7 @@ header {
 .menu-deroulant:hover {
     border: 2px solid #a7976a;
     border-radius: 5px;
-    background-color: white;
+    background-color: #f7f6f2;
 }
 
 .sous-menu {
@@ -156,7 +151,7 @@ header {
     right: 0; /* Ajoutez cette ligne pour centrer horizontalement */
     border: 2px solid #a7976a;
     border-radius: 5px;
-    background-color: white;
+    background-color: #f7f6f2;
     border-top: none;
     max-height: 10000px;
     overflow: hidden;

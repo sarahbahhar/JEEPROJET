@@ -355,10 +355,7 @@ CREATE TABLE Produitpanier (
     CREATE TABLE Token(
     email VARCHAR(100) NOT NULL PRIMARY KEY,
     token VARCHAR(50),
-
- 
-
-    FOREIGN KEY (email) REFERENCES Compte(email)
+	FOREIGN KEY (email) REFERENCES Compte(email)
     );
     
     
