@@ -11,6 +11,7 @@
     <mapping resource="Admin.hbm.xml"/>
       <mapping resource="Client.hbm.xml"/>
       <mapping resource="Commande.hbm.xml"/>
+    <mapping resource="Commentaires.hbm.xml"/>
       <mapping resource="Compte.hbm.xml"/>
       <mapping resource="Comptebancaire.hbm.xml"/>
     <mapping resource="Demandemoderateur.hbm.xml"/>
@@ -20,6 +21,7 @@
     <mapping resource="Produit.hbm.xml"/>
     <mapping resource="Produitcommande.hbm.xml"/>
     <mapping resource="Produitpanier.hbm.xml"/>
+    <mapping resource="Token.hbm.xml"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

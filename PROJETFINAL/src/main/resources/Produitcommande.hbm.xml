@@ -8,6 +8,9 @@
         <id name="id">
             <column name="id" sql-type="int"/>
         </id>
+        <property name="idProduit">
+            <column name="idProduit" sql-type="int"/>
+        </property>
         <property name="commandeNumero">
             <column name="commande_numero" sql-type="int"/>
         </property>

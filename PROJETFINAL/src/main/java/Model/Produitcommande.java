@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 public class Produitcommande {
     private int id;
+    private int idProduit;
     private int commandeNumero;
     private int quantite;
     private String emailVendeur;
@@ -16,6 +17,14 @@ public class Produitcommande {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdProduit() {
+        return idProduit;
+    }
+
+    public void setIdProduit(int idProduit) {
+        this.idProduit = idProduit;
     }
 
     public int getCommandeNumero() {
@@ -66,6 +75,7 @@ public class Produitcommande {
         Produitcommande that = (Produitcommande) o;
 
         if (id != that.id) return false;
+        if (idProduit != that.idProduit) return false;
         if (commandeNumero != that.commandeNumero) return false;
         if (quantite != that.quantite) return false;
         if (emailVendeur != null ? !emailVendeur.equals(that.emailVendeur) : that.emailVendeur != null) return false;
@@ -78,6 +88,7 @@ public class Produitcommande {
     @Override
     public int hashCode() {
         int result = id;
+        result = 31 * result + idProduit;
         result = 31 * result + commandeNumero;
         result = 31 * result + quantite;
         result = 31 * result + (emailVendeur != null ? emailVendeur.hashCode() : 0);
