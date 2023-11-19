@@ -50,15 +50,7 @@ public class AddProductCommandeServlet extends HttpServlet {
             int nCommande= (int) request.getAttribute("nCommande");
             List<Produitpanier> list=PanierDAO.getListProduitpanier(email);
             Produitcommande pc= new Produitcommande();
-            //premiere boucle pour verifier le stock
-            //methode a modifier
-            for( Produitpanier pp : list){
-                Produit p=ProduitDAO.getProduitById(pp.getProduitId());
-                if(p.getStock()-pp.getQuantite()<0){
-                    response.sendRedirect(request.getContextPath()+"/error");
-                    return;
-                }
-            }
+
 
             for( Produitpanier pp : list){
 
