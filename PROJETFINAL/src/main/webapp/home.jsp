@@ -31,7 +31,6 @@
 
 
 
-
 <c:if test="${empty produits}">
     <script type="text/javascript">
         window.location.href = '<%= request.getContextPath() %>/product-servlet';
