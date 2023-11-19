@@ -16,6 +16,6 @@ $(document).ready(function() {
     stepAnimateText('.fade', 'bounceInDown', 0.3);
     setTimeout(function() {
         window.location.href = 'home.jsp';
-    }, 1500);
+    }, 2000);
 });
 // Init on load
