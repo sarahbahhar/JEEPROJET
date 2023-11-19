@@ -64,6 +64,7 @@ public class AddProductCommandeServlet extends HttpServlet {
                 pc.setEmailVendeur(p.getEmail());
                 pc.setTitre(p.getTitre());
                 pc.setPrix(p.getPrix());
+                pc.setIdProduit(pp.getProduitId());
                 produitCommandeDAO.insertProduitCommande(pc);
 
             }
