@@ -20,7 +20,7 @@ public class ProduitCommandeDAO {
 
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        List<Produitcommande> result = session.createQuery("FROM Produitcommande P WHERE P.id = :idCommande")
+        List<Produitcommande> result = session.createQuery("FROM Produitcommande P WHERE P.commandeNumero = :idCommande")
                 .setParameter("idCommande", idCommande).list();
         session.close();
         return result;
