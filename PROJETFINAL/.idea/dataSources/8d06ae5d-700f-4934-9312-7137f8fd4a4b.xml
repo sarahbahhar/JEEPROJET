@@ -968,8 +968,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="281" parent="1" name="projet_jee">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-19.19:38:48</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-19.17:38:48</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-19.20:24:48</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-19.18:24:48</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="282" parent="1" name="sys">
@@ -1563,9 +1563,15 @@ produit_id</ColNames>
       <RefColNames>email</RefColNames>
       <RefTableName>compte</RefTableName>
     </foreign-key>
-    <index id="404" parent="300" name="email">
+    <index id="404" parent="300" name="PRIMARY">
       <ColNames>email</ColNames>
       <Type>btree</Type>
+      <Unique>1</Unique>
     </index>
+    <key id="405" parent="300" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

@@ -5,9 +5,9 @@
 <hibernate-mapping>
 
     <class name="Model.Token" table="token" schema="projet_jee">
-        <property name="email">
+        <id name="email">
             <column name="email" sql-type="varchar(100)" length="100"/>
-        </property>
+        </id>
         <property name="token">
             <column name="token" sql-type="varchar(50)" length="50" not-null="true"/>
         </property>
