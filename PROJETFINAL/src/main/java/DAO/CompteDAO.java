@@ -70,7 +70,7 @@ public class CompteDAO
             if (transaction != null) {
                 transaction.rollback();
             }
-        e.printStackTrace();
+            e.printStackTrace();
         }
         finally {
             session.close();
@@ -78,7 +78,7 @@ public class CompteDAO
         return unique;
 
     }
-    public boolean validate(String email, String password) {
+    public static boolean validate(String email, String password) {
 
         Transaction transaction = null;
         Compte compte = null;
@@ -88,11 +88,11 @@ public class CompteDAO
             // get an user object
             compte = (Compte) session.createQuery("FROM Compte C WHERE C.email = :email").setParameter("email", email).uniqueResult();
 
-            if (compte != null && compte.getMotDePasse().equals(password)) {
+            if (compte != null && compte.isMotDePasseCorrect(password)) {
                 return true;
             }
             // commit transaction
-            transaction.commit();
+            //transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 //transaction.rollback();

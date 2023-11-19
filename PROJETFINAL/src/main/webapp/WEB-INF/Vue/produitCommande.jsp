@@ -33,7 +33,7 @@
 
 
       </div>
-      <input type="hidden" name="produit_id" value="${produitCommande.id}" />
+      <input type="hidden" name="produit_id" value="${produitCommande.idProduit}" />
 
     </form>
   </c:forEach>

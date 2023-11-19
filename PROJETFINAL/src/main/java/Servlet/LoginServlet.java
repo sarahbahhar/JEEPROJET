@@ -51,10 +51,10 @@ public class LoginServlet extends HttpServlet{
         //PrintWriter out= response.getWriter();
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        //out.println(email);
+        //System.out.println(password);
 
 
-        if (loginDAO.validate(email, password)) {
+        if (CompteDAO.validate(email, password)) {
             HttpSession session = request.getSession();
             session.setAttribute("email",email);
 
