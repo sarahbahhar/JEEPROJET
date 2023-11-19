@@ -1,10 +1,13 @@
 package Servlet;
+
+import DAO.TokenDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Properties;
 
 
+import DAO.TokenDAO;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
@@ -27,9 +30,9 @@ public class PasswordForgetServlet extends HttpServlet {
         String email = request.getParameter("email");
 
         // Récupérer le token depuis la session
-        String sessionToken = "abc123";
+        String sessionToken = TokenDAO.getTokenValueByEmail(email);
 
-        if (true) { // veriier le token
+        if (token.equals(sessionToken)) { // verifier le token
             request.setAttribute("email", email);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/resetPassword.jsp");
             dispatcher.forward(request, response);
@@ -44,12 +47,13 @@ public class PasswordForgetServlet extends HttpServlet {
         try {
             String email = request.getParameter("email");
 
-            String resetToken = generateResetToken();
+            String resetToken = TokenDAO.generateResetToken();
+            TokenDAO.changeTokenByEmail(email,resetToken);
 
-            HttpSession session = request.getSession();
-            session.setAttribute("resetToken", resetToken);
 
             String resetLink = "http://localhost:8080/" + request.getContextPath() +"/PasswordForgetServlet?resetToken=" + resetToken+"&email="+email;
+
+
 
             request.setAttribute("resetLink",resetLink);
 
@@ -57,18 +61,17 @@ public class PasswordForgetServlet extends HttpServlet {
 
             sendEmailWithHTML(email,"Réinitialisation du mot de passe",htmlContent);
 
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mailSend.jsp");
 
-            response.sendRedirect("resetPassword.jsp");
+            dispatcher.forward(request, response);
+
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private String generateResetToken() {
 
-        return "abc123";
-    }
 
     void sendEmailWithHTML(String recipientEmail,String subject, String content) throws ServletException {
         final String username = "projetjee.cytech@gmail.com";

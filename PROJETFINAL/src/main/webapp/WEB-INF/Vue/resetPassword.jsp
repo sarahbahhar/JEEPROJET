@@ -22,8 +22,8 @@
 </head>
 <body>
 <h2>Réinitialisation du Mot de Passe</h2>
-<form action="ServletPourChangerMdp" method="POST" onsubmit="return validatePassword()">
-    <input type="hidden" name="token" value="${resetToken}"/>
+<form action="${pageContext.request.contextPath}/reset-password-servlet" method="POST" onsubmit="return validatePassword()">
+
     <input type="hidden" name="email" value="${email}"/>
     <div>
         <label for="newPassword">Nouveau Mot de Passe:</label>

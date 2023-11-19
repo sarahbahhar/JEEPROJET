@@ -50,6 +50,7 @@ public class PanierServlet extends HttpServlet {
         session.setAttribute("total",total);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/panier.jsp");
         try {
+
             dispatcher.forward(request, response);
         } catch (ServletException e) {
             throw new RuntimeException(e);
