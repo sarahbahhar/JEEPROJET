@@ -60,7 +60,7 @@ public class PanierServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
             int produitId = Integer.parseInt(request.getParameter("produit_id"));
-            int quantite = Integer.parseInt(request.getParameter("quantite"));
+            int quantite = Integer.parseInt(request.getParameter("quantity"));
             String email = request.getParameter("email");
 
 

@@ -12,7 +12,7 @@ public class PanierDAO {
     // Méthode pour récupérer les produits du panier
     public static List<Produitpanier> getListProduitpanier(String email) {
 
-        Session session= HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         List<Produitpanier> result = session.createQuery("FROM Produitpanier P WHERE P.email = :email")
                 .setParameter("email", email).list();
@@ -30,28 +30,26 @@ public class PanierDAO {
 
             if (produit != null && produit.getStock() >= quantite) {
                 //produit.setStock(produit.getStock() - quantite);
-                Produitpanier produitPanier = produitPanierExists(produit.getId() , email);
+                Produitpanier produitPanier = produitPanierExists(produit.getId(), email);
 
-                if (produitPanier==null) {
+                if (produitPanier == null) {
 
                     produitPanier = new Produitpanier();
                     produitPanier.setEmail(email);
                     produitPanier.setProduitId(produitId);
                     produitPanier.setQuantite(quantite);
                     session.save(produitPanier);
-                }
-                    else{
-                    produitPanier.setQuantite(quantite+produitPanier.getQuantite());
+                } else {
+                    produitPanier.setQuantite(quantite + produitPanier.getQuantite());
                     session.update(produitPanier);
                 }
-                }
-                session.update(produit);
-
-                session.getTransaction().commit();
-                session.close();
-
             }
-         catch (Exception e) {
+            session.update(produit);
+
+            session.getTransaction().commit();
+            session.close();
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -104,7 +102,7 @@ public class PanierDAO {
     // Pouvoir supprimer des produits du panier regarder ModeratorDAO
 
 
-    public static void resetPanier(String email){
+    public static void resetPanier(String email) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
@@ -118,7 +116,6 @@ public class PanierDAO {
             p.setHt(BigDecimal.valueOf(0));
             p.setTva(BigDecimal.valueOf(0));
             p.setTtc(BigDecimal.valueOf(0));
-
 
 
             // Enregistrer les modifications dans la base de données
@@ -141,7 +138,7 @@ public class PanierDAO {
     public static void removeProduitPanier(String email) {
 
 
-        Session session= HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
         session.createQuery("DELETE FROM Produitpanier WHERE email = :email")
@@ -149,10 +146,33 @@ public class PanierDAO {
                 .executeUpdate();
 
 
-
         session.getTransaction().commit();
 
         session.close();
+
+
+    }
+
+    public static void changeQuantityById(String email, int produitId, int newQuantity) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+
+            Produit produit = ProduitDAO.getProduitById(produitId);
+            Produitpanier produitPanier = produitPanierExists(produitId, email);
+
+            if (produit != null && produitPanier != null) {
+                if (newQuantity == 0) {
+                    session.delete(produitPanier);
+                } else if (produit.getStock() >= newQuantity) {
+                    produitPanier.setQuantite(newQuantity);
+                    session.update(produitPanier);
+                }
+            }
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
