@@ -36,7 +36,10 @@ public class InscriptionServlet extends HttpServlet{
                 c.setAndHashMotDePasse(password);
                 signUpDAO.addCompte(c);
                 TokenDAO.addToken(email);
-
+                HttpSession session = request.getSession();
+                session.setAttribute("email", email);
+                session.setAttribute("nom", nom);
+                session.setAttribute("prenom", prenom);
 
 
                 //EmailSender emailSender=new EmailSender();
@@ -49,7 +52,9 @@ public class InscriptionServlet extends HttpServlet{
                 dispatcher.forward(request, response);
             }
             else{
-                request.setAttribute("error", "Cette adresse e-mail est déjà utilisée. Veuillez en choisir une autre.");
+                PrintWriter out=response.getWriter();
+                out.println("Cette adresse e-mail est déjà utilisée. Vous allez être redirigé vers la page home.");
+                response.setHeader("Refresh", "5; URL=/PROJETFINAL_war_exploded/home.jsp");
             }
 
 

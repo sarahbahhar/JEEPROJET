@@ -9,6 +9,15 @@ import org.hibernate.query.Query;
 
 public class PanierDAO {
 
+    public static void createPanier(Panier p)
+    {
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(p);
+        session.getTransaction().commit();
+        session.close();
+    }
+
     // Méthode pour récupérer les produits du panier
     public static List<Produitpanier> getListProduitpanier(String email) {
 
