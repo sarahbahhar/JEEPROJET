@@ -33,6 +33,9 @@
                 <div class="info">
                     <div class="prix">${produit.prix} €</div>
                     <div class="stock">${produit.stock > 0 ? 'En stock' : 'Rupture de stock'}</div>
+                    <div class="prix">
+                        Note : ${noteMoyenne}
+                    </div>
                 </div>
             </c:otherwise>
         </c:choose>

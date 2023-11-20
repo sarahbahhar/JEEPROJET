@@ -4,6 +4,7 @@ import DAO.CommentairesDAO;
 import DAO.ProduitDAO;
 import Model.Commentaires;
 import Model.Produit;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -35,7 +36,8 @@ public class CommentaireServlet extends HttpServlet {
         CommentairesDAO.addCommentaire(newComment);
 
         // Redirection vers la page produit ou un message de confirmation
-        response.sendRedirect(request.getContextPath() + "/pageProduit.jsp");
+        //RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/productList.jsp");
+        response.sendRedirect(request.getContextPath()+"/product-details?type=pageProduit&produit_id="+produitId); // changer type=page  produti et idproduit s'inspirer de produitCommande
     }
 }
 
