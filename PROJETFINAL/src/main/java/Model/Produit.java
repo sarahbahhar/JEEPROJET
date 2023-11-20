@@ -11,6 +11,7 @@ public class Produit {
     private String nomImage;
     private String miniDescription;
     private BigDecimal prix;
+    private String categorie;
 
     public int getId() {
         return id;
@@ -76,6 +77,14 @@ public class Produit {
         this.prix = prix;
     }
 
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -92,6 +101,7 @@ public class Produit {
         if (miniDescription != null ? !miniDescription.equals(produit.miniDescription) : produit.miniDescription != null)
             return false;
         if (prix != null ? !prix.equals(produit.prix) : produit.prix != null) return false;
+        if (categorie != null ? !categorie.equals(produit.categorie) : produit.categorie != null) return false;
 
         return true;
     }
@@ -106,6 +116,7 @@ public class Produit {
         result = 31 * result + (nomImage != null ? nomImage.hashCode() : 0);
         result = 31 * result + (miniDescription != null ? miniDescription.hashCode() : 0);
         result = 31 * result + (prix != null ? prix.hashCode() : 0);
+        result = 31 * result + (categorie != null ? categorie.hashCode() : 0);
         return result;
     }
 }
