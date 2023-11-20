@@ -199,10 +199,10 @@ CREATE TABLE Token(
 
 
 -- Ajout des comptes dans la table Compte
-INSERT INTO Compte (email, mot_de_passe) VALUES ('abdellah.hassani@gmail.com', '123456');
-INSERT INTO Compte (email, mot_de_passe) VALUES ('simon.ren@gmail.com', '123456');
-INSERT INTO Compte (email, mot_de_passe) VALUES ('loucas.terchani@gmail.com', '123456');
-INSERT INTO Compte (email, mot_de_passe) VALUES ('sarah.bahhar@gmail.com', '123456');
+INSERT INTO Compte (email, mot_de_passe) VALUES ('abdellah.hassani@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
+INSERT INTO Compte (email, mot_de_passe) VALUES ('simon.ren@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
+INSERT INTO Compte (email, mot_de_passe) VALUES ('loucas.terchani@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
+INSERT INTO Compte (email, mot_de_passe) VALUES ('sarah.bahhar@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 
 
 
