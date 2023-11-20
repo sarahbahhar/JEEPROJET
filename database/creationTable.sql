@@ -111,6 +111,7 @@ CREATE TABLE Produit (
                          nomImage VARCHAR(250) NOT NULL,
                          miniDescription VARCHAR(200) NOT NULL,
                          prix decimal(10,2) NOT NULL,
+                         categorie varchar(100),
                          FOREIGN KEY (email) REFERENCES Moderateur(email)
 );
 

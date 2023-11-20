@@ -31,17 +31,18 @@
 <c:if test="${!empty sessionScope.InfoCompte.prenom && !empty sessionScope.InfoCompte.nom}">
     <div><h1>Bienvenue ${sessionScope.InfoCompte.prenom} ${sessionScope.InfoCompte.nom}</h1></div>
 </c:if>
-<h2>BESTSELLERS</h2>
+<h2>Meilleurs ventes</h2>
 <div class="container-left">
 <div class="slide-left">
     <section>
         <h2>À Propos de Nous</h2>
+        <br>
         <p><em>Bienvenue sur <strong>Divan.com</strong>, votre destination pour le canapé
             de vos rêves. Passionnés par le <strong>confort</strong> et le <strong>style</strong>, nous
             vous offrons une expérience unique. Comprendre l'importance du
             canapé dans votre vie quotidienne, c'est l'endroit où vous vous
             détendez après une longue journée, partagez des moments en famille
-            et accueillez vos amis. Notre sélection exceptionnelle allie confort
+            et accueillez vos amis. Notre sélection exceptionnelle allie <strong>confort</strong>
             , <strong>durabilité</strong> et <strong>esthétique</strong>. Travaillant avec des designers talentueux
             et des fabricants de confiance, nous proposons des canapés de <strong>haute
                 qualité</strong>. Explorez notre <a>catalogue</a> pour trouver le style, la taille et
@@ -54,11 +55,5 @@
     </section>
 </div>
 </div>
-
-
-
-
-
-
 </body>
 </html>

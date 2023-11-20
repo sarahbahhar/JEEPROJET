@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import Model.Commentaires;
+import Model.Produit;
 import jakarta.persistence.Query;
 import org.hibernate.Session;
 
@@ -18,7 +19,6 @@ public class CommentairesDAO {
 
         }
     }
-
     public static List<Commentaires> getCommentairesByProduitId(int produitId) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("FROM Commentaires WHERE idProduit = :produitId", Commentaires.class)
@@ -55,5 +55,15 @@ public class CommentairesDAO {
             e.printStackTrace();
             return BigDecimal.ZERO;
         }
+    }
+    public List<Integer> getBestNotedIdProduct(){
+        Session session= HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        List<Integer> result = session.createQuery("SELECT idProduit, AVG(note) AS moyenne\n" +
+                "FROM Commentaires \n" +
+                "GROUP BY idProduit\n" +
+                "ORDER BY moyenne ASC").list();
+        session.close();
+        return null;
     }
 }

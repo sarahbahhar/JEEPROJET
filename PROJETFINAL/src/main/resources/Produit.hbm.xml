@@ -29,5 +29,8 @@
         <property name="prix">
             <column name="prix" sql-type="decimal(10,2)" precision="10" scale="2"/>
         </property>
+        <property name="categorie">
+            <column name="categorie" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>
