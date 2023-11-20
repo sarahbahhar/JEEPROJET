@@ -31,6 +31,9 @@
                     <hr>
                 </div>
                 <div class="info">
+                    <div class="prix">
+                        Note : ${noteMoyenne}
+                    </div>
                     <div class="prix">${produit.prix} €</div>
                     <div class="stock">${produit.stock > 0 ? 'En stock' : 'Rupture de stock'}</div>
                     <form method="post" action="${pageContext.request.contextPath}/panier-servlet">
@@ -49,6 +52,32 @@
         </c:choose>
     </div>
     <hr> <!-- Repère visuel temporaire -->
+
+    <c:forEach var="commentaire" items="${commentaires}">
+        <div class="commentaire">
+            <p>Note : ${commentaire.note} / 5 </p>
+            <p>Commentaire : ${commentaire.commentaire}</p>
+        </div>
+    </c:forEach>
+
+    <c:if test="${not empty sessionScope.email}">
+        <div class="comment-section">
+            <h3>Laissez un commentaire :</h3>
+            <form method="post" action="<%=request.getContextPath()%>/commentaire-servlet">
+                <textarea name="commentaire" rows="4" cols="50"></textarea><br>
+                <label for="rating">Note :</label>
+                <select id="rating" name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br>
+                <input type="hidden" name="produit_id" value="${produit.id}">
+                <input type="submit" value="Soumettre">
+            </form>
+        </div>
+    </c:if>
 </div>
 </body>
 </html>

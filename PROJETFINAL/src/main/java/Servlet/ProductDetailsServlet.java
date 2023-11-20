@@ -1,8 +1,12 @@
 package Servlet;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
 
+import DAO.CommentairesDAO;
+import Model.Commentaires;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -25,9 +29,12 @@ public class ProductDetailsServlet extends HttpServlet {
 
         if (produitIdParam != null) {
             int produitId = Integer.parseInt(produitIdParam);
+            BigDecimal noteMoyenne = CommentairesDAO.getNoteMoyenneProduit(produitId);
             Produit produit = ProduitDAO.getProduitById(produitId);
             request.setAttribute("produit", produit);
-
+            request.setAttribute("noteMoyenne", noteMoyenne);
+            List<Commentaires> commentaires = CommentairesDAO.getCommentairesByProduitId(produitId);
+            request.setAttribute("commentaires", commentaires);
 
         }
         RequestDispatcher dispatcher;
