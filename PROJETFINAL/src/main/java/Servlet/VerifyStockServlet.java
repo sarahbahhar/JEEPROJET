@@ -5,8 +5,10 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+import DAO.ComptebancaireDAO;
 import DAO.PanierDAO;
 import DAO.ProduitDAO;
+import Model.Comptebancaire;
 import Model.Infocompte;
 import Model.Produit;
 import Model.Produitpanier;
@@ -35,9 +37,14 @@ public class VerifyStockServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+
+
             HttpSession session = request.getSession();
             Infocompte ic = (Infocompte) session.getAttribute("InfoCompte");
             String email = ic.getEmail();
+            List<Comptebancaire> cartesBancaires = ComptebancaireDAO.getListCBByEmail(email);
+            request.setAttribute("cartesBancaires", cartesBancaires);
+
             List<Produitpanier> list = PanierDAO.getListProduitpanier(email);
             for (Produitpanier pp : list) {
                 Produit p = ProduitDAO.getProduitById(pp.getProduitId());
@@ -46,6 +53,8 @@ public class VerifyStockServlet extends HttpServlet {
                     return;
                 }
             }
+
+
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/payment.jsp");
             dispatcher.forward(request, response);
 

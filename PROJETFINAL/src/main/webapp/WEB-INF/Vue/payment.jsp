@@ -11,40 +11,25 @@
     <title>payment</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
-</head>
-<body>
-<div style="width: 500px; margin: auto;">
-    <h1>Paiement</h1>
-    <form action="<%=request.getContextPath()%>/VerifyBankServlet" method="post">
-        <fieldset>
-            <legend>Vos données</legend>
-            <table>
-                <tr>
-                    <td><label for="nom">Nom</label></td>
-                    <td><input type="text" id="nom" name="nom" required></td>
-                </tr>
-                <tr>
-                    <td><label for="numero">numéro de carte</label></td>
-                    <td><input type="text" id="numero" name="numero" required></td>
-                </tr>
-                <tr>
-                    <td><label for="date">date d'expiration</label></td>
-                    <td><input type="text" id="date" name="date" required></td>
-                    <td><label for="cvv">CVV</label></td>
-                    <td><input type="text" id="cvv" name="cvv" required></td>
+</head><body>
+<h1>Choisissez une carte bancaire :</h1>
+
+<form action="<%=request.getContextPath()%>/VerifyBankServlet" method="post">
+    <c:forEach items="${cartesBancaires}" var="carte">
+        <div>
+            <label>
+                <input type="radio" name="carteId" value="${carte.numero}">
+                <input type="hidden" name="numero" value="${carte.numero}" />
+                <input type="hidden" name="cvv" value="${carte.cvv}" />
+                <input type="hidden" name="date" value="${carte.date}" />
+
+                    ${carte.nom} : **** **** **** ${carte.numero} (${carte.date})
+            </label>
+        </div>
+    </c:forEach>
+    <input type="submit" value="Valider">
+</form>
 
 
-                </tr>
-                <tr>
-                    <td colspan="2"><input class="bouton-golden" type="submit" value="payer"></td>
-                </tr>
-            </table>
-        </fieldset>
-    </form>
-
-
-
-
-</div>
 </body>
 </html>
