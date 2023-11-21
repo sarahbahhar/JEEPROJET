@@ -15,25 +15,25 @@
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head><body>
 <h1>Choisissez une carte bancaire :</h1>
-
 <form action="<%=request.getContextPath()%>/VerifyBankServlet" method="post">
-    <c:forEach items="${cartesBancaires}" var="carte">
-        <div>
-            <label>
-                <input type="radio" name="carteId" value="${carte.numero}">
-                <input type="hidden" name="numero" value="${carte.numero}" />
-                <input type="hidden" name="cvv" value="${carte.cvv}" />
-                <input type="hidden" name="date" value="${carte.date}" />
-
-                    ${carte.nom} : **** **** **** ${carte.numero} (${carte.date})
-            </label>
-        </div>
-
-
-
-    </c:forEach>
-
-
+    <table>
+        <c:forEach items="${cartesBancaires}" var="carte">
+            <tr>
+                <td>
+                    <input type="radio" name="carteId" value="${carte.numero}">
+                </td>
+                <td>
+                    <input type="hidden" name="numero" value="${carte.numero}" />
+                    <input type="hidden" name="cvv" value="${carte.cvv}" />
+                    <input type="hidden" name="date" value="${carte.date}" />
+                        ${carte.nom}
+                </td>
+                <td>
+                    **** **** **** ${carte.numero} (${carte.date})
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
     <input type="submit" value="Valider">
 </form>
 
@@ -63,7 +63,7 @@
         <input hidden type="text" id="email" name="email" value="${sessionScope.email}">
         <input type="hidden" id="redirectionPath" name="redirectionPath" value="selectCardServlet">
 
-        <input type="submit" value="Payer">
+        <input onclick="toggleAddCardForm()" type="submit" value="Payer">
     </form>
 
 
