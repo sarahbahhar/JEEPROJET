@@ -23,11 +23,13 @@ public class MesCommandeServlet extends HttpServlet{
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String email = request.getParameter("email");
 
+
         if (email != null) {
             List<Commande> listCommande = CommandeDAO.getListProduitByEmail(email);
 
             // Set the list of products as an attribute in the request
             request.setAttribute("commandes", listCommande);
+            request.setAttribute("type", "pageMyOrders");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mesCommandes.jsp");
             try {
                 dispatcher.forward(request, response);

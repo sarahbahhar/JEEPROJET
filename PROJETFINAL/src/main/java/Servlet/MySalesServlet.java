@@ -28,6 +28,7 @@ public class MySalesServlet extends HttpServlet{
 
             // Set the list of products as an attribute in the request
             request.setAttribute("commandes", salesList); // recalculer le total
+            request.setAttribute("type", "pageMySales");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mesCommandes.jsp");
             try {
                 dispatcher.forward(request, response);
