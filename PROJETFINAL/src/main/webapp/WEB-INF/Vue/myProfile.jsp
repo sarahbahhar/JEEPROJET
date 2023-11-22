@@ -13,7 +13,7 @@
 
 
     <div style="width: 40%; margin: auto;">
-        <h1>Mon Profile</h1>
+        <h1>Mon Profil</h1>
         <fieldset>
             <legend>Informations</legend>
             <table>

@@ -1,47 +1,61 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: CYTech Student
-  Date: 08/11/2023
-  Time: 21:18
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Ajouter un Produit</title>
     <link rel="stylesheet" href="./css/vendeur.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
 </head>
 <body>
-<form method="POST" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
+<div style="width: 40%; margin: auto;">
+    <h1>Ajouter un Produit</h1>
+    <fieldset>
+        <legend>Informations du Produit</legend>
+        <form id="add-product-form" method="post" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td><label for="titre">Titre</label></td>
+                    <td><input style="width: 100%;" type="text" id="titre" name="titre" required></td>
+                </tr>
+                <tr>
+                    <td><label for="description">Description</label></td>
+                    <td><textarea id="description" name="description" style="width: 100%; " required></textarea></td>
 
-    <label for="titre">Titre</label>
-    <input type="text" id="titre" name="titre"><br>
+                </tr>
 
-    <label for="description">Description</label>
-    <textarea id="description" name="description"></textarea><br>
+                <tr>
+                    <td><label for="miniDescription">Mini Description</label></td>
+                    <td><textarea style="width: 100%;" id="miniDescription" name="miniDescription" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="price">Prix</label></td>
+                    <td><input style="width: 20%;" type="number" id="price" name="price" min="1" required></td>
+                </tr>
+                <tr>
+                    <td><label for="stock">Stock</label></td>
+                    <td><input style="width: 20%;" type="number" id="stock" name="stock" min="1" required></td>
+                </tr>
+                <tr>
+                    <td><label for="image">Image</label></td>
+                    <td><input style="width: 100%;" type="file" id="image" name="image" required></td>
+                </tr>
+                <tr><input type="hidden" name="email" value="${sessionScope.email}" /><tr>
 
-    <label for="stock">Stock</label>
-    <input type="text" id="stock" name="stock"><br>
+            </table>
 
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email"><br>
+        </form>
+    </fieldset>
 
-    <label for="miniDescription">Mini Description</label>
-    <textarea id="miniDescription" name="miniDescription"></textarea><br>
+    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
 
-    <label for="price">Prix</label>
-    <input type="text" id="price" name="price"><br>
-
-    <label for="image">Image</label>
-    <input type="file" id="image" name="image"><br>
-
-    <input type="submit" value="Ajouter Produit">
-</form>
-
-
+        <form  action="${pageContext.request.contextPath}/my-product-list-servlet" method="post">
+            <input type="hidden" name="email" value="${sessionScope.email}" />
+            <button class="bouton-golden" type="submit">Retour</button>
+        </form>
+        <button class="bouton-golden" type="submit" form="add-product-form">Ajouter</button>
+    </div>
+</div>
 </body>
 </html>

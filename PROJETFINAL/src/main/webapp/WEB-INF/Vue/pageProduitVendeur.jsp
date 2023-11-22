@@ -41,15 +41,17 @@
         </c:choose>
     </div>
     <div class="bouton">
-        <form class="bouton-golden" action="${pageContext.request.contextPath}/modify-stock-servlet" method="post">
+        <form action="${pageContext.request.contextPath}/modify-stock-servlet" method="post">
             <input type="hidden" name="produit_id" value="${produit.id}">
             <input type="number" name="stock" value="${produit.stock}" min="${produit.stock}"> <!-- Champ pour le nouveau stock -->
-            <input type="submit" name="gerer_stock_produit" value="Modifier le stock">
+            <input class="bouton-golden" type="submit" name="gerer_stock_produit" value="Modifier le stock">
         </form>
 
-        <form  class="bouton-golden" method="post" action="${pageContext.request.contextPath}/delete-product-servlet">
+        <form  method="post" action="${pageContext.request.contextPath}/delete-product-servlet">
             <input type="hidden" name="id" value="${produit.id}">
-            <input type="submit" name="supprimer_un_produit" value="Supprimer ce produit">
+            <input type="hidden" name="email" value="${sessionScope.email}" />
+
+            <input class="bouton-golden" type="submit" name="supprimer_un_produit" value="Supprimer ce produit">
         </form>
 
     </div>

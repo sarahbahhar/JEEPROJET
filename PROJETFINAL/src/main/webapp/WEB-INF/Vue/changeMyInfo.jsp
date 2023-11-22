@@ -44,6 +44,8 @@
                     <td><label for="pays">Pays :</label></td>
                     <td><input type="text" id="pays" name="pays" value="${sessionScope.InfoCompte.pays}" required></td>
                 </tr>
+                <tr><input type="hidden" name="email" value="${sessionScope.email}" /><tr>
+
             </table>
         </form>
     </fieldset>
