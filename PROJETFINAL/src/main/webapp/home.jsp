@@ -26,7 +26,9 @@
         window.location.href = '<%= request.getContextPath() %>/product-servlet';
     </script>
 </c:if>-->
-
+<br>
+<br>
+<div class="img-home"><img src="img/home-img.jpg" alt="Nos Produits"></div>
 
 <c:if test="${!empty sessionScope.InfoCompte.prenom && !empty sessionScope.InfoCompte.nom}">
     <div><h1>Bienvenue ${sessionScope.InfoCompte.prenom} ${sessionScope.InfoCompte.nom}</h1></div>
