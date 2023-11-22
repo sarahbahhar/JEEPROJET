@@ -103,12 +103,12 @@ h2 {
 }
 
 #product-carousel-nav .carousel-nav.prev {
-    left: -35%;
+    left: -45%;
     transform: rotate(-135deg);
 }
 
 #product-carousel-nav .carousel-nav.next {
-    right: -35%;
+    right: -45%;
     transform: rotate(45deg);
 }
 
