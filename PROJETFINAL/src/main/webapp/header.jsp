@@ -62,7 +62,7 @@
                             <button class="lien" type="submit">Mes Commandes</button>
                         </form>
 
-                    
+
 
                             <form   class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                                 <input type="hidden" name="path" value="myProfile.jsp" />
