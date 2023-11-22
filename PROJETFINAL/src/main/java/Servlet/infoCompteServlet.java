@@ -1,5 +1,6 @@
 package Servlet;
 import java.math.BigDecimal;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,7 +12,8 @@ import jakarta.servlet.http.HttpSession;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.io.IOException;
-
+import Model.Client;
+import DAO.CustomerDAO;
 import DAO.PanierDAO;
 import Model.Panier;
 import DAO.InfoAccountDAO;
@@ -65,7 +67,10 @@ public class infoCompteServlet extends HttpServlet {
             p.setTva(zero);
             p.setEmail(email);
             PanierDAO.createPanier(p);
-
+            Client c=new Client();
+            c.setEmail(email);
+            c.setPointsFidelite(0);
+            CustomerDAO.addCustomer(c);
             //session.setAttribute("InfoCompte", infocompte);
             session.invalidate();
             RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
