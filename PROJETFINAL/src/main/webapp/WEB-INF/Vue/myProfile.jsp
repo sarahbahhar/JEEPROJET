@@ -98,17 +98,19 @@
         </c:choose>
         <div style="display: flex; justify-content: space-between; margin-top: 20px;">
             <c:choose>
-
                 <c:when test="${sessionScope.role != 2}">
-
                     <form  style="text-align:left" action="${pageContext.request.contextPath}/bank-account-servlet" method="get">
                         <input type="hidden" name="email" value="${sessionScope.email}" />
-
                         <button class="bouton-golden" type="submit">Gérer mes cartes</button>
                     </form>
-
                 </c:when>
             </c:choose>
+            <c:if test="${sessionScope.role == 0}">
+                <form  style="text-align:left" action="${pageContext.request.contextPath}/redirect-servlet" method="get">
+                    <input type="hidden" name="path" value="formAddModerator.jsp" />
+                    <button class="bouton-golden" type="submit">Faire demande moderateur</button>
+                </form>
+            </c:if>
             <form  style="text-align:right" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                 <input type="hidden" name="path" value="changeMyInfo.jsp" />
                 <button class="bouton-golden" type="submit">Modifier mes informations</button>
