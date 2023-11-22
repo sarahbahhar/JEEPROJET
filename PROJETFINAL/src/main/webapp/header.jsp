@@ -66,7 +66,7 @@
 
                             <form   class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                                 <input type="hidden" name="path" value="myProfile.jsp" />
-                                <button class="lien" type="submit">Profile</button>
+                                <button class="lien" type="submit">Profil</button>
                             </form>
 
 

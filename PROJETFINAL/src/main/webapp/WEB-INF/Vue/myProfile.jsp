@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Profile</title>
+    <title>Mon Profil</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon"  href="./img/logo_onglet.ico" type="image/x-icon">
 
@@ -13,7 +13,7 @@
 
 
     <div style="width: 40%; margin: auto;">
-        <h1>Mon Profile</h1>
+        <h1>Mon Profil</h1>
         <fieldset>
             <legend>Informations</legend>
             <table>
