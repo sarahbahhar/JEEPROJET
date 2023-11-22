@@ -208,7 +208,10 @@ INSERT INTO Compte (email, mot_de_passe) VALUES ('sarah.bahhar@gmail.com', '8d96
 
 
 -- Ajout des informations du client dans la table Client
-INSERT INTO Client (email, points_fidelite) VALUES ('abdellah.hassani@gmail.com', 0);
+INSERT INTO Client (email, points_fidelite) VALUES
+                                                ('abdellah.hassani@gmail.com', 0),
+                                                ('loucas.terchani@gmail.com', 0),
+                                                ('sarah.bahhar@gmail.com', 0);
 
 
 
@@ -264,7 +267,6 @@ VALUES('abdellah.hassani@gmail.com','0');
 INSERT INTO ProduitCommande (idProduit,commande_numero, quantite,emailVendeur, titre, prix)
 VALUES (1,1, 2,'sarah.bahhar@gmail.com', 'Casque audio', 59.99),
        (1,2, 3,'loucas.terchani@gmail.com', 'Casquette de baseball', 19.99);
-
 
 
 INSERT INTO Panier (email, HT, TVA,TTC)
