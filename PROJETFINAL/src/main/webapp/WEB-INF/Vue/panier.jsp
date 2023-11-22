@@ -81,11 +81,12 @@
                 <p id="total-amount">${total} €</p>
             </div>
 
-            <form class='style' action="${pageContext.request.contextPath}/VerifyStockServlet" method="post">
-                <input type="hidden" name="path" value="payment.jsp" />
-                <button class="bouton-golden" type="submit">valider</button>
-            </form>
-
+            <c:if test="${not empty produitsDansPanier}">
+                <form class='style' action="${pageContext.request.contextPath}/VerifyStockServlet" method="post">
+                    <input type="hidden" name="path" value="payment.jsp" />
+                    <button class="bouton-golden" type="submit">valider</button>
+                </form>
+            </c:if>
         </div>
     </div>
 

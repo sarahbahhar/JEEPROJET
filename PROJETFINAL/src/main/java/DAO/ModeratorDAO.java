@@ -4,8 +4,11 @@ import Model.Client;
 import Model.Infocompte;
 import Model.Moderateur;
 import org.hibernate.Session;
+
+import java.math.BigDecimal;
 import java.util.List;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 public class ModeratorDAO {
     public List<Moderateur> getListModerateur() {
@@ -123,6 +126,23 @@ public class ModeratorDAO {
             if (session != null) {
                 session.close();
             }
+        }
+    }
+
+    public BigDecimal getAverageRatingByEmail(String email) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query query = session.createQuery("SELECT AVG(c.note) FROM Commentaires c WHERE c.emailVendeur = :email");
+            query.setParameter("email", email);
+            Double result = (Double) query.uniqueResult();
+
+            if (result != null) {
+                return BigDecimal.valueOf(result);
+            } else {
+                return BigDecimal.ZERO;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return BigDecimal.ZERO;
         }
     }
 }
