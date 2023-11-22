@@ -156,12 +156,29 @@
                         </form>
                 </c:when>
             </c:choose>
-
-
-
-
-
         </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Velour</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Cuir</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Tissu</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Lin</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Lin</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Tissu</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
 </body>
