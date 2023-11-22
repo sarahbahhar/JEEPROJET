@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Commande</title>
 </head>
 <body>
 <form action="${pageContext.request.contextPath}/order-servlet" method="post">

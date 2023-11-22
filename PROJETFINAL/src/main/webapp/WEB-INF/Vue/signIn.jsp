@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div style="width: 500px; margin: auto;">
+<div style="width: 40%; margin: auto;">
     <h1>Se connecter</h1>
     <form action="<%=request.getContextPath()%>/login" method="post">
         <fieldset>
