@@ -13,9 +13,7 @@
     <link rel="icon" type="image/png" href="./img/logo2.png">
 </head>
 <body>
-<header>
-    <h1>Panier</h1>
-</header>
+
 
 
 
@@ -23,70 +21,82 @@
 <div>
     <div class="global">
         <div class="box">
-            <c:forEach items="${panier}" var="produitPanier">
+            <c:choose>
+                <c:when test="${not empty produitsDansPanier}">
+                    <header>
+                        <h1>Panier</h1>
+                    </header>
+                <c:forEach items="${panier}" var="produitPanier">
 
 
-                <div>
-                <form class="article" action="${pageContext.request.contextPath}/redirect-product-order-servlet" method="post">
+                    <div>
+                    <form class="article" action="${pageContext.request.contextPath}/redirect-product-order-servlet" method="post">
 
-                        <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">
-
-
-                            <c:forEach var="produit" items="${produitsDansPanier}">
-                                <c:if test="${produit.id eq produitPanier.produitId}">
-                                    <p>Titre : ${produit.titre}</p>
-                                    <p>Prix : ${produit.prix} €</p>
-                                </c:if>
-                            </c:forEach>
-
-                            <p>Quantite : ${produitPanier.quantite}</p>
-
-                        </button>
+                            <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">
 
 
+                                <c:forEach var="produit" items="${produitsDansPanier}">
+                                    <c:if test="${produit.id eq produitPanier.produitId}">
+                                        <p>Titre : ${produit.titre}</p>
+                                        <p>Prix : ${produit.prix} €</p>
+                                    </c:if>
+                                </c:forEach>
+
+                                <p>Quantite : ${produitPanier.quantite}</p>
+
+                            </button>
 
 
 
 
-                    <input type="hidden" name="produit_id" value="${produitPanier.produitId}" />
 
 
-                </form>
-
-                    <form action="${pageContext.request.contextPath}/modify-quantity-servlet" method="post">
-                        <input type="hidden" name="produit_id" value="${produitPanier.produitId}">
-                        <input type="hidden" name="email" value="${sessionScope.email}" />
+                        <input type="hidden" name="produit_id" value="${produitPanier.produitId}" />
 
 
-                            <c:forEach var="produit" items="${produitsDansPanier}">
-                                <c:if test="${produit.id eq produitPanier.produitId}">
-                                    <select name="quantite" onchange="this.form.submit()">
-                                        <c:forEach var="i" begin="0" end="${produit.stock}">
-                                            <option value="${i}" <c:if test="${i eq produitPanier.quantite}">selected</c:if>>${i}</option>
-                                        </c:forEach>
-                                    </select>
-
-                                </c:if>
-                            </c:forEach>
-
-                        <noscript><input type="submit" value="Submit"></noscript>
                     </form>
 
+                        <form action="${pageContext.request.contextPath}/modify-quantity-servlet" method="post">
+                            <input type="hidden" name="produit_id" value="${produitPanier.produitId}">
+                            <input type="hidden" name="email" value="${sessionScope.email}" />
 
-                </c:forEach>
+
+                                <c:forEach var="produit" items="${produitsDansPanier}">
+                                    <c:if test="${produit.id eq produitPanier.produitId}">
+                                        <select name="quantite" onchange="this.form.submit()">
+                                            <c:forEach var="i" begin="0" end="${produit.stock}">
+                                                <option value="${i}" <c:if test="${i eq produitPanier.quantite}">selected</c:if>>${i}</option>
+                                            </c:forEach>
+                                        </select>
+
+                                    </c:if>
+                                </c:forEach>
+
+                            <noscript><input type="submit" value="Submit"></noscript>
+                        </form>
+
+
+                    </c:forEach>
+                    </div>
+
+                <div>
+                    <h2>Total</h2>
+                    <p id="total-amount">${total} €</p>
                 </div>
 
-            <div>
-                <h2>Total</h2>
-                <p id="total-amount">${total} €</p>
-            </div>
 
-            <c:if test="${not empty produitsDansPanier}">
-                <form class='style' action="${pageContext.request.contextPath}/VerifyStockServlet" method="post">
-                    <input type="hidden" name="path" value="payment.jsp" />
-                    <button class="bouton-golden" type="submit">valider</button>
-                </form>
-            </c:if>
+                    <form class='style' action="${pageContext.request.contextPath}/VerifyStockServlet" method="post">
+                        <input type="hidden" name="path" value="payment.jsp" />
+                        <button class="bouton-golden" type="submit">valider</button>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <header>
+                        <h1>Votre panier est vide</h1>
+                    </header>
+
+                </c:otherwise>
+            </c:choose>
         </div>
     </div>
 
