@@ -33,7 +33,8 @@ public class NewBankAccountServlet extends HttpServlet {
                     cB.setNumero(numero);
                     cB.setCvv(cvvS);
                     bAccountDAO.addComptebancaire(cB);
-                    response.sendRedirect(request.getContextPath() + "/product-servlet");
+                    response.sendRedirect(request.getContextPath() + "/bank-account-servlet?email="+email);
+
             }
 
             }catch(Exception e){
