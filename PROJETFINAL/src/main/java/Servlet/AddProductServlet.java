@@ -19,6 +19,7 @@ import java.nio.file.Paths;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.servlet.http.Part;
@@ -39,7 +40,7 @@ import jakarta.servlet.http.Part;
 public class AddProductServlet extends HttpServlet {
 
     public static final int SIZE_BUFFER = 10240;
-    public static final String PATH_IMAGE = "/src/main/webapp/img/";
+    public static final String PATH_IMAGE = "../../src/main/webapp/img/";
 
     private ProduitDAO ProduitDAO = new ProduitDAO();
 
@@ -77,6 +78,8 @@ public class AddProductServlet extends HttpServlet {
 
                 // On écrit définitivement le fichier sur le disque
                 writeFile(filePart, fileName, PATH_IMAGE);
+
+                writeFile(filePart, fileName, "img/");
             }
 
 
@@ -95,8 +98,8 @@ public class AddProductServlet extends HttpServlet {
 // Vous avez maintenant un objet Produit (p) avec tous les attributs remplis.
 
                 ProduitDAO.addProduct(p);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/productList.jsp");
-                dispatcher.forward(request, response);
+
+
             } else {
                 request.setAttribute("error", "Pb");
             }
@@ -106,6 +109,10 @@ public class AddProductServlet extends HttpServlet {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        String email = request.getParameter("email");
+
+        response.sendRedirect(request.getContextPath()+"/my-product-list-servlet?email="+email); // changer type=page  produti et idproduit s'inspirer de produitCommande
+
 
 
     }
@@ -124,7 +131,7 @@ public class AddProductServlet extends HttpServlet {
 
     private void writeFile(Part part, String fileName, String path) throws IOException {
             // Obtenez le chemin réel à partir du chemin relatif
-            String absolutePath = getServletContext().getRealPath("/") + "../../" + path;
+            String absolutePath = getServletContext().getRealPath("/")  + path;
 
             // Assurez-vous que le répertoire existe, sinon créez-le
             File imageDir = new File(absolutePath);

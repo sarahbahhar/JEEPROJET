@@ -20,11 +20,13 @@ public class DeleteProductServlet extends HttpServlet {
     private ProduitDAO ProDAO=new ProduitDAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/product-servlet?email=");
+        doPost(request,response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String email=request.getParameter("email");
         try {
             String idStr=request.getParameter("id");
+
             Integer id = Integer.parseInt(idStr);
 
 
@@ -33,17 +35,14 @@ public class DeleteProductServlet extends HttpServlet {
 
                 ProduitDAO.removeProductById(id);
 
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/gererProduit.jsp");
-                try {
-                    dispatcher.forward(request, response);
-                } catch (ServletException e) {
-                    throw new RuntimeException(e);
-                }
+
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        response.sendRedirect(request.getContextPath()+"/my-product-list-servlet?email="+email); // changer type=page  produti et idproduit s'inspirer de produitCommande
+
     }
 
     private void deleteImageFile(String fileName) {

@@ -101,7 +101,7 @@
                                 <input type="hidden" name="email" value="${sessionScope.email}" />
                                 <button class="lien" type="submit">Mes Ventes</button>
                             </form>
-                            <form class='style' action="${pageContext.request.contextPath}/product-servlet" method="post">
+                            <form class='style' action="${pageContext.request.contextPath}/my-product-list-servlet" method="post">
                                 <input type="hidden" name="email" value="${sessionScope.email}" />
                                 <button class="lien" type="submit">Gérer Produit</button>
                             </form>
@@ -116,7 +116,7 @@
 
                         <form   class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                             <input type="hidden" name="path" value="myProfile.jsp" />
-                            <button class="lien" type="submit">Profile</button>
+                            <button class="lien" type="submit">Profil</button>
                         </form>
 
 

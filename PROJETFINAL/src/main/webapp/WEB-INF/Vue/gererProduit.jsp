@@ -16,11 +16,11 @@
 
 <div>
     <div class="global">
-        <div class="box">
+        <div class="box" style="display: grid;">
             <c:forEach items="${produits}" var="produit">
                 <form action="${pageContext.request.contextPath}/product-details" method="post">
-                    <div class="article">
-                        <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">
+                    <div class="article" style="display: flex; justify-content: center; align-items: center;">
+                        <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;" >
                             <img src="./img/${produit.nomImage}" style="width: 100px; height: 100px; margin-right: 10px;">
                             <div>
                                 <h5>${produit.titre}</h5>
