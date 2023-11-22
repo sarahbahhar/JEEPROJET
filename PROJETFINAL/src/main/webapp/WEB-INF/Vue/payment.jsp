@@ -29,7 +29,7 @@
                         ${carte.nom}
                 </td>
                 <td>
-                    **** **** **** ${carte.numero} (${carte.date})
+                    **** **** **** ${fn:substring(carte.numero, fn:length(carte.numero) - 4, fn:length(carte.numero))} (${carte.date})
                 </td>
             </tr>
         </c:forEach>
@@ -49,7 +49,7 @@
         <br>
 
         <label>Numéro de Carte:</label>
-        <input type="text" id="numero" name="numero" pattern="[0-9]{1}" required>
+        <input type="text" id="numero" name="numero" pattern="[0-9]{16}" required>
         <br>
 
         <label >Date d'Expiration (MM/AA):</label>

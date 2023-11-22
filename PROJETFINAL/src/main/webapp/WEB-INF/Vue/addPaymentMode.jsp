@@ -13,7 +13,7 @@
     <br>
 
     <label>Numéro de Carte:</label>
-    <input type="text" id="numero" name="numero" pattern="[0-9]{1}" required>
+    <input type="text" id="numero" name="numero" pattern="[0-9]{16}" required>
     <br>
 
     <label >Date d'Expiration (MM/AA):</label>
