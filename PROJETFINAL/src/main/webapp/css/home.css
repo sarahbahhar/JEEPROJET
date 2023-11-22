@@ -15,7 +15,7 @@ justify-content: space-between;
 display: flex;
 align-items: center;
 justify-content: center;
-border: 2px solid #a7976a;
+border: 2px solid #0d6735;
 border-radius: 4px;
 padding: 10px 20px;
 cursor: pointer;
@@ -24,14 +24,14 @@ height: 200px;
 }
 
 .article:hover {
-background-color: #a7976a;
+background-color: #0d6735;
 color: #f7f6f2;
 border-color: #0d6735;
 }
 
 .gauche{
 width: 30%;
-border: 2px solid #a7976a;
+border: 2px solid #0d6735;
 border-radius: 4px;
 }
 

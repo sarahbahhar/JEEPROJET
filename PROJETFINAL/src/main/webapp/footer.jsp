@@ -33,7 +33,7 @@
             <li><a href="about.jsp">A propos</a></li>
             <li><a href="contact.jsp">Contacter</a></li>
         </ul>
-        <center>© 2023, MilanGo.com</center>
+        <center> 2023, Divan.com</center>
         <ul class="logo">
             <li style="padding-left: 0px;"><a><i class="fab fa-facebook-f"></i></a></li>
             <li><a><i class="fab fa-twitter"></i></a></li>
