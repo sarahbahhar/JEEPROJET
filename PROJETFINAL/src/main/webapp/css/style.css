@@ -73,11 +73,9 @@ p{
 
 /***** Misc Styles *****/
 .container-left {
-    width: 500px;
+    width: 50%;
     margin: auto;
     background: #f7f6f2;
-    padding: 100px;
-    margin-top: 30px;
     border: 1px;
     text-align: center;
 }
