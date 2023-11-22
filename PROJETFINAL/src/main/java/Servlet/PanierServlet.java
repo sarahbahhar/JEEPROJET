@@ -1,10 +1,12 @@
 package Servlet;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import DAO.ProduitDAO;
+import Model.Panier;
 import Model.Produit;
 import Model.Produitcommande;
 import DAO.PanierDAO;
@@ -42,6 +44,15 @@ public class PanierServlet extends HttpServlet {
                 produitsDansPanier.add(produit);
             }
         }
+        Panier p=new Panier();
+        BigDecimal zero= new BigDecimal(0);
+        BigDecimal ttc=new BigDecimal(total);
+        p.setTtc(ttc);
+        p.setTva(zero);
+        p.setHt(zero);
+        p.setEmail(email);
+        PanierDAO.updatePanier(email, p);
+
 
         request.setAttribute("panier", panier);
         request.setAttribute("total", total);

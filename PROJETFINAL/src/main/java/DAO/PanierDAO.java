@@ -18,6 +18,36 @@ public class PanierDAO {
         session.close();
     }
 
+    public static void updatePanier(String email, Panier updated){
+        Session session = null;
+        Transaction transaction = null;
+
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            Panier toChange = (Panier) session.get(Panier.class, email);
+
+            // Mettre à jour les champs de le panier existant avec les nouvelles valeurs
+
+            toChange.setHt(updated.getHt());
+            toChange.setTva(updated.getTva());
+            toChange.setTtc(updated.getTtc());
+
+            // Enregistrer les modifications dans la base de données
+            session.update(toChange);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
     // Méthode pour récupérer les produits du panier
     public static List<Produitpanier> getListProduitpanier(String email) {
 
