@@ -138,7 +138,7 @@ header {
 }
 
 .menu-deroulant:hover {
-    border: 2px solid #a7976a;
+    border: 2px solid #0d6735;
     border-radius: 5px;
     background-color: #f7f6f2;
 }
@@ -149,7 +149,7 @@ header {
     top: 100%;
     left: 0;
     right: 0; /* Ajoutez cette ligne pour centrer horizontalement */
-    border: 2px solid #a7976a;
+    border: 2px solid #0d6735;
     border-radius: 5px;
     background-color: #f7f6f2;
     border-top: none;
@@ -189,7 +189,7 @@ header {
 }
 
 .menu-deroulant form button:hover {
-    background-color: #a7976a;
+    background-color: #0d6735;
 
 }
 
