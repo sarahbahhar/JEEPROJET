@@ -265,8 +265,6 @@ INSERT INTO ProduitCommande (idProduit,commande_numero, quantite,emailVendeur, t
 VALUES (1,1, 2,'sarah.bahhar@gmail.com', 'Casque audio', 59.99),
        (1,2, 3,'loucas.terchani@gmail.com', 'Casquette de baseball', 19.99);
 
-INSERT INTO CompteBancaire (numero, nom,date, cvv, email)
-VALUES ('1','Abdellah Hassani','01/01','111','abdellah.hassani@gmail.com');
 
 
 INSERT INTO Panier (email, HT, TVA,TTC)
