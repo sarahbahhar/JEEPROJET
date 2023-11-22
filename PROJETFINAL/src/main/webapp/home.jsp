@@ -39,7 +39,7 @@
 
 
 <div id="product-carousel-container">
-    <h2>Selection de canapé confortables</h2>
+    <h2>Selection de canapé confortable</h2>
     <ul id="product-carousel">
         <li class="item-1">
             <img src="img/canap1.png">
