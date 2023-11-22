@@ -10,9 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35573922-8f04-425f-84e1-8e242c3366fb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/ProductSliderHome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/canap1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/canap2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/canap3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/canap4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/canap5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/ProductSliderHome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/home-img.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/home-img.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +29,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="Jsp File" />
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -74,8 +81,8 @@
       <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp" />
       <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\img" />
+      <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="Model" />
@@ -198,7 +205,7 @@
       <workItem from="1700500287370" duration="5365000" />
       <workItem from="1700516767597" duration="94000" />
       <workItem from="1700650316719" duration="1735000" />
-      <workItem from="1700667619792" duration="3791000" />
+      <workItem from="1700667619792" duration="12621000" />
     </task>
     <servers />
   </component>

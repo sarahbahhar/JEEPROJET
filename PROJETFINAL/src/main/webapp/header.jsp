@@ -162,10 +162,10 @@
                     <a class="nav-link" href="#">Lin</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Lin</a>
+                    <a class="nav-link" href="#">Banc</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Tissu</a>
+                    <a class="nav-link" href="#">Exterieur</a>
                 </li>
             </ul>
         </div>
