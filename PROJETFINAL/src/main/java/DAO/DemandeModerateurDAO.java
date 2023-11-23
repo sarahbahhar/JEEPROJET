@@ -34,4 +34,26 @@ public class DemandeModerateurDAO {
         session.close();
 
     }
+    public static boolean isEmailInModeratorRequests(String email) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            session.beginTransaction();
+            // Requête pour vérifier si l'email est présent
+            String hql = "SELECT count(*) FROM Demandemoderateur WHERE email = :email";
+            Long count = (Long) session.createQuery(hql)
+                    .setParameter("email", email)
+                    .uniqueResult();
+            session.getTransaction().commit();
+            // Renvoie true si le nombre d'entrées est supérieur à 0
+            return count != null && count > 0;
+        } catch (Exception e) {
+            if (session.getTransaction() != null) {
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return false;
+    }
 }

@@ -57,6 +57,7 @@ public class LoginServlet extends HttpServlet{
         if (CompteDAO.validate(email, password)) {
             HttpSession session = request.getSession();
             session.setAttribute("email",email);
+            session.setAttribute("demandeModerateur",DAO.DemandeModerateurDAO.isEmailInModeratorRequests(email));
 
             if (AdminDAO.emailExists(email)) {
                 session.setAttribute("role", 2); // 2 pour admin

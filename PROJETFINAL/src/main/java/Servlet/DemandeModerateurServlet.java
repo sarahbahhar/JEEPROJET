@@ -8,8 +8,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.nio.file.Files;
 
 @WebServlet(name = "demandeModeratorServlet", value = "/demande-moderator-servlet")
 public class DemandeModerateurServlet extends HttpServlet {
@@ -26,7 +28,10 @@ public class DemandeModerateurServlet extends HttpServlet {
             dM.setEmail(email);
             dM.setMessage(description);
             formModeratorDAO.addModerator(dM);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/Vue/formAddModerator.jsp");
+            HttpSession session = request.getSession();
+            session.setAttribute("demandeModerateur",true);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/Vue/myProfile.jsp");
             dispatcher.forward(request, response);
 
 

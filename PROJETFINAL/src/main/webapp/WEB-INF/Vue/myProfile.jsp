@@ -105,7 +105,7 @@
                     </form>
                 </c:when>
             </c:choose>
-            <c:if test="${sessionScope.role == 0}">
+            <c:if test="${sessionScope.role == 0 && sessionScope.demandeModerateur == false }">
                 <form  style="text-align:left" action="${pageContext.request.contextPath}/redirect-servlet" method="get">
                     <input type="hidden" name="path" value="formAddModerator.jsp" />
                     <button class="bouton-golden" type="submit">Faire demande moderateur</button>
