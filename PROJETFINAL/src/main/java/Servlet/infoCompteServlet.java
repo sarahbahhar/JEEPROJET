@@ -1,6 +1,8 @@
 package Servlet;
 import java.math.BigDecimal;
 
+import DAO.*;
+import Model.Compte;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,10 +15,7 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.io.IOException;
 import Model.Client;
-import DAO.CustomerDAO;
-import DAO.PanierDAO;
 import Model.Panier;
-import DAO.InfoAccountDAO;
 import Model.Infocompte;
 
 @WebServlet("/infoCompteServlet")
@@ -47,8 +46,15 @@ public class infoCompteServlet extends HttpServlet {
             Integer codePostal= Integer.parseInt(request.getParameter("codePostal"));
             String pays=request.getParameter("pays");
 
+
             //out.println(email);
             //out.close();
+            Compte compte=new Compte();
+            compte.setEmail(email);
+            compte.setAndHashMotDePasse((String) session.getAttribute("password"));
+            session.removeAttribute("password");
+            CompteDAO.addCompte(compte);//create Compte in DB
+            TokenDAO.addToken(email);
             Infocompte infocompte=new Infocompte();
             infocompte.setEmail(email);
             infocompte.setDateNaissance((java.sql.Date) sqlDate);
@@ -59,18 +65,18 @@ public class infoCompteServlet extends HttpServlet {
             infocompte.setPays(pays);
             infocompte.setNom(nom);
             infocompte.setPrenom(prenom);
-            infocompteDAO.addInfoCompte(infocompte);
+            infocompteDAO.addInfoCompte(infocompte);// create infocomte in DB
             Panier p=new Panier();
             BigDecimal zero=new BigDecimal(0);
             p.setHt(zero);
             p.setTtc(zero);
             p.setTva(zero);
             p.setEmail(email);
-            PanierDAO.createPanier(p);
+            PanierDAO.createPanier(p);// create cart in DB
             Client c=new Client();
             c.setEmail(email);
             c.setPointsFidelite(0);
-            CustomerDAO.addCustomer(c);
+            CustomerDAO.addCustomer(c);//create Customer account in DB
             //session.setAttribute("InfoCompte", infocompte);
             session.invalidate();
             RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");

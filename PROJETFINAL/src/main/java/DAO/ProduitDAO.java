@@ -91,5 +91,22 @@ public class ProduitDAO
             e.printStackTrace();
         }
     }
+
+    public static List<Produit> getProductsByCategory(String categorie) {
+        List<Produit> produit = null;
+
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+            produit = session.createQuery("FROM Produit P WHERE P.categorie = :categorie")
+                    .setParameter("categorie", categorie)
+                    .list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return produit;
+    }
+
     }
 

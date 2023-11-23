@@ -11,8 +11,8 @@
 <h1>Moderator List</h1>
 <table>
     <tr>
-        <th>Note Moyenne</th>
         <th>Email</th>
+        <th>Note Moyenne</th>
         <th>Can Add Product</th>
         <th>Can delete Product</th>
         <th>Max Product</th>
@@ -20,8 +20,15 @@
 
     <c:forEach items="${moderators}" var="moderator">
         <tr>
-            <td>${averageRatings[moderator.email]}</td>
             <td>${moderator.email}</td>
+            <c:choose>
+                <c:when test="${averageRatings[moderator.email] ne 0}">
+                    <td>${averageRatings[moderator.email]}</td>
+                </c:when>
+                <c:otherwise>
+                    <td>-</td>
+                </c:otherwise>
+            </c:choose>
             <td>${moderator.peutAjouterProduit}</td>
             <td>${moderator.peutSupprimerProduit}</td>
             <td>${moderator.maxProduitsLigne}</td>
