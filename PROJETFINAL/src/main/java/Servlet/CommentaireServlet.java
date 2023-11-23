@@ -3,6 +3,7 @@ package Servlet;
 import DAO.CommentairesDAO;
 import DAO.ProduitDAO;
 import Model.Commentaires;
+import Model.Infocompte;
 import Model.Produit;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -10,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -17,12 +19,14 @@ import java.io.IOException;
 public class CommentaireServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session= request.getSession();
         String commentaire = request.getParameter("commentaire");
         int produitId = Integer.parseInt(request.getParameter("produit_id"));
         Produit produit = ProduitDAO.getProduitById(produitId);
         String emailVendeur = produit.getEmail();
         int rating = Integer.parseInt(request.getParameter("rating"));
-        String emailAcheteur = request.getParameter("email"); // Récupération de l'email de l'acheteur
+        Infocompte ic=(Infocompte) session.getAttribute("InfoCompte");
+        String emailAcheteur = ic.getEmail(); // Récupération de l'email de l'acheteur
          // Récupération de l'email de l'utilisateur connecté
 
         // Validation des données (vérification des plages, nettoyage des entrées, etc.)

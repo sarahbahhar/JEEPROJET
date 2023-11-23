@@ -26,6 +26,14 @@ public class ProductDetailsServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String produitIdParam = request.getParameter("produit_id");
         String type = request.getParameter("type");
+        String commandeIdStr=request.getParameter("commande_id");
+        int commandeId;
+        if(commandeIdStr==null){
+            commandeId=-1;
+        }
+        else{
+            commandeId=Integer.parseInt(commandeIdStr);
+        }
 
         if (produitIdParam != null) {
             int produitId = Integer.parseInt(produitIdParam);
@@ -35,6 +43,7 @@ public class ProductDetailsServlet extends HttpServlet {
             request.setAttribute("noteMoyenne", noteMoyenne);
             List<Commentaires> commentaires = CommentairesDAO.getCommentairesByProduitId(produitId);
             request.setAttribute("commentaires", commentaires);
+            request.setAttribute("commande_id",commandeId);
 
         }
         RequestDispatcher dispatcher;

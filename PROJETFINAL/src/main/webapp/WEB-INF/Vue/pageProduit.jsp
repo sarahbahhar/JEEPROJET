@@ -63,22 +63,24 @@
     </c:forEach>
 
     <c:if test="${not empty sessionScope.email}">
-        <div class="comment-section">
-            <h3>Laissez un commentaire :</h3>
-            <form method="post" action="<%=request.getContextPath()%>/commentaire-servlet">
-                <textarea name="commentaire" rows="4" cols="50"></textarea><br>
-                <label for="rating">Note :</label>
-                <select id="rating" name="rating">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select><br>
-                <input type="hidden" name="produit_id" value="${produit.id}">
-                <input type="submit" value="Soumettre">
-            </form>
-        </div>
+        <c:if test="${commande_id>0}">
+            <div class="comment-section">
+                <h3>Laissez un commentaire :</h3>
+                <form method="post" action="<%=request.getContextPath()%>/commentaire-servlet">
+                    <textarea name="commentaire" rows="4" cols="50"></textarea><br>
+                    <label for="rating">Note :</label>
+                    <select id="rating" name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select><br>
+                    <input type="hidden" name="produit_id" value="${produit.id}">
+                    <input type="submit" value="Soumettre">
+                </form>
+            </div>
+        </c:if>
     </c:if>
 </div>
 </body>
