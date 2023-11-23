@@ -22,6 +22,7 @@ public class CommentaireServlet extends HttpServlet {
         Produit produit = ProduitDAO.getProduitById(produitId);
         String emailVendeur = produit.getEmail();
         int rating = Integer.parseInt(request.getParameter("rating"));
+        String emailAcheteur = request.getParameter("email"); // Récupération de l'email de l'acheteur
          // Récupération de l'email de l'utilisateur connecté
 
         // Validation des données (vérification des plages, nettoyage des entrées, etc.)
@@ -31,6 +32,7 @@ public class CommentaireServlet extends HttpServlet {
         newComment.setNote(rating);
         newComment.setEmailVendeur(emailVendeur);
         newComment.setCommentaire(commentaire);
+        newComment.setEmail(emailAcheteur);
 
         // Enregistrement dans la base de données
         CommentairesDAO.addCommentaire(newComment);
