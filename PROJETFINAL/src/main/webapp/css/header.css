@@ -208,7 +208,7 @@ header {
     position: relative;
 }
 
-.navbar-nav li > a {
+.navbar-nav li >form>button> a {
     color: #0d6735;
     text-align: center;
     display: block;
@@ -216,19 +216,19 @@ header {
     position: relative;
 }
 
-.navbar-nav li > a > span {
+.navbar-nav li >form>button> a > span {
     display: inline-block;
 
 }
-.navbar-nav li > a:hover {
+.navbar-nav li >form>button> a:hover {
     color : #119b18;
 }
-.navbar-nav li > a:hover > span {
+.navbar-nav li >form>button> a:hover > span {
     text-decoration: underline;
     /* Soulignement uniquement au survol */
 }
 
-.navbar-nav li > a:after {
+.navbar-nav li >form>button> a:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -239,11 +239,19 @@ header {
     transition: width .3s;
 }
 
-.navbar-nav li > a:hover::after {
+.navbar-nav li >form>button> a:hover::after {
     width: 100%;
     /*transition: width .3s;*/
 }
-.navbar-nav li > a {
+.navbar-nav li>form>button > a {
     text-decoration: none; /* Remove the default underline on hover */
 }
-
+.navbar-nav li>form>button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+}

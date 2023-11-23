@@ -1,12 +1,13 @@
 /* footer */
 .color { 
-    color:#2E3F58;
+    color:#0d6735;
 }
 
 footer { 
     width:100%; 
-    background-color:#f9f7f7; 
-    min-height:250px; 
+    background-color:#f7f6f2;
+    min-height:250px;
+    font-family: Helvetica,sans-serif;
 }
 
 ul{
@@ -20,7 +21,7 @@ ul{
 
 footer p { 
     font-size:13px; 
-    color:#2E3F58; 
+    color:#0d6735;
     padding-bottom:0px; 
     margin-bottom:8px;
 }
@@ -34,7 +35,7 @@ footer p {
 
 .name li {
     padding:0px 0px 5px 0px;
-    color:#2E3F58;
+    color:#0d6735;
 }
 
 .fleft { 
@@ -42,7 +43,7 @@ footer p {
 }
 
 .bottom_border { 
-    border-bottom:1px solid #2E3F58; 
+    border-bottom:1px solid #0d6735;
     padding-bottom:20px;
     width: 50%;
 }
@@ -62,7 +63,7 @@ footer p {
 }
 
 .button_link li a { 
-    color:#2E3F58; 
+    color:#0d6735;
     margin:0 12px;
 }
 
@@ -79,8 +80,8 @@ footer p {
 }
 
 .logo li a { 
-    color:#2E3F58; 
-    border:1px solid #2E3F58; 
+    color:#0d6735;
+    border:1px solid #0d6735;
     padding:8px;
     border-radius:50%;
 }

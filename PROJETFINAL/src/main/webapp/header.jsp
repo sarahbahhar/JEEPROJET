@@ -152,22 +152,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Velour</a>
+                    <form class='style' action="${pageContext.request.contextPath}/velour-products" method="get">
+                        <button type="submit"><a class="nav-link">Velour</a></button>
+                    </form>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Cuir</a>
+                    <form class='style' action="${pageContext.request.contextPath}/cuir-products" method="get">
+                        <button type="submit"><a class="nav-link">Cuir</a></button>
+                    </form>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Tissu</a>
+                    <form class='style' action="${pageContext.request.contextPath}/tissu-products" method="get">
+                        <button type="submit"><a class="nav-link">Tissu</a></button>
+                    </form>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Lin</a>
+                    <form class='style' action="${pageContext.request.contextPath}/lin-products" method="get">
+                        <button type="submit"><a class="nav-link">Lin</a></button>
+                    </form>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Banc</a>
+                    <form class='style' action="${pageContext.request.contextPath}/banc-products" method="get">
+                        <button type="submit"><a class="nav-link">Banc</a></button>
+                    </form>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Exterieur</a>
+                    <form class='style' action="${pageContext.request.contextPath}/exterieur-products" method="get">
+                        <button type="submit"><a class="nav-link">Exterieur</a></button>
+                    </form>
                 </li>
             </ul>
         </div>
