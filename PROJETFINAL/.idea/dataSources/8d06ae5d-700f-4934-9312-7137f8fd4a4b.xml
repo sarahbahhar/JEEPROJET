@@ -968,8 +968,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="281" parent="1" name="projet_jee">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-24.00:11:39</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-23.22:11:39</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-24.00:23:37</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-23.22:23:37</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="282" parent="1" name="sys">
@@ -1424,7 +1424,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="376" parent="297" name="id">
-      <AutoIncrement>6</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

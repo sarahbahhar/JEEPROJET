@@ -66,7 +66,8 @@ CREATE TABLE Moderateur (
                             max_produits_ligne INT NOT NULL DEFAULT 10,
                             nbBannissement INT NOT NULL DEFAULT 0,
                             dateBanni date,
-                            motifBannissement Text(200),
+                            motifCourtBannissement VARCHAR(100) DEFAULT NULL,
+                            motifLongBanissement TEXT DEFAULT NULL,
                             FOREIGN KEY (email) REFERENCES Compte(email)
 );
 -- Table Demande Moderateur avec les droits intégrés
