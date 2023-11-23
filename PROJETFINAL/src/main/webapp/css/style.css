@@ -28,6 +28,9 @@ h1,h2,h3,h4,h5 {
      color: black;
  }
 
+.red-text {
+    color: red;
+}
 
 /* Style pour le bouton "Supprimer mon compte" */
 .bouton-golden {

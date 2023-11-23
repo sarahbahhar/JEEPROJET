@@ -6,6 +6,7 @@ import Model.Moderateur;
 import org.hibernate.Session;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -18,9 +19,9 @@ public class ModeratorDAO {
         session.close();
         return result;
     }
-    public static void addModerator(Model.Moderateur m)
-    {
-        Session session= HibernateUtil.getSessionFactory().openSession();
+
+    public static void addModerator(Model.Moderateur m) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(m);
         session.getTransaction().commit();
@@ -29,7 +30,7 @@ public class ModeratorDAO {
 
     public static boolean emailExists(String email) {
         Transaction transaction = null;
-        Moderateur  moderator = null;
+        Moderateur moderator = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // Démarrez une transaction
             transaction = session.beginTransaction();
@@ -53,10 +54,10 @@ public class ModeratorDAO {
         }
         return false;
     }
-    public static void removeModerator(String email)
-    {
+
+    public static void removeModerator(String email) {
         Moderateur m;
-        Session session= HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         m = (Moderateur) session.createQuery("FROM Moderateur m WHERE m.email = :email").setParameter("email", email).uniqueResult();
         List list = session.createQuery("from Moderateur").list(); // a revoir
@@ -64,6 +65,7 @@ public class ModeratorDAO {
         session.getTransaction().commit();
         session.close();
     }
+
     public static int[] getAllPermissionsByEmail(String email) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -92,10 +94,11 @@ public class ModeratorDAO {
 
         return allPermissions;
     }
+
     public void updateModerator(Moderateur updated) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
-        String email= updated.getEmail();
+        String email = updated.getEmail();
         try {
 
             // Exécuter la requête pour obtenir l'objet Moderateur
@@ -143,6 +146,35 @@ public class ModeratorDAO {
         } catch (Exception e) {
             e.printStackTrace();
             return BigDecimal.ZERO;
+        }
+    }
+
+    public static void bannirByEmail(String email, String motifCourt, String motifLong) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            Moderateur moderator = (Moderateur) session.createQuery("FROM Moderateur M WHERE M.email = :email")
+                    .setParameter("email", email)
+                    .uniqueResult();
+
+            if (moderator != null) {
+                // Mettre à jour les champs pour le bannissement
+                moderator.setMotifCourtBannissement(motifCourt);
+                moderator.setMotifLongBanissement(motifLong);
+                moderator.setNbBannissement(moderator.getNbBannissement() + 1);
+                moderator.setPeutAjouterProduit((byte) 0);
+                moderator.setPeutSupprimerProduit((byte) 0);
+                session.update(moderator);
+                transaction.commit();
+            } else {
+                System.out.println("Aucun modérateur trouvé avec l'email : " + email);
+            }
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
         }
     }
 }
