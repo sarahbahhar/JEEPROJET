@@ -215,6 +215,7 @@ INSERT INTO Client (email, points_fidelite) VALUES
 
 
 
+
 -- Ajout du modérateur dans la table Moderateur
 INSERT INTO Admin (email) VALUES ('simon.ren@gmail.com');
 
@@ -271,7 +272,9 @@ VALUES (1,1, 2,'sarah.bahhar@gmail.com', 'Casque audio', 59.99),
 
 INSERT INTO Panier (email, HT, TVA,TTC)
 VALUES
-    ("abdellah.hassani@gmail.com",0,0,0);
+    ("abdellah.hassani@gmail.com",0,0,0),
+    ("loucas.terchani@gmail.com",0,0,0),
+    ("sarah.bahhar@gmail.com",0,0,0);
 
 
 

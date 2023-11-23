@@ -124,10 +124,11 @@
                             <button class="lien" type="submit">Se Déconnecter</button>
                         </form>
 
-                        <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                                <input type="hidden" name="path" value="panier.jsp" />
-                                <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
-                            </form>
+
+                        <form class='style' action="${pageContext.request.contextPath}/panier-servlet" method="get">
+                            <input type="hidden" name="email" value="${sessionScope.email}" />
+                            <button class="lien" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Panier</button>
+                        </form>
 
                 </c:when>
                 <c:when test="${sessionScope.role == 2}">

@@ -78,7 +78,7 @@ public class PanierServlet extends HttpServlet {
 
             PanierDAO.ajouterProduitAuPanier(email, produitId, quantite);
 
-            response.sendRedirect(request.getContextPath()+"/product-details?type=pageProduit&produit_id="+produitId);
+            response.sendRedirect(request.getContextPath()+"/product-details?type=pageProduit&produit_id="+produitId +produitId);
 
     }
 
