@@ -6,12 +6,10 @@ import java.util.Date;
 import java.util.List;
 
 import DAO.ComptebancaireDAO;
+import DAO.CustomerDAO;
 import DAO.PanierDAO;
 import DAO.ProduitDAO;
-import Model.Comptebancaire;
-import Model.Infocompte;
-import Model.Produit;
-import Model.Produitpanier;
+import Model.*;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -54,9 +52,19 @@ public class VerifyStockServlet extends HttpServlet {
                 }
             }
 
+            Client c= CustomerDAO.getClient(email);
+            int pointFidelite=c.getPointsFidelite();
+            session.setAttribute("pointFidelite", pointFidelite);
+            if(pointFidelite>=100 && (double) session.getAttribute("total")>10){
+                request.setAttribute("totalReduit", (double) session.getAttribute("total")-10);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/fidelite.jsp");
+                dispatcher.forward(request, response);
+            }
+            else{
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/payment.jsp");
+                dispatcher.forward(request, response);
+            }
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/payment.jsp");
-            dispatcher.forward(request, response);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block

@@ -2,6 +2,7 @@ package DAO;
 
 import Model.Client;
 import Model.Demandemoderateur;
+import Model.Infocompte;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -78,5 +79,55 @@ public class CustomerDAO {
         }
     }
 
-    // Other generic DAO methods to manage entities
+    public static Client getClient(String email){
+        Client c= null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            c = (Client) session.createQuery("FROM Client WHERE email = :email").setParameter("email", email).uniqueResult();
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+
+        return c;
+    }
+
+    public static void updateClient(String email, Client updated) {
+        Session session = null;
+        Transaction transaction = null;
+
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+
+            // Charger le client existant à partir de la base de données
+            Client toChange = (Client) session.get(Client.class, email);
+
+            // Mettre à jour les champs de client existant avec les nouvelles valeurs
+
+            toChange.setPointsFidelite(updated.getPointsFidelite());
+
+            // Enregistrer les modifications dans la base de données
+            session.update(toChange);
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
 }
