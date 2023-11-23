@@ -66,6 +66,7 @@ CREATE TABLE Moderateur (
                             max_produits_ligne INT NOT NULL DEFAULT 10,
                             nbBannissement INT NOT NULL DEFAULT 0,
                             dateBanni date,
+                            motifBannissement Text(200),
                             FOREIGN KEY (email) REFERENCES Compte(email)
 );
 -- Table Demande Moderateur avec les droits intégrés
@@ -248,6 +249,7 @@ VALUES
     ('Chaussettes de sport', 'chaussette.jpg', 'Chaussettes confortables pour le sport', 9.99, 'Ces chaussettes de sport vous offrent un confort ultime pendant vos séances d entraînement. Respirantes et durables, elles sont un choix idéal pour les athlètes.', 200, 'loucas.terchani@gmail.com'),
     ('Claquettes de plage', 'claquette.jpg', 'Claquettes légères pour lété', 14.99, 'Les claquettes de plage sont essentielles pour lété. Légères et confortables, elles sont parfaites pour se détendre à la plage ou à la piscine.', 250, 'sarah.bahhar@gmail.com'),
     ('Clavier mécanique', 'clavier.jpg', 'Clavier mécanique réactif', 79.99, 'Ce clavier mécanique est conçu pour les joueurs exigeants. Avec des touches réactives et un éclairage RGB personnalisable, il améliorera votre expérience de jeu.', 300, 'loucas.terchani@gmail.com');
+    
 
 
 
