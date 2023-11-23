@@ -31,30 +31,33 @@ public class InscriptionServlet extends HttpServlet{
             String nom= request. getParameter("nom");
             String prenom=request.getParameter("prenom");
             if(signUpDAO.isUniqueEmail(email)){
-                Compte c=new Compte();
+                /*Compte c=new Compte();
                 c.setEmail(email);
                 c.setAndHashMotDePasse(password);
-                signUpDAO.addCompte(c);
-                TokenDAO.addToken(email);
+                signUpDAO.addCompte(c);*/
+
                 HttpSession session = request.getSession();
                 session.setAttribute("email", email);
                 session.setAttribute("nom", nom);
                 session.setAttribute("prenom", prenom);
+                session.setAttribute("password", password);
 
 
                 //EmailSender emailSender=new EmailSender();
                 //emailSender.sendMessage("rensimon@cy-tech.fr", email);
                 String htmlContent = getHtmlContentFromJsp("/mail/mailOfWelcome.jsp", request, response);
 
-                sendEmailWithHTML(email,"Bienvenue sur Arcadia",htmlContent);
+                sendEmailWithHTML(email,"Bienvenue sur Divan",htmlContent);
                 //response.sendRedirect("MailServlet");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/infoCompte.jsp");
                 dispatcher.forward(request, response);
             }
             else{
                 PrintWriter out=response.getWriter();
+                response.setCharacterEncoding("UTF-8");
                 out.println("Cette adresse e-mail est déjà utilisée. Vous allez être redirigé vers la page home.");
                 response.setHeader("Refresh", "5; URL=/PROJETFINAL_war_exploded/home.jsp");
+                out.close();
             }
 
 

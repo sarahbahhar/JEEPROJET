@@ -1,5 +1,6 @@
 package Servlet;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 import jakarta.servlet.RequestDispatcher;
@@ -48,6 +49,7 @@ public class LoginServlet extends HttpServlet{
 
     private void authenticate(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        response.setCharacterEncoding("UTF-8");
         //PrintWriter out= response.getWriter();
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -95,6 +97,11 @@ public class LoginServlet extends HttpServlet{
             //RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/home.jsp");
             //dispatcher.forward(request, response);
         } else {
+            PrintWriter out=response.getWriter();
+
+            out.println("Mot de passe incorrect. Veuillez réessayer.");
+            response.setHeader("Refresh", "3; URL=redirect-servlet?path=signIn.jsp");
+            out.close();
             throw new Exception("Login not successful..");
         }
         //out.close();

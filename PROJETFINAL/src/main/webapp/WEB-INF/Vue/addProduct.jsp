@@ -30,6 +30,19 @@
                     <td><textarea style="width: 100%;" id="miniDescription" name="miniDescription" required></textarea></td>
                 </tr>
                 <tr>
+                    <td><label for="categorie">Catégorie</label></td>
+                    <td>
+                        <select id="categorie" name="categorie" required>
+                            <option value="Velour">Velour</option>
+                            <option value="Cuir">Cuir</option>
+                            <option value="Banc">Banc</option>
+                            <option value="Tissu">Tissu</option>
+                            <option value="Lin">Lin</option>
+                            <option value="Exterieur">Exterieur</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <td><label for="price">Prix</label></td>
                     <td><input style="width: 20%;" type="number" id="price" name="price" min="1" required></td>
                 </tr>

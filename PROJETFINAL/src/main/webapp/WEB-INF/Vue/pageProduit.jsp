@@ -31,9 +31,11 @@
                     <hr>
                 </div>
                 <div class="info">
-                    <div class="prix">
-                        Note : ${noteMoyenne}
-                    </div>
+                    <c:if test="${noteMoyenne ne 0}">
+                        <div class="prix">
+                            Note : ${noteMoyenne}
+                        </div>
+                    </c:if>
                     <div class="prix">${produit.prix} €</div>
                     <div class="stock">${produit.stock > 0 ? 'En stock' : 'Rupture de stock'}</div>
 

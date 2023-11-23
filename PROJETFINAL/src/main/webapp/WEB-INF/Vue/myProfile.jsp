@@ -54,6 +54,17 @@
                     <td>Pays :</td>
                     <td class="black-text">${sessionScope.InfoCompte.pays}</td>
                 </tr>
+                <div>
+                    <h2>Ma note </h2>
+                    <c:choose>
+                        <c:when test="${empty averageRating}">
+                            <p>Aucune moyenne disponible</p>
+                        </c:when>
+                        <c:otherwise>
+                            <p>Moyenne : ${averageRating}</p>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
             </table>
         </fieldset>
         <c:choose>
