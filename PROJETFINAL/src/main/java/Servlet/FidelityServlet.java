@@ -31,11 +31,7 @@ public class FidelityServlet extends HttpServlet {
             //PrintWriter out= response.getWriter();
             HttpSession session = request.getSession();
             String usePoints= request.getParameter("usePoints");
-            if(usePoints.isEmpty()){
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/payment.jsp");
-                dispatcher.forward(request, response);
-            }
-            else{
+            if(usePoints!=null && usePoints.equals("true")){
                 session.setAttribute("total", (double) session.getAttribute("total") -10);
                 Client c=new Client();
                 Infocompte ic=(Infocompte) session.getAttribute("InfoCompte");
@@ -43,9 +39,10 @@ public class FidelityServlet extends HttpServlet {
                 int pf=(int)session.getAttribute("pointFidelite");
                 c.setPointsFidelite(pf-100);
                 CustomerDAO.updateClient(ic.getEmail(), c);
-                //out.println(email);
-                //out.close();
-
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/payment.jsp");
+                dispatcher.forward(request, response);
+            }
+            else{
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/payment.jsp");
                 dispatcher.forward(request, response);
             }

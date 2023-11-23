@@ -16,9 +16,10 @@
 <h2>Vos points de fidélité: ${pointFidelite} points </h2>
 <p>Vous pouvez utiliser 100 points pour obtenir une réduction de 10€. </p>
 <form action="${pageContext.request.contextPath}/FidelityServlet" method="post">
-    <label>
-        <input type="checkbox" id="usePoints" name="usePoints" value="true" onchange="this.form.submit()"> Utiliser 100 points de fidélité
-    </label>
+
+        <label>
+            <input type="checkbox" id="usePoints" name="usePoints" value="true" > Utiliser 100 points de fidélité
+        </label>
     <br>
 
     <h2>Total</h2>
