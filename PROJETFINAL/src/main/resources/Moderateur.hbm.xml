@@ -17,5 +17,14 @@
         <property name="maxProduitsLigne">
             <column name="max_produits_ligne" sql-type="int"/>
         </property>
+        <property name="nbBannissement">
+            <column name="nbBannissement" sql-type="int"/>
+        </property>
+        <property name="dateBanni">
+            <column name="dateBanni" sql-type="date" not-null="true"/>
+        </property>
+        <property name="motifBannissement">
+            <column name="motifBannissement" sql-type="text" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>
