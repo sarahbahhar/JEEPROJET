@@ -31,15 +31,16 @@ public class InscriptionServlet extends HttpServlet{
             String nom= request. getParameter("nom");
             String prenom=request.getParameter("prenom");
             if(signUpDAO.isUniqueEmail(email)){
-                Compte c=new Compte();
+                /*Compte c=new Compte();
                 c.setEmail(email);
                 c.setAndHashMotDePasse(password);
-                signUpDAO.addCompte(c);
-                TokenDAO.addToken(email);
+                signUpDAO.addCompte(c);*/
+
                 HttpSession session = request.getSession();
                 session.setAttribute("email", email);
                 session.setAttribute("nom", nom);
                 session.setAttribute("prenom", prenom);
+                session.setAttribute("password", password);
 
 
                 //EmailSender emailSender=new EmailSender();
