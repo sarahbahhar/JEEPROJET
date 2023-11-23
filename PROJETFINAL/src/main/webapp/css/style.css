@@ -82,12 +82,14 @@ p{
 .img-home {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 0;
+    align-items: flex-start; /* Aligner l'image en haut */
 }
 
 .img-home img {
+    margin-top: 2%;
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 75%;
+    height: 95%;
 }
