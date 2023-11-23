@@ -46,15 +46,17 @@ public class InscriptionServlet extends HttpServlet{
                 //emailSender.sendMessage("rensimon@cy-tech.fr", email);
                 String htmlContent = getHtmlContentFromJsp("/mail/mailOfWelcome.jsp", request, response);
 
-                sendEmailWithHTML(email,"Bienvenue sur Arcadia",htmlContent);
+                sendEmailWithHTML(email,"Bienvenue sur Divan",htmlContent);
                 //response.sendRedirect("MailServlet");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/infoCompte.jsp");
                 dispatcher.forward(request, response);
             }
             else{
                 PrintWriter out=response.getWriter();
+                response.setCharacterEncoding("UTF-8");
                 out.println("Cette adresse e-mail est déjà utilisée. Vous allez être redirigé vers la page home.");
                 response.setHeader("Refresh", "5; URL=/PROJETFINAL_war_exploded/home.jsp");
+                out.close();
             }
 
 
