@@ -1,36 +1,50 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: CYTech Student
-  Date: 08/11/2023
-  Time: 21:18
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Mes infos</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-<form method="POST" action="<%=request.getContextPath()%>/infoCompteServlet">
 
-    <label for="date">date</label>
-    <input type="date" id="date" name="date" required><br>
-    <label for="telephone">n° téléphone</label>
-    <input type="text" id="telephone" name="telephone" required><br>
-    <label for="adresse">adresse</label>
-    <input type="text" id="adresse" name="adresse" required><br>
-    <label for="ville">ville</label>
-    <input type="text" id="ville" name="ville" required><br>
-    <label for="codePostal">codePostal</label>
-    <input type="number" id="codePostal" name="codePostal" required><br>
-    <label for="pays">pays</label>
-    <input type="text" id="pays" name="pays" required><br>
+<div style="width: 40%; margin: auto;">
+    <h1>Mes Informations</h1>
+    <form method="POST" action="<%=request.getContextPath()%>/infoCompteServlet">
+        <fieldset>
+            <legend>Modifier vos informations</legend>
+            <table>
+                <tr>
+                    <td><label for="date">Date de naissance</label></td>
+                    <td><input type="date" id="date" name="date" required></td>
+                </tr>
+                <tr>
+                    <td><label for="telephone">N° téléphone</label></td>
+                    <td><input type="text" id="telephone" name="telephone" required></td>
+                </tr>
+                <tr>
+                    <td><label for="adresse">Adresse</label></td>
+                    <td><input type="text" id="adresse" name="adresse" required></td>
+                </tr>
+                <tr>
+                    <td><label for="ville">Ville</label></td>
+                    <td><input type="text" id="ville" name="ville" required></td>
+                </tr>
+                <tr>
+                    <td><label for="codePostal">Code Postal</label></td>
+                    <td><input type="number" id="codePostal" name="codePostal" required></td>
+                </tr>
+                <tr>
+                    <td><label for="pays">Pays</label></td>
+                    <td><input type="text" id="pays" name="pays" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input class="bouton-golden" type="submit" value="Mettre à jour"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</div>
 
-
-
-
-    <input type="submit" value="verifier">
-</form>
-
+<hr>
 </body>
 </html>

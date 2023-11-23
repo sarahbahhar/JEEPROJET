@@ -50,15 +50,13 @@
         </c:forEach>
 
     </c:if>
-
-    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+    <div style="text-align: right">
         <form action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-            <input type="hidden" name="path" value="myProfile.jsp" />
-            <button class="bouton-golden" type="submit">Retour</button>
-        </form>
-        <button class="bouton-golden" type="submit">Ajouter Carte</button>
-    </div>
+            <input type="hidden" name="path" value="addPaymentMode.jsp" />
 
+            <button class="bouton-golden" type="submit">Ajouter Carte</button>
+        </form>
+    </div>
 
 
 </div>
