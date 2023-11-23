@@ -89,6 +89,7 @@ public class AddProductServlet extends HttpServlet {
                 p.setTitre(request.getParameter("titre"));
                 p.setNomImage(fileName);
                 p.setMiniDescription(request.getParameter("miniDescription"));
+                p.setCategorie(request.getParameter("categorie"));
                 p.setPrix(price);
                 p.setDescription(request.getParameter("description"));
                 p.setStock(Integer.parseInt(request.getParameter("stock")));
