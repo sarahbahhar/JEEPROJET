@@ -9,7 +9,8 @@ public class Moderateur {
     private int maxProduitsLigne;
     private int nbBannissement;
     private Date dateBanni;
-    private String motifBannissement;
+    private String motifCourtBannissement;
+    private String motifLongBanissement;
 
     public String getEmail() {
         return email;
@@ -59,12 +60,20 @@ public class Moderateur {
         this.dateBanni = dateBanni;
     }
 
-    public String getMotifBannissement() {
-        return motifBannissement;
+    public String getMotifCourtBannissement() {
+        return motifCourtBannissement;
     }
 
-    public void setMotifBannissement(String motifBannissement) {
-        this.motifBannissement = motifBannissement;
+    public void setMotifCourtBannissement(String motifCourtBannissement) {
+        this.motifCourtBannissement = motifCourtBannissement;
+    }
+
+    public String getMotifLongBanissement() {
+        return motifLongBanissement;
+    }
+
+    public void setMotifLongBanissement(String motifLongBanissement) {
+        this.motifLongBanissement = motifLongBanissement;
     }
 
     @Override
@@ -80,7 +89,9 @@ public class Moderateur {
         if (nbBannissement != that.nbBannissement) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (dateBanni != null ? !dateBanni.equals(that.dateBanni) : that.dateBanni != null) return false;
-        if (motifBannissement != null ? !motifBannissement.equals(that.motifBannissement) : that.motifBannissement != null)
+        if (motifCourtBannissement != null ? !motifCourtBannissement.equals(that.motifCourtBannissement) : that.motifCourtBannissement != null)
+            return false;
+        if (motifLongBanissement != null ? !motifLongBanissement.equals(that.motifLongBanissement) : that.motifLongBanissement != null)
             return false;
 
         return true;
@@ -94,7 +105,8 @@ public class Moderateur {
         result = 31 * result + maxProduitsLigne;
         result = 31 * result + nbBannissement;
         result = 31 * result + (dateBanni != null ? dateBanni.hashCode() : 0);
-        result = 31 * result + (motifBannissement != null ? motifBannissement.hashCode() : 0);
+        result = 31 * result + (motifCourtBannissement != null ? motifCourtBannissement.hashCode() : 0);
+        result = 31 * result + (motifLongBanissement != null ? motifLongBanissement.hashCode() : 0);
         return result;
     }
 }

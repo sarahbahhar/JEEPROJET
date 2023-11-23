@@ -23,8 +23,11 @@
         <property name="dateBanni">
             <column name="dateBanni" sql-type="date" not-null="true"/>
         </property>
-        <property name="motifBannissement">
-            <column name="motifBannissement" sql-type="text" not-null="true"/>
+        <property name="motifCourtBannissement">
+            <column name="motifCourtBannissement" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="motifLongBanissement">
+            <column name="motifLongBanissement" sql-type="text" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>
