@@ -20,5 +20,8 @@
         <property name="commentaire">
             <column name="commentaire" sql-type="text" not-null="true"/>
         </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
+        </property>
     </class>
 </hibernate-mapping>

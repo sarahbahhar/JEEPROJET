@@ -147,7 +147,9 @@ CREATE TABLE Commentaires (
                               idProduit INT,
                               note INT NOT NULL CHECK (note BETWEEN 0 AND 5),
                               emailVendeur VARCHAR(100),
-                              commentaire TEXT
+                              commentaire TEXT,
+                              email VARCHAR(100) NOT NULL,
+                              FOREIGN KEY (email) REFERENCES Compte(email)
 );
 
 

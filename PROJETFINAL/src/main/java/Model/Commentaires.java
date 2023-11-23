@@ -6,6 +6,7 @@ public class Commentaires {
     private int note;
     private String emailVendeur;
     private String commentaire;
+    private String email;
 
     public int getId() {
         return id;
@@ -47,6 +48,14 @@ public class Commentaires {
         this.commentaire = commentaire;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,6 +68,7 @@ public class Commentaires {
         if (idProduit != null ? !idProduit.equals(that.idProduit) : that.idProduit != null) return false;
         if (emailVendeur != null ? !emailVendeur.equals(that.emailVendeur) : that.emailVendeur != null) return false;
         if (commentaire != null ? !commentaire.equals(that.commentaire) : that.commentaire != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
 
         return true;
     }
@@ -70,6 +80,7 @@ public class Commentaires {
         result = 31 * result + note;
         result = 31 * result + (emailVendeur != null ? emailVendeur.hashCode() : 0);
         result = 31 * result + (commentaire != null ? commentaire.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
 }
