@@ -18,10 +18,18 @@ public class RedirectProductOrder extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String produitIdStr = request.getParameter("produit_id");
+        String commandeIdStr=request.getParameter("commande_id");
         int produitId = Integer.parseInt(produitIdStr);
+        int commandeId;
+        if(commandeIdStr==null){
+            commandeId=-1;
+        }
+        else{
+            commandeId=Integer.parseInt(commandeIdStr);
+        }
 
         if(ProduitDAO.getProduitById(produitId)!=null){
-            response.sendRedirect(request.getContextPath()+"/product-details?type=pageProduit&produit_id="+produitId);
+            response.sendRedirect(request.getContextPath()+"/product-details?type=pageProduit&produit_id="+produitId+"&commande_id=" + commandeId);
 
         }
 

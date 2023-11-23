@@ -27,6 +27,9 @@ public class AddModeratorServlet extends HttpServlet {
                 DModeratorDAO.removeDissmissedModerator(email);
                 Moderateur m=new Moderateur();
                 m.setEmail(email);
+                m.setMaxProduitsLigne(10);
+                m.setPeutAjouterProduit((byte) 1);
+                m.setPeutSupprimerProduit((byte) 1);
                 ModDAO.addModerator(m);
                 response.sendRedirect(request.getContextPath() + "/moderator-servlet");
             }

@@ -29,7 +29,7 @@
     <c:if test="${!usePoints}">
         <p id="total-amount">${total} €</p>
     </c:if>
-    <input type="submit" value="Submit">
+    <button class="bouton-golden" type="submit" value="Submit">
 </form>
 </body>
 </html>

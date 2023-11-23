@@ -72,6 +72,7 @@ public class LoginServlet extends HttpServlet{
                 session.setAttribute("canDeleteProduct",allPermissions[2] == 1);
 
 
+
             }else if (CustomerDAO.emailExists(email)) {
                 session.setAttribute("role", 0); // 0 pour client
 
