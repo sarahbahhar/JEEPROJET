@@ -64,6 +64,8 @@ CREATE TABLE Moderateur (
                             peut_ajouter_produit BOOLEAN NOT NULL DEFAULT TRUE,
                             peut_supprimer_produit BOOLEAN NOT NULL DEFAULT TRUE,
                             max_produits_ligne INT NOT NULL DEFAULT 10,
+                            nbBannissement INT NOT NULL DEFAULT 0,
+                            dateBanni date,
                             FOREIGN KEY (email) REFERENCES Compte(email)
 );
 -- Table Demande Moderateur avec les droits intégrés
