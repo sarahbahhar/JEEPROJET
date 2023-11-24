@@ -3,6 +3,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
@@ -16,7 +17,13 @@
             <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
             <input id="emailI" name="email"  type="email" placeholder="Email" required/>
             <input id="passwordI" name="password" type="password" placeholder="Mot de passe" required/>
-            <button class="lien">Sign Up</button>
+            <button class="lien">S'inscrire</button>
+            <c:if test="${not empty failEmailExist and failEmailExist}">
+
+                <script>container.classList.add("right-panel-active");</script>
+
+                <div><p class="red-text">Cet email est déjà lié à un compte.</p></div>
+            </c:if>
         </form>
     </div>
     <div class="form-container sign-in-container">
@@ -24,7 +31,13 @@
             <h1>Connexion</h1>
             <input id="email" name="email" type="email" placeholder="Email" required/>
             <input id="password" name="password" type="password" placeholder="Mot de passe" required/>
-            <button class="lien">Connexion</button>
+
+
+
+            <button class="lien">Se connecter</button>
+            <c:if test="${not empty failLogin and failLogin}">
+            <div><p class="red-text">Email ou mot de passe incorrect.</p></div>
+        </c:if>
         </form>
     </div>
 
@@ -40,12 +53,12 @@
             <div class="overlay-panel overlay-left">
                 <h1>Content de te revoir!</h1>
                 <p>Connecte toi</p>
-                <button class="ghost" id="signIn">Sign In</button>
+                <button class="ghost" id="signIn">Se connecter</button>
             </div>
             <div class="overlay-panel overlay-right">
                 <h1>Hello !</h1>
                 <p>Rejoins nous.</p>
-                <button class="ghost" id="signUp">Sign Up</button>
+                <button class="ghost" id="signUp">S'inscrire</button>
             </div>
         </div>
     </div>
