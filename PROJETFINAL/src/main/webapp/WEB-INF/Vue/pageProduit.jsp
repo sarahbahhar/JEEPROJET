@@ -102,7 +102,7 @@
     </c:forEach>
 
     <c:if test="${not empty sessionScope.email}">
-        <c:if test="${commande_id>0}">
+        <c:if test="${canComment==true}">
             <div class="comment-section">
                 <h3>Laissez un commentaire :</h3>
                 <form method="post" action="<%=request.getContextPath()%>/commentaire-servlet">

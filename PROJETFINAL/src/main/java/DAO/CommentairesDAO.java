@@ -7,6 +7,7 @@ import Model.Commentaires;
 import Model.Produit;
 import jakarta.persistence.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class CommentairesDAO {
     public static void addCommentaire(Commentaires commentaire) {
@@ -66,4 +67,32 @@ public class CommentairesDAO {
         session.close();
         return null;
     }
+
+    public static boolean hasCommented(int produitId, String email) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction=null;
+        boolean hasCommented=false;
+        long nbComment;
+        try {
+            transaction= session.beginTransaction();
+            nbComment= (long) session.createQuery("SELECT COUNT(*) FROM Commentaires C WHERE C.email = :email AND C.idProduit = :idProduit")
+                    .setParameter("email", email)
+                    .setParameter("idProduit", produitId)
+                    .uniqueResult();
+            hasCommented=(nbComment>0);
+            transaction.commit();
+        }
+        catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return hasCommented;
+    }
+
+
 }
