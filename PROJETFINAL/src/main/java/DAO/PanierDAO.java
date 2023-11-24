@@ -191,6 +191,23 @@ public class PanierDAO {
 
 
     }
+    public static void removeProduitPanierById(int id) {
+
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+
+        session.createQuery("DELETE FROM Produitpanier WHERE produitId = :id")
+                .setParameter("id", id)
+                .executeUpdate();
+
+
+        session.getTransaction().commit();
+
+        session.close();
+
+
+    }
 
     public static void changeQuantityById(String email, int produitId, int newQuantity) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {

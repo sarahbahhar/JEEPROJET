@@ -1,9 +1,6 @@
 package DAO;
 
-import Model.Client;
-import Model.Infocompte;
-import Model.Moderateur;
-import Model.Produit;
+import Model.*;
 import org.hibernate.Session;
 
 import java.math.BigDecimal;
@@ -13,6 +10,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import java.time.LocalDate;
 
+import DAO.ProduitDAO;
 
 
 public class ModeratorDAO {
@@ -70,17 +68,25 @@ public class ModeratorDAO {
         return false;
     }
 
-    public static void removeModerator(String email) {
-        Moderateur m;
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        m = (Moderateur) session.createQuery("FROM Moderateur m WHERE m.email = :email").setParameter("email", email).uniqueResult();
-        List list = session.createQuery("from Moderateur").list(); // a revoir
-        session.delete(m);
-        session.getTransaction().commit();
-        session.close();
-    }
+    public static void removeModerator(String  localisation,String email) {
+        Transaction transaction = null;
 
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.createQuery("UPDATE Produitcommande SET emailVendeur = null WHERE emailVendeur = :email")
+                    .setParameter("email", email)
+                    .executeUpdate();
+
+            ProduitDAO.removeProductByModerator(localisation,email);
+            Moderateur moderator = session.get(Moderateur.class, email);
+            if (moderator != null) session.delete(moderator);
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        }
+    }
 
 
     public void updateModerator(Moderateur updated) {

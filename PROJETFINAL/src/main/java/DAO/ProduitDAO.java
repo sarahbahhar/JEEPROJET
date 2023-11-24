@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import Model.Moderateur;
 import Model.Produit;
+import Model.Produitpanier;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 public class ProduitDAO
@@ -157,13 +158,24 @@ public class ProduitDAO
         if (file.exists()) {
             if (file.delete()) {
                 System.out.println("Image file deleted: " + fileName);
-                removeProductByIdOfTable(id);
+
             } else {
                 System.err.println("Failed to delete image file: " + fileName);
             }
         } else {
             System.err.println("Image file not found: " + fileName);
         }
+        removeProductByIdOfTable(id);
+
+    }
+    public static void removeProductByModerator(String localisation,String email) {
+        List<Produit> produits =  getListProduitByEmail(email);
+        for(Produit produit : produits){
+            PanierDAO.removeProduitPanierById(produit.getId());
+            removeProductById(localisation,produit.getNomImage(),produit.getId());
+
+        }
+
 
     }
 

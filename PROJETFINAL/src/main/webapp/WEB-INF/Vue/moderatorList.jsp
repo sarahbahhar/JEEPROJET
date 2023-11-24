@@ -53,7 +53,7 @@
 
             <td>
                 <form action="${pageContext.request.contextPath}/delete-moderator-servlet" method="post">
-                    <input type="hidden" name="email" value="${moderator.email}" />
+                    <input type="hidden" name="email" value="email" />
                     <button type="submit">Delete</button>
                 </form>
             </td>

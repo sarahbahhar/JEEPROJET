@@ -22,11 +22,9 @@ DeleteModeratorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String email=request.getParameter("email");
-            if(email != null && !email.isEmpty()){
-                ModeratorDAO.removeModerator(email);
-                Client c =new Client();
-                c.setEmail(email);
-                CustomerDAO.addCustomer(c);
+            if(email != null){
+                ModeratorDAO.removeModerator(getServletContext().getRealPath("/"),"sarah.bahhar@gmail.com");
+
                 response.sendRedirect(request.getContextPath() + "/moderator-servlet");
             }
         } catch (Exception e) {
