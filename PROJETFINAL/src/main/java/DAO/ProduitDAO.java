@@ -2,6 +2,7 @@ package DAO;
 
 import java.io.File;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import Model.Moderateur;
 import Model.Produit;
@@ -24,9 +25,15 @@ public class ProduitDAO
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        List<Produit> result = session.createQuery("from Produit").list();
+        List<Produit> allProducts = session.createQuery("FROM Produit").list();
         session.close();
-        return result;
+
+        List<Produit> filteredProducts = allProducts.stream()
+                .filter(p -> !isModerateurBanni(p))
+                .collect(Collectors.toList());
+
+        return filteredProducts;
+
     }
     public static List<Produit> getListProduitByEmail(String email)
     {
@@ -56,10 +63,15 @@ public class ProduitDAO
     public static List<Produit> getListProductByTitre(String titre) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        List<Produit> result = session.createQuery("FROM Produit P WHERE P.titre LIKE :titre")
+        List<Produit> allProducts = session.createQuery("FROM Produit P WHERE  P.titre LIKE :titre")
                 .setParameter("titre", "%" + titre + "%").list();
+
+        List<Produit> filteredProducts = allProducts.stream()
+                .filter(p -> !isModerateurBanni(p))
+                .collect(Collectors.toList());
+
         session.close();
-        return result;
+        return filteredProducts;
     }
 
 
@@ -97,7 +109,7 @@ public class ProduitDAO
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
-            produit = session.createQuery("FROM Produit P WHERE P.categorie = :categorie")
+            produit = session.createQuery("FROM Produit P WHERE  P.categorie = :categorie")
                     .setParameter("categorie", categorie)
                     .list();
             session.getTransaction().commit();
@@ -106,6 +118,29 @@ public class ProduitDAO
         }
 
         return produit;
+    }
+
+    public static boolean isModerateurBanni(Produit produit) {
+        boolean isBanned = false;
+
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+
+            Moderateur moderateur = session.createQuery("FROM Moderateur M WHERE M.email = :email", Moderateur.class)
+                    .setParameter("email", produit.getEmail())
+                    .uniqueResult();
+
+            // Vérifier si le modérateur est banni
+            if (moderateur != null && moderateur.getDateBanni() != null) {
+                isBanned = true;
+            }
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return isBanned;
     }
 
     }

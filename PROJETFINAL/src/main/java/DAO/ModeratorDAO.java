@@ -10,6 +10,9 @@ import java.sql.Date;
 import java.util.List;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import java.time.LocalDate;
+
+
 
 public class ModeratorDAO {
     public List<Moderateur> getListModerateur() {
@@ -149,7 +152,7 @@ public class ModeratorDAO {
         }
     }
 
-    public static void bannirByEmail(String email, String motifCourt, String motifLong) {
+    public static void bannirByEmail(String email, String motifCourt, String motifLong, String dateStr) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
@@ -159,12 +162,12 @@ public class ModeratorDAO {
                     .uniqueResult();
 
             if (moderator != null) {
-                // Mettre à jour les champs pour le bannissement
                 moderator.setMotifCourtBannissement(motifCourt);
                 moderator.setMotifLongBanissement(motifLong);
                 moderator.setNbBannissement(moderator.getNbBannissement() + 1);
                 moderator.setPeutAjouterProduit((byte) 0);
                 moderator.setPeutSupprimerProduit((byte) 0);
+                ModeratorDAO.updateDateBanni(moderator,dateStr);
                 session.update(moderator);
                 transaction.commit();
             } else {
@@ -176,5 +179,41 @@ public class ModeratorDAO {
             }
             e.printStackTrace();
         }
+    }
+    public static void unbanByEmail(String email) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            Moderateur moderator = (Moderateur) session.createQuery("FROM Moderateur M WHERE M.email = :email")
+                    .setParameter("email", email)
+                    .uniqueResult();
+
+            java.util.Date currentDate = new java.util.Date();
+
+            java.sql.Date currentSqlDate = new java.sql.Date(currentDate.getTime());
+
+            if (moderator != null && moderator.getDateBanni().before(currentSqlDate)) {
+                moderator.setMotifCourtBannissement(null);
+                moderator.setMotifLongBanissement(null);
+                moderator.setPeutAjouterProduit((byte) 1);
+                moderator.setPeutSupprimerProduit((byte) 1);
+                moderator.setDateBanni(null);
+                session.update(moderator);
+                transaction.commit();
+            } else {
+                System.out.println("Aucun modérateur trouvé avec l'email : " + email);
+            }
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+    private static void updateDateBanni(Moderateur moderator, String dateStr) {
+        LocalDate localDate = LocalDate.parse(dateStr); // Conversion de la chaîne de caractères en LocalDate
+        Date date = Date.valueOf(localDate); // Conversion de LocalDate en java.sql.Date
+        moderator.setDateBanni(date); // Mise à jour de l'objet moderateur
     }
 }

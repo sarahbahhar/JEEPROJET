@@ -54,6 +54,9 @@ public class ProductDetailsServlet extends HttpServlet {
             }
             request.setAttribute("canComment", canComment);
             
+            request.setAttribute("commande_id",commandeId);
+            boolean isModBanned = ProduitDAO.isModerateurBanni(produit);
+            request.setAttribute("isModBanned", isModBanned);
 
         }
         RequestDispatcher dispatcher;
