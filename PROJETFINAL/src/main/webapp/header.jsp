@@ -88,7 +88,7 @@
                 <c:when test="${sessionScope.role == 1}">
 
                     <li class="menu-deroulant">
-                        <button class="lien" type="submit">Gerer</button>
+                        <button class="lienG" type="submit">Gerer</button>
 
                         <div class="sous-menu">
 
