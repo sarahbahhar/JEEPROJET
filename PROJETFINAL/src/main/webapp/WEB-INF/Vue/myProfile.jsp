@@ -54,7 +54,9 @@
                     <td>Pays :</td>
                     <td class="black-text">${sessionScope.InfoCompte.pays}</td>
                 </tr>
+                <c:if test="${sessionScope.role == 1}">
                 <div>
+
                     <h2>Ma note </h2>
                     <c:choose>
                         <c:when test="${empty averageRating}">
@@ -65,6 +67,7 @@
                         </c:otherwise>
                     </c:choose>
                 </div>
+                    </c:if>
             </table>
         </fieldset>
         <c:choose>

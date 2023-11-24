@@ -28,6 +28,8 @@ public class ProductDetailsServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session= request.getSession();
         String email = request.getParameter("email");
+        Infocompte ic=(Infocompte) session.getAttribute("InfoCompte");
+        String emailAcheteur=ic.getEmail();
         String produitIdParam = request.getParameter("produit_id");
         String type = request.getParameter("type");
         String commandeIdStr=request.getParameter("commande_id");
@@ -48,7 +50,7 @@ public class ProductDetailsServlet extends HttpServlet {
             request.setAttribute("noteMoyenne", noteMoyenne);
             List<Commentaires> commentaires = CommentairesDAO.getCommentairesByProduitId(produitId);
             request.setAttribute("commentaires", commentaires);
-            if(commandeId>0 && !CommentairesDAO.hasCommented(produitId,email)){
+            if(commandeId>0 && !CommentairesDAO.hasCommented(produitId,emailAcheteur)){
                 canComment=true;
             }
             request.setAttribute("canComment", canComment);

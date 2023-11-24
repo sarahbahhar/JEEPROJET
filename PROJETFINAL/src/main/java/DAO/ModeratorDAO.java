@@ -172,24 +172,32 @@ public class ModeratorDAO {
                     .setParameter("email", email)
                     .uniqueResult();
 
-            java.util.Date currentDate = new java.util.Date();
+            // Vérifier d'abord si le modérateur est trouvé
+            if (moderator != null) {
+                // Vérifier ensuite si la date de bannissement est non nulle et dans le passé
+                java.util.Date currentDate = new java.util.Date();
+                java.sql.Date currentSqlDate = new java.sql.Date(currentDate.getTime());
 
-            java.sql.Date currentSqlDate = new java.sql.Date(currentDate.getTime());
-
-            if (moderator != null && moderator.getDateBanni().before(currentSqlDate)) {
-                moderator.setMotifCourtBannissement(null);
-                moderator.setMotifLongBanissement(null);
-                moderator.setDateBanni(null);
-                session.update(moderator);
-                transaction.commit();
+                if (moderator.getDateBanni() != null && moderator.getDateBanni().before(currentSqlDate)) {
+                    moderator.setMotifCourtBannissement(null);
+                    moderator.setMotifLongBanissement(null);
+                    moderator.setDateBanni(null);
+                    session.update(moderator);
+                    transaction.commit();
+                } else {
+                    System.out.println("Le modérateur n'est pas banni ou la date de bannissement est dans le futur : " + email);
+                }
             } else {
                 System.out.println("Aucun modérateur trouvé avec l'email : " + email);
             }
         } catch (Exception e) {
-
+            if (transaction != null) {
+                transaction.rollback();
+            }
             e.printStackTrace();
         }
     }
+
     private static void updateDateBanni(Moderateur moderator, String dateStr) {
         LocalDate localDate = LocalDate.parse(dateStr); // Conversion de la chaîne de caractères en LocalDate
         Date date = Date.valueOf(localDate); // Conversion de LocalDate en java.sql.Date
