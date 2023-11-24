@@ -198,17 +198,7 @@ header {
     max-height: 200px;
     width: 100%; /* Ajoutez cette ligne pour ajuster la largeur */
 }
-.navbar-nav {
-    display: flex;
-    width: 100%;
-}
-
-.navbar-nav li {
-    flex: 1;
-    position: relative;
-}
-
-.navbar-nav li >form>button> a {
+.navbar-nav li > form > button a {
     color: #0d6735;
     text-align: center;
     display: block;
@@ -216,19 +206,19 @@ header {
     position: relative;
 }
 
-.navbar-nav li >form>button> a > span {
+.navbar-nav li > form > button a > span {
     display: inline-block;
+}
 
+.navbar-nav li > form > button a:hover {
+    color: #119b18;
 }
-.navbar-nav li >form>button> a:hover {
-    color : #119b18;
-}
-.navbar-nav li >form>button> a:hover > span {
+
+.navbar-nav li > form > button a:hover > span {
     text-decoration: underline;
-    /* Soulignement uniquement au survol */
 }
 
-.navbar-nav li >form>button> a:after {
+.navbar-nav li > form > button a:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -239,14 +229,15 @@ header {
     transition: width .3s;
 }
 
-.navbar-nav li >form>button> a:hover::after {
+.navbar-nav li > form > button a:hover::after {
     width: 100%;
-    /*transition: width .3s;*/
 }
-.navbar-nav li>form>button > a {
-    text-decoration: none; /* Remove the default underline on hover */
+
+.navbar-nav li > form > button a {
+    text-decoration: none;
 }
-.navbar-nav li>form>button {
+
+.navbar-nav li > form > button {
     border: none;
     background: none;
     padding: 0;

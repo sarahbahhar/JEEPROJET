@@ -1,5 +1,4 @@
 
-
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/footer.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
@@ -27,12 +26,33 @@
     </div>
     <div class="line"></div>
     <div>
-        <ul class="button_link">
-            <li><a href="profil.jsp">Profil</a></li>
-            <li><a href="index.jsp">Accueil</a></li>
-            <li><a href="about.jsp">A propos</a></li>
-            <li><a href="contact.jsp">Contacter</a></li>
+        <div class="footer-nav-bar">
+        <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                        <input type="hidden" name="path" value="myProfile.jsp" />
+                        <button type="submit"><a class="nav-link">Profil</a></button>
+                    </form>
+                </li>
+
+            <li class="nav-item ">
+                <form class='style' action="${pageContext.request.contextPath}/#" method="get">
+                    <button type="submit"><a class="nav-link">Accueil</a></button>
+                </form>
+            </li>
+            <li class="nav-item ">
+                <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                    <input type="hidden" name="path" value="about.jsp" />
+                    <button type="submit"><a class="nav-link">A propos</a></button>
+                </form>
+            </li>
+            <li class="nav-item ">
+                <form class='style' action="${pageContext.request.contextPath}/#" method="get">
+                    <button type="submit"><a class="nav-link">Contacter</a></button>
+                </form>
+            </li>
         </ul>
+        </div>
         <center> 2023, Divan.com</center>
         <ul class="logo">
             <li style="padding-left: 0px;"><a><i class="fab fa-facebook-f"></i></a></li>

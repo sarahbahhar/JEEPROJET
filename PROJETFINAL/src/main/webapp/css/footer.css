@@ -110,3 +110,40 @@ footer p {
     width: 50%;
     margin: 0 auto;
 }
+.footer-nav-bar {
+    display: flex;
+    justify-content: center; /* Alignement horizontal au centre */
+    gap: 10px; /* Espacement entre les éléments */
+}
+
+.footer-nav-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer-nav-bar li {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav-bar button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    color: #0d6735;
+    cursor: pointer;
+}
+
+.footer-nav-bar a {
+    color: #0d6735;
+    text-decoration: none; /* Enlève le soulignement du lien */
+    padding: 10px;
+}
+
+.footer-nav-bar a:hover {
+    color: #119b18;
+}
