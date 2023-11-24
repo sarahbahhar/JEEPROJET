@@ -87,26 +87,24 @@ p{
 .img-home {
     display: flex;
     justify-content: center;
-    align-items: center; /* Centrer verticalement et horizontalement */
-    width: 100%;
-    height: 100vh; /* Utilise la hauteur de la fenêtre visible */
-}
-
-.img-home button {
-    border: none;
-    background: #f7f6f2;
+    align-items: flex-start; /* Aligner l'image en haut */
     width: 100%;
 }
+.img-home button{
+    border:none;
+    background:#f7f6f2;
+    width: 100%;
 
+}
 .img-home form {
     margin: 0;
     width: 100%;
-    display: flex;
     justify-content: center;
+    /* Remplacez margin-top: 0; par margin: 0; pour éviter tout décalage inutile */
 }
-
 .img-home img {
-    margin-top:5%;
-    width: 90%; /* Utilise la largeur de la fenêtre visible */
-    height: auto; /* Maintient les proportions de l'image */
+
+    margin-top: 5%;
+    width: 90%;
+    height: 90%;
 }
