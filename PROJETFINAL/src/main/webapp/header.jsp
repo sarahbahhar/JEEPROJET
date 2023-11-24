@@ -41,7 +41,7 @@
                     <form >
                     </form>
                     <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                        <input type="hidden" name="path" value="signIn2.jsp" />
+                        <input type="hidden" name="path" value="about.jsp" />
                         <button class='lien' type='submit'>A propos</button>
                     </form>
                         <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">

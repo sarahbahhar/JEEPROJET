@@ -10,21 +10,21 @@
 <div class="container" id="container">
     <div class="form-container sign-up-container">
         <form method="POST" action="<%=request.getContextPath()%>/inscriptionServlet">
-            <h1>Create Account</h1>
+            <h1>Crée un Compte</h1>
 
-            <input type="text" placeholder="Name" id="nom" name="nom" required/>
+            <input type="text" placeholder="Nom" id="nom" name="nom" required/>
             <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
             <input id="emailI" name="email"  type="email" placeholder="Email" required/>
-            <input id="passwordI" name="password" type="password" placeholder="Password" required/>
+            <input id="passwordI" name="password" type="password" placeholder="Mot de passe" required/>
             <button class="lien">Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
         <form action="<%=request.getContextPath()%>/login" method="post">
-            <h1>Sign in</h1>
+            <h1>Connexion</h1>
             <input id="email" name="email" type="email" placeholder="Email" required/>
-            <input id="password" name="password" type="password" placeholder="Password" required/>
-            <button class="lien">Sign In</button>
+            <input id="password" name="password" type="password" placeholder="Mot de passe" required/>
+            <button class="lien">Connexion</button>
         </form>
     </div>
 
@@ -44,13 +44,13 @@
     <div class="overlay-container">
         <div class="overlay">
             <div class="overlay-panel overlay-left">
-                <h1>Welcome Back!</h1>
-                <p>To keep connected with us please login with your personal info</p>
+                <h1>Content de te revoir!</h1>
+                <p>Connecte toi</p>
                 <button class="ghost" id="signIn">Sign In</button>
             </div>
             <div class="overlay-panel overlay-right">
-                <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start journey with us</p>
+                <h1>Hello !</h1>
+                <p>Rejoins nous.</p>
                 <button class="ghost" id="signUp">Sign Up</button>
             </div>
         </div>
