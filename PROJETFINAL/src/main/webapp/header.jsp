@@ -45,7 +45,7 @@
                         <button class='lien' type='submit'>A propos</button>
                     </form>
                         <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                            <input type="hidden" name="path" value="signIn.jsp" />
+                            <input type="hidden" name="path" value="signIn2.jsp" />
                             <button class='lien' type='submit'>Se Connecter</button>
                         </form>
 
