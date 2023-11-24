@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 @WebServlet(name = "DeleteProductServlet", value = "/delete-product-servlet")
 public class DeleteProductServlet extends HttpServlet {
-    public static final String PATH_IMAGE = "/src/main/webapp/img/";
+
 
     private ProduitDAO ProDAO=new ProduitDAO();
 
@@ -31,9 +31,9 @@ public class DeleteProductServlet extends HttpServlet {
 
 
             if (id != null){
-                deleteImageFile(ProduitDAO.getProduitById(id).getNomImage());
+                ProduitDAO.removeProductById(getServletContext().getRealPath("/"),ProduitDAO.getProduitById(id).getNomImage(),id);
 
-                ProduitDAO.removeProductById(id);
+
 
 
             }
@@ -45,28 +45,7 @@ public class DeleteProductServlet extends HttpServlet {
 
     }
 
-    private void deleteImageFile(String fileName) {
 
-        // Obtenez le chemin réel à partir du chemin relatif
-        String absolutePath = getServletContext().getRealPath("/") + "../../" + PATH_IMAGE;
-
-        // Assurez-vous que le répertoire existe, sinon créez-le
-        File imageDir = new File(absolutePath);
-
-
-        // Maintenant, utilisez le chemin absolu pour écrire le fichier
-        File file = new File(imageDir, fileName);
-
-        if (file.exists()) {
-            if (file.delete()) {
-                System.out.println("Image file deleted: " + fileName);
-            } else {
-                System.err.println("Failed to delete image file: " + fileName);
-            }
-        } else {
-            System.err.println("Image file not found: " + fileName);
-        }
-    }
 
 
 }

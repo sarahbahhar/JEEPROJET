@@ -10,8 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 public class ProduitDAO
 {
-    public static final String PATH_IMAGE = "/img/";
-
+    public static final String PATH_IMAGE = "/src/main/webapp/img/";
 
     public static void addProduct(Produit p)
     {
@@ -45,7 +44,7 @@ public class ProduitDAO
         return result;
     }
 
-    public static void removeProductById(int id)
+    public static void removeProductByIdOfTable(int id)
     {
         Produit p;
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -141,6 +140,31 @@ public class ProduitDAO
         }
 
         return isBanned;
+    }
+
+    public static void removeProductById(String p,String fileName,int id) {
+
+        // Obtenez le chemin réel à partir du chemin relatif
+        String absolutePath = p+"../../" + PATH_IMAGE;
+
+        // Assurez-vous que le répertoire existe, sinon créez-le
+        File imageDir = new File(absolutePath);
+
+
+        // Maintenant, utilisez le chemin absolu pour écrire le fichier
+        File file = new File(imageDir, fileName);
+
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("Image file deleted: " + fileName);
+                removeProductByIdOfTable(id);
+            } else {
+                System.err.println("Failed to delete image file: " + fileName);
+            }
+        } else {
+            System.err.println("Image file not found: " + fileName);
+        }
+
     }
 
     }
