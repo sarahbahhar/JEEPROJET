@@ -229,6 +229,7 @@ button.ghost:hover {
     left: 0;
     width: 50%; /* Ajustez la largeur selon vos besoins */
     z-index: 2;
+    margin-top: 20px;
 }
 .container .mdpOublie form>button{
     border: none;
