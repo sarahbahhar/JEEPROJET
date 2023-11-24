@@ -62,8 +62,7 @@
 </table>
 <br>
 <br>
-<form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-    <input type="hidden" name="path" value="editModerator.jsp" />
+<form class="style" action="${pageContext.request.contextPath}/edit-moderator-servlet" method="get">
     <button class="lien" type="submit">Edit Moderators</button>
 </form>
 </body>
