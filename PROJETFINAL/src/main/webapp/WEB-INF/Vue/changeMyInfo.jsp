@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>Modifier Mon Profil</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/signIn.css">
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-<div style="width: 40%; margin: auto;">
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
     <h1>Modifier Mon Profil</h1>
-    <fieldset>
         <legend>Informations à Modifier</legend>
         <form id="modifier-infoCompte-form" method="POST" action="${pageContext.request.contextPath}/ModifyInfoServlet">
             <table>
@@ -48,15 +48,14 @@
 
             </table>
         </form>
-    </fieldset>
-    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+    </div>
+</div>
         <form action="${pageContext.request.contextPath}/redirect-servlet" method="post">
             <input type="hidden" name="path" value="myProfile.jsp" />
             <button class="bouton-golden" type="submit">Retour</button>
         </form>
         <button class="bouton-golden" type="submit" form="modifier-infoCompte-form">Modifier</button>
-    </div>
 
-</div>
+
 </body>
 </html>
