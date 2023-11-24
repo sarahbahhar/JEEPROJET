@@ -41,9 +41,10 @@ public class BannirModeratorServlet extends HttpServlet {
         String email = request.getParameter("email");
         String motifCourt = request.getParameter("motifCourt");
         String motifLong = request.getParameter("motifLong");
+        String dateFinBan = request.getParameter("dateFinBan");
 
 
-        ModeratorDAO.bannirByEmail(email, motifCourt, motifLong);
+        ModeratorDAO.bannirByEmail(email, motifCourt, motifLong,dateFinBan);
 
         // Redirection ou gestion de la réponse après le bannissement
 

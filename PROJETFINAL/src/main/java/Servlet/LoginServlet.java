@@ -65,6 +65,7 @@ public class LoginServlet extends HttpServlet{
                 session.setAttribute("role", 2); // 2 pour admin
 
             }else if (ModeratorDAO.emailExists(email)) {
+                ModeratorDAO.unbanByEmail(email);
                 session.setAttribute("role", 1); // 1 pour moderateur
                 int[] allPermissions = ModeratorDAO.getAllPermissionsByEmail(email);
                 session.setAttribute("maxProductsPerLine",allPermissions[0]);

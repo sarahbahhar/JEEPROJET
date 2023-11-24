@@ -40,7 +40,9 @@
             </c:otherwise>
         </c:choose>
     </div>
-    <div class="bouton">
+<c:if test="${sessionScope.canDeleteProduct}">
+
+<div class="bouton">
         <form action="${pageContext.request.contextPath}/modify-stock-servlet" method="post">
             <input type="hidden" name="produit_id" value="${produit.id}">
             <input type="number" name="stock" value="${produit.stock}" min="${produit.stock}"> <!-- Champ pour le nouveau stock -->
@@ -55,6 +57,8 @@
         </form>
 
     </div>
+</c:if>
+
     <hr> <!-- Repère visuel temporaire -->
 </div>
 </body>

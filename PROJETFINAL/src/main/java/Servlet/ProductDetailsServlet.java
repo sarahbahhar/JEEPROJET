@@ -44,6 +44,8 @@ public class ProductDetailsServlet extends HttpServlet {
             List<Commentaires> commentaires = CommentairesDAO.getCommentairesByProduitId(produitId);
             request.setAttribute("commentaires", commentaires);
             request.setAttribute("commande_id",commandeId);
+            boolean isModBanned = ProduitDAO.isModerateurBanni(produit);
+            request.setAttribute("isModBanned", isModBanned);
 
         }
         RequestDispatcher dispatcher;

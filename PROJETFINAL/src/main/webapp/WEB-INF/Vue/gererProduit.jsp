@@ -39,10 +39,12 @@
 
 
 
+        <c:if test="${sessionScope.canAddProduct}">
+            <form action="${pageContext.request.contextPath}/add-product-servlet" method="get">
+                <input type="submit" name="ajouter_un_produit" value="Ajouter un produit">
+            </form>
+        </c:if>
 
-        <form action="${pageContext.request.contextPath}/add-product-servlet" method="get">
-            <input type="submit" name="ajouter_un_produit" value="Ajouter un produit">
-        </form>
     </div>
     <hr>
 </div>

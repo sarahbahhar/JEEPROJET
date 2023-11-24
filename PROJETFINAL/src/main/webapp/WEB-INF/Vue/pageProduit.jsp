@@ -14,6 +14,7 @@
 <div>
     <hr> <!-- Repère visuel temporaire -->
     <div class="page">
+
         <c:choose>
             <c:when test="${empty produit}">
                 <p>Aucun produit sélectionné.</p>
@@ -46,14 +47,17 @@
 
                                 <c:when test="${empty sessionScope.role}">
                                     <form action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                                        <div class="quantite">
-                                            <label >Quantité :</label>
-                                                <input type="number" name="quantite"  min="1" max="${produit.stock}" value="1">
-                                        </div>
+
                                         <input type="hidden" name="path" value="signIn.jsp" />
 
 
-                                        <input type="submit" name="ajouter_au_panier" value="Ajouter au panier">
+                                        <c:if test="${not isModBanned}">
+                                            <div class="quantite">
+                                                <label >Quantité :</label>
+                                                <input type="number" name="quantite"  min="1" max="${produit.stock}" value="1">
+                                            </div>
+                                            <input type="submit" name="ajouter_au_panier" value="Ajouter au panier">
+                                        </c:if>
                                     </form>
                                 </c:when>
                                 <c:when test="${sessionScope.role == 2}">
@@ -62,15 +66,18 @@
                                 </c:when>
                                 <c:otherwise>
                                     <form method="post" action="${pageContext.request.contextPath}/panier-servlet">
-                                        <div class="quantite">
-                                            <label >Quantité :</label>
-                                            <input type="number" name="quantite"  min="1" max="${produit.stock}" value="1">
-                                        </div>
+
                                         <input type="hidden" name="produit_id" value="${produit.id}">
                                         <input type="hidden" name="produit_nom" value="${produit.titre}">
                                         <input type="hidden" name="prix_produit" value="${produit.prix}">
                                         <input type="hidden" name="email" value="${sessionScope.email}">
-                                        <input type="submit" name="ajouter_au_panier" value="Ajouter au panier">
+                                        <c:if test="${not isModBanned}">
+                                            <div class="quantite">
+                                                <label >Quantité :</label>
+                                                <input type="number" name="quantite"  min="1" max="${produit.stock}" value="1">
+                                            </div>
+                                            <input type="submit" name="ajouter_au_panier" value="Ajouter au panier">
+                                        </c:if>
                                     </form>
                                 </c:otherwise>
 
