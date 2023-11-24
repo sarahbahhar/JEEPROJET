@@ -88,21 +88,23 @@ p{
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Aligner l'image en haut */
+    width: 100%;
 }
 .img-home button{
     border:none;
     background:#f7f6f2;
+    width: 100%;
 
 }
 .img-home form {
     margin: 0;
     width: 100%;
-
+    justify-content: center;
     /* Remplacez margin-top: 0; par margin: 0; pour éviter tout décalage inutile */
 }
 .img-home img {
+
     margin-top: 5%;
-    margin-left: 19%;
-    width: 150%;
-    height: 97%;
+    width: 90%;
+    height: 90%;
 }
