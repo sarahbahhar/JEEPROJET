@@ -31,8 +31,7 @@
 </c:if>-->
 
 <div class="img-home">
-    <form action="${pageContext.request.contextPath}/product-servlet" method="post">
-        <input type="hidden" name="email" value="${sessionScope.email}" />
+    <form action="${pageContext.request.contextPath}/product-servlet" method="get">
         <button type="submit"><img src="img/home-img.jpg" alt="Nos Produits"></button>
     </form>
 </div>

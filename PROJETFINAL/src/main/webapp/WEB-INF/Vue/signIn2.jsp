@@ -36,7 +36,7 @@
 
             <button class="lien">Se connecter</button>
             <c:if test="${not empty failLogin and failLogin}">
-            <div><p class="red-text">Email ou mot de passe incorrect.</p></div>
+            <div><p class="red-text" >Email ou mot de passe incorrect.</p></div>
         </c:if>
         </form>
     </div>

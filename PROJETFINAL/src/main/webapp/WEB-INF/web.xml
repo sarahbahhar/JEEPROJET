@@ -28,9 +28,9 @@
              <url-pattern>/WEB-INF/Vue/*</url-pattern>
              <url-pattern>/home.jsp</url-pattern>
              <url-pattern>/productList.jsp</url-pattern>
-             <include-prelude>/WEB-INF/Vue/header.jsp</include-prelude>
+             <include-prelude>/header.jsp</include-prelude>
              <include-prelude>/WEB-INF/Vue/taglibs.jsp</include-prelude>
-             <include-coda>/WEB-INF/Vue/footer.jsp</include-coda>
+             <include-coda>/footer.jsp</include-coda>
          </jsp-property-group>
 
          <jsp-property-group>
