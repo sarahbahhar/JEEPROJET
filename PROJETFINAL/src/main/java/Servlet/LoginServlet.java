@@ -86,8 +86,8 @@ public class LoginServlet extends HttpServlet{
                     isBan=true;
 
                 }else {
-                    session.setAttribute("canAddProduct", m.getPeutAjouterProduit() == 1);
-                    session.setAttribute("canDeleteProduct", m.getPeutSupprimerProduit() == 1);
+                    session.setAttribute("canAddProduct", m.getPeutAjouterProduit()==1 );
+                    session.setAttribute("canDeleteProduct", m.getPeutSupprimerProduit()==1);
                 }
 
 
