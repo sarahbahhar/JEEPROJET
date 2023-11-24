@@ -59,15 +59,16 @@
 
                     <h2>Ma note </h2>
                     <c:choose>
-                        <c:when test="${empty averageRating}">
+                        <c:when test="${averageRating==0}">
                             <p>Aucune moyenne disponible</p>
                         </c:when>
                         <c:otherwise>
-                            <p>Moyenne : ${averageRating}</p>
+                            <p>Moyenne : ${averageRating}/5 </p>
                         </c:otherwise>
                     </c:choose>
                 </div>
-                    </c:if>
+                </c:if>
+
             </table>
         </fieldset>
         <c:choose>

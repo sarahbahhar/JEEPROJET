@@ -114,7 +114,7 @@
 
 
 
-                        <form   class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                        <form   class='style' action="${pageContext.request.contextPath}/my-profile-servlet" method="get">
                             <input type="hidden" name="path" value="myProfile.jsp" />
                             <button class="lien" type="submit">Profil</button>
                         </form>
