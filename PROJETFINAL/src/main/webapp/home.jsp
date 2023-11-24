@@ -30,7 +30,12 @@
     </script>
 </c:if>-->
 
-<div class="img-home"><img src="img/home-img.jpg" alt="Nos Produits"></div>
+<div class="img-home">
+    <form action="${pageContext.request.contextPath}/product-servlet" method="post">
+        <input type="hidden" name="email" value="${sessionScope.email}" />
+        <button type="submit"><img src="img/home-img.jpg" alt="Nos Produits"></button>
+    </form>
+</div>
 
 <!--<c:if test="${!empty sessionScope.InfoCompte.prenom && !empty sessionScope.InfoCompte.nom}">
     <div><h1>Bienvenue ${sessionScope.InfoCompte.prenom} ${sessionScope.InfoCompte.nom}</h1></div>

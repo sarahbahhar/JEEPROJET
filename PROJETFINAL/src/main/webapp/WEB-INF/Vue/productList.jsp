@@ -9,9 +9,9 @@
         <meta charset="utf-8">
         <meta name="viewport">
         <title>Accueil</title>
-        <link rel="stylesheet" href="./css/home.css">
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="shortcut icon"  href="./img/logo_onglet.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../../css/home.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="shortcut icon" href="../../img/logo_onglet.ico" type="image/x-icon">
     </head>
 
 </head>
