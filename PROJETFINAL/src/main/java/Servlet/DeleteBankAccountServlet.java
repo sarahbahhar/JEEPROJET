@@ -24,7 +24,7 @@ public class DeleteBankAccountServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/bank-account-servlet");
             }
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            response.sendRedirect(request.getContextPath() + "/error");
             e.printStackTrace();
         }
     }

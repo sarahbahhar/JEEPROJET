@@ -63,7 +63,7 @@ public class ModifyInfoServlet extends HttpServlet {
 
 
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            response.sendRedirect(request.getContextPath() + "/error");
             e.printStackTrace();
         }
     }

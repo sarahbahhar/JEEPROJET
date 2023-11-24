@@ -107,7 +107,7 @@ public class AddProductServlet extends HttpServlet {
 
 
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            response.sendRedirect(request.getContextPath() + "/error");
             e.printStackTrace();
         }
         String email = request.getParameter("email");

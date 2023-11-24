@@ -67,6 +67,7 @@ public class PasswordForgetServlet extends HttpServlet {
 
 
         } catch (Exception e) {
+            response.sendRedirect(request.getContextPath() + "/error");
             e.printStackTrace();
         }
     }

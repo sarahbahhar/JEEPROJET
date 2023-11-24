@@ -38,7 +38,7 @@ public class DeleteProductServlet extends HttpServlet {
 
             }
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            response.sendRedirect(request.getContextPath() + "/error");
             e.printStackTrace();
         }
         response.sendRedirect(request.getContextPath()+"/my-product-list-servlet?email="+email); // changer type=page  produti et idproduit s'inspirer de produitCommande

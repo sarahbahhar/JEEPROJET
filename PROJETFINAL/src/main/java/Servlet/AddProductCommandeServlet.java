@@ -76,7 +76,7 @@ public class AddProductCommandeServlet extends HttpServlet {
             dispatcher.forward(request, response);
 
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            response.sendRedirect(request.getContextPath() + "/error");
             e.printStackTrace();
         }
     }

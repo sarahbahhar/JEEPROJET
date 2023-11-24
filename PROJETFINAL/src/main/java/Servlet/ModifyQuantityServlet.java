@@ -33,7 +33,7 @@ public class ModifyQuantityServlet extends HttpServlet {
 
         } catch (Exception e) {
             // rediriger vers la page d'erreur
-            response.sendRedirect("/error");
+            response.sendRedirect(request.getContextPath() + "/error");
             e.printStackTrace();
         }
     }
