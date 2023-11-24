@@ -35,12 +35,6 @@
         </form>
     </div>
 
-
-
-
-
-
-
     <div class="overlay-container">
         <div class="overlay">
             <div class="overlay-panel overlay-left">
