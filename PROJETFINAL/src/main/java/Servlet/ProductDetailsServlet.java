@@ -7,6 +7,7 @@ import java.util.Objects;
 
 import DAO.CommentairesDAO;
 import Model.Commentaires;
+import Model.Infocompte;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,6 +16,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import DAO.ProduitDAO;
 import Model.Produit;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "ProductDetailsServlet", value = "/product-details")
 public class ProductDetailsServlet extends HttpServlet {
@@ -24,9 +26,13 @@ public class ProductDetailsServlet extends HttpServlet {
 
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session= request.getSession();
+        Infocompte ic=(Infocompte) session.getAttribute("InfoCompte");
+        String email=ic.getEmail();
         String produitIdParam = request.getParameter("produit_id");
         String type = request.getParameter("type");
         String commandeIdStr=request.getParameter("commande_id");
+        boolean canComment=false;
         int commandeId;
         if(commandeIdStr==null){
             commandeId=-1;
@@ -43,7 +49,11 @@ public class ProductDetailsServlet extends HttpServlet {
             request.setAttribute("noteMoyenne", noteMoyenne);
             List<Commentaires> commentaires = CommentairesDAO.getCommentairesByProduitId(produitId);
             request.setAttribute("commentaires", commentaires);
-            request.setAttribute("commande_id",commandeId);
+            if(commandeId>0 && !CommentairesDAO.hasCommented(produitId,email)){
+                canComment=true;
+            }
+            request.setAttribute("canComment", canComment);
+            
 
         }
         RequestDispatcher dispatcher;
