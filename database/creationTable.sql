@@ -66,6 +66,8 @@ CREATE TABLE Moderateur (
                             max_produits_ligne INT NOT NULL DEFAULT 10,
                             nbBannissement INT NOT NULL DEFAULT 0,
                             dateBanni date,
+                            motifCourtBannissement VARCHAR(100) DEFAULT NULL,
+                            motifLongBanissement TEXT DEFAULT NULL,
                             FOREIGN KEY (email) REFERENCES Compte(email)
 );
 -- Table Demande Moderateur avec les droits intégrés
@@ -228,7 +230,7 @@ INSERT INTO Admin (email) VALUES ('simon.ren@gmail.com');
 -- Ajout des vendeurs dans la table Moderateur
 INSERT INTO Moderateur (email, peut_ajouter_produit, peut_supprimer_produit, max_produits_ligne)
 VALUES ('loucas.terchani@gmail.com', TRUE, FALSE, 50),
-       ('sarah.bahhar@gmail.com', TRUE, TRUE, 100);
+       ('sarah.bahhar@gmail.com', TRUE, TRUE, 2);
 
 
 

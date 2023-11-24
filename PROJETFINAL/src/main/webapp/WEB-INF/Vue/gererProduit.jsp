@@ -2,6 +2,7 @@
 <%@ page import="Model.Moderateur" %>
 <%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,7 @@
 <div>
     <div class="global">
         <div class="box" style="display: grid;">
+
             <c:forEach items="${produits}" var="produit">
                 <form action="${pageContext.request.contextPath}/product-details" method="post">
                     <div class="article" style="display: flex; justify-content: center; align-items: center;">
@@ -35,14 +37,25 @@
                     </div>
                 </form>
             </c:forEach>
+            <c:if test="${fn:length(produits) == 0}">
+                <h1>Vous n'avez pas de produit en ligne</h1>
+            </c:if>
         </div>
 
 
 
         <c:if test="${sessionScope.canAddProduct}">
-            <form action="${pageContext.request.contextPath}/add-product-servlet" method="get">
-                <input type="submit" name="ajouter_un_produit" value="Ajouter un produit">
-            </form>
+            <c:choose>
+                <c:when test="${fn:length(produits) lt sessionScope.maxProductsPerLine}">
+                    <form action="${pageContext.request.contextPath}/add-product-servlet" method="get">
+                        <input type="submit" name="ajouter_un_produit" value="Ajouter un produit">
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <div class="red-text">Vous avez atteint votre limite de produits en ligne.</div>
+                </c:otherwise>
+            </c:choose>
+
         </c:if>
 
     </div>
