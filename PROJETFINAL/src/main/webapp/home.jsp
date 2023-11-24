@@ -57,10 +57,6 @@
         </li>
     </ul>
 
-    <div id="product-carousel-nav">
-        <button class="carousel-nav prev"></button>
-        <button class="carousel-nav next"></button>
-    </div>
 </div>
 <script src="js/ProductSliderHome.js"></script>
 
