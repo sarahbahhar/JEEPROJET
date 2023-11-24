@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("WEB-INF/Vue/signIn.jsp");
+        response.sendRedirect("WEB-INF/Vue/signIn2.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -125,12 +125,12 @@ public class LoginServlet extends HttpServlet{
             //RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/home.jsp");
             //dispatcher.forward(request, response);
         } else {
-            PrintWriter out=response.getWriter();
+            request.setAttribute("failLogin",true);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/signIn2.jsp");
+            dispatcher.forward(request, response);
 
-            out.println("Mot de passe incorrect. Veuillez réessayer.");
-            response.setHeader("Refresh", "3; URL=redirect-servlet?path=signIn.jsp");
-            out.close();
-            throw new Exception("Login not successful..");
+
+
         }
         //out.close();
     }

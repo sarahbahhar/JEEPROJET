@@ -27,8 +27,7 @@ public class ProductDetailsServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session= request.getSession();
-        Infocompte ic=(Infocompte) session.getAttribute("InfoCompte");
-        String email=ic.getEmail();
+        String email = request.getParameter("email");
         String produitIdParam = request.getParameter("produit_id");
         String type = request.getParameter("type");
         String commandeIdStr=request.getParameter("commande_id");

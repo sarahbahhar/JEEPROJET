@@ -48,7 +48,7 @@
                                 <c:when test="${empty sessionScope.role}">
                                     <form action="${pageContext.request.contextPath}/redirect-servlet" method="post">
 
-                                        <input type="hidden" name="path" value="signIn.jsp" />
+                                        <input type="hidden" name="path" value="signIn2.jsp" />
 
 
                                         <c:if test="${not isModBanned}">
