@@ -1,8 +1,10 @@
 package Servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 
 
+import Model.Moderateur;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -39,6 +41,7 @@ public class LoginServlet extends HttpServlet{
             throws ServletException, IOException {
         try {
             authenticate(request, response);
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -53,6 +56,7 @@ public class LoginServlet extends HttpServlet{
         //PrintWriter out= response.getWriter();
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        boolean isBan=false;
         //System.out.println(password);
 
 
@@ -67,10 +71,24 @@ public class LoginServlet extends HttpServlet{
             }else if (ModeratorDAO.emailExists(email)) {
                 ModeratorDAO.unbanByEmail(email);
                 session.setAttribute("role", 1); // 1 pour moderateur
-                int[] allPermissions = ModeratorDAO.getAllPermissionsByEmail(email);
-                session.setAttribute("maxProductsPerLine",allPermissions[0]);
-                session.setAttribute("canAddProduct",allPermissions[1] == 1);
-                session.setAttribute("canDeleteProduct",allPermissions[2] == 1);
+
+                Moderateur m = ModeratorDAO.getModeratorByEmail(email);
+
+                session.setAttribute("maxProductsPerLine",m.getMaxProduitsLigne());
+                session.setAttribute("nbBannissement",m.getNbBannissement());
+                session.setAttribute("motifCourtBannissement",m.getMotifCourtBannissement());
+                session.setAttribute("motifLongBanissement",m.getMotifLongBanissement());
+                session.setAttribute("dateBanni",m.getDateBanni());
+
+                if(m.getDateBanni()!=null){
+                    session.setAttribute("canAddProduct", false);
+                    session.setAttribute("canDeleteProduct", false);
+                    isBan=true;
+
+                }else {
+                    session.setAttribute("canAddProduct", m.getPeutAjouterProduit() == 1);
+                    session.setAttribute("canDeleteProduct", m.getPeutSupprimerProduit() == 1);
+                }
 
 
 
@@ -82,7 +100,15 @@ public class LoginServlet extends HttpServlet{
             session.setAttribute("firstName",fullName[0]);
             session.setAttribute("lastName",fullName[1]);
 
-            response.sendRedirect(request.getContextPath());
+            if (isBan) {
+                RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/Vue/yourAreBan.jsp");
+                dispatcher.forward(request, response);
+
+            }else{
+                response.sendRedirect(request.getContextPath());
+            }
+
+
 
             Infocompte ic=infocompteDAO.getInfoCompte(email);
 
