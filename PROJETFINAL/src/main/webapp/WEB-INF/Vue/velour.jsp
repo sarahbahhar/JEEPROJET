@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport">
-    <title>Produits Velour</title>
+    <title>Produits Tissu</title>
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">

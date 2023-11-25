@@ -12,13 +12,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "VelourProductsServlet", value = "/tissu-products")
+@WebServlet(name = "TissuProductsServlet", value = "/tissu-products")
 public class TissuProductsServlet extends HttpServlet {
     private final ProduitDAO produitDAO = new ProduitDAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Produit> tissuProducts = produitDAO.getProductsByCategory("Tissu");
-        request.setAttribute("cuirProducts", tissuProducts);
+        request.setAttribute("tissuProducts", tissuProducts);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/tissu.jsp");
         dispatcher.forward(request, response);
