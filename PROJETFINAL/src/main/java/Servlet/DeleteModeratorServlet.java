@@ -23,7 +23,7 @@ DeleteModeratorServlet extends HttpServlet {
         try {
             String email=request.getParameter("email");
             if(email != null){
-                ModeratorDAO.removeModerator(getServletContext().getRealPath("/"),"sarah.bahhar@gmail.com");
+                ModeratorDAO.removeModerator(getServletContext().getRealPath("/"),email);
 
                 response.sendRedirect(request.getContextPath() + "/moderator-servlet");
             }
