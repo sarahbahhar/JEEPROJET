@@ -18,9 +18,9 @@ public class DeleteBankAccountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String email=request.getParameter("email");
-            String numero=request.getParameter("numero");
-            if(email != null && !email.isEmpty()&&numero!=null&&!numero.isEmpty()){
-                CBDAO.deleteComptebancaire(email,numero);
+            String id=request.getParameter("id");
+            if(email != null && !email.isEmpty()&&id!=null&&!id.isEmpty()){
+                CBDAO.deleteComptebancaire(email,id);
                 response.sendRedirect(request.getContextPath() + "/bank-account-servlet");
             }
         } catch (Exception e) {

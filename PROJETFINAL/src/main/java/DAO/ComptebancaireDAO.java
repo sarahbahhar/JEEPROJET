@@ -21,11 +21,11 @@ public class ComptebancaireDAO
         session.getTransaction().commit();
         session.close();
     }
-    public void deleteComptebancaire(String email,String numero){
+    public void deleteComptebancaire(String email,String id){
         Comptebancaire cb;
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        cb = (Comptebancaire) session.createQuery("FROM Comptebancaire cb WHERE cb.email = :email AND cb.numero=:numero").setParameter("email", email).setParameter("numero", numero).uniqueResult();
+        cb = (Comptebancaire) session.createQuery("FROM Comptebancaire cb WHERE cb.email = :email AND cb.id=:id").setParameter("email", email).setParameter("id", id).uniqueResult();
         session.delete(cb);
         session.getTransaction().commit();
         session.close();
@@ -41,7 +41,7 @@ public class ComptebancaireDAO
     }
 
 
-    public boolean validate(String numero, String cvv, String date) {
+    public boolean validate(String numero, String cvv, String date, int id) {
 
         Transaction transaction = null;
         Comptebancaire compte = null;
@@ -49,7 +49,7 @@ public class ComptebancaireDAO
             // start a transaction
             transaction = session.beginTransaction();
             // get an user object
-            compte = (Comptebancaire) session.createQuery("FROM Comptebancaire Cb WHERE Cb.numero = :numero").setParameter("numero", numero).uniqueResult();
+            compte = (Comptebancaire) session.createQuery("FROM Comptebancaire Cb WHERE Cb.id = :id").setParameter("id", id).uniqueResult();
 
             if (compte != null && compte.getDate().equals(date) && compte.getCvv().equals(cvv)) {
                 return true;

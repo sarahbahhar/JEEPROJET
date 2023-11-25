@@ -53,10 +53,11 @@ public class VerifyBankServlet extends HttpServlet{
         String numero = request.getParameter("numero");
         String cvv = request.getParameter("cvv");
         String date= request.getParameter("date");
+        String id= request.getParameter("id");
         //out.println(email);
 
 
-        if (CBDAO.validate(numero, cvv, date)) {
+        if (CBDAO.validate(numero, cvv, date, Integer.parseInt(id))) {
             //HttpSession session = request.getSession();
             //session.setAttribute("email",email);
             response.sendRedirect(request.getContextPath() +"/CreateCommandeServlet");

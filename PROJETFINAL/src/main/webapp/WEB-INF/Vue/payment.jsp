@@ -42,7 +42,9 @@
                             <input type="hidden" name="numero" value="${carte.numero}" />
                             <input type="hidden" name="cvv" value="${carte.cvv}" />
                             <input type="hidden" name="date" value="${carte.date}" />
-                                ${carte.nom}
+                            <input type="hidden" name="id" value="${carte.id}" />
+
+                        ${carte.nom}
                         </td>
                         <td>
                             **** **** **** ${fn:substring(carte.numero, fn:length(carte.numero) - 4, fn:length(carte.numero))} (${carte.date})
@@ -66,9 +68,9 @@
                     <input type="text" id="numero" name="numero" pattern="[0-9]{16}" placeholder="Numéro de Carte" required>
                     <input type="text" id="expiration" name="expiration" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" placeholder="Date d'Expiration (MM/AA)" required>
                     <input type="text" id="cvv" name="cvv" pattern="[0-9]{3}" placeholder="CVV" required>
-                    <input type="hidden" name="email" value="${sessionScope.email}" />
+                    <input type="hidden" id="email" name="email" value="${sessionScope.email}" />
                     <input type="hidden" id="redirectionPath" name="redirectionPath" value="selectCardServlet">
-                    <button class="lien" onclick="toggleAddCardForm()" type="submit" >Payer</button>
+                    <button class="lien" onclick="validateAndToggle()" type="submit" >Payer</button>
                 </form>
             </div>
             <div class="overlay-container">
@@ -84,3 +86,6 @@
 
 </body>
 </html>
+
+
+

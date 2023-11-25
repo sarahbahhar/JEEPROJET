@@ -41,7 +41,7 @@
                     <td colspan="2">
                         <form action="${pageContext.request.contextPath}/delete-bank-account-servlet" method="post">
                             <input type="hidden" name="email" value="${account.email}" />
-                            <input type="hidden" name="numero" value="${account.numero}" />
+                            <input type="hidden" name="id" value="${account.id}" />
                             <button type="submit" class="bouton-golden">Delete</button>
                         </form>
                     </td>
