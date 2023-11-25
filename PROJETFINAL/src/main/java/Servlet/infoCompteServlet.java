@@ -37,7 +37,7 @@ public class infoCompteServlet extends HttpServlet {
             String prenom=(String) session.getAttribute("prenom");
 
             String dateString= request.getParameter("date");
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             java.util.Date utilDate = dateFormat.parse(dateString);
             java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
             String telephone=request.getParameter("telephone");

@@ -5,6 +5,16 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        var dateField = document.getElementById('date');
+        var today = new Date();
+        var maxDate = today.toISOString().split('T')[0]; // Convertit la date actuelle en format AAAA-MM-JJ
+        dateField.setAttribute('max', maxDate);
+    });
+</script>
+
 <body>
 <div class="container" id="container">
     <div class="form-container sign-in-container">
