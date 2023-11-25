@@ -35,6 +35,26 @@ public class AdminDAO {
         }
         return false;
     }
+    public static String getAdminEmail() {
+        Transaction transaction = null;
+        String adminEmail = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            Admin admin = (Admin) session.createQuery("FROM Admin").setMaxResults(1).uniqueResult();
+            if (admin != null) {
+                adminEmail = admin.getEmail();
+            }
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+        return adminEmail;
+    }
 
 
 
