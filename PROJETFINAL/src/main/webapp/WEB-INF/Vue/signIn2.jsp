@@ -19,7 +19,10 @@
             <input type="text" placeholder="Nom" id="nom" name="nom" required/>
             <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
             <input id="emailI" name="email"  type="email" placeholder="Email" required/>
-            <input id="passwordI" name="password" type="password" placeholder="Mot de passe" required/>
+            <input id="passwordI" name="password" type="password" placeholder="Mot de passe"
+                   pattern="(?=.*[A-Z])(?=.*[!@#$&*]).{6,}"
+                   title="Le mot de passe doit contenir au moins 6 caractères, dont une majuscule et un caractère spécial."
+                   required />
             <button class="lien">S'inscrire</button>
             <c:if test="${not empty failEmailExist and failEmailExist}">
 
