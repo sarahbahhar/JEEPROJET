@@ -29,7 +29,11 @@ public class ProductDetailsServlet extends HttpServlet {
         HttpSession session= request.getSession();
         String email = request.getParameter("email");
         Infocompte ic=(Infocompte) session.getAttribute("InfoCompte");
-        String emailAcheteur=ic.getEmail();
+        String emailAcheteur=null;
+        if(ic !=null){
+            emailAcheteur=ic.getEmail();
+        }
+
         String produitIdParam = request.getParameter("produit_id");
         String type = request.getParameter("type");
         String commandeIdStr=request.getParameter("commande_id");
