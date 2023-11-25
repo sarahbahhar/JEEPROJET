@@ -2,36 +2,30 @@
 <html>
 <head>
     <title>Demande de Modérateur</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
 
 </head>
 <body>
-
-<div style="width: 40%; margin: auto;">
-    <h1>Demande Moderateur</h1>
-        <fieldset>
-            <legend>Informations</legend>
-                <form id="demande-moderateur-form" action="${pageContext.request.contextPath}/demande-moderator-servlet" method="post">
-
-                    <p>Veuillez expliquer pourquoi vous souhaitez devenir modérateur et comment vous envisagez de contribuer à Divan.</p>
-                    <label for="description"></label>
-                    <textarea style ="width: 100%;height: 300px; " id="description" name="description" required></textarea>
-
-
-                    <input type="hidden" name="email" value="${sessionScope.email}" />
-
-                </form>
-
-        </fieldset>
-    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-        <form action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-            <input type="hidden" name="path" value="myProfile.jsp" />
-            <button class="bouton-golden" type="submit">Retour</button>
+<div class="container" id="container">
+    <div class="form-container sign-in-container">
+        <form action="${pageContext.request.contextPath}/demande-moderator-servlet" method="post">
+            <h1>Demande Moderateur</h1>
+            <p>Veuillez expliquer pourquoi vous souhaitez devenir modérateur et comment vous envisagez de contribuer à Divan.</p>
+            <textarea style ="width: 100%;height: 300px; " id="description" name="description" placeholder="Description" required></textarea>
+            <input type="hidden" name="email" value="${sessionScope.email}" />
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <button class="lien" type="submit" >Soumettre la Demande</button>
         </form>
-        <button class="bouton-golden" type="submit" form="demande-moderateur-form">Soumettre la Demande</button>
     </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <img src="${pageContext.request.contextPath}/img/demandeMod.jpg" alt="canape">
+            </div>
+        </div>
     </div>
+</div>
 </body>
 </html>
 

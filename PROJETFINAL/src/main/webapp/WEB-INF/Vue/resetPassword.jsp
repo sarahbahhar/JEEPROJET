@@ -19,24 +19,28 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
 </head>
 <body>
-<h2>Réinitialisation du Mot de Passe</h2>
-<form action="${pageContext.request.contextPath}/reset-password-servlet" method="POST" onsubmit="return validatePassword()">
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form action="${pageContext.request.contextPath}/reset-password-servlet" method="POST" onsubmit="return validatePassword()">
+                <h1>Réinitialisation du Mot de Passe</h1>
+                <input type="hidden" name="email" value="${email}"/>
+                <input type="password" id="newPassword" name="newPassword" placeholder="Nouveau mot de passe" required>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmation" required>
+                <div id="error" style="color: red;"></div>
+                <button class="lien" type="submit" >Réinitialiser le Mot de Passe</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <img src="${pageContext.request.contextPath}/img/Rmdp.jpg" alt="canape">
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <input type="hidden" name="email" value="${email}"/>
-    <div>
-        <label for="newPassword">Nouveau Mot de Passe:</label>
-        <input type="password" id="newPassword" name="newPassword" required>
-    </div>
-    <div>
-        <label for="confirmPassword">Confirmer le Nouveau Mot de Passe:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
-    </div>
-    <div id="error" style="color: red;"></div>
-    <div>
-        <button type="submit">Réinitialiser le Mot de Passe</button>
-    </div>
-</form>
 </body>
 </html>

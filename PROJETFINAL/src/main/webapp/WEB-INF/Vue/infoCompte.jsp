@@ -6,8 +6,6 @@
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-
-
 <div class="container" id="container">
     <div class="form-container sign-in-container">
         <form method="POST" action="<%=request.getContextPath()%>/infoCompteServlet">
@@ -29,6 +27,5 @@
         </div>
     </div>
 </div>
-<hr>
 </body>
 </html>
