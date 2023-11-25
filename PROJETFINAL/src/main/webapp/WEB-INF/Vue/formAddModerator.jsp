@@ -14,7 +14,6 @@
             <p>Veuillez expliquer pourquoi vous souhaitez devenir modérateur et comment vous envisagez de contribuer à Divan.</p>
             <textarea style ="width: 100%;height: 300px; " id="description" name="description" placeholder="Description" required></textarea>
             <input type="hidden" name="email" value="${sessionScope.email}" />
-            <input type="email" id="email" name="email" placeholder="Email" required>
             <button class="lien" type="submit" >Soumettre la Demande</button>
         </form>
     </div>
