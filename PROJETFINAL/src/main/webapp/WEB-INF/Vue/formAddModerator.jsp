@@ -12,7 +12,7 @@
         <form action="${pageContext.request.contextPath}/demande-moderator-servlet" method="post">
             <h1>Demande Moderateur</h1>
             <p>Veuillez expliquer pourquoi vous souhaitez devenir modérateur et comment vous envisagez de contribuer à Divan.</p>
-            <textarea style ="width: 100%;height: 300px; " id="description" name="description" placeholder="Description" required></textarea>
+            <textarea class="custom-textarea-g" id="description" name="description" placeholder="Description" required></textarea>
             <input type="hidden" name="email" value="${sessionScope.email}" />
             <button class="lien" type="submit" >Soumettre la Demande</button>
         </form>
