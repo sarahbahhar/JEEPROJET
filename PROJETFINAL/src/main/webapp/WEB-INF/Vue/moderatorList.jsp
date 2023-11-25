@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Moderator List</title>
+    <title>Liste des modérateurs</title>
     <link rel="stylesheet" href="./css/moderatorList.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>

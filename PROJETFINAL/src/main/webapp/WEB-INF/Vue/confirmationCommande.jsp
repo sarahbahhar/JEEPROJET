@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Confirmation de la commande</title>
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
 <h1>Confirmation de la commande</h1>

@@ -12,24 +12,25 @@
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
     <title>Fidélité</title>
 </head>
-<body>
-<h2>Vos points de fidélité: ${pointFidelite} points </h2>
-<p>Vous pouvez utiliser 100 points pour obtenir une réduction de 10€. </p>
-<form action="${pageContext.request.contextPath}/FidelityServlet" method="post">
+    <body>
+        <h2>Vos points de fidélité: ${pointFidelite} points </h2>
+        <p>Vous pouvez utiliser 100 points pour obtenir une réduction de 10€. </p>
+        <form action="${pageContext.request.contextPath}/FidelityServlet" method="post">
 
-        <label>
-            <input type="checkbox" id="usePoints" name="usePoints" value="true" > Utiliser 100 points de fidélité
-        </label>
-    <br>
+                <label>
+                    <input type="checkbox" id="usePoints" name="usePoints" value="true" > Utiliser 100 points de fidélité
+                </label>
+            <br>
 
-    <h2>Total</h2>
-    <c:if test="${usePoints}">
-        <p id="total-amount">${totalReduit} €</p>
-    </c:if>
-    <c:if test="${!usePoints}">
-        <p id="total-amount">${total} €</p>
-    </c:if>
-    <button class="bouton-golden" type="submit" value="Submit">
-</form>
-</body>
+            <h2>Total</h2>
+            <c:if test="${usePoints}">
+                <p id="total-amount">${totalReduit} €</p>
+            </c:if>
+
+            <c:if test="${!usePoints}">
+                <p id="total-amount">${total} €</p>
+            </c:if>
+            <button class="bouton-golden" type="submit" value="Submit"> </button>
+        </form>
+    </body>
 </html>

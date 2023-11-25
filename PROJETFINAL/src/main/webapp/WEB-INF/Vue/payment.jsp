@@ -11,7 +11,7 @@
 
 <html>
 <head>
-    <title>Payment</title>
+    <title>Paiement</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/myCard.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">

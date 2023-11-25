@@ -3,6 +3,8 @@
 <html>
 <head>
     <title>Réinitialisation du Mot de Passe</title>
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+
     <!-- Ajoutez ici votre CSS et autres en-têtes si nécessaire -->
     <script type="text/javascript">
         function validatePassword() {
