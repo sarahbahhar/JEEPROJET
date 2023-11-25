@@ -109,9 +109,9 @@ public class AddProductServlet extends HttpServlet {
         } catch (Exception e) {
             response.sendRedirect(request.getContextPath() + "/error");
             e.printStackTrace();
+
         }
         String email = request.getParameter("email");
-
         response.sendRedirect(request.getContextPath()+"/my-product-list-servlet?email="+email); // changer type=page  produti et idproduit s'inspirer de produitCommande
 
 
