@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,11 +35,12 @@
 
 
             <c:choose>
-                <c:when test="${empty sessionScope.email}">
+                <c:when test="${empty sessionScope.role }">
 
 
 
-                    <form >
+
+                <form >
                     </form>
                     <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                         <input type="hidden" name="path" value="about.jsp" />

@@ -36,7 +36,11 @@ public class InscriptionServlet extends HttpServlet{
                 c.setAndHashMotDePasse(password);
                 signUpDAO.addCompte(c);*/
 
-                
+                HttpSession session = request.getSession();
+                session.setAttribute("email", email);
+                session.setAttribute("nom", nom);
+                session.setAttribute("prenom", prenom);
+                session.setAttribute("password", password);
 
 
                 //EmailSender emailSender=new EmailSender();
