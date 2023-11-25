@@ -18,7 +18,7 @@
 <body>
 <div class="container" id="container">
     <div class="form-container sign-up-container">
-        <form id="partie2" method="POST" action="<%=request.getContextPath()%>/inscriptionServlet">
+        <form id="partie2" method="POST"  method="post" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
             <h1>Description</h1>
             <br>
             <textarea class="custom-textarea-g" id="description" name="description" placeholder="Description" required></textarea>
