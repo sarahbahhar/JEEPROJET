@@ -90,7 +90,8 @@ CREATE TABLE Admin (
 
 -- Table CompteBancaire
 CREATE TABLE CompteBancaire (
-                                numero VARCHAR(16) PRIMARY KEY  NOT NULL,
+								id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+                                numero VARCHAR(16)  NOT NULL,
                                 nom VARCHAR(255) NOT NULL,
                                 date VARCHAR(5) NOT NULL,
                                 cvv VARCHAR(3) NOT NULL,
@@ -109,11 +110,11 @@ CREATE TABLE CompteBancaire (
 CREATE TABLE Produit (
                          id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
                          titre VARCHAR(255) NOT NULL,
-                         description TEXT NOT NULL,
+                         description TEXT  NOT NULL,
                          stock INT NOT NULL,
                          email VARCHAR(100) NOT NULL,
                          nomImage VARCHAR(250) NOT NULL,
-                         miniDescription VARCHAR(200) NOT NULL,
+                         miniDescription VARCHAR(200)  NOT NULL,
                          prix decimal(10,2) NOT NULL,
                          categorie varchar(100),
                          FOREIGN KEY (email) REFERENCES Moderateur(email)

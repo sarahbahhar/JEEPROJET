@@ -5,9 +5,12 @@
 <hibernate-mapping>
 
     <class name="Model.Comptebancaire" table="comptebancaire" schema="projet_jee">
-        <id name="numero">
-            <column name="numero" sql-type="varchar(16)" length="16"/>
+        <id name="id">
+            <column name="id" sql-type="int"/>
         </id>
+        <property name="numero">
+            <column name="numero" sql-type="varchar(16)" length="16"/>
+        </property>
         <property name="nom">
             <column name="nom" sql-type="varchar(255)"/>
         </property>
