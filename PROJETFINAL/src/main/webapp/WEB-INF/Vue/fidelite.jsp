@@ -18,7 +18,7 @@
         <form action="${pageContext.request.contextPath}/FidelityServlet" method="post">
 
                 <label>
-                    <input type="checkbox" id="usePoints" name="usePoints" value="true" > Utiliser 100 points de fidélité
+                    <input type="checkbox" id="usePoints" name="usePoints" value="true" > Utilise 100 points de fidélité
                 </label>
             <br>
 
@@ -30,7 +30,7 @@
             <c:if test="${!usePoints}">
                 <p id="total-amount">${total} €</p>
             </c:if>
-            <button class="bouton-golden" type="submit" value="Submit"> </button>
+            <button class="bouton-golden" type="submit" value="Submit"> Suivant</button>
         </form>
     </body>
 </html>

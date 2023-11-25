@@ -53,7 +53,14 @@
                 <tr>
                     <td>Pays :</td>
                     <td class="black-text">${sessionScope.InfoCompte.pays}</td>
+
                 </tr>
+                <c:if test="${sessionScope.role == 0 || sessionScope.role == 1}">
+                    <tr>
+                        <td>Points de fidélité :</td>
+                        <td class="black-text">${sessionScope.pointFidelite}</td>
+                    </tr>
+                </c:if>
                 <c:if test="${sessionScope.role == 1}">
                 <div>
 
