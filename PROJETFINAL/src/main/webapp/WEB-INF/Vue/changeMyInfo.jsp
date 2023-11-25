@@ -6,7 +6,8 @@
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-<div class="container" id="container">
+
+<div class="container special-container" id="container">
     <div class="form-container sign-in-container">
         <form method="POST" action="${pageContext.request.contextPath}/ModifyInfoServlet">
             <h1>Modifier Mon Profil</h1>
@@ -25,7 +26,7 @@
     <div class="overlay-container">
         <div class="overlay">
             <div class="overlay-panel overlay-right">
-                <img src="${pageContext.request.contextPath}/img/Modifinfo.jpeg" alt="canape">
+                <img src="${pageContext.request.contextPath}/img/Modifinfo.jpg" alt="canape">
             </div>
         </div>
     </div>
