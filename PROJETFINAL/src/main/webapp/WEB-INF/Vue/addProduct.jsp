@@ -8,60 +8,38 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
-    <script>
-        function submitForms() {
-            document.getElementById('partie1').submit();
-            document.getElementById('partie2').submit();
-        }
-    </script>
 </head>
 <body>
-<div class="container" id="container">
-    <div class="form-container sign-up-container">
-        <form id="partie2" method="POST"  method="post" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
-            <h1>Description</h1>
-            <br>
-            <textarea class="custom-textarea-g" id="description" name="description" placeholder="Description" required></textarea>
 
-            <textarea class="custom-textarea-p" id="miniDescription" name="miniDescription" placeholder="Mini description" required></textarea>
-            <button onclick="submitForms()" class="lien" type="button">Ajouter</button>
-        </form>
-    </div>
+<div class="container special-container" id="container">
     <div class="form-container sign-in-container">
-        <form id="partie1" method="post" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
+        <form method="post" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
             <h1>Ajouter un Produit</h1>
             <input type="text" id="titre" name="titre" placeholder="Titre" required>
+            <textarea class="custom-textarea-g" id="description" name="description" placeholder="Description" required></textarea>
+            <textarea class="custom-textarea-p" id="miniDescription" name="miniDescription" placeholder="Mini description" required></textarea>
             <select id="categorie" name="categorie" required>
-                <option value="" disabled selected>Choisissez une catégorie</option>
-                <option value="Velour">Velour</option>
-                <option value="Cuir">Cuir</option>
-                <option value="Banc">Banc</option>
-                <option value="Tissu">Tissu</option>
-                <option value="Lin">Lin</option>
-                <option value="Exterieur">Exterieur</option>
+                            <option value="Velour">Velour</option>
+                            <option value="Cuir">Cuir</option>
+                            <option value="Banc">Banc</option>
+                            <option value="Tissu">Tissu</option>
+                            <option value="Lin">Lin</option>
+                            <option value="Exterieur">Exterieur</option>
             </select>
-
             <input type="number" id="price" name="price" min="1" placeholder="Prix" required>
             <input type="number" id="stock" name="stock" min="1" placeholder="Stock" required>
             <input type="file" id="image" name="image" required>
             <input type="hidden" name="email" value="${sessionScope.email}" />
-
+            <button class="lien" type="submit" >Ajouter</button>
         </form>
     </div>
     <div class="overlay-container">
         <div class="overlay">
-            <div class="overlay-panel overlay-left">
-                <h1>Informations du produit</h1>
-                <button class="ghost" id="signIn">Precedent</button>
-            </div>
             <div class="overlay-panel overlay-right">
-                <h1>Description du produit</h1>
-               <button class="ghost" id="signUp">Suivant</button>
+                <img src="${pageContext.request.contextPath}/img/nouveauprod.jpg" alt="canape">
             </div>
         </div>
     </div>
 </div>
-<script src="${pageContext.request.contextPath}/js/signIn.js"></script>
-
 </body>
 </html>

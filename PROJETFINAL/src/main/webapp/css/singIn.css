@@ -11,7 +11,12 @@
     font-family: Helvetica, sans-serif;
     margin-top: 5%;
 }
-
+.container.special-container {
+    /* Add your custom styles for the larger container on this page */
+    height: auto; /* Set to auto to adjust based on content */
+    min-height: 600px; /* Adjust the minimum height as needed */
+    margin-top: 100px; /* Adjust the top margin as needed */
+}
 .container {
     background-color: #f7f6f2;
     border-radius: 10px;
@@ -102,6 +107,7 @@ button.ghost:hover {
     margin: 8px 0;
     width: 100%;
 }
+
 .custom-textarea-g {
     width: 100%;
     height: 300px;
@@ -112,6 +118,7 @@ button.ghost:hover {
     height: 100px;
     resize: none;
 }
+
 .container {
     background-color: #f7f6f2;
     border-radius: 10px;
