@@ -11,8 +11,8 @@
         <form action="${pageContext.request.contextPath}/bannir-moderator-servlet" method="post">
             <h1>Bannir un Modérateur</h1>
             <p>Email du modérateur : ${emailModerateur}</p>
-            <input id="motifCourt" name="motifCourt" maxlength="100" required>
-            <textarea id="motifLong" name="motifLong" required></textarea>
+            <input id="motifCourt" name="motifCourt" maxlength="100" placeholder="Mini motif" required>
+            <textarea class="custom-textarea-g" id="motifLong" name="motifLong" placeholder="Motif" required></textarea>
             <input type="date" id="dateFinBan" name="dateFinBan" required>
             <input type="hidden" name="email" value="${emailModerateur}" />
             <button class="lien" type="submit" >Bannir</button>
