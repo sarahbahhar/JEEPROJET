@@ -11,7 +11,6 @@
     <div>
         <h2>Confirmation d'envoi</h2>
         <p>Un e-mail vous a été envoyé avec les instructions pour réinitialiser votre mot de passe.</p>
-        <%-- si le compte existe-->
     </div>
     </body>
 </html>

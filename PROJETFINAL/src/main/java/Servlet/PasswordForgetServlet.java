@@ -1,6 +1,5 @@
 package Servlet;
 
-import DAO.CompteDAO;
 import DAO.TokenDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -47,13 +46,8 @@ public class PasswordForgetServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             String email = request.getParameter("email");
-            if(DAO.CompteDAO.isUniqueEmail(email))
-            {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mailSend.jsp");
+            if(DAO.CompteDAO.emailExists(email)) {
 
-                dispatcher.forward(request, response);
-
-            }else {
 
                 String resetToken = TokenDAO.generateResetToken();
                 TokenDAO.changeTokenByEmail(email, resetToken);
@@ -67,11 +61,12 @@ public class PasswordForgetServlet extends HttpServlet {
                 String htmlContent = getHtmlContentFromJsp("/mail/mailPasswordForget.jsp", request, response);
 
                 sendEmailWithHTML(email, "Réinitialisation du mot de passe", htmlContent);
-
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mailSend.jsp");
-
-                dispatcher.forward(request, response);
             }
+
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mailSend.jsp");
+
+            dispatcher.forward(request, response);
 
 
         } catch (Exception e) {
