@@ -55,7 +55,7 @@ public class CompteDAO
         session.close();
         return result;
     }*/
-    public boolean isUniqueEmail(String email){
+    public static boolean isUniqueEmail(String email){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction=null;
         boolean unique=true;

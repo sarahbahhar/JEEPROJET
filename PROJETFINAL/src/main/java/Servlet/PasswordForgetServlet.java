@@ -1,5 +1,6 @@
 package Servlet;
 
+import DAO.CompteDAO;
 import DAO.TokenDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -46,24 +47,31 @@ public class PasswordForgetServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             String email = request.getParameter("email");
+            if(DAO.CompteDAO.isUniqueEmail(email))
+            {
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mailSend.jsp");
 
-            String resetToken = TokenDAO.generateResetToken();
-            TokenDAO.changeTokenByEmail(email,resetToken);
+                dispatcher.forward(request, response);
+
+            }else {
+
+                String resetToken = TokenDAO.generateResetToken();
+                TokenDAO.changeTokenByEmail(email, resetToken);
 
 
-            String resetLink = "http://localhost:8080/" + request.getContextPath() +"/PasswordForgetServlet?resetToken=" + resetToken+"&email="+email;
+                String resetLink = "http://localhost:8080/" + request.getContextPath() + "/PasswordForgetServlet?resetToken=" + resetToken + "&email=" + email;
 
 
+                request.setAttribute("resetLink", resetLink);
 
-            request.setAttribute("resetLink",resetLink);
+                String htmlContent = getHtmlContentFromJsp("/mail/mailPasswordForget.jsp", request, response);
 
-            String htmlContent = getHtmlContentFromJsp("/mail/mailPasswordForget.jsp", request, response);
+                sendEmailWithHTML(email, "Réinitialisation du mot de passe", htmlContent);
 
-            sendEmailWithHTML(email,"Réinitialisation du mot de passe",htmlContent);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mailSend.jsp");
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mailSend.jsp");
-
-            dispatcher.forward(request, response);
+                dispatcher.forward(request, response);
+            }
 
 
         } catch (Exception e) {

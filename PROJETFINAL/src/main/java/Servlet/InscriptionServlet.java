@@ -19,7 +19,7 @@ import java.util.Properties;
 
 @WebServlet("/inscriptionServlet")
 public class InscriptionServlet extends HttpServlet{
-    private CompteDAO signUpDAO=new CompteDAO();
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("WEB-INF/Vue/signUp.jsp");
     }
@@ -30,7 +30,7 @@ public class InscriptionServlet extends HttpServlet{
             String password= request.getParameter("password");
             String nom= request. getParameter("nom");
             String prenom=request.getParameter("prenom");
-            if(signUpDAO.isUniqueEmail(email)){
+            if(DAO.CompteDAO.isUniqueEmail(email)){
                 /*Compte c=new Compte();
                 c.setEmail(email);
                 c.setAndHashMotDePasse(password);
