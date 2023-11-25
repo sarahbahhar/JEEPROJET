@@ -1,9 +1,10 @@
-function toggleAddCardForm() {
-    var form = document.getElementById("addCardForm");
-    if (form.style.display === "none") {
-        form.style.display = "block";
+function validateAndToggle(event) {
+    var form = document.getElementById('myForm');
+    if (form.checkValidity()) {
+        toggleAddCardForm();
     } else {
-        form.style.display = "none";
+        // Le formulaire n'est pas valide, empêche la soumission
+        event.preventDefault();
     }
 }
 document.addEventListener('DOMContentLoaded', function() {
