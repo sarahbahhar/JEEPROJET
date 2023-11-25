@@ -208,7 +208,7 @@ CREATE TABLE Token(
 
 -- Ajout des comptes dans la table Compte
 INSERT INTO Compte (email, mot_de_passe) VALUES ('abdellah.hassani@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
-INSERT INTO Compte (email, mot_de_passe) VALUES ('simon.ren@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
+INSERT INTO Compte (email, mot_de_passe) VALUES ('abdellah.hassani2002@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 INSERT INTO Compte (email, mot_de_passe) VALUES ('loucas.terchani@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 INSERT INTO Compte (email, mot_de_passe) VALUES ('sarah.bahhar@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 
@@ -224,7 +224,7 @@ INSERT INTO Client (email, points_fidelite) VALUES
 
 
 -- Ajout du modérateur dans la table Moderateur
-INSERT INTO Admin (email) VALUES ('simon.ren@gmail.com');
+INSERT INTO Admin (email) VALUES ('abdellah.hassani2002@gmail.com');
 
 
 
@@ -238,7 +238,7 @@ VALUES ('loucas.terchani@gmail.com', TRUE, FALSE, 50),
 -- Ajout des informations supplémentaires dans la table infocompte
 INSERT INTO infocompte (email, prenom, nom, dateNaissance, telephone, adresse, ville, codePostal, pays)
 VALUES ('abdellah.hassani@gmail.com', 'Abdellah', 'Hassani', '2002-06-15', '0702030405', '123 Rue Fictive', 'Paris', 75001, 'France'),
-       ('simon.ren@gmail.com', 'Simon', 'Ren', '2002-12-01', '0706070809', '456 Rue Imaginaire', 'Lyon', 69001, 'France'),
+       ('abdellah.hassani2002@gmail.com', 'Simon', 'Ren', '2002-12-01', '0706070809', '456 Rue Imaginaire', 'Lyon', 69001, 'France'),
        ('loucas.terchani@gmail.com', 'Loucas', 'Terchani', '2002-03-20', '0708091011', '789 Rue Inexistante', 'Marseille', 13001, 'France'),
        ('sarah.bahhar@gmail.com', 'Sarah', 'Bahhar', '1985-08-25', '012131415', '101 Rue Inventée', 'Toulouse', 31000, 'France');
 
@@ -268,7 +268,10 @@ VALUES (1,'2023-11-12', 99.99, 'abdellah.hassani@gmail.com'),
        (2,'2023-11-13', 149.99, 'abdellah.hassani@gmail.com');
 
 INSERT INTO Token(email,token)
-VALUES('abdellah.hassani@gmail.com','0');
+VALUES('abdellah.hassani@gmail.com','0'),
+      ('sarah.bahhar@gmail.com','0'),
+      ('loucas.terchani@gmail.com','0'),
+      ('abdellah.hassani2002@gmail.com','0');
 
 
 

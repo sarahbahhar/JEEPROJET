@@ -2,6 +2,7 @@ package DAO;
 
 import java.util.List;
 
+import Model.Client;
 import Model.Compte;
 import Model.Token;
 import org.hibernate.Session;
@@ -109,6 +110,33 @@ public class CompteDAO
         List<Compte> result = session.createQuery("from Compte").list();
         session.close();
         return result;
+    }
+
+    public static boolean emailExists(String email) {
+        Transaction transaction = null;
+        Compte compte = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            // Démarrez une transaction
+            transaction = session.beginTransaction();
+            // Obtenez un objet Client en recherchant par e-mail
+            compte = (Compte) session.createQuery("FROM Compte C WHERE C.email = :email")
+                    .setParameter("email", email)
+                    .uniqueResult();
+
+            // Si un client est trouvé, l'e-mail existe dans la base de données
+            if (compte != null) {
+                return true;
+            }
+
+            // Commit la transaction
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                // En cas d'erreur, vous pouvez effectuer un rollback de la transaction ici si nécessaire
+            }
+            e.printStackTrace();
+        }
+        return false;
     }
 }
 
