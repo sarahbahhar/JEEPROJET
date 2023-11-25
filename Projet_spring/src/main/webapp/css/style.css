@@ -1,0 +1,100 @@
+html{
+    margin-right: 10px;
+    margin-left: 5px;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header" "main" "footer"; /* Définir explicitement les zones */
+    background-color: #f7f6f2;
+    color: #0d6735;
+}
+
+hr{
+    border-color: #0d6735;
+}
+
+/*Changement de la font du texte */
+
+h1,h2,h3,h4,h5 {
+    font-family: Helvetica,sans-serif;
+    color: #0d6735;
+}
+
+
+.black-text {
+     color: black;
+ }
+
+.red-text {
+    color: red;
+}
+
+/* Style pour le bouton "Supprimer mon compte" */
+.bouton-golden {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0d6735;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px; /* Ajouter de l'espace en bas */
+}
+/***** Global Style *****/
+*{
+    font-family: Helvetica,sans-serif;
+}
+p{
+    font-size: 20px;
+    color: #444;
+}
+
+/***** Global Slide *****/
+.slide-left {
+    width: 100%;
+}
+
+
+/***** Slide Left *****/
+.slide-left {
+    animation: 3s slide-left;
+}
+
+@keyframes slide-left {
+    from {
+        margin-left: 90%;
+    }
+    to {
+        margin-left: 0%; /* Ajustez la valeur selon vos besoins */
+    }
+}
+
+/***** Misc Styles *****/
+.container-left {
+    width: 30%;
+    top: 50%;
+    margin-top:5%;
+ margin-left:35%;
+    background: #f7f6f2;
+    border: 1px;
+    text-align: center;
+}
+.img-home {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    align-items: flex-start; /* Aligner l'image en haut */
+}
+
+.img-home img {
+    margin-top: 2%;
+    max-width: 100%;
+    max-height: 100%;
+    width: 75%;
+    height: 97%;
+}

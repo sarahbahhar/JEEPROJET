@@ -1,0 +1,7 @@
+#addCardForm {
+    display: none;
+}
+#error-message {
+    color: red;
+    /* Ajoutez d'autres styles ici si nécessaire */
+}

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Model.Commentaires" table="commentaires" schema="projet_jee">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="idProduit">
+            <column name="idProduit" sql-type="int" not-null="true"/>
+        </property>
+        <property name="note">
+            <column name="note" sql-type="int"/>
+        </property>
+        <property name="emailVendeur">
+            <column name="emailVendeur" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="commentaire">
+            <column name="commentaire" sql-type="text" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

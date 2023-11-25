@@ -1,0 +1,149 @@
+/* footer */
+.color { 
+    color:#0d6735;
+}
+
+footer { 
+    width:100%; 
+    background-color:#f7f6f2;
+    min-height:250px;
+    font-family: Helvetica,sans-serif;
+}
+
+ul{
+    padding-left: 0px;
+}
+
+.pt2 { 
+    padding-top:40px ; 
+    margin-bottom:20px ;
+}
+
+footer p { 
+    font-size:13px; 
+    color:#0d6735;
+    padding-bottom:0px; 
+    margin-bottom:8px;
+}
+
+.name { 
+    margin:0px ; 
+    list-style-type:none ; 
+    font-size:14px; 
+    padding:0px 0px 10px 0px ; 
+}
+
+.name li {
+    padding:0px 0px 5px 0px;
+    color:#0d6735;
+}
+
+.fleft { 
+    float:left;
+}
+
+.bottom_border { 
+    border-bottom:1px solid #0d6735;
+    padding-bottom:20px;
+    width: 50%;
+}
+
+.button_link {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+
+.button_link li { 
+    display:inline;
+}
+
+.button_link li a { 
+    color:#0d6735;
+    margin:0 12px;
+}
+
+.logo {
+    list-style-type:none;
+    display: flex;
+    justify-content: center;
+}
+
+.logo li { 
+    padding-left:20px; 
+    padding-top:10px; 
+    float:left; 
+}
+
+.logo li a { 
+    color:#0d6735;
+    border:1px solid #0d6735;
+    padding:8px;
+    border-radius:50%;
+}
+
+.logo li i {  
+    width:20px; 
+    height:20px; 
+    text-align:center;
+}
+
+.p1 {
+    display:flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.c1{
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.line {
+    border-top: 1px solid black;
+    width: 50%;
+    margin: 0 auto;
+}
+.footer-nav-bar {
+    display: flex;
+    justify-content: center; /* Alignement horizontal au centre */
+    gap: 10px; /* Espacement entre les éléments */
+}
+
+.footer-nav-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer-nav-bar li {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav-bar button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    color: #0d6735;
+    cursor: pointer;
+}
+
+.footer-nav-bar a {
+    color: #0d6735;
+    text-decoration: none; /* Enlève le soulignement du lien */
+    padding: 10px;
+}
+
+.footer-nav-bar a:hover {
+    color: #119b18;
+}
