@@ -3,6 +3,7 @@ package DAO;
 import Model.Client;
 import Model.Demandemoderateur;
 import Model.Infocompte;
+import jakarta.servlet.http.HttpSession;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -68,7 +69,9 @@ public class CustomerDAO {
             client = (Client) session.createQuery("FROM Client C WHERE C.email = :email")
                     .setParameter("email", email)
                     .uniqueResult();
-            client.setPointsFidelite((client.getPointsFidelite()+point));
+            int newPts = (client.getPointsFidelite()+point);
+            client.setPointsFidelite(newPts);
+
             session.update(client);
             transaction.commit();
         } catch (Exception e) {

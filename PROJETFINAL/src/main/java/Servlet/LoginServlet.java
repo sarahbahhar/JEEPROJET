@@ -62,6 +62,7 @@ public class LoginServlet extends HttpServlet{
 
         if (CompteDAO.validate(email, password)) {
             HttpSession session = request.getSession();
+
             session.setAttribute("email",email);
             session.setAttribute("demandeModerateur",DAO.DemandeModerateurDAO.isEmailInModeratorRequests(email));
 
@@ -80,6 +81,9 @@ public class LoginServlet extends HttpServlet{
                 session.setAttribute("motifLongBanissement",m.getMotifLongBanissement());
                 session.setAttribute("dateBanni",m.getDateBanni());
 
+                Model.Client c = DAO.CustomerDAO.getClient(email);
+                session.setAttribute("pointFidelite",c.getPointsFidelite());
+
                 if(m.getDateBanni()!=null){
                     session.setAttribute("canAddProduct", false);
                     session.setAttribute("canDeleteProduct", false);
@@ -94,6 +98,8 @@ public class LoginServlet extends HttpServlet{
 
             }else if (CustomerDAO.emailExists(email)) {
                 session.setAttribute("role", 0); // 0 pour client
+                Model.Client c = DAO.CustomerDAO.getClient(email);
+                session.setAttribute("pointFidelite",c.getPointsFidelite());
 
             }
             String[] fullName = InfoAccountDAO.getFullNameByEmail(email);

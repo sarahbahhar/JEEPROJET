@@ -72,6 +72,9 @@ public class AddProductCommandeServlet extends HttpServlet {
             PanierDAO.removeProduitPanier(email);
             CustomerDAO.addPointFidelite(email,(int) totalDouble);
 
+
+            session.setAttribute("pointFidelite",CustomerDAO.getClient(email).getPointsFidelite());
+
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/confirmationCommande.jsp");
             dispatcher.forward(request, response);
 
