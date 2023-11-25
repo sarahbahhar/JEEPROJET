@@ -14,6 +14,7 @@
     <title>Payment</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/myCard.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
     <script src="<%=request.getContextPath()%>/js/myCard.js"></script>
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
@@ -54,45 +55,32 @@
     </c:if>
 
 </div>
+<button class="bouton-golden" onclick="toggleAddCardForm()">Ajouter Carte</button>
+<div id="addCardForm">
 
-<div>
-
-    <button class="bouton-golden" onclick="toggleAddCardForm()">Ajouter Carte</button>
-
-    <div id="addCardForm">
-
-        <form action="${pageContext.request.contextPath}/add-card-during-servlet" method="post">
-            <br>
-            <br>
-            <label>Nom sur la Carte:</label>
-            <input type="text" id ="nom" name="nom" required>
-            <br>
-
-            <label>Numéro de Carte:</label>
-            <input type="text" id="numero" name="numero" pattern="[0-9]{16}" required>
-            <br>
-
-            <label >Date d'Expiration (MM/AA):</label>
-            <input type="text" id="expiration" name="expiration" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" required>
-            <br>
-
-            <label>CVV:</label>
-            <input type="text" id="cvv" name="cvv" pattern="[0-9]{3}" required>
-            <br>
-
-            <input hidden type="text" id="email" name="email" value="${sessionScope.email}">
-            <input type="hidden" id="redirectionPath" name="redirectionPath" value="selectCardServlet">
-
-            <input onclick="toggleAddCardForm()" type="submit" value="Payer">
-        </form>
-
-
-
-
-
-
-    </div>
+        <div class="container" id="container">
+            <div class="form-container sign-in-container">
+                <form action="${pageContext.request.contextPath}/add-card-during-servlet" method="post">
+                    <h1>Ajouter un Mode de Paiement</h1>
+                    <input type="text" id="nom" name="nom" placeholder="Nom sur la Carte" required>
+                    <input type="text" id="numero" name="numero" pattern="[0-9]{16}" placeholder="Numéro de Carte" required>
+                    <input type="text" id="expiration" name="expiration" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" placeholder="Date d'Expiration (MM/AA)" required>
+                    <input type="text" id="cvv" name="cvv" pattern="[0-9]{3}" placeholder="CVV" required>
+                    <input type="hidden" name="email" value="${sessionScope.email}" />
+                    <input type="hidden" id="redirectionPath" name="redirectionPath" value="selectCardServlet">
+                    <button class="lien" onclick="toggleAddCardForm()" type="submit" >Payer</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <img src="${pageContext.request.contextPath}/img/nouvelleCarte.jpg" alt="canape">
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
+
 
 </body>
 </html>
