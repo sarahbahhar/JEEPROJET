@@ -19,6 +19,7 @@
         <th>Can delete Product</th>
         <th>Max Product</th>
         <th>Bannir</th>
+
     </tr>
 
     <c:forEach items="${moderators}" var="moderator">
@@ -53,17 +54,22 @@
 
             <td>
                 <form action="${pageContext.request.contextPath}/delete-moderator-servlet" method="post">
-                    <input type="hidden" name="email" value="email" />
+                    <input type="hidden" name="email" value="${moderator.email}" />
                     <button type="submit">Delete</button>
                 </form>
+            </td>
+            <td>
+            <form action="${pageContext.request.contextPath}/redirection-form-edit-moderator-servlet" method="post">
+                <input type="hidden" name="email" value="${moderator.email}" />
+
+                <button type="submit">Edit Moderators</button>
+            </form>
             </td>
         </tr>
     </c:forEach>
 </table>
 <br>
 <br>
-<form class="style" action="${pageContext.request.contextPath}/edit-moderator-servlet" method="get">
-    <button class="lien" type="submit">Edit Moderators</button>
-</form>
+
 </body>
 </html>
