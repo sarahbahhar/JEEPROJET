@@ -3,12 +3,11 @@
 <html>
 <head>
     <title>Contact</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
 </head>
 <body>
 
-
-
+</div>
 <div class="container" id="container">
     <div class="form-container sign-in-container">
         <form action="${pageContext.request.contextPath}/contact-servlet" method="post">
@@ -23,17 +22,17 @@
                 </c:otherwise>
 
             </c:choose>
-
-
-
-
-            <textarea name="message" placeholder="Votre message" required></textarea>
+            <textarea class="custom-textarea-g" name="message" placeholder="Votre message" required></textarea>
             <button class="lien" type="submit">Envoyer</button>
         </form>
     </div>
-
-
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <img src="${pageContext.request.contextPath}/img/contact.jpg" alt="canape">
+            </div>
+        </div>
+    </div>
 </div>
-
 </body>
 </html>
