@@ -9,35 +9,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Produits</title>
-    <link rel="stylesheet" href="./css/vendeur.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/productList.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
 </head>
 <body>
 
-<div>
-    <div class="global">
-        <div class="box" style="display: grid;">
 
-            <c:forEach items="${produits}" var="produit">
-                <form action="${pageContext.request.contextPath}/product-details" method="post">
-                    <div class="article" style="display: flex; justify-content: center; align-items: center;">
-                        <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;" >
-                            <img src="./img/${produit.nomImage}" style="width: 100px; height: 100px; margin-right: 10px;">
-                            <div>
-                                <h5>${produit.titre}</h5>
-                                <p>${produit.miniDescription}</p>
-                                <p>Prix : ${produit.prix} €</p>
-                            </div>
-                        </button>
-                        <input type="hidden" name="produit_id" value="${produit.id}">
-                        <input type="hidden" name="type" value="pageProduitVendeur">
-
-
+<div class="container">
+    <table>
+        <c:forEach items="${produits}" var="produit" varStatus="loop">
+        <c:if test="${loop.index % 4 == 0}">
+        </tr><tr>
+        </c:if>
+        <td>
+            <form action="${pageContext.request.contextPath}/product-details" method="post">
+                <button style="border:none; background-color:#f7f6f2;"type="submit"><div class="card">
+                    <img src="./img/${produit.nomImage}" alt="${produit.titre}">
+                    <div class="image-box">
+                        <img src="./img/${produit.nomImage2}" alt="${produit.titre}">
                     </div>
-                </form>
-            </c:forEach>
-            <c:if test="${fn:length(produits) == 0}">
+                    <div class="content-box">
+                        <h2>${produit.titre}</h2>
+                        <div class="color">
+                            <p>${produit.miniDescription}</p>
+                        </div>
+                        <div class="size">
+                            <p>${produit.prix}$</p>
+                        </div>
+                    </div>
+                </div></button>
+                <input type="hidden" name="produit_id" value="${produit.id}">
+                <input type="hidden" name="type" value="pageProduit">
+
+            </form>
+        </td>
+        </c:forEach>
+    </table>
+</div>
+<div>
+    <c:if test="${fn:length(produits) == 0}">
                 <h1>Vous n'avez pas de produit en ligne</h1>
             </c:if>
         </div>

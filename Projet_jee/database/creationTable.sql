@@ -114,6 +114,7 @@ CREATE TABLE Produit (
                          stock INT NOT NULL,
                          email VARCHAR(100) NOT NULL,
                          nomImage VARCHAR(250) NOT NULL,
+                         nomImage2 VARCHAR(250) NOT NULL,
                          miniDescription VARCHAR(200)  NOT NULL,
                          prix decimal(10,2) NOT NULL,
                          categorie varchar(100),
@@ -244,13 +245,13 @@ VALUES ('abdellah.hassani@gmail.com', 'Abdellah', 'Hassani', '2002-06-15', '0702
 
 
 
-INSERT INTO Produit (titre, nomImage, miniDescription, prix, description, stock, email,categorie)
+INSERT INTO Produit (titre, nomImage,nomImage2, miniDescription, prix, description, stock, email,categorie)
 VALUES
-    ('Casque audio', 'casque.png', 'Casque audio de haute qualité', 59.99, 'Ce casque audio de haute qualité offre une expérience sonore exceptionnelle. Profitez de votre musique préférée avec une clarté audio inégalée.', 100, 'loucas.terchani@gmail.com','Velour'),
-    ('Casquette de baseball', 'casquette.jpg', 'Casquette tendance pour tous les styles', 19.99, 'La casquette de baseball parfaite pour compléter votre look. Disponible en plusieurs couleurs, elle est idéale pour toutes les occasions.', 150, 'sarah.bahhar@gmail.com','Cuir'),
-    ('Chaussettes de sport', 'chaussette.jpg', 'Chaussettes confortables pour le sport', 9.99, 'Ces chaussettes de sport vous offrent un confort ultime pendant vos séances d entraînement. Respirantes et durables, elles sont un choix idéal pour les athlètes.', 200, 'loucas.terchani@gmail.com','Lin'),
-    ('Claquettes de plage', 'claquette.jpg', 'Claquettes légères pour lété', 14.99, 'Les claquettes de plage sont essentielles pour lété. Légères et confortables, elles sont parfaites pour se détendre à la plage ou à la piscine.', 250, 'sarah.bahhar@gmail.com','Tissu'),
-    ('Clavier mécanique', 'clavier.jpg', 'Clavier mécanique réactif', 79.99, 'Ce clavier mécanique est conçu pour les joueurs exigeants. Avec des touches réactives et un éclairage RGB personnalisable, il améliorera votre expérience de jeu.', 300, 'loucas.terchani@gmail.com','Banc');
+    ('Casque audio', 'canape1.jpg','canape11.png', 'Casque audio de haute qualité', 59.99, 'Ce casque audio de haute qualité offre une expérience sonore exceptionnelle. Profitez de votre musique préférée avec une clarté audio inégalée.', 100, 'loucas.terchani@gmail.com','Velour'),
+    ('Chaussettes de sport','canape2.jpg','canape22.png' , 'Chaussettes confortables pour le sport', 9.99, 'Ces chaussettes de sport vous offrent un confort ultime pendant vos séances d entraînement. Respirantes et durables, elles sont un choix idéal pour les athlètes.', 200, 'loucas.terchani@gmail.com','Lin'),
+    ('Claquettes de plage', 'canape3.jpg','canape33.png' , 'Claquettes légères pour lété', 14.99, 'Les claquettes de plage sont essentielles pour lété. Légères et confortables, elles sont parfaites pour se détendre à la plage ou à la piscine.', 250, 'sarah.bahhar@gmail.com','Tissu'),
+    ('Clavier mécanique', 'canape4.jpg','canape44.png',  'Clavier mécanique réactif', 79.99, 'Ce clavier mécanique est conçu pour les joueurs exigeants. Avec des touches réactives et un éclairage RGB personnalisable, il améliorera votre expérience de jeu.', 300, 'loucas.terchani@gmail.com','Banc'),
+	('Canape', 'canape5.jpg','canape55.png',  'Clavier mécanique réactif', 79.99, 'Ce clavier mécanique est conçu pour les joueurs exigeants. Avec des touches réactives et un éclairage RGB personnalisable, il améliorera votre expérience de jeu.', 300, 'loucas.terchani@gmail.com','Banc');
 
 
 

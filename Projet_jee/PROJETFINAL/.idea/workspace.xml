@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35573922-8f04-425f-84e1-8e242c3366fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/modifDroits.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/formEditModerateur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/formEditModerateur.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="35573922-8f04-425f-84e1-8e242c3366fb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Jsp File" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -35,7 +31,7 @@
         <entry key="$PROJECT_DIR$/.." value="450d9427125087b65fb9cac14c5413417cffac0e" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -62,21 +58,27 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;8d06ae5d-700f-4934-9312-7137f8fd4a4b&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CYTech Student/JEEPROJET/PROJETFINAL/src/main/webapp/img&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CYTech Student/JEEPROJETFINAL/Projet_jee/PROJETFINAL/src/main/webapp/img&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CYTech Student\JEEPROJETFINAL\Projet_jee\PROJETFINAL\src\main\webapp\img" />
       <recent name="C:\Users\CYTech Student\JEEPROJET\PROJETFINAL\src\main\webapp\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -214,6 +216,16 @@
       <workItem from="1700826558574" duration="37367000" />
       <workItem from="1700915618023" duration="8892000" />
       <workItem from="1700926785437" duration="4075000" />
+      <workItem from="1700940606118" duration="33000" />
+      <workItem from="1700940666778" duration="7175000" />
+      <workItem from="1700949257833" duration="1572000" />
+      <workItem from="1700952510318" duration="1001000" />
+      <workItem from="1700953568391" duration="178000" />
+      <workItem from="1700953768441" duration="280000" />
+      <workItem from="1700954066689" duration="5000" />
+      <workItem from="1700954301598" duration="1574000" />
+      <workItem from="1700957974913" duration="2328000" />
+      <workItem from="1700960514259" duration="3068000" />
     </task>
     <servers />
   </component>

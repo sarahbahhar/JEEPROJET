@@ -31,7 +31,7 @@ public class DeleteProductServlet extends HttpServlet {
 
 
             if (id != null){
-                ProduitDAO.removeProductById(getServletContext().getRealPath("/"),ProduitDAO.getProduitById(id).getNomImage(),id);
+                ProduitDAO.removeProductById(getServletContext().getRealPath("/"),ProduitDAO.getProduitById(id).getNomImage(),ProduitDAO.getProduitById(id).getNomImage2(),id);
 
 
 

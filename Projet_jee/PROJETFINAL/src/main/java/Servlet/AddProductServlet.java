@@ -81,13 +81,21 @@ public class AddProductServlet extends HttpServlet {
 
                 writeFile(filePart, fileName, "img/");
             }
+            Part filePart2 = request.getPart("image2");
+            String fileName2 = getNameFile(filePart2);
+            if (fileName2 != null && !fileName2.isEmpty()) {
 
+                // On écrit définitivement le fichier sur le disque
+                writeFile(filePart, fileName2, PATH_IMAGE);
 
+                writeFile(filePart, fileName2, "img/");
+            }
             if (true) {
                 // Créez d'abord un objet Produit en utilisant le constructeur vide
 
                 p.setTitre(request.getParameter("titre"));
                 p.setNomImage(fileName);
+                p.setNomImage2(fileName2);
                 p.setMiniDescription(request.getParameter("miniDescription"));
                 p.setCategorie(request.getParameter("categorie"));
                 p.setPrix(price);

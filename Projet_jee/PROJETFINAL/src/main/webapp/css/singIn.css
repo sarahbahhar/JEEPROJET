@@ -14,7 +14,7 @@
 .container.special-container {
     /* Add your custom styles for the larger container on this page */
     height: auto; /* Set to auto to adjust based on content */
-    min-height: 600px; /* Adjust the minimum height as needed */
+    min-height: 650px; /* Adjust the minimum height as needed */
     margin-top: 100px; /* Adjust the top margin as needed */
 }
 .container {

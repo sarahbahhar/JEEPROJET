@@ -143,7 +143,7 @@ public class ProduitDAO
         return isBanned;
     }
 
-    public static void removeProductById(String p,String fileName,int id) {
+    public static void removeProductById(String p,String fileName1,String fileName2,int id) {
 
         // Obtenez le chemin réel à partir du chemin relatif
         String absolutePath = p+"../../" + PATH_IMAGE;
@@ -153,17 +153,18 @@ public class ProduitDAO
 
 
         // Maintenant, utilisez le chemin absolu pour écrire le fichier
-        File file = new File(imageDir, fileName);
+        File file = new File(imageDir, fileName1);
+        File file2 = new File(imageDir, fileName2);
 
-        if (file.exists()) {
-            if (file.delete()) {
-                System.out.println("Image file deleted: " + fileName);
+        if (file.exists()&&file2.exists()) {
+            if (file.delete()&&file2.delete()) {
+                System.out.println("Image file deleted: " + fileName1+fileName2);
 
             } else {
-                System.err.println("Failed to delete image file: " + fileName);
+                System.err.println("Failed to delete image file: " + fileName1+fileName2);
             }
         } else {
-            System.err.println("Image file not found: " + fileName);
+            System.err.println("Image file not found: " + fileName1+fileName2);
         }
         removeProductByIdOfTable(id);
 
@@ -172,7 +173,7 @@ public class ProduitDAO
         List<Produit> produits =  getListProduitByEmail(email);
         for(Produit produit : produits){
             PanierDAO.removeProduitPanierById(produit.getId());
-            removeProductById(localisation,produit.getNomImage(),produit.getId());
+            removeProductById(localisation,produit.getNomImage(),produit.getNomImage2(),produit.getId());
 
         }
 

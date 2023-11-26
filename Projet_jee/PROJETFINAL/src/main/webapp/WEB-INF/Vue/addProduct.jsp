@@ -29,6 +29,7 @@
             <input type="number" id="price" name="price" min="1" placeholder="Prix" required>
             <input type="number" id="stock" name="stock" min="1" placeholder="Stock" required>
             <input type="file" id="image" name="image" required>
+            <input type="file" id="image2" name="image2" required>
             <input type="hidden" name="email" value="${sessionScope.email}" />
             <button class="lien" type="submit" >Ajouter</button>
         </form>

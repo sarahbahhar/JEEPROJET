@@ -9,6 +9,7 @@ public class Produit {
     private int stock;
     private String email;
     private String nomImage;
+    private String nomImage2;
     private String miniDescription;
     private BigDecimal prix;
     private String categorie;
@@ -61,6 +62,14 @@ public class Produit {
         this.nomImage = nomImage;
     }
 
+    public String getNomImage2() {
+        return nomImage2;
+    }
+
+    public void setNomImage2(String nomImage2) {
+        this.nomImage2 = nomImage2;
+    }
+
     public String getMiniDescription() {
         return miniDescription;
     }
@@ -98,6 +107,7 @@ public class Produit {
         if (description != null ? !description.equals(produit.description) : produit.description != null) return false;
         if (email != null ? !email.equals(produit.email) : produit.email != null) return false;
         if (nomImage != null ? !nomImage.equals(produit.nomImage) : produit.nomImage != null) return false;
+        if (nomImage2 != null ? !nomImage2.equals(produit.nomImage2) : produit.nomImage2 != null) return false;
         if (miniDescription != null ? !miniDescription.equals(produit.miniDescription) : produit.miniDescription != null)
             return false;
         if (prix != null ? !prix.equals(produit.prix) : produit.prix != null) return false;
@@ -114,6 +124,7 @@ public class Produit {
         result = 31 * result + stock;
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (nomImage != null ? nomImage.hashCode() : 0);
+        result = 31 * result + (nomImage2 != null ? nomImage2.hashCode() : 0);
         result = 31 * result + (miniDescription != null ? miniDescription.hashCode() : 0);
         result = 31 * result + (prix != null ? prix.hashCode() : 0);
         result = 31 * result + (categorie != null ? categorie.hashCode() : 0);

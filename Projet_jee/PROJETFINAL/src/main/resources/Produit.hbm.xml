@@ -23,6 +23,9 @@
         <property name="nomImage">
             <column name="nomImage" sql-type="varchar(250)" length="250"/>
         </property>
+        <property name="nomImage2">
+            <column name="nomImage2" sql-type="varchar(250)" length="250"/>
+        </property>
         <property name="miniDescription">
             <column name="miniDescription" sql-type="varchar(200)" length="200"/>
         </property>
