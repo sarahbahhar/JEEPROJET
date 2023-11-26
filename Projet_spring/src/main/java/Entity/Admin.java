@@ -3,10 +3,8 @@ package Entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
 
 @Entity
-@Data
 
 @Table(name = "Admin")
 public class Admin {
@@ -15,6 +13,10 @@ public class Admin {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getEmail(){
+        return this.email;
     }
 
     @Override

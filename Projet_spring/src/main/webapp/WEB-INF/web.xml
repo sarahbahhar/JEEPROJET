@@ -9,7 +9,7 @@
     <servlet>
 
         <servlet-name>moderatorServlet</servlet-name>
-        <servlet-class>Servlet.ModeratorServlet</servlet-class>
+        <servlet-class>com.example.projetspring.Servlet.ModeratorServlet</servlet-class>
         <multipart-config>
             <location>tmp</location>
             <max-file-size>10485760</max-file-size> <!-- 10 Mo -->

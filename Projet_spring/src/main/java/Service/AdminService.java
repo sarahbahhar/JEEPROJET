@@ -1,19 +1,20 @@
 package Service;
 
-import java.util.Optional;
-
 import Repository.AdminRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import Entity.Admin;
+import jakarta.inject.Inject;
 
-@Service
+// Service ou Contrôleur Jakarta EE
 public class AdminService {
-
-    @Autowired
+    @Inject
     private AdminRepository adminRepository;
 
-    public Optional<Admin> getAdmin() {
-        return adminRepository.findAll().stream().findFirst();
+    public boolean emailExists(String email) {
+        return adminRepository.existsByEmail(email);
     }
+
+    public String getAdminEmail() {
+        return adminRepository.findTopByEmail();
+    }
+
+    // Autres méthodes spécifiques si nécessaire
 }
