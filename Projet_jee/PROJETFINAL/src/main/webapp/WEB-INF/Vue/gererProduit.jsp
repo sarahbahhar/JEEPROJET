@@ -39,7 +39,7 @@
                     </div>
                 </div></button>
                 <input type="hidden" name="produit_id" value="${produit.id}">
-                <input type="hidden" name="type" value="pageProduit">
+                <input type="hidden" name="type" value="pageProduitVendeur">
 
             </form>
         </td>
