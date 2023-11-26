@@ -9,7 +9,7 @@
     <servlet>
 
         <servlet-name>moderatorServlet</servlet-name>
-        <servlet-class>com.example.projetspring.Servlet.ModeratorServlet</servlet-class>
+        <servlet-class>JEE.Servlet.Servlet.ModeratorServlet</servlet-class>
         <multipart-config>
             <location>tmp</location>
             <max-file-size>10485760</max-file-size> <!-- 10 Mo -->
@@ -28,9 +28,9 @@
              <url-pattern>/WEB-INF/Vue/*</url-pattern>
              <url-pattern>/home.jsp</url-pattern>
              <url-pattern>/productList.jsp</url-pattern>
-             <include-prelude>/header.jsp</include-prelude>
+             <include-prelude>/WEB-INF/header.jsp</include-prelude>
              <include-prelude>/WEB-INF/Vue/taglibs.jsp</include-prelude>
-             <include-coda>/footer.jsp</include-coda>
+             <include-coda>/WEB-INF/footer.jsp</include-coda>
          </jsp-property-group>
 
          <jsp-property-group>
