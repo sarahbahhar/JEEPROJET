@@ -84,7 +84,7 @@
     <c:if test="${not empty sessionScope.email}">
         <c:if test="${canComment==true}">
 
-            <h3>Laissez un commentaire :</h3>
+            <h3>Laissez un commentaire : </h3>
             <form method="post" action="<%=request.getContextPath()%>/commentaire-servlet">
                 <textarea name="commentaire" rows="4" cols="50"></textarea><br>
                 <label for="rating">Note :</label>
