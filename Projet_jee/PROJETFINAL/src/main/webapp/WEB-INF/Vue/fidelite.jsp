@@ -15,7 +15,7 @@
     <body>
     <div class="container" id="container">
             <div class="form-container sign-in-container">
-                < action="${pageContext.request.contextPath}/FidelityServlet" method="post">
+                <form action="${pageContext.request.contextPath}/FidelityServlet" method="post">
                     <h2>Vos points de fidélité: ${pointFidelite} points </h2>
                     <p>Vous pouvez utiliser 100 points pour obtenir une réduction de 10€. </p>
                     <input type="checkbox" id="usePoints" name="usePoints" value="true" > Utiliser 100 points de fidélité
