@@ -84,12 +84,6 @@ p{
     border: 1px;
     text-align: center;
 }
-.img-home {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Aligner l'image en haut */
-    width: 100%;
-}
 .img-home button{
     border:none;
     background:#f7f6f2;

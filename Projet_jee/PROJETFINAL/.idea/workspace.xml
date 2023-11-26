@@ -20,8 +20,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Jsp File" />
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -227,7 +227,8 @@
       <workItem from="1700954301598" duration="1574000" />
       <workItem from="1700957974913" duration="2328000" />
       <workItem from="1700960514259" duration="3068000" />
-      <workItem from="1701016799982" duration="3474000" />
+      <workItem from="1701016799982" duration="13671000" />
+      <workItem from="1701035061468" duration="3573000" />
     </task>
     <servers />
   </component>
