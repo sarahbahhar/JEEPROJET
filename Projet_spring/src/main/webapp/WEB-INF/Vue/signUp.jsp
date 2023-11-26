@@ -9,7 +9,7 @@
 
 <div style="width: 40%; margin: auto;">
     <h1>Inscription</h1>
-    <form method="POST" action="<%=request.getContextPath()%>/inscriptionServlet">
+    <form method="POST" action="<%=request.getContextPath()%>/inscriptionController">
         <fieldset>
             <legend>Informations Personnelles</legend>
             <table>
