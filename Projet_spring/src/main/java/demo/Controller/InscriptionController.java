@@ -1,6 +1,9 @@
 package demo.Controller;
 
 
+import Entity.Compte;
+import Repository.CompteRepository;
+import Service.CompteService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -31,24 +34,32 @@ public class InscriptionController {/*
             sessionStatus.setComplete();
             return "redirect:/Index";
         }*/
-    
+
+
+
+
 
     @GetMapping
-    public String doGet(Model model){
-        return "redirect:/signUp";
-    }
-    @PostMapping
-    public String doPost(@RequestParam("email") String email,
+
+    public String doGet(@RequestParam("email") String email,
                          @RequestParam("password") String password,
                          @RequestParam("nom") String nom,
                          @RequestParam("prenom") String prenom, Model model,HttpSession session){
         try{
 
+            Compte compte = new Compte();
+            compte.setEmail(email);
+            compte.setMotDePasse(password);
+            CompteService cs = new CompteService();
+
+            cs.addCompte(compte);
+
             session.setAttribute("email", email);
             session.setAttribute("nom", nom);
             session.setAttribute("prenom", prenom);
             session.setAttribute("password", password);
-            return "infoCompte";// ?
+
+            return "redirect:infoCompte";// ?
 
 
         }catch (Exception e) {
@@ -56,6 +67,8 @@ public class InscriptionController {/*
             return "redirect:/error";
 
     }
+        /* http://localhost:9000/inscriptionController?email=test@gmail.com&password=test&nom=test&prenom=test
+          */
 
 
     }
