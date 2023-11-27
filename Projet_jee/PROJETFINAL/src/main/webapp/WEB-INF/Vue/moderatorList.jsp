@@ -6,7 +6,6 @@
 <html>
 <head>
     <title>Liste des modérateurs</title>
-    <link rel="stylesheet" href="./css/moderatorList.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/table.css">
 </head>
