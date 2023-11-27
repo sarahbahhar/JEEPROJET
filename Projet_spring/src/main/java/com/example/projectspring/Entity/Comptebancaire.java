@@ -3,7 +3,7 @@ package com.example.projectspring.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "comptebancaire")
+@Table(name = "CompteBancaire")
 public class Comptebancaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
