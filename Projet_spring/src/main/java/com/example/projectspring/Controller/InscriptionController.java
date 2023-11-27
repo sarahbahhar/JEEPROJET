@@ -41,9 +41,9 @@ public class InscriptionController {/*
 
 
 
-    @GetMapping
+    @PostMapping
 
-    public String doGet(@RequestParam("email") String email,
+    public String doPost(@RequestParam("email") String email,
                          @RequestParam("password") String password,
                          @RequestParam("nom") String nom,
                          @RequestParam("prenom") String prenom, Model model,HttpSession session){

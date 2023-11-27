@@ -9,7 +9,7 @@
 
 
     <div class="form-container sign-in-container">
-        <form action="<%=request.getContextPath()%>/login/login" method="post">
+        <form action="<%=request.getContextPath()%>/inscriptionController" method="post">
             <h1>Connexion</h1>
             <input id="email" name="email" type="email" placeholder="Email" required/>
             <input id="password" name="password" type="password" placeholder="Mot de passe" required/>
