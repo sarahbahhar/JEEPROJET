@@ -52,13 +52,11 @@
             </c:if>
         </div>
 
-
-
         <c:if test="${sessionScope.canAddProduct}">
             <c:choose>
                 <c:when test="${fn:length(produits) lt sessionScope.maxProductsPerLine}">
                     <form action="${pageContext.request.contextPath}/add-product-servlet" method="get">
-                        <input type="submit" name="ajouter_un_produit" value="Ajouter un produit">
+                        <button class="lien" type="submit" name="ajouter_un_produit">Ajouter un produit</button>
                     </form>
                 </c:when>
                 <c:otherwise>
@@ -68,9 +66,6 @@
 
         </c:if>
 
-    </div>
-    <hr>
-</div>
 
 </body>
 </html>

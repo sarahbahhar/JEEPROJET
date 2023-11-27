@@ -19,6 +19,7 @@ body {
     flex-wrap: wrap; /* Ajout de la propriété pour permettre le passage à la ligne */
     justify-content: space-between; /* Aligns items with space in between */
     max-width: 41%;
+    margin-left: 5%;
 }
 
 
