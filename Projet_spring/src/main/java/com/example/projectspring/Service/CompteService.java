@@ -6,10 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.projectspring.Repository.CompteRepository;
 import com.example.projectspring.Entity.Compte;
-
-import java.util.List;
-import java.util.Optional;
-
 @Service
 
 public class CompteService {
@@ -73,45 +69,6 @@ public class CompteService {
         return unique;
 
     }
-
-    public boolean validate(String email, String password) {
-        Compte compte = null;
-        try {
-            compte= cr.findByEmail(email);
-            if (compte != null && compte.isMotDePasseCorrect(password)) {
-                return true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public List<Compte> getListCompte() {
-        List<Compte> result = cr.findAll();
-        return result;
-    }
-
-    public boolean emailExists(String email) {
-
-        Compte compte = null;
-        try {
-            compte = cr.findByEmail(email);
-
-            // Si un client est trouvé, l'e-mail existe dans la base de données
-            if (compte != null) {
-                return true;
-            }
-
-            // Commit la transaction
-
-        }
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
 
 
 

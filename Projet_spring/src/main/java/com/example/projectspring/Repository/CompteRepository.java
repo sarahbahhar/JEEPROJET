@@ -6,8 +6,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.example.projectspring.Entity.Compte;
 
-import java.util.List;
-
 @Repository
 
 public interface CompteRepository extends JpaRepository<Compte, String> {
@@ -23,14 +21,6 @@ public interface CompteRepository extends JpaRepository<Compte, String> {
 
     @Query(value = "SELECT COUNT(*) FROM Compte C  WHERE C.email = :email", nativeQuery = true)
     long isUniqueEmail(@Param("email") String email);
-
-    @Query(value="SELECT * FROM Compte C WHERE C.email = :email", nativeQuery=true)
-    Compte findByEmail(@Param("email") String email);
-
-    /*@Query(value="SELECT * FROM Compte", nativeQuery= true)
-    List<Compte> findAll();*/
-
-
 
 
 
