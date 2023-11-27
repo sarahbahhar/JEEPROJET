@@ -34,7 +34,12 @@ public class RedirectProductOrder extends HttpServlet {
         }
 
         else{
-            response.sendRedirect(request.getContextPath()+"/WEB-INF/Vue/produitSupprime.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/produitSupprime.jsp");
+            try {
+                dispatcher.forward(request, response);
+            } catch (ServletException e) {
+                throw new RuntimeException(e);
+            }
 
         }
     }
