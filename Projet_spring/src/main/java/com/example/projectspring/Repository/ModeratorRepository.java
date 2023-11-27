@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,6 +35,7 @@ public interface ModeratorRepository extends JpaRepository<Moderateur, String> {
     @Query(value="UPDATE Client SET points_fidelite = :points_fdelite WHERE email= :email", nativeQuery=true)
     void addPoint(@Param("points_fidelite") int point_fidelite, @Param("email") String email);
 
-
+    @Query(value="SELECT AVG(c.note) FROM Commentaires c WHERE c.emailVendeur = :email", nativeQuery=true)
+    Double getAverageRatingByEmail(@Param("email") String email);
 
 }
