@@ -22,8 +22,8 @@ public interface ModeratorRepository extends JpaRepository<Moderateur, String> {
 
     @Transactional
     @Modifying
-    @Query(value="UPDATE Produitcommande SET emailVendeur = null WHERE emailVendeur = :email")
-    void  updateVendeur(@Param("emailVendeur") String emailVendeur);
+    @Query("UPDATE Produitcommande SET emailVendeur = null WHERE emailVendeur = :email")
+    void updateVendeur(@Param("email") String emailVendeur);
 
     @Transactional
     @Modifying
@@ -32,8 +32,8 @@ public interface ModeratorRepository extends JpaRepository<Moderateur, String> {
 
     @Transactional
     @Modifying
-    @Query(value="UPDATE Client SET points_fidelite = :points_fdelite WHERE email= :email", nativeQuery=true)
-    void addPoint(@Param("points_fidelite") int point_fidelite, @Param("email") String email);
+    @Query(value="UPDATE Client SET points_fidelite = :points_fidelite WHERE email= :email", nativeQuery=true)
+    void addPoint(@Param("points_fidelite") int pointFidelite, @Param("email") String email);
 
     @Query(value="SELECT AVG(c.note) FROM Commentaires c WHERE c.emailVendeur = :email", nativeQuery=true)
     Double getAverageRatingByEmail(@Param("email") String email);

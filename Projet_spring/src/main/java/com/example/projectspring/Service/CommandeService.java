@@ -18,7 +18,7 @@ public class CommandeService {
     }
 
     public List<Commande> getListOrderByEmailSeller(String email) {
-        return cr.findByEmailVendeur(email);
+        return cr.findDistinctByProduitcommande_EmailVendeur(email);
     }
 
     public void addCommande(Commande c) {
