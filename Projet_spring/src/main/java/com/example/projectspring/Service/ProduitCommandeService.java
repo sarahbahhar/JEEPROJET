@@ -14,13 +14,6 @@ import java.util.Optional;
 
 public class ProduitCommandeService {
 
-
-    /*
-    private CustomerService cs;
-    private CreditCardService ccs;
-    private ProductService ps;
-    private UserService us;
-    */
     @Autowired
     private ProduitCommandeRepository pcr;
 
