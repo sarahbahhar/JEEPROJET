@@ -62,6 +62,9 @@
                                         </div>
                                         <button class="lien" type="submit" name="ajouter_au_panier">Ajouter au panier</button>
                                     </c:if>
+                                    <c:if test="${isModBanned}">
+                                        <p>Produit momentanément indisponible</p>
+                                    </c:if>
                                 </form>
                             </c:otherwise>
                         </c:choose>
