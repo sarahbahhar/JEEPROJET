@@ -23,10 +23,12 @@ public interface CustomerRepository extends JpaRepository<Client, String> {
     @Query(value="DELETE FROM Client WHERE email= :email", nativeQuery=true)
     void deleteByEmail(@Param("email") String email);
 
+
+
     @Transactional
     @Modifying
-    @Query(value="UPDATE Client SET points_fidelite = :points_fdelite WHERE email= :email", nativeQuery=true)
-    void addPoint(@Param("points_fidelite") int point_fidelite, @Param("email") String email);
+    @Query(value="UPDATE Client SET points_fidelite = :points_fidelite WHERE email= :email", nativeQuery=true)
+    void addPoint(@Param("points_fidelite") int pointsFidelite, @Param("email") String email);
 
 
 

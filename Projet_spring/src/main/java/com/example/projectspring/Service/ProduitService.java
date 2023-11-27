@@ -5,6 +5,7 @@ import com.example.projectspring.Entity.Produitpanier;
 import com.example.projectspring.Repository.ProduitRepository;
 import com.example.projectspring.Repository.PanierRepository;
 import com.example.projectspring.Repository.ModeratorRepository;
+import com.example.projectspring.Repository.ProduitPanierRepository;
 import com.example.projectspring.Service.ModeratorService;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.projectspring.Entity.Produit;
 import com.example.projectspring.Entity.Moderateur;
+import com.example.projectspring.Entity.Produitpanier;
 
 import java.io.File;
 import java.util.List;
@@ -30,6 +32,7 @@ public class ProduitService {
     private PanierService pas;
     private ModeratorService ms;
     private ModeratorRepository mr;
+    private ProduitPanierRepository ppr;
 
 
 
@@ -51,7 +54,7 @@ public class ProduitService {
 
     @Transactional
     public void removeProductByIdOfTable(int id) {
-        par.deleteByProduitId(id);
+        ppr.deleteByProduitId(id);
         pr.deleteById(id);
     }
 

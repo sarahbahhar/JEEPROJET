@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import com.example.projectspring.Repository.ModeratorRepository;
+import com.example.projectspring.Repository.ProduitRepository;
 import com.example.projectspring.Entity.Moderateur;
 
 import java.math.BigDecimal;
@@ -30,7 +31,7 @@ public class ModeratorService {
     */
     @Autowired
     private ModeratorRepository mr;
-    private ProduitRepository pr;
+    private ProduitService ps;
 
 
 
@@ -102,7 +103,7 @@ public class ModeratorService {
         try {
             mr.updateVendeur(email);
 
-            pr.removeProductByModerator(localisation,email);///////////
+            ps.removeProductByModerator(localisation,email);///////////
             Moderateur moderator = mr.findByEmail(email);
             if (moderator != null) {
                 mr.deleteByEmail(email);

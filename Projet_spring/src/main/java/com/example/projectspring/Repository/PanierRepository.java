@@ -8,10 +8,11 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface PanierRepository extends JpaRepository<Panier, String> {
-    @Query("SELECT pp FROM Panier p JOIN p.produit pp WHERE p.email = :email") // le produit n'est pas bon
-    List<Produitpanier> findProduitsByEmail(@Param("email") String email);
+
+    Optional<Panier> findByEmail(String email);
 }
 
