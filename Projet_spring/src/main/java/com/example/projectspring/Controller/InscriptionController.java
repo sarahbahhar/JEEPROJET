@@ -61,12 +61,15 @@ public class InscriptionController {/*
             session.setAttribute("prenom", prenom);
             session.setAttribute("password", password);
 
+            boolean test = cs.isUniqueEmail(email);
+            model.addAttribute("isUnique",test);
+
             return "infoCompte";// ?
 
 
         }catch (Exception e) {
             e.printStackTrace();
-            return "redirect:/error";
+            return "error";
 
     }
         /* http://localhost:8080/inscriptionController?email=test@gmail.com&password=test&nom=test&prenom=test

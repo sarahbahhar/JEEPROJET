@@ -16,6 +16,8 @@ public class homeController {
     @GetMapping("/home")
     public String home(){
 
-        return "redirect:/signUp.jsp";
+
+
+        return "signUp";
     }
 }

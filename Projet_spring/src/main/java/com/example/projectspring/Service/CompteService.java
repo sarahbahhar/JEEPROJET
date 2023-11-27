@@ -1,6 +1,7 @@
 package com.example.projectspring.Service;
 
 
+import com.mysql.cj.protocol.a.CompressedInputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.projectspring.Repository.CompteRepository;
@@ -50,6 +51,22 @@ public class CompteService {
 
     public void addCompte(Compte compte) {
         cr.save(compte);
+
+    }
+
+    public boolean isUniqueEmail(String email){
+
+        boolean unique=true;
+        long nbEmail;
+        try {
+            nbEmail= cr.isUniqueEmail(email);
+            unique=(nbEmail==1);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return unique;
 
     }
 

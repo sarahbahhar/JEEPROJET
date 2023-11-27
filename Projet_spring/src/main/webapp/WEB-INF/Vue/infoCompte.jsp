@@ -9,6 +9,7 @@
 
 <div style="width: 40%; margin: auto;">
     <h1>Mes Informations</h1>
+    <p>${isUnique}</p>
     <form method="POST" action="<%=request.getContextPath()%>/infoCompteServlet">
         <fieldset>
             <legend>Modifier vos informations</legend>
