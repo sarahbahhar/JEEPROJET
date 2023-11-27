@@ -25,6 +25,8 @@ public class Produit {
 
     @Column(name = "nomImage", length = 250)
     private String nomImage;
+    @Column(name = "nomImage2")
+    private String nomImage2;
 
     @Column(name = "miniDescription", length = 200)
     private String miniDescription;
@@ -83,6 +85,14 @@ public class Produit {
 
     public void setNomImage(String nomImage) {
         this.nomImage = nomImage;
+    }
+
+    public String getNomImage2() {
+        return nomImage2;
+    }
+
+    public void setNomImage2(String nomImage2) {
+        this.nomImage2 = nomImage2;
     }
 
     public String getMiniDescription() {
