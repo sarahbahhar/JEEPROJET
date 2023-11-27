@@ -74,32 +74,57 @@
                 </div>
             </div>
 </div>
-    <c:forEach var="commentaire" items="${commentaires}">
 
-        <p>Note : ${commentaire.note} / 5 </p>
-        <p>Commentaire : ${commentaire.commentaire}</p>
 
-    </c:forEach>
 
-    <c:if test="${not empty sessionScope.email}">
-        <c:if test="${canComment==true}">
 
-            <h3>Laissez un commentaire : </h3>
-            <form method="post" action="<%=request.getContextPath()%>/commentaire-servlet">
-                <textarea name="commentaire" rows="4" cols="50"></textarea><br>
-                <label for="rating">Note :</label>
-                <select id="rating" name="rating">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select><br>
-                <input type="hidden" name="produit_id" value="${produit.id}">
-                <button type="submit" class="lien">Soumettre</button>
-            </form>
+    <div class="bodyC">
+        <div class="commentBox">
+            <div class="post">
+                <c:if test="${not empty sessionScope.email}">
+                <c:if test="${canComment==true}">
 
-        </c:if>
-    </c:if>
+                    <h3>Laissez un commentaire : </h3>
+                    <form method="post" action="<%=request.getContextPath()%>/commentaire-servlet">
+                        <label for="comment">Your Comment</label>
+                        <textarea id="comment" type="text" placeholder="Comment" required name="commentaire"></textarea><br>
+                        <label for="rating">Note :</label>
+                        <select id="rating" name="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select><br>
+                        <input type="hidden" name="produit_id" value="${produit.id}">
+                        <button type="submit" style="width: 400px;">Soumettre</button>
+                    </form>
+
+                </c:if>
+                </c:if><br><br>
+                <h1>Commentaires</h1>
+            </div>
+
+            <c:forEach var="commentaire" items="${commentaires}">
+                <div class="comment">
+                    <div class="commentBody">
+                        <div class="commentHeader">
+                            <h3 class="commentAuthor">${commentaire.email}</h3>
+                            <span class="publishDate">
+                    <c:forEach var="i" begin="1" end="5">
+                        <span class="etoile ${i <= commentaire.note ? 'active' : ''}">&#9733;</span>
+                    </c:forEach>
+                </span>
+                        </div>
+                        <span class="commentContent">${commentaire.commentaire}</span>
+                    </div>
+                </div>
+            </c:forEach>
+
+            <!-- Comment Components -->
+
+            <!-- Add other Comment Components as needed -->
+        </div>
+    </div>
 </body>
 </html>
