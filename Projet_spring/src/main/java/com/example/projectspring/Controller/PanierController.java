@@ -35,7 +35,7 @@ public class PanierController {
         this.panierService = panierService;
     }
 
-    @GetMapping()
+    @GetMapping
     public String afficherPanier(@RequestParam String email, Model model, HttpSession session) {
         List<Produitpanier> panier = panierService.getListProduitpanier(email);
         List<Produit> produitsDansPanier = new ArrayList<>();
@@ -68,9 +68,11 @@ public class PanierController {
         return "panier";
     }
 
-    @PostMapping()
-    public String ajouterAuPanier(@RequestParam int produitId, @RequestParam int quantite, @RequestParam String email) {
+    @PostMapping
+    public String ajouterAuPanier(@RequestParam(value="produit_id") int produitId, @RequestParam(value="quantite") int quantite, @RequestParam(value="email") String email, Model model) {
+        System.out.println("hello");
         panierService.ajouterProduitAuPanier(email, produitId, quantite);
+        System.out.println("hellolkjkljlkjl");
         return "redirect:/panier-servlet?email=" + email;
     }
 }

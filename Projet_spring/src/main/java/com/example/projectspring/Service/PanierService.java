@@ -55,7 +55,7 @@ public class PanierService {
                 .orElseThrow(() -> new EntityNotFoundException("Produit non trouvé avec l'ID : " + produitId));
 
         if (produit.getStock() >= quantite) {
-            /*
+
             Optional<Produitpanier> existingProduitPanier = ppr.findByEmailAndProduitId(email, produitId);
 
             if (!existingProduitPanier.isPresent()) {
@@ -74,7 +74,7 @@ public class PanierService {
             // Mise à jour du stock
             produit.setStock(produit.getStock() - quantite);
             pr.save(produit);
-            */
+            
 
         }
     }
