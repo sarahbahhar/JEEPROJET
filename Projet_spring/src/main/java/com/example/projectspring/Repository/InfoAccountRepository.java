@@ -24,6 +24,7 @@ public interface InfoAccountRepository extends JpaRepository<Infocompte, String>
 
 */
 
+
     @Query(value="SELECT * FROM Infocompte  WHERE email = :email", nativeQuery=true)
     Infocompte findByEmail(@Param("email") String email);
 

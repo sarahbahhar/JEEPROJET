@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>A propos</title>
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
 <div class="container-left">

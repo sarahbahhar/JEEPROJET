@@ -18,6 +18,6 @@ public class homeController {
 
 
 
-        return "signUp";
+        return "header";
     }
 }

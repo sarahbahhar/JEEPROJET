@@ -7,67 +7,39 @@
     <link rel="stylesheet" href="./css/vendeur.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
 </head>
 <body>
-<div style="width: 40%; margin: auto;">
-    <h1>Ajouter un Produit</h1>
-    <fieldset>
-        <legend>Informations du Produit</legend>
-        <form id="add-product-form" method="post" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
-            <table>
-                <tr>
-                    <td><label for="titre">Titre</label></td>
-                    <td><input style="width: 100%;" type="text" id="titre" name="titre" required></td>
-                </tr>
-                <tr>
-                    <td><label for="description">Description</label></td>
-                    <td><textarea id="description" name="description" style="width: 100%; " required></textarea></td>
 
-                </tr>
-
-                <tr>
-                    <td><label for="miniDescription">Mini Description</label></td>
-                    <td><textarea style="width: 100%;" id="miniDescription" name="miniDescription" required></textarea></td>
-                </tr>
-                <tr>
-                    <td><label for="categorie">Catégorie</label></td>
-                    <td>
-                        <select id="categorie" name="categorie" required>
+<div class="container special-container" id="container">
+    <div class="form-container sign-in-container">
+        <form method="post" action="<%=request.getContextPath()%>/add-product-servlet" enctype="multipart/form-data">
+            <h1>Ajouter un Produit</h1>
+            <input type="text" id="titre" name="titre" placeholder="Titre" required>
+            <textarea class="custom-textarea-g" id="description" name="description" placeholder="Description" required></textarea>
+            <textarea class="custom-textarea-p" id="miniDescription" name="miniDescription" placeholder="Mini description" required></textarea>
+            <select id="categorie" name="categorie" required>
                             <option value="Velour">Velour</option>
                             <option value="Cuir">Cuir</option>
                             <option value="Banc">Banc</option>
                             <option value="Tissu">Tissu</option>
                             <option value="Lin">Lin</option>
                             <option value="Exterieur">Exterieur</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="price">Prix</label></td>
-                    <td><input style="width: 20%;" type="number" id="price" name="price" min="1" required></td>
-                </tr>
-                <tr>
-                    <td><label for="stock">Stock</label></td>
-                    <td><input style="width: 20%;" type="number" id="stock" name="stock" min="1" required></td>
-                </tr>
-                <tr>
-                    <td><label for="image">Image</label></td>
-                    <td><input style="width: 100%;" type="file" id="image" name="image" required></td>
-                </tr>
-                <tr><input type="hidden" name="email" value="${sessionScope.email}" /><tr>
-
-            </table>
-
-        </form>
-    </fieldset>
-
-    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-
-        <form  action="${pageContext.request.contextPath}/my-product-list-servlet" method="post">
+            </select>
+            <input type="number" id="price" name="price" min="1" placeholder="Prix" required>
+            <input type="number" id="stock" name="stock" min="1" placeholder="Stock" required>
+            <input type="file" id="image" name="image" required>
+            <input type="file" id="image2" name="image2" required>
             <input type="hidden" name="email" value="${sessionScope.email}" />
-            <button class="bouton-golden" type="submit">Retour</button>
+            <button class="lien" type="submit" >Ajouter</button>
         </form>
-        <button class="bouton-golden" type="submit" form="add-product-form">Ajouter</button>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <img src="${pageContext.request.contextPath}/img/nouveauprod.jpg" alt="canape">
+            </div>
+        </div>
     </div>
 </div>
 </body>

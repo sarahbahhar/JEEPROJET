@@ -28,12 +28,15 @@
     <div>
         <div class="footer-nav-bar">
         <ul class="navbar-nav">
+            <c:if test="${not empty sessionScope.email}">
                 <li class="nav-item ">
                     <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                         <input type="hidden" name="path" value="myProfile.jsp" />
                         <button type="submit"><a class="nav-link">Profil</a></button>
                     </form>
                 </li>
+            </c:if>
+
 
             <li class="nav-item ">
                 <form class='style' action="${pageContext.request.contextPath}/#" method="get">
@@ -47,7 +50,8 @@
                 </form>
             </li>
             <li class="nav-item ">
-                <form class='style' action="${pageContext.request.contextPath}/#" method="get">
+                <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                    <input type="hidden" name="path" value="contact.jsp" />
                     <button type="submit"><a class="nav-link">Contacter</a></button>
                 </form>
             </li>
