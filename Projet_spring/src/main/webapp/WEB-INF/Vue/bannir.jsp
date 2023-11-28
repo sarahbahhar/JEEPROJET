@@ -3,6 +3,7 @@
 <head>
     <title>Bannir un Modérateur</title>
     <link rel="icon" type="image/png" href="./img/logo2.png">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
 </head>
 <body>

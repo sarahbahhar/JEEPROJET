@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Réinitialisation du Mot de Passe</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 
     <!-- Ajoutez ici votre CSS et autres en-têtes si nécessaire -->

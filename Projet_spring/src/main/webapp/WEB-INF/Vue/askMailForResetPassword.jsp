@@ -4,6 +4,7 @@
 <head>
     <title>Réinitialisation du mot de passe</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>

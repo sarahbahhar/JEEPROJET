@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produit</title>
     <link rel="shortcut icon"  href="./img/logo_onglet.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/prod.css">
 </head>
 <body>

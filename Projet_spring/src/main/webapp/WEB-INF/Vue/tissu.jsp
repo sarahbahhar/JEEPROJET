@@ -13,6 +13,7 @@
     <meta name="viewport">
     <title>Produits Tissu</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/productList.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>

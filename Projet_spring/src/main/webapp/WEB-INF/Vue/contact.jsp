@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Contact</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
 </head>
 <body>
