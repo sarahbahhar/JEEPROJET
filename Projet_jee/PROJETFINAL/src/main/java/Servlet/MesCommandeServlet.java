@@ -1,6 +1,8 @@
 package Servlet;
 import java.io.IOException;
 
+import DAO.ProduitCommandeDAO;
+import Model.Produitcommande;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -30,6 +32,10 @@ public class MesCommandeServlet extends HttpServlet{
             // Set the list of products as an attribute in the request
             request.setAttribute("commandes", listCommande);
             request.setAttribute("type", "pageMyOrders");
+
+            List<Produitcommande> listProduitCommande = ProduitCommandeDAO.getListProduitCommand();
+
+            request.setAttribute("produitcommandes", listProduitCommande);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/mesCommandes.jsp");
             try {
                 dispatcher.forward(request, response);
@@ -38,6 +44,7 @@ public class MesCommandeServlet extends HttpServlet{
             }
 
         }
+
     }
 
 }

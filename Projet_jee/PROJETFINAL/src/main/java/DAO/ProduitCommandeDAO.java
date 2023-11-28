@@ -1,5 +1,6 @@
 package DAO;
 
+import Model.Moderateur;
 import Model.Produitcommande;
 import Model.Produitpanier;
 import org.hibernate.Session;
@@ -25,6 +26,15 @@ public class ProduitCommandeDAO {
         session.close();
         return result;
     }
+    public static List<Produitcommande> getListProduitCommand() {
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        List<Produitcommande> result = session.createQuery("from Produitcommande ", Produitcommande.class).list();
+        session.close();
+        return result;
+    }
+
 
     public void insertProduitCommande(Produitcommande produitCommande) throws SQLException {
         /*String query = "INSERT INTO produit_commande (produit_id, commande_numero, quantite) VALUES (?, ?, ?)";

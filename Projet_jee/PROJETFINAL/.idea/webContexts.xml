@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/Vue/order.jsp" value="file://$PROJECT_DIR$/src/main/webapp/Vue" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/fidelite.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/mesCommandes.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/moderatorList.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/pageProduit.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue/productList.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Vue" />
