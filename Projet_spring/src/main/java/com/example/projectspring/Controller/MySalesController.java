@@ -8,23 +8,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
 @Controller
-
+@RequestMapping("/my-sales-servlet")
 public class MySalesController {
 
     @Autowired
     private CommandeService commandeService;
 
-    @GetMapping("/my-sales-servlet") // Même chemin d'accès que votre servlet
+    @GetMapping
     public String mySales() {
         return "mySales"; // Assurez-vous que "mySales" est le nom de la vue appropriée
     }
 
-    @PostMapping("/my-sales-servlet")
+    @PostMapping
     public String listMySales(@RequestParam("email") String email, Model model) {
         try {
             List<Commande> salesList = commandeService.getListOrderByEmailSeller(email);

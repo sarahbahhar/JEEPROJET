@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/research-product")
+@RequestMapping("/research-product-servlet")
 public class ResearchProductController {
 
     private final ProduitService produitService;

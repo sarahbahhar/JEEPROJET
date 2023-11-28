@@ -5,6 +5,7 @@ import com.example.projectspring.Entity.Produit;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +13,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 @Controller
+@RequestMapping("/my-product-list-servlet")
 public class MyProductListController {
 
     @Autowired
     private ProduitService produitService;
 
-    @GetMapping("/my-product-list-servlet") // Même chemin d'accès que votre servlet
+    @GetMapping
     public String myProductList(@RequestParam("email") String email, Model model) {
         try {
             List<Produit> listProduit = produitService.getListProduitByEmail(email);

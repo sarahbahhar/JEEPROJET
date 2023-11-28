@@ -8,11 +8,12 @@ import com.example.projectspring.Entity.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
-
 @Controller
+@RequestMapping("/commentaire-servlet")
 public class CommentaireController {
 
     @Autowired
@@ -21,7 +22,7 @@ public class CommentaireController {
     @Autowired
     private ProduitService produitService;
 
-    @PostMapping("/commentaire")
+    @PostMapping
     public String addCommentaire(@RequestParam("commentaire") String commentaire,
                                  @RequestParam("produit_id") int produitId,
                                  @RequestParam("rating") int rating,

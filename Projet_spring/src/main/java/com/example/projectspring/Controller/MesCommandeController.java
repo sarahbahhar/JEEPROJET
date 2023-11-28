@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 @Controller
-@RequestMapping("/mes-commandes")
+@RequestMapping("/mes-commandes-servlet")
 public class MesCommandeController {
 
     @Autowired

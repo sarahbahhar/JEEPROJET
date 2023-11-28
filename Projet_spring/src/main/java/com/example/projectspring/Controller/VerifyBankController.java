@@ -3,12 +3,14 @@ package com.example.projectspring.Controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.projectspring.Service.ComptebancaireService;
 
 @Controller
+@RequestMapping("/VerifyBankServlet")
 public class VerifyBankController {
 
     private ComptebancaireService comptebancaireService;
@@ -17,12 +19,12 @@ public class VerifyBankController {
         this.comptebancaireService = comptebancaireService;
     }
 
-    @GetMapping("/VerifyBankServlet")
+    @GetMapping
     public String showVerifyBankPage() {
         return "verifyBank"; // Nom du fichier JSP ou HTML pour la vérification bancaire
     }
 
-    @PostMapping("/VerifyBankServlet")
+    @PostMapping
     public ModelAndView authenticateBank(@RequestParam("numero") String numero,
                                          @RequestParam("cvv") String cvv,
                                          @RequestParam("date") String date,
