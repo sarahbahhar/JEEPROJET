@@ -8,6 +8,7 @@
     <title>Liste des modérateurs</title>
     <link rel="stylesheet" href="./css/moderatorList.css">
     <link rel="stylesheet" href="/css/style.css">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 <h1>Moderator List</h1>
@@ -72,4 +73,7 @@
 <br>
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

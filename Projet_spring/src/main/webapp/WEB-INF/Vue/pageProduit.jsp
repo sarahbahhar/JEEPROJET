@@ -9,6 +9,7 @@
     <link rel="shortcut icon"  href="./img/logo_onglet.ico" type="image/x-icon">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/prod.css">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
     <div class="page">
@@ -128,4 +129,7 @@
         </div>
     </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

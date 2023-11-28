@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
-
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 <div class="container" id="container">
@@ -27,6 +27,9 @@
     </div>
 </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
 
 
