@@ -1,9 +1,13 @@
 package com.example.projectspring.Entity;
 
+import jakarta.persistence.Column;
+
 import java.io.Serializable;
 
 public class ProduitpanierPK implements Serializable {
+
     private String email;
+    @Column(name="produit_id")
     private int produitId;
 
     public String getEmail() {

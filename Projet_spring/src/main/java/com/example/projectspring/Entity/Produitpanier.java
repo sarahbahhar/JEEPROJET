@@ -12,7 +12,7 @@ public class Produitpanier {
     @Id
     @Column(name = "produit_id")
     private int produitId;
-
+    @Column(name="quantite")
     private int quantite;
 
     public String getEmail() {
