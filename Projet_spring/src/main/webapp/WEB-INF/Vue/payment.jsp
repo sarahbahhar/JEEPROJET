@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
     <script src="../../js/myCard.js"></script>
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 
@@ -85,6 +86,9 @@
 
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
 
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/creditcardlist.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <%@ include file="header.jsp" %>
 </head>
 <body>
     <c:if test="${empty accounts}">
@@ -53,4 +53,7 @@
     </div>
 </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

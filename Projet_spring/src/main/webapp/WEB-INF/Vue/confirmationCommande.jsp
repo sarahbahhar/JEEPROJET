@@ -11,10 +11,14 @@
     <title>Confirmation de la commande</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 <h1>Confirmation de la commande</h1>
 
 <!-- Il faut afficher peut etre un recap de la commande -->
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
