@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Demandemoderateur {
     @Id
     private String email;
-
+    @Column(name="message")
     private String message;
 
     public String getEmail() {

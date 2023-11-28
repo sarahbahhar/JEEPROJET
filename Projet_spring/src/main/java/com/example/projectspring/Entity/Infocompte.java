@@ -8,21 +8,22 @@ import java.sql.Date;
 public class Infocompte {
     @Id
     private String email;
-
+    @Column(name="prenom")
     private String prenom;
+    @Column(name="nom")
     private String nom;
-
-    @Column(name = "date_naissance")
+    @Column(name = "dateNaissance")
     private Date dateNaissance;
-
+    @Column(name="telephone")
     private String telephone;
-
+    @Column(name="adresse")
     private String adresse;
+    @Column(name="ville")
     private String ville;
 
-    @Column(name = "code_postal")
+    @Column(name = "codePostal")
     private int codePostal;
-
+    @Column(name="pays")
     private String pays;
 
     public String getEmail() {

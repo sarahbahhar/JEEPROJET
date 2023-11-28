@@ -15,14 +15,15 @@ public class Produitcommande {
 
     @Column(name = "commande_numero")
     private int commandeNumero;
+    @Column(name="quantite")
 
     private int quantite;
 
-    @Column(name = "email_vendeur")
+    @Column(name = "emailVendeur")
     private String emailVendeur;
-
+    @Column(name="titre")
     private String titre;
-
+    @Column(name="prix")
     private BigDecimal prix;
 
     public int getId() {
