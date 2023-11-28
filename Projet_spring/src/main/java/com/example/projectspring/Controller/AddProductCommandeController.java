@@ -41,11 +41,13 @@ public class AddProductCommandeController {
 
     @GetMapping
     public String addProductCommande(HttpSession session,
-                                     @RequestParam(value = "nCommande", required = false) int nCommande,
-                                     @RequestParam(value = "total", required = false) double total,
+                                     @RequestParam(value = "nCommande") int nCommande,
+
                                      Model model) {
         try {
 
+            double total= (double) session.getAttribute("total");
+            System.out.println(nCommande+ " ; "+ total);
             Infocompte ic = (Infocompte) session.getAttribute("InfoCompte");
             String email = ic.getEmail();
             BigDecimal totalBigDecimal = new BigDecimal(total);

@@ -81,7 +81,7 @@
                 </div>
 
 
-                    <form class='style' action="${pageContext.request.contextPath}/VerifyStockServlet" method="post">
+                    <form class='style' action="${pageContext.request.contextPath}/VerifyStockServlet" method="get">
                         <input type="hidden" name="path" value="payment.jsp" />
                         <button class="bouton-golden" type="submit">valider</button>
                     </form>

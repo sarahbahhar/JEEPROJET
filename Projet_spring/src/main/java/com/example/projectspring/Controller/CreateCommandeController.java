@@ -43,13 +43,14 @@ public class CreateCommandeController {
             commande.setDateDePaiement(sqlDate);
 
             commandeService.addCommande(commande);
+            System.out.println(email);
             int nCommande = commandeService.getLastCommandeIdByEmail(email);
 
             model.addAttribute("nCommande", nCommande);
 
-            return "confirmationCommande"; // Nom de la vue confirmationCommande.jsp
+            return "redirect:/AddProductCommandeServlet?nCommande="+ nCommande; // Nom de la vue confirmationCommande.jsp
         } catch (Exception e) {
-            return "error";
+            return "redirect:/error";
         }
     }
 }
