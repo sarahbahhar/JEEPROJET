@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/commande.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-KPx5sYzNlKDziuAx9nu7ZW9z0H73i1zYAM+QRVOGLsQVtThxdhZL0DO0Qe2UJbVsd0LooUrF9PsFyqU/Z2N5Ug==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-KPx5sYzNlKDziuAx9nu7ZW9z0H73i1zYAM+QRVOGLsQVtThxdhZL0DO0Qe2UJbVsd0LooUrF9PsFyqU/Z2N5Ug==" crossorigin="anonymous" />
 </head>
 <body>
 <c:choose>
@@ -80,8 +81,9 @@
                                             </div>
                                             <div>
                                                 <dt><form class="style" action="${pageContext.request.contextPath}/redirect-product-order-servlet" method="post">
-                                                    <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">Detail</button>
-                                                    <input type="hidden" name="produit_id" value="${produitCommande.idProduit}" />
+                                                    <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">
+                                                        <i class="fas fa-search"></i> <!-- Utilisez l'icône de recherche de Font Awesome -->
+                                                    </button><input type="hidden" name="produit_id" value="${produitCommande.idProduit}" />
                                                     <input type="hidden" name="commande_id" value="${produitCommande.commandeNumero}" />
                                                 </form></dt>
                                                 <dd>
@@ -89,9 +91,6 @@
                                                 </dd>
                                             </div>
                                         </dl></c:if>
-
-
-
                             </c:when>
                             <c:otherwise>
                                 <c:if test="${produitCommande.commandeNumero eq commande.numero}">
@@ -110,8 +109,9 @@
                                         </div>
                                         <div>
                                             <dd><form class="style" style="width: 100%;height: 100%;" action="${pageContext.request.contextPath}/redirect-product-order-servlet" method="post">
-                                                <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">Detail</button>
-                                                <input type="hidden" name="produit_id" value="${produitCommande.idProduit}" />
+                                                <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">
+                                                    <i class="fas fa-search"></i> <!-- Utilisez l'icône de recherche de Font Awesome -->
+                                                </button><input type="hidden" name="produit_id" value="${produitCommande.idProduit}" />
                                                 <input type="hidden" name="commande_id" value="${produitCommande.commandeNumero}" />
                                             </form></dd>
 

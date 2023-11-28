@@ -9,16 +9,21 @@
 }
 
 /* Styles pour le corps du document */
-body {
-    font-family: "Inter", sans-serif;
-    line-height: 1.5;
-    min-height: 100vh;
-    padding: 5rem 0;
-    font-size: clamp(1rem, 2.5vw, 1.125rem);
+
+
+
+/* Styles pour l'en-tête */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    max-width: 100%;
 }
+
 
 /* Styles pour les sections du document */
 section {
+
     width: 90%;
     max-width: 800px;
     margin-left: auto;
@@ -32,6 +37,7 @@ section {
 
 /* Styles pour les titres de niveau 1 */
 h1 {
+    margin-left: 225px;
     font-weight: 700;
     line-height: 1.125;
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
@@ -149,13 +155,15 @@ dl {
         margin-bottom: 2em;
     }
 }
-.command{
+/* Styles pour la première section du document (en dessous de l'en-tête) */
+.command {
+    margin-top: 10rem; /* Ajustez la marge pour placer la section en dessous de l'en-tête */
+    width: 64%;
     margin-left: auto;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 64%;
     margin-right: auto;
     border-radius: 20px;
 }
