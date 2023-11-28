@@ -38,8 +38,23 @@
                             <td><p style="font-size: 100%;">-</p></td>
                         </c:otherwise>
                     </c:choose>
-                    <td><p style="font-size: 100%;">${moderator.peutAjouterProduit}</p></td>
-                    <td><p style="font-size: 100%;">${moderator.peutSupprimerProduit}</p></td>
+                    <td><p style="font-size: 100%;">
+                        <c:choose>
+                        <c:when test="${moderator.peutAjouterProduit==1}">
+                            Oui
+                        </c:when>
+                        <c:otherwise>
+                        Non</p>
+                        </c:otherwise>
+                            </c:choose></p></td>
+                    <td><p style="font-size: 100%;"><c:choose>
+                        <c:when test="${moderator.peutSupprimerProduit==1}">
+                            Oui
+                        </c:when>
+                        <c:otherwise>
+                        Non</p>
+                        </c:otherwise>
+                            </c:choose></p></td>
                     <td><p style="font-size: 100%;">${moderator.maxProduitsLigne}</p></td>
 
                     <td>
