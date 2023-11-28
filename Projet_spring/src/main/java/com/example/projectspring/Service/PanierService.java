@@ -20,8 +20,11 @@ public class PanierService {
 
     @Autowired
     private PanierRepository par;
+    @Autowired
     private ProduitPanierRepository ppr;
+    @Autowired
     private ProduitService ps;
+    @Autowired
     private ProduitRepository pr;
 
     public void createPanier(Panier p) {

@@ -31,6 +31,7 @@ public class ModeratorService {
     */
     @Autowired
     private ModeratorRepository mr;
+    @Autowired
     private ProduitService ps;
 
 

@@ -28,10 +28,15 @@ public class ProduitService {
 
     @Autowired
     private ProduitRepository pr;
+    @Autowired
     private PanierRepository par;
+    @Autowired
     private PanierService pas;
+    @Autowired
     private ModeratorService ms;
+    @Autowired
     private ModeratorRepository mr;
+    @Autowired
     private ProduitPanierRepository ppr;
 
 
@@ -83,7 +88,7 @@ public class ProduitService {
     }
 
     public List<Produit> getProductsByCategory(String categorie) {
-        return produitRepository.findByCategorie(categorie);
+        return pr.findByCategorie(categorie);
     }
 
     public boolean isModerateurBanni(Produit produit) {
