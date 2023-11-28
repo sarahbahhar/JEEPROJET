@@ -17,7 +17,7 @@ import java.util.Optional;
 @Repository
 
 public interface ModeratorRepository extends JpaRepository<Moderateur, String> {
-    @Query(value="SELECT * FROM Admin WHERE email= :email", nativeQuery=true)
+    @Query(value="SELECT * FROM Moderateur WHERE email= :email", nativeQuery=true)
     Moderateur findByEmail(@Param("email") String email);
 
     @Transactional
@@ -27,13 +27,13 @@ public interface ModeratorRepository extends JpaRepository<Moderateur, String> {
 
     @Transactional
     @Modifying
-    @Query(value="DELETE FROM Client WHERE email= :email", nativeQuery=true)
+    @Query(value="DELETE FROM Moderateur WHERE email= :email", nativeQuery=true)
     void deleteByEmail(@Param("email") String email);
 
     @Transactional
     @Modifying
     @Query(value="UPDATE Client SET points_fidelite = :points_fidelite WHERE email= :email", nativeQuery=true)
-    void addPoint(@Param("points_fidelite") int pointFidelite, @Param("email") String email);
+    void addPoint(@Param("points_fidelite") int point_fidelite, @Param("email") String email);
 
     @Query(value="SELECT AVG(c.note) FROM Commentaires c WHERE c.emailVendeur = :email", nativeQuery=true)
     Double getAverageRatingByEmail(@Param("email") String email);

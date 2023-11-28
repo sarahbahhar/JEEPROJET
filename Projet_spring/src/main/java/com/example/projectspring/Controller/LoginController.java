@@ -40,15 +40,22 @@ public class LoginController {
 
         if (cos.validate(email, password)) {
             session.setAttribute("email", email);
-            session.setAttribute("demandeModerateur", dms.isEmailInModeratorRequests(email));
+            //session.setAttribute("demandeModerateur", dms.isEmailInModeratorRequests(email));
+
 
             if (as.emailExists(email)) {
                 session.setAttribute("role", 2); // 2 pour admin
+
+
             } else if (ms.emailExists(email)) {
+
+
                 ms.unbanByEmail(email);
                 session.setAttribute("role", 1); // 1 pour moderateur
 
+
                 Moderateur m = ms.getModeratorByEmail(email);
+
 
                 session.setAttribute("maxProductsPerLine", m.getMaxProduitsLigne());
                 session.setAttribute("nbBannissement", m.getNbBannissement());
@@ -56,41 +63,54 @@ public class LoginController {
                 session.setAttribute("motifLongBanissement", m.getMotifLongBanissement());
                 session.setAttribute("dateBanni", m.getDateBanni());
 
+
                 Client c = cs.getClient(email);
+
+
                 session.setAttribute("pointFidelite", c.getPointsFidelite());
 
-                if (m.getDateBanni() != null) {
-                    session.setAttribute("canAddProduct", false);
-                    session.setAttribute("canDeleteProduct", false);
-                    isBan = true;
-                } else {
-                    session.setAttribute("canAddProduct", m.getPeutAjouterProduit() == 1);
-                    session.setAttribute("canDeleteProduct", m.getPeutSupprimerProduit() == 1);
-                }
 
-            } else if (cs.emailExists(email)) {
-                session.setAttribute("role", 0); // 0 pour client
-                Client c = cs.getClient(email);
-                session.setAttribute("pointFidelite", c.getPointsFidelite());
-            }
+                    if (m.getDateBanni() != null) {
+                        session.setAttribute("canAddProduct", false);
+                        session.setAttribute("canDeleteProduct", false);
+                        isBan = true;
+                    } else {
+                        session.setAttribute("canAddProduct", m.getPeutAjouterProduit() == 1);
+                        session.setAttribute("canDeleteProduct", m.getPeutSupprimerProduit() == 1);
+                    }
 
-            //String[] fullName = ias.getFullNameByEmail(email);
-            //session.setAttribute("firstName", fullName[0]);
-            //session.setAttribute("lastName", fullName[1]);
+                   if (isBan) {
+                        return "yourAreBan";
+                    }
 
-           // Infocompte ic = ias.getInfoCompte(email);
 
-          //  session.setAttribute("InfoCompte", ic);
-            if (isBan) {
-                return "yourAreBan";
-            } else {
-                return "header";
-            }
+        } else if (cs.emailExists(email)) {
+            session.setAttribute("role", 0); // 0 pour client
+            Client c = cs.getClient(email);
+            session.setAttribute("pointFidelite", c.getPointsFidelite());
+        }
+
+
+        //String[] fullName = ias.getFullNameByEmail(email);
+        //session.setAttribute("firstName", fullName[0]);
+        //session.setAttribute("lastName", fullName[1]);
+
+        // Infocompte ic = ias.getInfoCompte(email);
+
+        //  session.setAttribute("InfoCompte", ic);
+
+        return "header";
+
+
 
 
         } else {
             model.addAttribute("failLogin", true);
             return "signIn2";
         }
+
+
     }
 }
+
+

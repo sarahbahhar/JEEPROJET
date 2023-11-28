@@ -86,9 +86,10 @@ public class ModeratorService {
 
     public boolean emailExists(String email) {
 
-        Moderateur m = null;
+        Moderateur m = new Moderateur();
         try {
             m = mr.findByEmail(email);
+
             if (m!= null) {
                 return true;
             }
