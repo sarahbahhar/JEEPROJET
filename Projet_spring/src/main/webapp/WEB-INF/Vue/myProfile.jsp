@@ -5,133 +5,88 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Profil</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/profil.css">
     <link rel="shortcut icon"  href="./img/logo_onglet.ico" type="image/x-icon">
+    <style>
+        .container-profil {
+            background: url("${pageContext.request.contextPath}/img/profil.jpg") center center no-repeat;
+            background-size: cover;
+        }
+    </style>
 
 </head><body>
-<div>
+<div class="container-profil">
+    <div class="card">
+        <h1>Mon Profil</h1><br>
+        <p><strong>Email: </strong>${sessionScope.InfoCompte.email}</p>
+        <p><strong>Prénom: </strong>${sessionScope.InfoCompte.prenom}</p>
+        <p><strong>Nom: </strong>${sessionScope.InfoCompte.nom}</p>
+        <p><strong>Date de naissance: </strong>${sessionScope.InfoCompte.dateNaissance}</p>
+        <p><strong>Numéro de téléphone: </strong>${sessionScope.InfoCompte.telephone}</p>
+        <p><strong>Adresse: </strong>${sessionScope.InfoCompte.adresse}</p>
+        <p><strong>Ville: </strong>${sessionScope.InfoCompte.ville}</p>
+        <p><strong>Code postal: </strong>${sessionScope.InfoCompte.codePostal}</p>
+        <p><strong>Pays: </strong>${sessionScope.InfoCompte.pays}</p>
+        <c:if test="${sessionScope.role == 0 || sessionScope.role == 1}">
+            <p><strong>Points de fidélité: </strong>${sessionScope.pointFidelite}</p>
+
+        </c:if>
+        <c:if test="${sessionScope.role == 1}">
+            <p><strong>Ma note: </strong>
+            <c:choose>
+                <c:when test="${averageRating==0}">
+                    <em>Aucune moyenne disponible</em>
+                </c:when>
+                <c:otherwise>
+                    <strong>Moyenne: </strong> ${averageRating}/5 </p>
+                </c:otherwise>
+            </c:choose>
+        </c:if>
 
 
-    <div style="width: 40%; margin: auto;">
-        <h1>Mon Profil</h1>
-        <fieldset>
-            <legend>Informations</legend>
-            <table>
-
-                <tr>
-                    <td>Email :</td>
-                    <td class="black-text">${sessionScope.InfoCompte.email}</td>
-                </tr>
-                <tr>
-                    <td>Prénom :</td>
-                    <td class="black-text">${sessionScope.InfoCompte.prenom}</td>
-                </tr>
-                <tr>
-                    <td>Nom :</td>
-                    <td class="black-text">${sessionScope.InfoCompte.nom}</td>
-                </tr>
-                <tr>
-                    <td>Date de naissance :</td>
-                    <td class="black-text">${sessionScope.InfoCompte.dateNaissance}</td>
-                </tr>
-                <tr>
-                    <td>Numéro de téléphone :</td>
-                    <td class="black-text">${sessionScope.InfoCompte.telephone}</td>
-                </tr>
-                <tr>
-                    <td>Adresse :</td>
-                    <td class="black-text">${sessionScope.InfoCompte.adresse}</td>
-                </tr>
-                <tr>
-                    <td>Ville :</td>
-                    <td class="black-text">${sessionScope.InfoCompte.ville}</td>
-                </tr>
-                <tr>
-                    <td>Code postal :</td>
-                    <td class="black-text">${sessionScope.InfoCompte.codePostal}</td>
-                </tr>
-                <tr>
-                    <td>Pays :</td>
-                    <td class="black-text">${sessionScope.InfoCompte.pays}</td>
-                </tr>
-                <div>
-                    <h2>Ma note </h2>
-                    <c:choose>
-                        <c:when test="${empty averageRating}">
-                            <p>Aucune moyenne disponible</p>
-                        </c:when>
-                        <c:otherwise>
-                            <p>Moyenne : ${averageRating}</p>
-                        </c:otherwise>
-                    </c:choose>
-                </div>
-            </table>
-        </fieldset>
         <c:choose>
             <c:when test="${sessionScope.role == 1}">
-                <fieldset>
-                    <legend>Droits d'Accès</legend>
-                    <table>
-                        <tr>
-                            <td>Droit d'ajouter un produit :</td>
-                            <td class="black-text">
-                                <c:choose>
-                                    <c:when test="${sessionScope.canAddProduct}">
-                                        Oui
-                                    </c:when>
-                                    <c:otherwise>
-                                        Non
-                                    </c:otherwise>
-                                </c:choose>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Droit de supprimer un produit :</td>
-                            <td class="black-text">
-                                <c:choose>
-                                    <c:when test="${sessionScope.canDeleteProduct}">
-                                        Oui
-                                    </c:when>
-                                    <c:otherwise>
-                                        Non
-                                    </c:otherwise>
-                                </c:choose>
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nombre Maximal de produits en ligne :</td>
-                            <td class="black-text">${sessionScope.maxProductsPerLine}</td>
-                        </tr>
-                    </table>
-                </fieldset>
+                <p><strong>Droit d'ajouter un produit: </strong>
+                <c:choose>
+                    <c:when test="${sessionScope.canAddProduct}">
+                        Oui
+                    </c:when>
+                    <c:otherwise>
+                        Non</p>
+                    </c:otherwise>
+                </c:choose>
+                <p><strong>Droit de supprimer un produit: </strong>
+                <c:choose>
+                    <c:when test="${sessionScope.canDeleteProduct}">
+                        Oui
+                    </c:when>
+                    <c:otherwise>
+                        Non</p>
+                    </c:otherwise>
+                </c:choose>
+                <p><strong>Nombre Maximal de produits en ligne: </strong>${sessionScope.maxProductsPerLine}</p>
             </c:when>
         </c:choose>
-        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-            <c:choose>
-                <c:when test="${sessionScope.role != 2}">
-                    <form  style="text-align:left" action="${pageContext.request.contextPath}/bank-account-servlet" method="get">
-                        <input type="hidden" name="email" value="${sessionScope.email}" />
-                        <button class="bouton-golden" type="submit">Gérer mes cartes</button>
-                    </form>
-                </c:when>
-            </c:choose>
-            <c:if test="${sessionScope.role == 0 && sessionScope.demandeModerateur == false }">
-                <form  style="text-align:left" action="${pageContext.request.contextPath}/redirect-servlet" method="get">
-                    <input type="hidden" name="path" value="formAddModerator.jsp" />
-                    <button class="bouton-golden" type="submit">Faire demande moderateur</button>
+        <c:choose>
+            <c:when test="${sessionScope.role != 2}">
+                <form  style="text-align:center" action="${pageContext.request.contextPath}/bank-account-servlet" method="get">
+                    <input type="hidden" name="email" value="${sessionScope.email}" />
+                    <button class="lien" type="submit">Gérer mes cartes</button>
                 </form>
-            </c:if>
-            <form  style="text-align:right" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-                <input type="hidden" name="path" value="changeMyInfo.jsp" />
-                <button class="bouton-golden" type="submit">Modifier mes informations</button>
+            </c:when>
+        </c:choose>
+        <c:if test="${sessionScope.role == 0 && sessionScope.demandeModerateur == false }">
+            <form  style="text-align:center" action="${pageContext.request.contextPath}/redirect-servlet" method="get">
+                <input type="hidden" name="path" value="formAddModerator.jsp" />
+                <button class="lien" type="submit">Faire demande moderateur</button>
             </form>
-
-        </div>
+        </c:if>
+        <form  style="text-align:center" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+            <input type="hidden" name="path" value="changeMyInfo.jsp" />
+            <button class="lien" type="submit">Modifier mes informations</button>
+        </form>
     </div>
-
-    <hr>
 </div>
-
 </body>
 </html>

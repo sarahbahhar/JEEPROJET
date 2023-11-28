@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,7 @@
     <nav class="header-nav">
         <ul class="ulMain">
             <li class="logo">
-                <a href="<%=request.getContextPath()%>">
+                <a href="<%=request.getContextPath()%>/home.jsp">
                     <img src="<%=request.getContextPath()%>/img/logo_page.png" alt="logo_du_site" width="250px">
                 </a>
             </li>
@@ -34,11 +35,12 @@
 
 
             <c:choose>
-                <c:when test="${empty sessionScope.email}">
+                <c:when test="${empty sessionScope.role }">
 
 
 
-                    <form >
+
+                <form >
                     </form>
                     <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
                         <input type="hidden" name="path" value="about.jsp" />
@@ -114,7 +116,7 @@
 
 
 
-                        <form   class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="post">
+                        <form   class='style' action="${pageContext.request.contextPath}/my-profile-servlet" method="get">
                             <input type="hidden" name="path" value="myProfile.jsp" />
                             <button class="lien" type="submit">Profil</button>
                         </form>

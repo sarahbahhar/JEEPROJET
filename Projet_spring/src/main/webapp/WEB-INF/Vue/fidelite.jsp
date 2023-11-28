@@ -8,28 +8,35 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/singIn.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
     <title>Fidélité</title>
 </head>
-<body>
-<h2>Vos points de fidélité: ${pointFidelite} points </h2>
-<p>Vous pouvez utiliser 100 points pour obtenir une réduction de 10€. </p>
-<form action="${pageContext.request.contextPath}/FidelityServlet" method="post">
+    <body>
+    <div class="container" id="container">
+            <div class="form-container sign-in-container">
+                <form action="${pageContext.request.contextPath}/FidelityServlet" method="post">
+                    <h2>Vos points de fidélité: ${pointFidelite} points </h2>
+                    <p>Vous pouvez utiliser 100 points pour obtenir une réduction de 10€. </p>
+                    <input type="checkbox" id="usePoints" name="usePoints" value="true" > Utiliser 100 points de fidélité
+                    <h2>Total</h2>
+                    <c:if test="${usePoints}">
+                        <p id="total-amount">${totalReduit} €</p>
+                    </c:if>
 
-        <label>
-            <input type="checkbox" id="usePoints" name="usePoints" value="true" > Utiliser 100 points de fidélité
-        </label>
-    <br>
-
-    <h2>Total</h2>
-    <c:if test="${usePoints}">
-        <p id="total-amount">${totalReduit} €</p>
-    </c:if>
-    <c:if test="${!usePoints}">
-        <p id="total-amount">${total} €</p>
-    </c:if>
-    <button class="bouton-golden" type="submit" value="Submit">
-</form>
-</body>
+                    <c:if test="${!usePoints}">
+                        <p id="total-amount">${total} €</p>
+                    </c:if>
+                    <button class="lien" type="submit" >Suivant</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <img src="${pageContext.request.contextPath}/img/fidelite.jpg" alt="canape">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

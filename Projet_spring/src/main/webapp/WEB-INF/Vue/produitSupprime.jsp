@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Produit Supprimer</title>
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+
 </head>
 <body>
 

@@ -30,7 +30,11 @@
     </script>
 </c:if>-->
 
-<div class="img-home"><img src="../../img/home-img.jpg" alt="Nos Produits"></div>
+<div class="img-home">
+    <form action="${pageContext.request.contextPath}/product-servlet" method="get">
+        <button type="submit"><img src="img/home-img.png" alt="Nos Produits"></button>
+    </form>
+</div>
 
 <!--<c:if test="${!empty sessionScope.InfoCompte.prenom && !empty sessionScope.InfoCompte.nom}">
     <div><h1>Bienvenue ${sessionScope.InfoCompte.prenom} ${sessionScope.InfoCompte.nom}</h1></div>
@@ -57,10 +61,6 @@
         </li>
     </ul>
 
-    <div id="product-carousel-nav">
-        <button class="carousel-nav prev"></button>
-        <button class="carousel-nav next"></button>
-    </div>
 </div>
 <script src="../../js/ProductSliderHome.js"></script>
 

@@ -2,61 +2,34 @@
 <html>
 <head>
     <title>Modifier Mon Profil</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-<div style="width: 40%; margin: auto;">
-    <h1>Modifier Mon Profil</h1>
-    <fieldset>
-        <legend>Informations à Modifier</legend>
-        <form id="modifier-infoCompte-form" method="POST" action="${pageContext.request.contextPath}/ModifyInfoServlet">
-            <table>
-                <tr>
-                    <td><label for="prenom">Prénom :</label></td>
-                    <td><input type="text" id="prenom" name="prenom" value="${sessionScope.InfoCompte.prenom}" required></td>
-                </tr>
-                <tr>
-                    <td><label for="nom">Nom :</label></td>
-                    <td><input type="text" id="nom" name="nom" value="${sessionScope.InfoCompte.nom}" required></td>
-                </tr>
-                <tr>
-                    <td><label for="date">Date de naissance :</label></td>
-                    <td><input type="date" id="date" name="date" value="${sessionScope.InfoCompte.dateNaissance}" required></td>
-                </tr>
-                <tr>
-                    <td><label for="telephone">N° téléphone :</label></td>
-                    <td><input type="text" id="telephone" name="telephone" value="${sessionScope.InfoCompte.telephone}" required></td>
-                </tr>
-                <tr>
-                    <td><label for="adresse">Adresse :</label></td>
-                    <td><input type="text" id="adresse" name="adresse" value="${sessionScope.InfoCompte.adresse}" required></td>
-                </tr>
-                <tr>
-                    <td><label for="ville">Ville :</label></td>
-                    <td><input type="text" id="ville" name="ville" value="${sessionScope.InfoCompte.ville}" required></td>
-                </tr>
-                <tr>
-                    <td><label for="codePostal">Code postal :</label></td>
-                    <td><input type="number" id="codePostal" name="codePostal" value="${sessionScope.InfoCompte.codePostal}" required></td>
-                </tr>
-                <tr>
-                    <td><label for="pays">Pays :</label></td>
-                    <td><input type="text" id="pays" name="pays" value="${sessionScope.InfoCompte.pays}" required></td>
-                </tr>
-                <tr><input type="hidden" name="email" value="${sessionScope.email}" /><tr>
 
-            </table>
+<div class="container special-container" id="container">
+    <div class="form-container sign-in-container">
+        <form method="POST" action="${pageContext.request.contextPath}/ModifyInfoServlet">
+            <h1>Modifier Mon Profil</h1>
+            <input type="text" id="prenom" name="prenom" value="${sessionScope.InfoCompte.prenom}" placeholder="Prénom" required>
+            <input type="text" id="nom" name="nom" value="${sessionScope.InfoCompte.nom}" placeholder="Nom" required>
+            <input type="date" id="date" name="date" value="${sessionScope.InfoCompte.dateNaissance}" placeholder="JJ/MM/AAAA" required>
+            <input type="text" id="telephone" name="telephone" value="${sessionScope.InfoCompte.telephone}" placeholder="N° telephone" required>
+            <input type="text" id="adresse" name="adresse" value="${sessionScope.InfoCompte.adresse}"placeholder="Adresse" required>
+            <input type="text" id="ville" name="ville" value="${sessionScope.InfoCompte.ville}" placeholder="Ville" required>
+            <input type="number" id="codePostal" name="codePostal" value="${sessionScope.InfoCompte.codePostal}" placeholder="Code Postal" required>
+            <input type="text" id="pays" name="pays" value="${sessionScope.InfoCompte.pays}" placeholder="Pays" required>
+            <input type="hidden" name="email" value="${sessionScope.email}" />
+            <button class="lien" type="submit" >Modifier</button>
         </form>
-    </fieldset>
-    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-        <form action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-            <input type="hidden" name="path" value="myProfile.jsp" />
-            <button class="bouton-golden" type="submit">Retour</button>
-        </form>
-        <button class="bouton-golden" type="submit" form="modifier-infoCompte-form">Modifier</button>
     </div>
-
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <img src="${pageContext.request.contextPath}/img/Modifinfo.jpg" alt="canape">
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

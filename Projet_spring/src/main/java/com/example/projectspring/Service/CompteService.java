@@ -2,10 +2,14 @@ package com.example.projectspring.Service;
 
 
 import com.mysql.cj.protocol.a.CompressedInputStream;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.projectspring.Repository.CompteRepository;
 import com.example.projectspring.Entity.Compte;
+
+import java.util.Optional;
+
 @Service
 
 public class CompteService {
@@ -69,8 +73,27 @@ public class CompteService {
         return unique;
 
     }
+    public boolean validate(String email, String password) {
+        return cr.findByEmail(email)
+                .map(compte -> compte.isMotDePasseCorrect(password))
+                .orElse(false);
+    }
 
+    @Transactional
+    public void changePasswordByEmail(String email, String newPassword) {
+        Optional<Compte> compteOptional = cr.findByEmail(email);
 
+        if (compteOptional.isPresent()) {
+            Compte compte = compteOptional.get();
+            compte.setAndHashMotDePasse(newPassword);
+            cr.save(compte);
+        } else {
+            // Gérer le cas où aucun compte n'est trouvé pour l'email fourni
+            // Par exemple, en lançant une exception personnalisée ou en retournant une indication d'échec
+            throw new RuntimeException("Aucun compte trouvé avec l'email : " + email);
+            // Ou retourner une valeur spécifique, selon votre logique d'application
+        }
+    }
 
 
 

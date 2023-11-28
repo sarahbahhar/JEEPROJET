@@ -3,6 +3,7 @@ package com.example.projectspring.Service;
 
 import com.example.projectspring.Entity.Client;
 import com.mysql.cj.protocol.a.CompressedInputStream;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.projectspring.Repository.InfoAccountRepository;
@@ -106,6 +107,15 @@ public class InfoAccountService {
             e.printStackTrace();
         }
     }
+
+    public Infocompte getInfoCompte(String email) {
+        Infocompte infocompte = ir.findByEmail(email);
+        if (infocompte == null) {
+            throw new EntityNotFoundException("InfoCompte non trouvé pour l'email : " + email);
+        }
+        return infocompte;
+    }
+
 
 }
 

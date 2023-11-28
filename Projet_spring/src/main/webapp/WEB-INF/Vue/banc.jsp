@@ -12,40 +12,41 @@
     <meta charset="utf-8">
     <meta name="viewport">
     <title>Produits Banc</title>
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/productList.css">
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-<h1>Banc</h1>
-<div>
-    <div class="global">
-
-        <div class="box">
-
-            <c:forEach items="${bancProducts}" var="produit">
-                <form action="${pageContext.request.contextPath}/product-details" method="post">
-                    <br>
-                    <div class="article">
-                        <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">
-
-                            <img src="./img/${produit.nomImage}" alt="${produit.titre}" style="width: 100px; height: 100px; margin-right: 10px;">
-                            <div>
-                                <h5>${produit.titre}</h5>
-                                <p>${produit.miniDescription}</p>
-                                <p>Prix : ${produit.prix} €</p>
-                            </div>
-                        </button>
-                        <input type="hidden" name="produit_id" value="${produit.id}">
-                        <input type="hidden" name="type" value="pageProduit">
+<div class="container">
+    <table>
+        <c:forEach items="${bancProducts}" var="produit" varStatus="loop">
+        <c:if test="${loop.index % 4 == 0}">
+        </tr><tr>
+        </c:if>
+        <td>
+            <form action="${pageContext.request.contextPath}/product-details" method="post">
+                <button style="border:none; background-color:#f7f6f2;"type="submit"><div class="card">
+                    <img src="./img/${produit.nomImage}" alt="${produit.titre}">
+                    <div class="image-box">
+                        <img src="./img/${produit.nomImage2}" alt="${produit.titre}">
                     </div>
-                </form>
-            </c:forEach>
+                    <div class="content-box">
+                        <h2>${produit.titre}</h2>
+                        <div class="color">
+                            <p>${produit.miniDescription}</p>
+                        </div>
+                        <div class="size">
+                            <p>${produit.prix}$</p>
+                        </div>
+                    </div>
+                </div></button>
+                <input type="hidden" name="produit_id" value="${produit.id}">
+                <input type="hidden" name="type" value="pageProduit">
 
-        </div>
-    </div>
+            </form>
+        </td>
+        </c:forEach>
+    </table>
 </div>
-
 </body>
 </html>
 

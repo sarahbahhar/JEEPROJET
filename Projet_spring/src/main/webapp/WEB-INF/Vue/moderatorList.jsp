@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Moderator List</title>
+    <title>Liste des modérateurs</title>
     <link rel="stylesheet" href="./css/moderatorList.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -19,6 +19,7 @@
         <th>Can delete Product</th>
         <th>Max Product</th>
         <th>Bannir</th>
+
     </tr>
 
     <c:forEach items="${moderators}" var="moderator">
@@ -57,14 +58,18 @@
                     <button type="submit">Delete</button>
                 </form>
             </td>
+            <td>
+            <form action="${pageContext.request.contextPath}/redirection-form-edit-moderator-servlet" method="post">
+                <input type="hidden" name="email" value="${moderator.email}" />
+
+                <button type="submit">Edit Moderators</button>
+            </form>
+            </td>
         </tr>
     </c:forEach>
 </table>
 <br>
 <br>
-<form class="style" action="${pageContext.request.contextPath}/redirect-servlet" method="post">
-    <input type="hidden" name="path" value="editModerator.jsp" />
-    <button class="lien" type="submit">Edit Moderators</button>
-</form>
+
 </body>
 </html>
