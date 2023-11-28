@@ -9,7 +9,7 @@ public class Commentaires {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "id_produit")
+    @Column(name = "idProduit")
     private Integer idProduit;
     @Column(name="note")
     private int note;
