@@ -74,7 +74,7 @@ public class PanierService {
             // Mise à jour du stock
             produit.setStock(produit.getStock() - quantite);
             pr.save(produit);
-            
+
 
         }
     }
