@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.example.projectspring.Entity.ProduitpanierPK;
 import com.example.projectspring.Entity.Produitpanier;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,10 +21,12 @@ public interface ProduitPanierRepository extends JpaRepository<Produitpanier, Pr
     Optional<Produitpanier> findByEmailAndProduitId(String email, Integer produitId);
 
     @Modifying
+    @Transactional
     @Query("DELETE FROM Produitpanier p WHERE p.email = :email")
     void deleteByUserEmail(@Param("email") String email);
 
     @Modifying
+    @Transactional
     @Query("DELETE FROM Produitpanier p WHERE p.produitId = :produitId")
     void deleteByProduitId(@Param("produitId") int produitId);
 

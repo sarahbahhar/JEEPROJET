@@ -30,9 +30,19 @@ public class ProductDetailsController {
     }
 
 
+    @GetMapping
+    public String showProductDetailsGet(@RequestParam("produit_id") int produitId,
+                                     @RequestParam(value = "commande_id", required = false) Integer commandeId,
+                                     @RequestParam(value = "type", required = false) String type,
+                                     @SessionAttribute(value = "InfoCompte", required = false) Infocompte ic,
+                                     Model model)
+    {
+        return showProductDetailsPost(produitId, commandeId, type, ic, model);
+
+    }
 
     @PostMapping
-    public String showProductDetails(@RequestParam("produit_id") int produitId,
+    public String showProductDetailsPost(@RequestParam("produit_id") int produitId,
                                      @RequestParam(value = "commande_id", required = false) Integer commandeId,
                                      @RequestParam(value = "type", required = false) String type,
                                      @SessionAttribute(value = "InfoCompte", required = false) Infocompte ic,

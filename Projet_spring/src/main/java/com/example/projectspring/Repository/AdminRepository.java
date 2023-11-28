@@ -1,4 +1,3 @@
-
 package com.example.projectspring.Repository;
 
 import com.example.projectspring.Entity.Admin;

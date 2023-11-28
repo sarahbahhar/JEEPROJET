@@ -5,6 +5,7 @@ import com.example.projectspring.Entity.Produit;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,11 +21,22 @@ public class MyProductListController {
     private ProduitService produitService;
 
     @GetMapping
+
+    public String myProductListGet(@RequestParam("email") String email, Model model){
+        return myProductList( email, model);
+
+
+    }
+
+
+
+
+    @PostMapping
     public String myProductList(@RequestParam("email") String email, Model model) {
         try {
             List<Produit> listProduit = produitService.getListProduitByEmail(email);
 
-            // Ajouter la liste de produits au modèle
+
             model.addAttribute("produits", listProduit);
 
             return "gererProduit"; // Assurez-vous que "gererProduit" est le nom de la vue appropriée

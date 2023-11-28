@@ -22,12 +22,11 @@ public class ModifyStockController {
             Produit produit = produitService.getProduitById(produitId);
 
             if (produit != null) {
-                // Modifier le stock du produit
                 produit.setStock(newStock);
                 produitService.updateProduct(produit);
 
                 // Redirection vers la page de gestion des produits
-                return "redirect:/gererProduit"; // Assurez-vous d'avoir un mapping approprié pour la page de gestion des produits
+                return "redirect:/product-details?produit_id="+produitId+"&type=+pageProduitVendeur"; // Assurez-vous d'avoir un mapping approprié pour la page de gestion des produits
             }
         } catch (Exception e) {
             // Gérer les erreurs ici

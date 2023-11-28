@@ -39,7 +39,7 @@ public class LoginController {
 
         if (cos.validate(email, password)) {
             session.setAttribute("email", email);
-            //session.setAttribute("demandeModerateur", dms.isEmailInModeratorRequests(email));
+            session.setAttribute("demandeModerateur", dms.isEmailInModeratorRequests(email));
 
 
             if (as.emailExists(email)) {

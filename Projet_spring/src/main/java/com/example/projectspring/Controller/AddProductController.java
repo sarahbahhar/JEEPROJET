@@ -3,6 +3,7 @@ package com.example.projectspring.Controller;
 import com.example.projectspring.Entity.Produit;
 import com.example.projectspring.Service.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,8 @@ public class AddProductController {
 
     @Autowired
     private ProduitService produitService;
+    @Autowired
+    private ResourceLoader resourceLoader;
 
     @GetMapping
     public String showAddProductForm(Model model) {
@@ -49,35 +52,32 @@ public class AddProductController {
             p.setDescription(description);
             p.setStock(stock);
             p.setEmail(email);
+            String realPath = resourceLoader.getResource("classpath:/").getFile().getAbsolutePath();
 
-            if (!image.isEmpty()) {
-                String fileName = saveFile(image);
-                p.setNomImage(fileName);
+
+            if (!image.isEmpty() && !image2.isEmpty()) {
+
+                produitService.addFullProduct(realPath,p, image,image2);
+
             }
 
-            if (!image2.isEmpty()) {
-                String fileName2 = saveFile(image2);
-                p.setNomImage2(fileName2);
-            }
+
+
 
             produitService.addProduct(p);
+
+
+
+
+
 
         } catch (Exception e) {
             model.addAttribute("error", "Erreur lors de l'ajout du produit");
             return "error"; // Assurez-vous que "error" est le nom de votre vue d'erreur (à créer dans /src/main/resources/templates)
         }
 
-        return "redirect:/my-product-list-controller?email=" + email;
+        return "redirect:/my-product-list-servlet?email=" + email;
     }
 
-    private String saveFile(MultipartFile file) throws IOException {
-        String uniqueID = UUID.randomUUID().toString();
-        String fileName = uniqueID + "_" + file.getOriginalFilename();
 
-        String absolutePath = "src/main/webapp/img/"; // Remplacez cela par votre chemin réel
-        File outputFile = new File(absolutePath, fileName);
-
-        file.transferTo(outputFile);
-        return fileName;
-    }
 }

@@ -15,15 +15,19 @@ import org.springframework.stereotype.Service;
 import com.example.projectspring.Entity.Produit;
 import com.example.projectspring.Entity.Moderateur;
 import com.example.projectspring.Entity.Produitpanier;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
 
 public class ProduitService {
-    public static final String PATH_IMAGE = "/src/main/webapp/img/";
+
+    public static final String PATH_IMAGE = "/../../src/main/webapp/img/";
 
 
     @Autowired
@@ -55,11 +59,13 @@ public class ProduitService {
                 .collect(Collectors.toList());
     }
     public List<Produit> getListProduitByEmail(String email) {
-        return pr.findByEmail(email);
+
+        return pr.findByEmail(email)
+                ;
     }
 
 
-    @Transactional
+
     public void removeProductByIdOfTable(int id) {
         ppr.deleteByProduitId(id);
         pr.deleteById(id);
@@ -100,9 +106,14 @@ public class ProduitService {
 
     public void removeProductById(String p,String fileName1,String fileName2,int id) {
 
-        String absolutePath = p+"../../" + PATH_IMAGE;
+
+        String absolutePath = p + PATH_IMAGE;
+
+
 
         File imageDir = new File(absolutePath);
+        System.out.println(absolutePath);
+
 
 
         File file = new File(imageDir, fileName1);
@@ -119,6 +130,9 @@ public class ProduitService {
             System.err.println("Image file not found: " + fileName1+fileName2);
         }
 
+
+
+        System.out.println(id);
         this.removeProductByIdOfTable(id);
 
     }
@@ -130,6 +144,36 @@ public class ProduitService {
             removeProductById(localisation, produit.getNomImage(), produit.getNomImage2(), produit.getId());
         }
     }
+
+    @Transactional
+    public void addFullProduct(String p ,Produit produit, MultipartFile image1, MultipartFile image2) throws IOException {
+        // Ajoutez la logique pour définir le chemin et les noms de fichier des images
+        String absolutePath = p + PATH_IMAGE;
+
+        // Sauvegarde des images
+        String fileName1 = saveFile(image1, absolutePath);
+        String fileName2 = saveFile(image2, absolutePath);
+
+        // Définir les noms des images dans l'objet produit
+        produit.setNomImage(fileName1);
+        produit.setNomImage2(fileName2);
+
+        // Sauvegarde du produit dans la base de données
+        pr.save(produit);
+    }
+
+    private String saveFile(MultipartFile file, String path) throws IOException {
+        if (!file.isEmpty()) {
+            String uniqueID = UUID.randomUUID().toString();
+            String fileName = uniqueID + "_" + file.getOriginalFilename();
+
+            File outputFile = new File(path, fileName);
+            file.transferTo(outputFile);
+            return fileName;
+        }
+        return null;
+    }
+
 
 
 

@@ -12,11 +12,12 @@ public class RedirectController {
 
     @GetMapping
     public String doGet(@RequestParam("path") String path) {
-        return path;
+        return doPost(path);
     }
 
     @PostMapping
     public String doPost(@RequestParam("path") String path) {
+
 
         if (path != null && path.endsWith(".jsp")) {
             path = path.substring(0, path.length() - 4);
