@@ -23,13 +23,15 @@ public class ProductDetailsController {
     private final ProduitService produitService;
     private final CommentairesService commentairesService;
 
+
     public ProductDetailsController(ProduitService produitService, CommentairesService commentairesService) {
         this.produitService = produitService;
         this.commentairesService = commentairesService;
     }
 
+
+
     @PostMapping
-    @GetMapping
     public String showProductDetails(@RequestParam("produit_id") int produitId,
                                      @RequestParam(value = "commande_id", required = false) Integer commandeId,
                                      @RequestParam(value = "type", required = false) String type,
@@ -46,6 +48,6 @@ public class ProductDetailsController {
         model.addAttribute("canComment", commandeId != null && commandeId > 0 && !commentairesService.hasCommented(produitId, ic != null ? ic.getEmail() : null));
         model.addAttribute("isModBanned", produitService.isModerateurBanni(produit));
 
-        return "Vue/" + ("pageProduit".equals(type) ? "pageProduit" : "pageProduitVendeur");
+        return "pageProduit".equals(type) ? "pageProduit" : "pageProduitVendeur";
     }
 }
