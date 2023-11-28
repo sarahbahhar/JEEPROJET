@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 
 
 @Controller
-@RequestMapping("/inscriptionController")
+@RequestMapping("/inscriptionServlet")
 @SessionAttributes({"email", "nom", "prenom", "password"})
 
 
