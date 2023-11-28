@@ -3,6 +3,7 @@ package com.example.projectspring.Controller;
 import com.example.projectspring.Entity.Panier;
 import com.example.projectspring.Entity.Produit;
 import com.example.projectspring.Entity.Produitpanier;
+import com.example.projectspring.Service.CommentairesService;
 import com.example.projectspring.Service.PanierService;
 import com.example.projectspring.Service.ProduitService;
 
@@ -28,6 +29,11 @@ public class PanierController {
 
     @Autowired
     private PanierService panierService;
+
+    public PanierController(ProduitService produitService, PanierService panierService) {
+        this.produitService = produitService;
+        this.panierService = panierService;
+    }
 
     @GetMapping()
     public String afficherPanier(@RequestParam String email, Model model, HttpSession session) {
