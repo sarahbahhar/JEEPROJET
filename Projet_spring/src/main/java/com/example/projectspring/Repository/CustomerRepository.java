@@ -15,7 +15,7 @@ import java.util.List;
 @Repository
 
 public interface CustomerRepository extends JpaRepository<Client, String> {
-    @Query(value="SELECT * FROM Admin WHERE email= :email", nativeQuery=true)
+    @Query(value="SELECT * FROM Client WHERE email= :email", nativeQuery=true)
     Client findByEmail(@Param("email") String email);
 
     @Transactional
@@ -28,7 +28,7 @@ public interface CustomerRepository extends JpaRepository<Client, String> {
     @Transactional
     @Modifying
     @Query(value="UPDATE Client SET points_fidelite = :points_fidelite WHERE email= :email", nativeQuery=true)
-    void addPoint(@Param("points_fidelite") int pointsFidelite, @Param("email") String email);
+    void addPoint(@Param("points_fidelite") int points_fidelite, @Param("email") String email);
 
 
 
