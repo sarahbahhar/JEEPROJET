@@ -11,13 +11,9 @@
     <link rel="stylesheet" href="./css/vendeur.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
-
-
-
-
-
 <div>
     <div class="global">
         <div class="box">
@@ -107,4 +103,7 @@
 
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

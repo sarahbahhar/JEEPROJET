@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../js/loading.js"></script>
+    <%@ include file="header.jsp" %>
 </head>
 <body>
     <div class="container">
@@ -19,4 +20,7 @@
         </div>
     </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
