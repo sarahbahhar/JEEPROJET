@@ -1,4 +1,4 @@
-package com.demo.Util;
+package com.example.projectspring.Util;
 
 import jakarta.mail.*;
 import jakarta.mail.internet.AddressException;

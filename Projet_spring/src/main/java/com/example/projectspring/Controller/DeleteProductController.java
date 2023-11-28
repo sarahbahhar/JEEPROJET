@@ -3,9 +3,12 @@ package com.example.projectspring.Controller;
 import com.example.projectspring.Service.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 
 import jakarta.servlet.ServletContext;
 
@@ -17,13 +20,15 @@ public class DeleteProductController {
     private ProduitService produitService;
 
     @Autowired
-    private ServletContext servletContext;
+    private ResourceLoader resourceLoader;
 
     @PostMapping
-    public String deleteProduct(@RequestParam("email") String email, @RequestParam("id") Integer id) {
+    public String deleteProduct(@RequestParam("email") String email, @RequestParam("id") String idStr, Model model) {
+        Integer id=Integer.parseInt(idStr);
         try {
             if (id != null) {
-                produitService.removeProductById(servletContext.getRealPath("/"), id);
+                String realPath =resourceLoader.getResource("classpath:/").getFile().getAbsolutePath();
+                produitService.removeProductById(realPath, produitService.getProduitById(id).getNomImage(),produitService.getProduitById(id).getNomImage2(),id);
             }
         } catch (Exception e) {
             e.printStackTrace();
