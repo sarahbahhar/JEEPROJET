@@ -3,6 +3,7 @@
 <head>
     <title>Demande de Modérateur</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
 
 </head>

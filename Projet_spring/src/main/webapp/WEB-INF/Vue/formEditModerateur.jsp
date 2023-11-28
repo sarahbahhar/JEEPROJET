@@ -10,6 +10,7 @@
 <head>
     <title>Modifier Moderateur</title>
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
 </head>
 

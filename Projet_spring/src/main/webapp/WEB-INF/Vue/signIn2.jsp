@@ -4,7 +4,7 @@
 <head>
     <title>Connexion</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

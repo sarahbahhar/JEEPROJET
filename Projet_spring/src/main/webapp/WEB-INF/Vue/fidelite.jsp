@@ -9,6 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/singIn.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
     <title>Fidélité</title>
 </head>
