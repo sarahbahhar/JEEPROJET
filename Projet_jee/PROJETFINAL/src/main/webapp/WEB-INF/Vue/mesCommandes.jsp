@@ -64,13 +64,13 @@
                                 <dd>${produitCommande.quantite}</dd>
                             </div>
                             <div>
-                                <dt>Detail</dt>
+                                <dt><form class="style" action="${pageContext.request.contextPath}/redirect-product-order-servlet" method="post">
+                                    <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;">Detail</button>
+                                    <input type="hidden" name="produit_id" value="${produitCommande.idProduit}" />
+                                    <input type="hidden" name="commande_id" value="${produitCommande.commandeNumero}" />
+                                </form></dt>
                                 <dd>
-                                    <form class="style" action="${pageContext.request.contextPath}/redirect-product-order-servlet" method="post">
-                                        <button type="submit" style="background-color: transparent; border: none; padding: 0; margin: 0; cursor: pointer;"></button>
-                                        <input type="hidden" name="produit_id" value="${produitCommande.idProduit}" />
-                                        <input type="hidden" name="commande_id" value="${produitCommande.commandeNumero}" />
-                                    </form>
+
                                 </dd>
                             </div>
                         </dl></c:if>
