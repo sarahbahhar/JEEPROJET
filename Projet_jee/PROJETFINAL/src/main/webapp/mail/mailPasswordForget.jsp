@@ -27,5 +27,7 @@
 <a href="${resetLink}" class="reset-button">Réinitialiser le mot de passe</a>
 
 <p>Si vous n'avez pas demandé cette réinitialisation, veuillez ignorer cet e-mail.</p>
+<p>Cordialement,</p>
+<p>L'équipe de Divan</p>
 </body>
 </html>
