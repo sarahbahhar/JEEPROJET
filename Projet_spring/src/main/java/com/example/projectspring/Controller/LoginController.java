@@ -13,7 +13,6 @@ import com.example.projectspring.Entity.Client;
 
 @Controller
 @RequestMapping("/login")
-@SessionAttributes({"email", "demandeModerateur", "maxProductsPerLine", "nbBannissement","motifCourtBannissement","motifLongBanissement","dateBanni","role"})
 public class LoginController {
 
     @Autowired
@@ -91,13 +90,13 @@ public class LoginController {
         }
 
 
-        //String[] fullName = ias.getFullNameByEmail(email);
-        //session.setAttribute("firstName", fullName[0]);
-        //session.setAttribute("lastName", fullName[1]);
 
-        // Infocompte ic = ias.getInfoCompte(email);
 
-        //  session.setAttribute("InfoCompte", ic);
+        Infocompte ic = ias.getInfoCompte(email);
+
+        session.setAttribute("InfoCompte", ic);
+
+
 
         return "header";
 

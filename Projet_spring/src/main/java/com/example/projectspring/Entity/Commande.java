@@ -11,7 +11,7 @@ public class Commande {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int numero;
 
-    @Column(name = "date_de_paiement")
+    @Column(name = "dateDePaiement")
     private Date dateDePaiement;
     @Column(name="total")
     private BigDecimal total;

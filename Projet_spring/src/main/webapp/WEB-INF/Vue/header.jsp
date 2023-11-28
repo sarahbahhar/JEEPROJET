@@ -20,7 +20,7 @@
     <nav class="header-nav">
         <ul class="ulMain">
             <li class="logo">
-                <a href="<%=request.getContextPath()%>/home.jsp">
+                <a href="<%=request.getContextPath()%>/home">
                     <img src="<%=request.getContextPath()%>/img/logo_page.png" alt="logo_du_site" width="250px">
                 </a>
             </li>

@@ -28,19 +28,17 @@ public class ProduitService {
 
     @Autowired
     private ProduitRepository pr;
+    @Autowired
     private PanierRepository par;
+    @Autowired
     private PanierService pas;
+    @Autowired
     private ModeratorService ms;
+    @Autowired
     private ModeratorRepository mr;
+    @Autowired
     private ProduitPanierRepository ppr;
-    public void setDependencies(ProduitRepository pr,PanierRepository par,PanierService pas,ModeratorService ms,ModeratorRepository mr,ProduitPanierRepository ppr) {
-        this.pr = pr;
-        this.par = par;
-        this.pas = pas;
-        this.ms = ms;
-        this.mr = mr;
-        this.ppr = ppr;
-    }
+
 
 
 
@@ -90,7 +88,7 @@ public class ProduitService {
     }
 
     public List<Produit> getProductsByCategory(String categorie) {
-        return produitRepository.findByCategorie(categorie);
+        return pr.findByCategorie(categorie);
     }
 
     public boolean isModerateurBanni(Produit produit) {

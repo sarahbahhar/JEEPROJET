@@ -1,133 +1,125 @@
 package com.example.projectspring.Entity;
 
+
 import jakarta.persistence.*;
-import java.sql.Date;
+
+import java.util.Date;
 
 @Entity
-@Table(name = "infocompte")
+@Table(name = "infocompte" ,schema = "projet_jee")
 public class Infocompte {
+
     @Id
+    @Column(name = "email", nullable = false, length = 100)
     private String email;
-    @Column(name="prenom")
+
+    @Column(name = "prenom", nullable = false, length = 50)
     private String prenom;
-    @Column(name="nom")
+
+    @Column(name = "nom", nullable = false, length = 50)
     private String nom;
-    @Column(name = "dateNaissance")
+
+    @Column(name = "dateNaissance", nullable = false)
     private Date dateNaissance;
-    @Column(name="telephone")
+
+    @Column(name = "telephone", nullable = false, length = 10)
     private String telephone;
-    @Column(name="adresse")
+
+    @Column(name = "adresse", nullable = false, length = 250)
     private String adresse;
-    @Column(name="ville")
+
+    @Column(name = "ville", nullable = false, length = 50)
     private String ville;
 
-    @Column(name = "codePostal")
+    @Column(name = "codePostal", nullable = false)
     private int codePostal;
-    @Column(name="pays")
+
+    @Column(name = "pays", nullable = false, length = 50)
     private String pays;
 
+    @ManyToOne
+    @JoinColumn(name = "email", insertable = false, updatable = false)
+    private Compte compte;
+
+    // Getters
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPrenom() {
         return prenom;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
     public String getNom() {
         return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
     }
 
     public Date getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
-
     public String getTelephone() {
         return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
     }
 
     public String getAdresse() {
         return adresse;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
     public String getVille() {
         return ville;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
     }
 
     public int getCodePostal() {
         return codePostal;
     }
 
-    public void setCodePostal(int codePostal) {
-        this.codePostal = codePostal;
-    }
-
     public String getPays() {
         return pays;
+    }
+
+    public Compte getCompte() {
+        return compte;
+    }
+
+    // Setters
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setDateNaissance(Date dateNaissance) {
+        this.dateNaissance = dateNaissance;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public void setCodePostal(int codePostal) {
+        this.codePostal = codePostal;
     }
 
     public void setPays(String pays) {
         this.pays = pays;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Infocompte that = (Infocompte) o;
-
-        if (codePostal != that.codePostal) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (prenom != null ? !prenom.equals(that.prenom) : that.prenom != null) return false;
-        if (nom != null ? !nom.equals(that.nom) : that.nom != null) return false;
-        if (dateNaissance != null ? !dateNaissance.equals(that.dateNaissance) : that.dateNaissance != null)
-            return false;
-        if (telephone != null ? !telephone.equals(that.telephone) : that.telephone != null) return false;
-        if (adresse != null ? !adresse.equals(that.adresse) : that.adresse != null) return false;
-        if (ville != null ? !ville.equals(that.ville) : that.ville != null) return false;
-        return pays != null ? pays.equals(that.pays) : that.pays == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = email != null ? email.hashCode() : 0;
-        result = 31 * result + (prenom != null ? prenom.hashCode() : 0);
-        result = 31 * result + (nom != null ? nom.hashCode() : 0);
-        result = 31 * result + (dateNaissance != null ? dateNaissance.hashCode() : 0);
-        result = 31 * result + (telephone != null ? telephone.hashCode() : 0);
-        result = 31 * result + (adresse != null ? adresse.hashCode() : 0);
-        result = 31 * result + (ville != null ? ville.hashCode() : 0);
-        result = 31 * result + codePostal;
-        result = 31 * result + (pays != null ? pays.hashCode() : 0);
-        return result;
+    public void setCompte(Compte compte) {
+        this.compte = compte;
     }
 }
