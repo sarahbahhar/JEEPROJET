@@ -49,12 +49,13 @@ public class PanierService {
 
 
 
-    @Transactional
+
     public void ajouterProduitAuPanier(String email, int produitId, int quantite) {
         Produit produit = pr.findById(produitId)
                 .orElseThrow(() -> new EntityNotFoundException("Produit non trouvé avec l'ID : " + produitId));
 
         if (produit.getStock() >= quantite) {
+            /*
             Optional<Produitpanier> existingProduitPanier = ppr.findByEmailAndProduitId(email, produitId);
 
             if (!existingProduitPanier.isPresent()) {
@@ -73,6 +74,8 @@ public class PanierService {
             // Mise à jour du stock
             produit.setStock(produit.getStock() - quantite);
             pr.save(produit);
+            */
+
         }
     }
     public Produitpanier produitPanierExists(Integer produitId, String email) {
