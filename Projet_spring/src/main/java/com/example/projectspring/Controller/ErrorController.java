@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/error")
 public class ErrorController {
 
-    @GetMapping("/error")
+    @GetMapping
     public String handleError() {
         // Affichez la page d'erreur avec un message spécifique
         return "error";

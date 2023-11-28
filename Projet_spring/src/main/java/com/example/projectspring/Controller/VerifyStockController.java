@@ -19,7 +19,7 @@ import jakarta.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-@RequestMapping("/verify-stock")
+@RequestMapping("/VerifyStockServlet")
 public class VerifyStockController {
 
     private final ComptebancaireService ComptebancaireService;
@@ -38,7 +38,7 @@ public class VerifyStockController {
         this.ProduitService = ProduitService;
     }
 
-    @GetMapping("/check")
+    @GetMapping
     public String verifyStock(Model Model, HttpSession session) {
         try {
             Infocompte Infocompte = (Infocompte) session.getAttribute("InfoCompte");

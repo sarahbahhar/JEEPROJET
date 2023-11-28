@@ -6,10 +6,12 @@ import com.example.projectspring.Entity.Produit;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @Controller
+@RequestMapping("/tissu-products")
 public class TissuProductsController {
 
     private final ProduitService produitService;
@@ -18,7 +20,7 @@ public class TissuProductsController {
         this.produitService = produitService;
     }
 
-    @GetMapping("/tissu-products")
+    @GetMapping
     public String getTissuProducts(Model model) {
         List<Produit> tissuProducts = produitService.getProductsByCategory("Tissu");
         model.addAttribute("tissuProducts", tissuProducts);

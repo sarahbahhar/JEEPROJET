@@ -18,7 +18,7 @@ public class BannirModeratorController {
     @Autowired
     private ModeratorService moderatorService;
 
-    @PostMapping("/bannir-moderator")
+    @PostMapping
     public String bannirModerator(@RequestParam("email") String email,
                                   @RequestParam("motifCourt") String motifCourt,
                                   @RequestParam("motifLong") String motifLong,

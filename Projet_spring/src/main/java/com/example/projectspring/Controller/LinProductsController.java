@@ -18,7 +18,7 @@ public class LinProductsController {
     @Autowired
     private ProduitService produitService;
 
-    @GetMapping("/lin-products")
+    @GetMapping
     public String showLinProductsPage(Model model) {
         List<Produit> linProducts = produitService.getProductsByCategory("Lin");
         model.addAttribute("linProducts", linProducts);

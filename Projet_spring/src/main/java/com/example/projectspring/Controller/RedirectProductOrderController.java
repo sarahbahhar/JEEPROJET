@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
-@RequestMapping("/redirect-product-order")
+@RequestMapping("/redirect-product-order-servlet")
 public class RedirectProductOrderController {
 
     private final ProduitService produitService;

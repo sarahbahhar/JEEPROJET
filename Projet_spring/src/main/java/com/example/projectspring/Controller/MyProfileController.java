@@ -9,15 +9,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.servlet.http.HttpSession;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import java.math.BigDecimal;
 
 @Controller
+@RequestMapping("/my-profile-servlet")
 public class MyProfileController {
 
     @Autowired
     private ModeratorService moderatorService;
 
-    @GetMapping("/my-profile-servlet") // Même chemin d'accès que votre servlet
+    @GetMapping
     public String myProfile(HttpSession session, Model model) {
         try {
             Infocompte ic = (Infocompte) session.getAttribute("InfoCompte");

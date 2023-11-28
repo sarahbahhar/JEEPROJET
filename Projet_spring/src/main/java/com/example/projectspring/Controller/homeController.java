@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 @Controller
-
+@RequestMapping("/home")
 public class homeController {
 
-    @GetMapping("/home")
+    @GetMapping
     public String home(){
 
 
 
-        return "header";
+        return "home";
     }
 }
