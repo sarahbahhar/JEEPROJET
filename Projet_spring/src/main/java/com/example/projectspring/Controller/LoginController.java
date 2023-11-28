@@ -13,7 +13,6 @@ import com.example.projectspring.Entity.Client;
 
 @Controller
 @RequestMapping("/login")
-@SessionAttributes({"email", "demandeModerateur", "maxProductsPerLine", "nbBannissement","motifCourtBannissement","motifLongBanissement","dateBanni","role"})
 public class LoginController {
 
     @Autowired
