@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-@RequestMapping("/ModifyInfoServle")
+@RequestMapping("/ModifyInfoServlet")
 
 public class ModifyInfoController {
 
