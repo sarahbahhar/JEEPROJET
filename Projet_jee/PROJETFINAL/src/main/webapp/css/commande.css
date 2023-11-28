@@ -23,6 +23,7 @@ section {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 20px;
 
     & + section {
         margin-top: 2.5em;
@@ -54,7 +55,7 @@ summary {
     cursor: pointer;
     padding: 1em .5em;
     list-style: none;
-
+    border-radius: 20px;
     &::-webkit-details-marker {
         display: none;
     }
@@ -115,14 +116,15 @@ summary {
 
 /* Styles pour les détails */
 details {
-    border-bottom: 1px solid #b5bfd9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
 
     &[open] {
-        box-shadow: -3px 0 0 #b5bfd9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     &:first-of-type {
-        border-top: 1px solid #b5bfd9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     & > div {
@@ -135,9 +137,11 @@ details {
 dl {
     display: flex;
     flex-wrap: wrap;
+    width: max-content;
 
     & dt {
         font-weight: 700;
+        margin-inline-start: 40px;
     }
 
     & div {
@@ -145,3 +149,14 @@ dl {
         margin-bottom: 2em;
     }
 }
+.command{
+    margin-left: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 64%;
+    margin-right: auto;
+    border-radius: 20px;
+}
+

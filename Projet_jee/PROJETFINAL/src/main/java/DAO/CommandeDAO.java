@@ -46,54 +46,6 @@ public class CommandeDAO
         session.close();
         return result;
     }
-/*
-    public static void removeProductById(int id)
-    {
-        Produit p;
-        Session session= HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-
-        session.createQuery("DELETE FROM Produitpanier WHERE produitId = :id")
-                .setParameter("id", id)
-                .executeUpdate();
-
-        p = getProduitById(id);
-        session.delete(p);
-        session.getTransaction().commit();
-        session.close();
-    }*/
-    /*
-    public static List<Produit> getListProductByTitre(String titre) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        List<Produit> result = session.createQuery("FROM Produit P WHERE P.titre LIKE :titre")
-                .setParameter("titre", "%" + titre + "%").list();
-        session.close();
-        return result;
-    }*/
-
-
-    //
-    /*
-    public static Produit getProduitById(int produitId) {
-        Produit produit = null;
-
-        try
-                (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            session.beginTransaction();
-            produit = session.get(Produit.class, produitId);
-            session.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return produit;
-    }*/
-
-
-
-
-
 
 
     public static void addCommande(Commande c) throws SQLException
