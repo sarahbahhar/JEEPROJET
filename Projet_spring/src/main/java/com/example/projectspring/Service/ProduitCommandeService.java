@@ -16,8 +16,8 @@ public class ProduitCommandeService {
     @Autowired
     private ProduitCommandeRepository pcr;
 
-    public List<Produitcommande> getListProduitCommande(int idCommande) {
-        return pcr.findByCommandeNumero(idCommande);
+    public List<Produitcommande> getListProduitCommande() {
+        return pcr.findAll();
     }
     public void insertProduitCommande(Produitcommande produitCommande) {
         pcr.save(produitCommande);

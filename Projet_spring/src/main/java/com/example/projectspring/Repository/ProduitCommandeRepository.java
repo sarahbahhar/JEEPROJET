@@ -15,6 +15,7 @@ import java.util.Optional;
 public interface ProduitCommandeRepository extends JpaRepository<Produitcommande, Integer> {
 
     List<Produitcommande> findByCommandeNumero(int idCommande);
+    List<Produitcommande> findAll();
 
 
 

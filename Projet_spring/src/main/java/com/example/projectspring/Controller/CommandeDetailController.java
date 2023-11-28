@@ -20,7 +20,7 @@ public class CommandeDetailController {
 
     @GetMapping
     public String getCommandeDetail(@RequestParam("commande_id") int idCommande, Model model) {
-        List<Produitcommande> listProduitCommande = produitCommandeService.getListProduitCommande(idCommande);
+        List<Produitcommande> listProduitCommande = produitCommandeService.getListProduitCommande();
         model.addAttribute("produitcommandes", listProduitCommande);
         return "produitCommande";
     }
