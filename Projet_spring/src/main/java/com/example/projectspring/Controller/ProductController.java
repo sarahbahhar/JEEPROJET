@@ -25,7 +25,7 @@ public class ProductController {
     public String showProducts(Model model) {
         List<Produit> listProduit = produitService.getListProduit();
         model.addAttribute("produits", listProduit);
-        return "Vue/productList";
+        return "productList";
     }
 
     @PostMapping
@@ -33,10 +33,10 @@ public class ProductController {
         if (email != null) {
             List<Produit> listProduit = produitService.getListProduitByEmail(email);
             model.addAttribute("produits", listProduit);
-            return "Vue/gererProduit";
+            return "ererProduit";
         } else {
             // Redirection ou autre logique si email est null
-            return "redirect:/some-other-path";
+            return "";
         }
     }
 }

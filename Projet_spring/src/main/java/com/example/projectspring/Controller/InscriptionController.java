@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 
 
 @Controller
-@RequestMapping("/inscriptionController")
+@RequestMapping("/inscriptionServlet")
 @SessionAttributes({"email", "nom", "prenom", "password"})
 
 
@@ -51,7 +51,7 @@ public class InscriptionController {/*
 
             Compte compte = new Compte();
             compte.setEmail(email);
-            compte.setMotDePasse(password);
+            compte.setAndHashMotDePasse(password);
 
 
             cs.addCompte(compte);

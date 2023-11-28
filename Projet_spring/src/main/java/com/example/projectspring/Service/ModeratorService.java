@@ -49,9 +49,9 @@ public class ModeratorService {
      */
 
 
-    /*
-    public void setDependencies(CompteRepository cr) {
-        this.cr = cr;
+/*
+    public void setDependencies(ModeratorRepository cr) {
+        this.mr = mr;
     }*/
 
 
