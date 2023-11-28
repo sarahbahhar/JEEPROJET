@@ -1,0 +1,34 @@
+package com.example.projectspring.Controller;
+
+import com.example.projectspring.Service.ProduitService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import jakarta.servlet.ServletContext;
+
+@Controller
+@RequestMapping("/delete-product-servlet")
+public class DeleteProductController {
+
+    @Autowired
+    private ProduitService produitService;
+
+    @Autowired
+    private ServletContext servletContext;
+
+    @PostMapping
+    public String deleteProduct(@RequestParam("email") String email, @RequestParam("id") Integer id) {
+        try {
+            if (id != null) {
+                produitService.removeProductById(servletContext.getRealPath("/"), id);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "redirect:/error";
+        }
+        return "redirect:/my-product-list-servlet?email=" + email;
+    }
+}
