@@ -62,6 +62,9 @@
                                         </div>
                                         <button class="lien" type="submit" name="ajouter_au_panier">Ajouter au panier</button>
                                     </c:if>
+                                    <c:if test="${isModBanned}">
+                                        <p>Produit momentanément indisponible</p>
+                                    </c:if>
                                 </form>
                             </c:otherwise>
                         </c:choose>
@@ -89,13 +92,13 @@
                         <label for="comment">Your Comment</label>
                         <textarea id="comment" type="text" placeholder="Comment" required name="commentaire"></textarea><br>
                         <label for="rating">Note :</label>
-                        <select id="rating" name="rating">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select><br>
+                        <div class="etoiles" id="userRatingStars" data-rating="0">
+                            <c:forEach var="i" begin="1" end="5">
+                                <span class="etoile" onclick="setUserRating(${i})">&#9733;</span>
+                            </c:forEach>
+                        </div>
+                        <input type="hidden" id="hiddenUserRating" name="rating" value="0" />
+
                         <input type="hidden" name="produit_id" value="${produit.id}">
                         <button type="submit" style="width: 400px;">Soumettre</button>
                     </form>
@@ -126,5 +129,36 @@
             <!-- Add other Comment Components as needed -->
         </div>
     </div>
+    <script>
+        // Ajouter la fonction JavaScript pour la notation par étoiles ici
+        function setRating(rating) {
+            const starsContainer = document.getElementById('ratingStars');
+            const stars = starsContainer.getElementsByClassName('etoile');
+
+            for (let i = 0; i < stars.length; i++) {
+                if (i < rating) {
+                    stars[i].classList.add('active');
+                } else {
+                    stars[i].classList.remove('active');
+                }
+            }
+        }
+
+        function setUserRating(rating) {
+            const starsContainer = document.getElementById('userRatingStars');
+            const stars = starsContainer.getElementsByClassName('etoile');
+            const hiddenRatingInput = document.getElementById('hiddenUserRating');
+
+            for (let i = 0; i < stars.length; i++) {
+                if (i < rating) {
+                    stars[i].classList.add('active');
+                } else {
+                    stars[i].classList.remove('active');
+                }
+            }
+
+            hiddenRatingInput.value = rating;
+        }
+    </script>
 </body>
 </html>
