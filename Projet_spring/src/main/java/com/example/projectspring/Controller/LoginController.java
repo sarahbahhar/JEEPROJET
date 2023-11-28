@@ -95,7 +95,7 @@ public class LoginController {
 
         Infocompte ic = ias.getInfoCompte(email);
 
-        //session.setAttribute("InfoCompte", ic);
+        session.setAttribute("InfoCompte", ic);
 
 
 
