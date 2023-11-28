@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
+    <%@ include file="header.jsp" %>
 </head>
 
 
@@ -44,4 +45,7 @@
     </div>
 </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

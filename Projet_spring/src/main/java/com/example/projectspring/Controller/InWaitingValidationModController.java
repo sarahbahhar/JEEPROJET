@@ -18,7 +18,7 @@ public class InWaitingValidationModController {
     @Autowired
     private DemandeModerateurService demandeModerateurService;
 
-    @GetMapping("/in-waiting-mod")
+    @GetMapping
     public String showInWaitingModPage(Model model) {
         List<Demandemoderateur> listModerator = demandeModerateurService.getListModerateurWaiting();
         model.addAttribute("moderators", listModerator);

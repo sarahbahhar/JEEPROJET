@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@RequestMapping("/redirection-form-edit-moderator")
+@RequestMapping("/redirection-form-edit-moderator-servlet")
 public class RedirectionFormEditModeratorController {
 
     private final ModeratorService moderatorService;

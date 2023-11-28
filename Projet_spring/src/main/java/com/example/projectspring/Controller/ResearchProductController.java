@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/research-product")
+@RequestMapping("/research-product-servlet")
 public class ResearchProductController {
 
     private final ProduitService produitService;
@@ -24,6 +24,6 @@ public class ResearchProductController {
     public String getProductsByTitle(@RequestParam("query") String titre, Model model) {
         List<Produit> listProduct = produitService.getListProductByTitre(titre);
         model.addAttribute("produits", listProduct);
-        return "Vue/researchProductResult"; // Mettre à jour le chemin vers votre JSP si nécessaire
+        return "researchProductResult";
     }
 }

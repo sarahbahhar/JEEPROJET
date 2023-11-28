@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/profil.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon"  href="./img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
     <style>
         .container-profil {
             background: url("${pageContext.request.contextPath}/img/profil.jpg") center center no-repeat;
@@ -90,4 +91,7 @@
     </div>
 </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

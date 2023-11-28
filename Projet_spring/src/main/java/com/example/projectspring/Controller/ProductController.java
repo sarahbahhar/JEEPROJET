@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/product-servlet")
 public class ProductController {
 
     private final ProduitService produitService;

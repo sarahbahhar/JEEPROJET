@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/productList.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 
@@ -69,4 +70,7 @@
 
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

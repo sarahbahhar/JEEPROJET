@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="Model.Produit" %>
+<%@ page import="com.example.projectspring.Entity.Produit" %>
 <%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -11,13 +11,9 @@
     <link rel="stylesheet" href="./css/vendeur.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
-
-
-
-
-
 <div>
     <div class="global">
         <div class="box">
@@ -107,4 +103,7 @@
 
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

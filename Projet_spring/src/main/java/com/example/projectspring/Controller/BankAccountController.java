@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import java.util.List;
 
 @Controller
-@RequestMapping("/bank-account-controller")
+@RequestMapping("/bank-account-servlet")
 @SessionAttributes({"email"})
 public class BankAccountController {
 

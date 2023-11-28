@@ -11,11 +11,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import jakarta.servlet.http.HttpSession;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
 
 @Controller
+@RequestMapping("/CreateCommandeServlet")
 public class CreateCommandeController {
 
     @Autowired
@@ -24,7 +27,7 @@ public class CreateCommandeController {
     @Autowired
     private InfoAccountService infocompteService;
 
-    @GetMapping("/create-commande")
+    @GetMapping
     public String createCommande(HttpSession session, Model model) {
         try {
             Infocompte infocompte = (Infocompte) session.getAttribute("InfoCompte");

@@ -4,17 +4,19 @@ import com.example.projectspring.Service.ProduitService;
 import com.example.projectspring.Entity.Produit;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
+@RequestMapping("/modify-stock-servlet")
 public class ModifyStockController {
 
     @Autowired
     private ProduitService produitService;
 
-    @PostMapping("/modify-stock-servlet") // Même chemin d'accès que votre servlet
+    @PostMapping
     public String modifyStock(@RequestParam("produit_id") Integer produitId, @RequestParam("stock") int newStock) {
         try {
             Produit produit = produitService.getProduitById(produitId);

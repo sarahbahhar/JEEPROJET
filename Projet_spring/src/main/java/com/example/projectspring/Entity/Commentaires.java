@@ -11,14 +11,14 @@ public class Commentaires {
 
     @Column(name = "id_produit")
     private Integer idProduit;
-
+    @Column(name="note")
     private int note;
 
-    @Column(name = "email_vendeur")
+    @Column(name = "emailVendeur")
     private String emailVendeur;
-
+    @Column(name="commentaire")
     private String commentaire;
-
+    @Column(name="email")
     private String email;
 
     public int getId() {

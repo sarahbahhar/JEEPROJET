@@ -3,17 +3,19 @@ package com.example.projectspring.Controller;
 import com.example.projectspring.Service.PanierService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
+@RequestMapping("/modify-quantity-servlet")
 public class ModifyQuantityController {
 
     @Autowired
     private PanierService panierService;
 
-    @PostMapping("/modify-quantity-servlet") // Même chemin d'accès que votre servlet
+    @PostMapping
     public String modifyQuantity(@RequestParam("produit_id") Integer produit_id, @RequestParam("email") String email, @RequestParam("quantite") Integer newQuantity) {
         try {
             panierService.changeQuantityById(email, produit_id, newQuantity);
