@@ -1,7 +1,9 @@
 #product-carousel-container {
     position: relative;
     width: 50%;
-    margin: auto;
+    height: 25%;
+    margin-top:2%;
+    margin-left: 25%;
     text-align: center;
 }
 h2 {
@@ -28,7 +30,7 @@ h2 {
 
 #product-carousel li.item-1 {
     z-index: 2;
-    transform: translateX(-50%) scale(1) translate3d(0, 0, 0);
+    transform: translateX(-50%) scale(1.2) translate3d(0, 0, 0);
 }
 
 #product-carousel li.item-2 {
@@ -104,11 +106,13 @@ h2 {
 
 #product-carousel-nav .carousel-nav.prev {
     left: -45%;
+    bottom:40%;
     transform: rotate(-135deg);
 }
 
 #product-carousel-nav .carousel-nav.next {
     right: -45%;
+    bottom:40%;
     transform: rotate(45deg);
 }
 

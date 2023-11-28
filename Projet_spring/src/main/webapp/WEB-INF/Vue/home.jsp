@@ -7,9 +7,14 @@
     <meta charset="utf-8">
     <meta name="viewport">
     <title>Accueil</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
-    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/ProductSliderHome.css">
+
+
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <%@ include file="header.jsp" %>
 
@@ -33,7 +38,7 @@
 
 <div class="img-home">
     <form action="${pageContext.request.contextPath}/product-servlet" method="get">
-        <button type="submit"><img src="img/home-img.png" alt="Nos Produits"></button>
+        <button type="submit"><img src="../../img/home-img.png" alt="Nos Produits"></button>
     </form>
 </div>
 

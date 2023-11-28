@@ -33,14 +33,7 @@ public class ProduitService {
     private ModeratorService ms;
     private ModeratorRepository mr;
     private ProduitPanierRepository ppr;
-    public void setDependencies(ProduitRepository pr,PanierRepository par,PanierService pas,ModeratorService ms,ModeratorRepository mr,ProduitPanierRepository ppr) {
-        this.pr = pr;
-        this.par = par;
-        this.pas = pas;
-        this.ms = ms;
-        this.mr = mr;
-        this.ppr = ppr;
-    }
+
 
 
 

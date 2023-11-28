@@ -1,13 +1,13 @@
 /* Header */
 header {
     width: 100%;
-    height: 150px;
+    height: 200px;
 }
 
 
 .header-nav {
     padding: 0;
-    height: 5px;
+    height: 100%;
     position: relative;
     bottom: 0;
     left: 0;
@@ -153,20 +153,14 @@ header {
 }
 
 .sous-menu {
-    display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0; /* Ajoutez cette ligne pour centrer horizontalement */
-    /* Supprimez les propriétés border ici */
+    top: 60%;
     background-color: #f7f6f2;
     border-top: none;
-    max-height: 10000px;
     overflow: hidden;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    z-index: 2;
+    z-index: 4;
+    margin-left: 56px;
 }
 
 .menu-deroulant:hover .sous-menu {
@@ -193,12 +187,12 @@ header {
     border: none;
     cursor: pointer;
     font-weight: bold;
+    margin: 0; /* Ajoutez cette ligne pour réduire la marge */
 }
 
 .menu-deroulant form button:hover {
     background-color: #0d6735;
 }
-
 .menu-deroulant:hover .sous-menu {
     display: block;
     max-height: 200px;

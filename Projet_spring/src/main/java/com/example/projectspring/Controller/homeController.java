@@ -18,6 +18,6 @@ public class homeController {
 
 
 
-        return "header";
+        return "home";
     }
 }
