@@ -24,6 +24,6 @@ public class ResearchProductController {
     public String getProductsByTitle(@RequestParam("query") String titre, Model model) {
         List<Produit> listProduct = produitService.getListProductByTitre(titre);
         model.addAttribute("produits", listProduct);
-        return "Vue/researchProductResult"; // Mettre à jour le chemin vers votre JSP si nécessaire
+        return "researchProductResult";
     }
 }
