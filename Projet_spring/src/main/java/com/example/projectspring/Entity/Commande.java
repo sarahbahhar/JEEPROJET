@@ -13,9 +13,9 @@ public class Commande {
 
     @Column(name = "date_de_paiement")
     private Date dateDePaiement;
-
+    @Column(name="total")
     private BigDecimal total;
-
+    @Column(name="email")
     private String email;
 
     public int getNumero() {

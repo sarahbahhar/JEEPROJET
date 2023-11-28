@@ -8,15 +8,16 @@ public class Comptebancaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    @Column(name="numero")
     private String numero;
+    @Column(name="nom")
     private String nom;
 
-    @Column(name = "date_expiration")
+    @Column(name = "date")
     private String date;
-
+    @Column(name="cvv")
     private String cvv;
-
+    @Column(name="email")
     private String email;
 
     public int getId() {
