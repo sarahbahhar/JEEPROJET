@@ -122,6 +122,7 @@ public class ProduitService {
         this.removeProductByIdOfTable(id);
 
     }
+    @org.springframework.transaction.annotation.Transactional
     public void removeProductByModerator(String localisation, String email) {
         List<Produit> produits = getListProduitByEmail(email);
         for (Produit produit : produits) {

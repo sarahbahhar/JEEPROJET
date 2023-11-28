@@ -25,7 +25,7 @@ public class RedirectionFormEditModeratorController {
         try {
             Moderateur moderator = moderatorService.getModeratorByEmail(email);
             model.addAttribute("moderator", moderator);
-            return "Vue/formEditModerateur"; // Assurez-vous que ce chemin correspond à votre structure JSP
+            return "formEditModerateur"; // Assurez-vous que ce chemin correspond à votre structure JSP
         } catch (Exception e) {
             // Gérer l'exception et rediriger vers la page d'erreur si nécessaire
             return "redirect:/error";

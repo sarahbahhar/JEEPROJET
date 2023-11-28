@@ -28,7 +28,7 @@ public class BannirModeratorController {
             moderatorService.bannirByEmail(email, motifCourt, motifLong, dateFinBan);
 
             // Redirection ou gestion de la réponse après le bannissement
-            return "redirect:/moderator-controller";
+            return "redirect:/moderator-servlet";
         } catch (Exception e) {
             e.printStackTrace();
             // Gérer l'erreur de conversion de date

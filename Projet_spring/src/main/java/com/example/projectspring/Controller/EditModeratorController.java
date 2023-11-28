@@ -21,7 +21,7 @@ public class EditModeratorController {
     public String showModerators(Model model) {
         List<Moderateur> listModerator = moderateurService.getListModerateur();
         model.addAttribute("moderators", listModerator);
-        return "editModerator";
+        return "formEditModerateur";
     }
 
     @PostMapping
@@ -44,7 +44,7 @@ public class EditModeratorController {
             return "redirect:/moderator-servlet"; // Changer cela selon votre configuration
         } catch (Exception e) {
             model.addAttribute("error", e.getMessage());
-            return "error";
+            return "redirect:/error";
         }
     }
 }
