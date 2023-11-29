@@ -98,7 +98,7 @@ public class LoginController {
 
 
 
-        return "header";
+        return "home";
 
 
 
