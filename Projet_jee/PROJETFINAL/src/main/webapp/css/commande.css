@@ -13,12 +13,6 @@
 
 
 /* Styles pour l'en-tête */
-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-}
 
 
 /* Styles pour les sections du document */
@@ -156,8 +150,7 @@ dl {
     }
 }
 /* Styles pour la première section du document (en dessous de l'en-tête) */
-.command {
-    margin-top: 10rem; /* Ajustez la marge pour placer la section en dessous de l'en-tête */
+.command { /* Ajustez la marge pour placer la section en dessous de l'en-tête */
     width: 64%;
     margin-left: auto;
     background-color: #fff;
@@ -166,5 +159,12 @@ dl {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-right: auto;
     border-radius: 20px;
+}
+select {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
 }
 
