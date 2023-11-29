@@ -9,8 +9,8 @@
 
 <body>
 <div>
-    <h2>Confirmation d'envoi</h2>
-    <p>Un e-mail a été envoyé à l'administrateur du site.</p>
+    <h2 style="margin-left: 40%;">Confirmation d'envoi</h2>
+    <p style="margin-left: 35%;">Un e-mail a été envoyé à l'administrateur du site.</p>
 </div>
 </body>
 </html>

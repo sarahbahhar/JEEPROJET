@@ -48,23 +48,30 @@ public class InscriptionController {/*
                          @RequestParam("nom") String nom,
                          @RequestParam("prenom") String prenom, Model model,HttpSession session){
         try{
+            if(!cs.isUniqueEmail(email)){
 
-            Compte compte = new Compte();
-            compte.setEmail(email);
-            compte.setAndHashMotDePasse(password);
+                Compte compte = new Compte();
+                compte.setEmail(email);
+                compte.setAndHashMotDePasse(password);
 
 
-            cs.addCompte(compte);
+                cs.addCompte(compte);
 
-            session.setAttribute("email", email);
-            session.setAttribute("nom", nom);
-            session.setAttribute("prenom", prenom);
-            session.setAttribute("password", password);
+                session.setAttribute("email", email);
+                session.setAttribute("nom", nom);
+                session.setAttribute("prenom", prenom);
+                session.setAttribute("password", password);
 
-            boolean test = cs.isUniqueEmail(email);
-            model.addAttribute("isUnique",test);
+                boolean test = cs.isUniqueEmail(email);
+                model.addAttribute("isUnique",test);
 
-            return "infoCompte";// ?
+                return "infoCompte";
+            }else{
+                model.addAttribute("failEmailExist",true);
+
+                return "signIn2";
+
+            }
 
 
         }catch (Exception e) {
