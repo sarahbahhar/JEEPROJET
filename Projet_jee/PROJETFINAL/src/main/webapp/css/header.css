@@ -17,7 +17,7 @@ header {
 .header-nav ul {
     list-style: none;
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     margin: 0;
     padding: 0;
 }
@@ -27,7 +27,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 15px;
+
 
 }
 
@@ -36,7 +36,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 15px;
+
 }
 
 .style {
@@ -69,7 +69,7 @@ header {
     border: none;
     background-color: transparent;
     background: none;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 
@@ -199,9 +199,10 @@ header {
     width: 100%; /* Ajoutez cette ligne pour ajuster la largeur */
 }
 .navbar-nav li > form > button a {
-    color: #0d6735;
+    color: #acc4ad;
     text-align: center;
     display: block;
+    font-size:20px ;
     padding: 10px;
     position: relative;
 }

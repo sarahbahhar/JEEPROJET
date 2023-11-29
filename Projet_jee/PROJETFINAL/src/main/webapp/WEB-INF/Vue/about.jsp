@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
-<div class="container-left">
+<div class="container-left" style="background:transparent;width:50%;margin-left:25%;margin-top:0;">
     <div class="slide-left">
         <section>
             <h2>À Propos de Nous</h2>

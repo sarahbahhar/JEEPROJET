@@ -45,7 +45,7 @@
                             <c:if test="${not isModBanned}">
                                 <div class="stock">
                                     <label >Quantité :</label>
-                                    <input style="width: 20%" type="number" id="kactane" name="quantite"  min="1" max="${produit.stock}" value="1">
+                                    <input style="width: 30%" type="number" id="kactane" name="quantite"  min="1" max="${produit.stock}" value="1">
                                 </div>
                                 <button type="submit" class="lien" name="ajouter_au_panier" >Ajouter au panier</button>
                             </c:if>

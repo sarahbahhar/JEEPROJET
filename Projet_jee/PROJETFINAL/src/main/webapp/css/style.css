@@ -107,9 +107,10 @@ p{
 }
 .img-home img {
 
-    margin-top: 5%;
+
     width: 90%;
     height: 90%;
+    border-radius: 20px;
 }
 .carte{
     border: 2px;
