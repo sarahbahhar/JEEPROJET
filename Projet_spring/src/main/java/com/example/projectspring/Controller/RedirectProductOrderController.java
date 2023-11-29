@@ -19,13 +19,13 @@ public class RedirectProductOrderController {
     }
 
     @PostMapping
-    public RedirectView handlePostRequest(@RequestParam("produit_id") int produitId,
+    public String handlePostRequest(@RequestParam("produit_id") int produitId,
                                           @RequestParam(value = "commande_id", required = false) Integer commandeId) {
         if (produitService.getProduitById(produitId) != null) {
             commandeId = (commandeId == null) ? -1 : commandeId;
-            return new RedirectView("/product-details?type=pageProduit&produit_id=" + produitId + "&commande_id=" + commandeId);
+            return "redirect:/product-details?type=pageProduit&produit_id=" + produitId + "&commande_id=" + commandeId;
         } else {
-            return new RedirectView("/WEB-INF/Vue/produitSupprime.jsp");
+            return "produitSupprime";
         }
     }
 

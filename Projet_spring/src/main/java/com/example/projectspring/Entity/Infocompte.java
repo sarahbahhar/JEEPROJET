@@ -20,6 +20,7 @@ public class Infocompte {
     private String nom;
 
     @Column(name = "dateNaissance", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date dateNaissance;
 
     @Column(name = "telephone", nullable = false, length = 10)

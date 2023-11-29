@@ -2,6 +2,7 @@ package com.example.projectspring.Controller;
 
 import com.example.projectspring.Service.InfoAccountService;
 import com.example.projectspring.Entity.Infocompte;
+import com.example.projectspring.Service.ModeratorService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -21,6 +23,9 @@ public class ModifyInfoController {
 
     @Autowired
     private InfoAccountService infoAccountService;
+
+    @Autowired
+    private ModeratorService moderatorService;
 
     @GetMapping
     public String showModifyInfoForm() {
@@ -54,7 +59,13 @@ public class ModifyInfoController {
             infoAccountService.updateInfoCompte(email, updated);
 
             // Met à jour l'attribut "InfoCompte" dans le modèle
-            model.addAttribute("InfoCompte", updated);
+
+
+            session.setAttribute("InfoCompte", updated);
+            BigDecimal averageRating = moderatorService.getAverageRatingByEmail(email);
+
+            // Ajouter l'averageRating au modèle
+            model.addAttribute("averageRating", averageRating);
 
             return "myProfile"; // Nom du fichier JSP pour afficher le profil mis à jour
         } catch (Exception e) {
