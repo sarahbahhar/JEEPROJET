@@ -47,6 +47,11 @@ public class TokenService {
         return token.toString();
     }
 
+    public boolean isValidToken(String email, String resetToken){
+        return (resetToken.equals(this.getTokenValueByEmail(email)));
+
+    }
+
 
 
 

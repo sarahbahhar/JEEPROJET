@@ -6,7 +6,10 @@ import com.example.projectspring.Entity.Infocompte;
 import com.example.projectspring.Entity.Panier;
 import com.example.projectspring.Entity.Client;
 
+import com.example.projectspring.Util.EmailSender;
+import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import jakarta.servlet.http.HttpSession;
+
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,6 +43,8 @@ public class InfoCompteController {
 
     @Autowired
     private TokenService tokenService;
+    @Autowired
+    private ResourceLoader resourceLoader;
     @GetMapping
     public ModelAndView showInfoComptePage(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("infoCompte"); // Nom de la vue infoCompte.jsp
@@ -101,11 +108,18 @@ public class InfoCompteController {
             // Session invalide
             session.invalidate();
 
+            String realPath =resourceLoader.getResource("classpath:/").getFile().getAbsolutePath();
+            EmailSender.sendWelcomeEmail(realPath,email,nom,prenom);
+
             // Redirection vers la page d'accueil
             return "redirect:/home";
         } catch (ParseException e) {
             e.printStackTrace();
             return "redirect:/error";
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

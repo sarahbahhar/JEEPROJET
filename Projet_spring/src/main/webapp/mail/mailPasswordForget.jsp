@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Réinitialisation du mot de passe</title>
@@ -24,7 +24,7 @@
 <p>Vous avez demandé une réinitialisation de mot de passe pour votre compte. Cliquez sur le bouton ci-dessous pour réinitialiser votre mot de passe :</p>
 
 <!-- Bouton de réinitialisation -->
-<a href="${resetLink}" class="reset-button">Réinitialiser le mot de passe</a>
+<a href="{resetLink}" class="reset-button">Réinitialiser le mot de passe</a>
 
 <p>Si vous n'avez pas demandé cette réinitialisation, veuillez ignorer cet e-mail.</p>
 </body>
