@@ -1,17 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page import="Model.Produit" %>
 <%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <head>
         <meta charset="utf-8">
         <meta name="viewport">
         <title>Accueil</title>
         <link rel="shortcut icon" href="../../img/logo_onglet.ico" type="image/x-icon">
-        <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/productList.css">
-        <%@ include file="header.jsp" %>
+    </head>
 </head>
 <body>
 <div class="container">
@@ -47,7 +47,4 @@
 </div>
 
 </body>
-<footer>
-    <%@ include file="footer.jsp" %>
-</footer>
 </html>

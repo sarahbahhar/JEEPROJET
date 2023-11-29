@@ -7,16 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport">
     <title>Accueil</title>
-
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/ProductSliderHome.css">
-
-
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
-
-
+    <link rel="stylesheet" href="css/ProductSliderHome.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <%@ include file="header.jsp" %>
 
 </head>
 <script>
@@ -38,7 +32,7 @@
 
 <div class="img-home">
     <form action="${pageContext.request.contextPath}/product-servlet" method="get">
-        <button type="submit"><img src="../../img/home-img.png" alt="Nos Produits"></button>
+        <button type="submit"><img src="img/home-img.png" alt="Nos Produits"></button>
     </form>
 </div>
 
@@ -51,27 +45,24 @@
     <h2>Selection de canapé confortable</h2>
     <ul id="product-carousel">
         <li class="item-1">
-            <img src="../../img/canap1.png">
+            <img src="img/canap1.png">
         </li>
         <li class="item-2">
-            <img src="../../img/canap2.png">
+            <img src="img/canap2.png">
         </li>
         <li class="item-3">
-            <img src="../../img/canap3.png">
+            <img src="img/canap3.png">
         </li>
         <li class="item-4">
-            <img src="../../img/canap4.png">
+            <img src="img/canap4.png">
         </li>
         <li class="item-5">
-            <img src="../../img/canap5.png">
+            <img src="img/canap5.png">
         </li>
     </ul>
 
 </div>
-<script src="../../js/ProductSliderHome.js"></script>
+<script src="js/ProductSliderHome.js"></script>
 
 </body>
-<footer>
-    <%@ include file="footer.jsp" %>
-</footer>
 </html>

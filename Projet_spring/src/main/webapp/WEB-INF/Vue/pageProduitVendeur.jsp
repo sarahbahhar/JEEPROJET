@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produit</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/prod.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon"  href="./img/logo_onglet.ico" type="image/x-icon">
-    <%@ include file="header.jsp" %>
 </head>
 <body>
 
@@ -47,7 +45,7 @@
                             <c:if test="${not isModBanned}">
                                 <div class="stock">
                                     <label >Quantité :</label>
-                                    <input style="width: 20%" type="number" id="kactane" name="quantite"  min="1" max="${produit.stock}" value="1">
+                                    <input style="width: 30%" type="number" id="kactane" name="quantite"  min="1" max="${produit.stock}" value="1">
                                 </div>
                                 <button type="submit" class="lien" name="ajouter_au_panier" >Ajouter au panier</button>
                             </c:if>
@@ -90,7 +88,4 @@
     </div>
 </div>
 </body>
-<footer>
-    <%@ include file="footer.jsp" %>
-</footer>
 </html>
