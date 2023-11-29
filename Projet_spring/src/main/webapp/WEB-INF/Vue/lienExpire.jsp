@@ -12,20 +12,22 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">
     <title>Lien Expiré</title>
-    <style>
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-    </style>
+    <%@ include file="header.jsp" %>
+
 </head>
 <body>
 <div class="container">
     <h1>Lien de Réinitialisation Expiré</h1>
     <p>Le lien de réinitialisation de votre mot de passe est expiré ou invalide. Veuillez demander un nouveau lien.</p>
-    <a href="/login">Retour à la page de connexion</a><br>
-    <a href="/PasswordForgetServlet">Demander un nouveau lien de réinitialisation</a>
+
+    <form class='style' action="${pageContext.request.contextPath}/login" method="get">
+        <button class='lien' type='submit'>Retour à la page de connexion</button>
+    </form>
+
 </div>
 </body>
+
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
