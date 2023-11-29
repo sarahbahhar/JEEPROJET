@@ -30,7 +30,7 @@ public class FidelityController {
     @Autowired
     private PanierService panierService;
 
-    @GetMapping
+    /*@GetMapping
     public String showFidelityPage(HttpSession session, Model model) {
         try {
             Infocompte infocompte = (Infocompte) session.getAttribute("InfoCompte");
@@ -42,31 +42,31 @@ public class FidelityController {
             e.printStackTrace();
             return "redirect:/error";
         }
-    }
+    }*/
 
     @PostMapping
-    public String processFidelityPoints(@RequestParam(value = "usePoints", required = false) String usePoints, HttpSession session) {
+    public String processFidelityPoints(@RequestParam(value = "usePoints", required = false) String usePoints,HttpSession session, Model model) {
         try {
+            Infocompte infocompte = (Infocompte) session.getAttribute("InfoCompte");
+            String email = infocompte.getEmail();
+            List<Comptebancaire> cartesBancaires = comptebancaireService.getListCBByEmail(email);
+            model.addAttribute("cartesBancaires", cartesBancaires);
             if (usePoints != null && usePoints.equals("true")) {
                 double total = (double) session.getAttribute("total");
                 session.setAttribute("total", total - 10);
-
-                Infocompte infocompte = (Infocompte) session.getAttribute("InfoCompte");
-                String email = infocompte.getEmail();
                 Client c=new Client();
-
                 c.setEmail(infocompte.getEmail());
                 int pf=(int)session.getAttribute("pointFidelite");
                 c.setPointsFidelite(pf-100);
-
-                int pointsFidelite = (int) session.getAttribute("pointFidelite");
+                session.setAttribute("pointFidelite", pf-100);
                 customerService.updateClient(email, c);
 
                 // Redirection vers la page de paiement
-                return "redirect:/payment";
-            } else {
+                return "/payment";
+            }
+            else {
                 // Redirection vers la page de paiement
-                return "redirect:/payment";
+                return "/payment";
             }
         } catch (Exception e) {
             e.printStackTrace();
