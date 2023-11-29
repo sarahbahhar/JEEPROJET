@@ -26,7 +26,7 @@ public class CompteDAO
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
             compte = session.get(Compte.class, email);
-            compte.setMotDePasse(password);
+            compte.setAndHashMotDePasse(password);
             session.getTransaction().commit();
 
         } catch (Exception e) {
