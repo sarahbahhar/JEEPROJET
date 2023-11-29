@@ -15,7 +15,7 @@ $(document).ready(function() {
     console.log("Le DOM est prêt !");
     stepAnimateText('.fade', 'bounceInDown', 0.3);
     setTimeout(function() {
-        window.location.href = 'home.jsp';
+        window.location.href = '/home';
     }, 2000);
 });
 // Init on load

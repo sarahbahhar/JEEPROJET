@@ -94,7 +94,9 @@ public class ProduitService {
     }
 
     public List<Produit> getProductsByCategory(String categorie) {
-        return pr.findByCategorie(categorie);
+        return pr.findByCategorie(categorie) .stream()
+                .filter(p -> !this.isModerateurBanni(p))
+                .collect(Collectors.toList());
     }
 
     public boolean isModerateurBanni(Produit produit) {

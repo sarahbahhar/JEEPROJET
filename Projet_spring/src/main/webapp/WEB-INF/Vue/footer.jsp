@@ -39,7 +39,7 @@
 
 
             <li class="nav-item ">
-                <form class='style' action="${pageContext.request.contextPath}/#" method="get">
+                <form class='style' action="${pageContext.request.contextPath}/home" method="get">
                     <button type="submit"><a class="nav-link">Accueil</a></button>
                 </form>
             </li>
