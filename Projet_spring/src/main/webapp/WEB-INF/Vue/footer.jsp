@@ -40,7 +40,8 @@
 
 
             <li class="nav-item ">
-                <form class='style' action="${pageContext.request.contextPath}/#" method="get">
+                <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="get">
+                    <input type="hidden" name="path" value="loading.jsp" />
                     <button type="submit"><a class="nav-link">Accueil</a></button>
                 </form>
             </li>
