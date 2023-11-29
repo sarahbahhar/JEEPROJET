@@ -37,14 +37,24 @@
                             <input type="radio" name="carteId" value="${carte.numero}">
                         </td>
                         <td>
+
                             <input type="hidden" name="numero" value="${carte.numero}" />
                             <input type="hidden" name="cvv" value="${carte.cvv}" />
                             <input type="hidden" name="date" value="${carte.date}" />
                             <input type="hidden" name="id" value="${carte.id}" />
-                        ${carte.nom}
                         </td>
                         <td>
-                            **** **** **** ${fn:substring(carte.numero, fn:length(carte.numero) - 4, fn:length(carte.numero))} (${carte.date})
+                            <div class="credit-card visa selectable">
+                                <div class="credit-card-last4">
+                                        ${fn:substring(carte.numero, fn:length(carte.numero) - 4, fn:length(carte.numero))}
+                                </div>
+
+                                <div class="credit-card-expiry">
+                                        ${carte.date}
+                                </div>
+                                <div class="credit-card-name"> <!-- Added div for cardholder's name -->
+                                        ${carte.nom} <!-- Placing the cardholder's name here -->
+                                </div></div>
                         </td>
                     </tr>
                 </c:forEach>
