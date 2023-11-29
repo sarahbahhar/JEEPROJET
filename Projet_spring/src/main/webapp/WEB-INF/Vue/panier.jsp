@@ -77,4 +77,7 @@
     </c:otherwise>
 </c:choose>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
