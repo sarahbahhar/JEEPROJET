@@ -89,8 +89,8 @@
 
                     <h3>Laissez un commentaire : </h3>
                     <form method="post" action="<%=request.getContextPath()%>/commentaire-servlet">
-                        <label for="comment">Your Comment</label>
-                        <textarea id="comment" type="text" placeholder="Comment" required name="commentaire"></textarea><br>
+                        <label for="comment">Votre commentaire</label>
+                        <textarea id="comment" type="text" placeholder="Commentaire" required name="commentaire"></textarea><br>
                         <label for="rating">Note :</label>
                         <div class="etoiles" id="userRatingStars" data-rating="0">
                             <c:forEach var="i" begin="1" end="5">
