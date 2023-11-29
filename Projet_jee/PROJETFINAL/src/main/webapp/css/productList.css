@@ -14,6 +14,7 @@ body {
 }
 
 .container {
+    margin-top: 10px;
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap; /* Ajout de la propriété pour permettre le passage à la ligne */

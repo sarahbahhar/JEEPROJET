@@ -55,8 +55,8 @@
         <c:if test="${sessionScope.canAddProduct}">
             <c:choose>
                 <c:when test="${fn:length(produits) lt sessionScope.maxProductsPerLine}">
-                    <form action="${pageContext.request.contextPath}/add-product-servlet" method="get">
-                        <button class="lien" type="submit" name="ajouter_un_produit">Ajouter un produit</button>
+                    <form style="margin-left: 601px;width: 400px;" action="${pageContext.request.contextPath}/add-product-servlet" method="get">
+                        <button  class="lien" type="submit" name="ajouter_un_produit">Ajouter un produit</button>
                     </form>
                 </c:when>
                 <c:otherwise>
