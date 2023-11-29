@@ -84,6 +84,7 @@ public class EmailSender {
      * @param filePath  The path to the HTML file.
      * @param resetLink The reset link to be inserted into the HTML content.
      * @return The HTML content as a String.
+     * @throws IOException If there is an error reading the file.
      */
     private static String loadHtmlContent2(String filePath, String resetLink) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
