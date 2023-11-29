@@ -17,4 +17,7 @@
 <h1 style="margin:auto">Le produit a ete supprime</h1>
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

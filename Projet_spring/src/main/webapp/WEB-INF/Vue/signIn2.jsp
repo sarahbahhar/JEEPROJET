@@ -71,4 +71,7 @@
 </div>
 <script src="${pageContext.request.contextPath}/js/signIn.js"></script>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

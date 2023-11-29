@@ -13,5 +13,8 @@
     <p style="margin-left: 35%;">Un e-mail a été envoyé à l'administrateur du site.</p>
 </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
-</html>
+
