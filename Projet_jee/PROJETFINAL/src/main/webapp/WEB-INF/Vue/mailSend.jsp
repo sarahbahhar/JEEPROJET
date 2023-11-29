@@ -9,8 +9,8 @@
 
     <body>
     <div>
-        <h2 style="margin-left: 40%;">Confirmation d'envoi</h2>
-        <p style="margin-left: 30%;">Un e-mail vous a été envoyé pour réinitialiser votre mot de passe.</p>
+        <h2 style="margin-left: 44%;">Confirmation d'envoi</h2>
+        <p style="margin-left: 33%;">Un e-mail vous a été envoyé pour réinitialiser votre mot de passe.</p>
 
     </div>
     </body>
