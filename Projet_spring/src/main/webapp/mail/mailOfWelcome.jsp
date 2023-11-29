@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Bienvenue sur Arcadia</title>
+    <title>Bienvenue sur Divan</title>
 </head>
 <body>
 <h1 style='color: #0066cc;'>Bienvenue sur notre site</h1>
@@ -10,6 +10,6 @@
 <p>Nous vous souhaitons la bienvenue sur notre site. Merci de vous être inscrit.</p>
 <p>N'hésitez pas à parcourir notre catalogue de produits et à passer commande.</p>
 <p>Cordialement,</p>
-<p>L'équipe de Arcadia</p>
+<p>L'équipe de Divan</p>
 </body>
 </html>
