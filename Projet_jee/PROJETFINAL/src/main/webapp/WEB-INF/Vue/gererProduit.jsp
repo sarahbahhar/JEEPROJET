@@ -48,7 +48,7 @@
 </div>
 <div>
     <c:if test="${fn:length(produits) == 0}">
-                <h1>Vous n'avez pas de produit en ligne</h1>
+                <h1 style="margin-left: 433px;">Vous n'avez pas de produit en ligne</h1>
             </c:if>
         </div>
 
