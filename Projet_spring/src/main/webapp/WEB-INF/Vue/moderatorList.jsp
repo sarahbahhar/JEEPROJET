@@ -1,79 +1,95 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.example.projectspring.Entity.Moderateur" %>
+<%@ page import="Model.Moderateur" %>
 <%@ page import="java.math.BigDecimal" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Liste des modérateurs</title>
-    <link rel="stylesheet" href="./css/moderatorList.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <%@ include file="header.jsp" %>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/table.css">
 </head>
 <body>
-<h1>Moderator List</h1>
-<table>
-    <tr>
-        <th>Email</th>
-        <th>Note Moyenne</th>
-        <th>Can Add Product</th>
-        <th>Can delete Product</th>
-        <th>Max Product</th>
-        <th>Bannir</th>
+<div id="demo" style="border-radius: 20px;">
+    <div style="border-radius: 20px;" class="table-responsive-vertical shadow-z-1">
+        <!-- Table starts here -->
+        <table style="border-radius: 20px;" id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+            <tr>
+                <th>Email</th>
+                <th>Note Moyenne</th>
+                <th>Droit ajout produit</th>
+                <th>Droit supprimer produit</th>
+                <th>Max Produit</th>
+                <th>Bannir</th>
+                <th>Supprimer</th>
+                <th>Modifier</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${moderators}" var="moderator">
+                <tr>
+                   <td> <p style="font-size: 100%;">${moderator.email}</p></td>
+                    <c:choose>
+                        <c:when test="${averageRatings[moderator.email] ne 0}">
+                            <td><p style="font-size: 100%;">${averageRatings[moderator.email]}</p></td>
+                        </c:when>
+                        <c:otherwise>
+                            <td><p style="font-size: 100%;">-</p></td>
+                        </c:otherwise>
+                    </c:choose>
+                    <td><p style="font-size: 100%;">
+                        <c:choose>
+                        <c:when test="${moderator.peutAjouterProduit==1}">
+                            Oui
+                        </c:when>
+                        <c:otherwise>
+                        Non</p>
+                        </c:otherwise>
+                            </c:choose></p></td>
+                    <td><p style="font-size: 100%;"><c:choose>
+                        <c:when test="${moderator.peutSupprimerProduit==1}">
+                            Oui
+                        </c:when>
+                        <c:otherwise>
+                        Non</p>
+                        </c:otherwise>
+                            </c:choose></p></td>
+                    <td><p style="font-size: 100%;">${moderator.maxProduitsLigne}</p></td>
 
-    </tr>
+                    <td>
+                        <c:choose>
+                            <c:when test="${moderator.dateBanni== null}">
+                                <form action="${pageContext.request.contextPath}/page-bannir-servlet" method="post">
+                                    <input type="hidden" name="email" value="${moderator.email}" />
+                                    <p style="font-size: 100%;"><button type="submit">Bannir</button></p>
+                                </form>
 
-    <c:forEach items="${moderators}" var="moderator">
-        <tr>
-            <td>${moderator.email}</td>
-            <c:choose>
-                <c:when test="${averageRatings[moderator.email] ne 0}">
-                    <td>${averageRatings[moderator.email]}</td>
-                </c:when>
-                <c:otherwise>
-                    <td>-</td>
-                </c:otherwise>
-            </c:choose>
-            <td>${moderator.peutAjouterProduit}</td>
-            <td>${moderator.peutSupprimerProduit}</td>
-            <td>${moderator.maxProduitsLigne}</td>
+                            </c:when>
+                            <c:otherwise>
+                                <p class="red-text" style="font-size: 100%;" >Banni</p>
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
 
-            <td>
-                <c:choose>
-                    <c:when test="${moderator.dateBanni== null}">
-                        <form action="${pageContext.request.contextPath}/page-bannir-servlet" method="post">
+                    <td>
+                        <form action="${pageContext.request.contextPath}/delete-moderator-servlet" method="post">
                             <input type="hidden" name="email" value="${moderator.email}" />
-                            <button type="submit">Bannir</button>
+                            <p style="font-size: 100%;"><button type="submit">Supprimer</button></p>
                         </form>
+                    </td>
+                    <td>
+                        <form action="${pageContext.request.contextPath}/redirection-form-edit-moderator-servlet" method="post">
+                            <input type="hidden" name="email" value="${moderator.email}" />
 
-                    </c:when>
-                    <c:otherwise>
-                        <p class="red-text" >Banni</p>
-                    </c:otherwise>
-                </c:choose>
-            </td>
-
-            <td>
-                <form action="${pageContext.request.contextPath}/delete-moderator-servlet" method="post">
-                    <input type="hidden" name="email" value="${moderator.email}" />
-                    <button type="submit">Delete</button>
-                </form>
-            </td>
-            <td>
-            <form action="${pageContext.request.contextPath}/redirection-form-edit-moderator-servlet" method="post">
-                <input type="hidden" name="email" value="${moderator.email}" />
-
-                <button type="submit">Edit Moderators</button>
-            </form>
-            </td>
-        </tr>
-    </c:forEach>
-</table>
-<br>
-<br>
-
+                            <p style="font-size: 100%;"><button type="submit">Modifier</button></p>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
-<footer>
-    <%@ include file="footer.jsp" %>
-</footer>
 </html>

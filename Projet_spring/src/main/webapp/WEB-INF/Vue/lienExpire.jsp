@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">
     <title>Lien Expiré</title>
-    <%@ include file="header.jsp" %>
+
 
 </head>
 <body>
@@ -28,6 +28,6 @@
 </body>
 
 <footer>
-    <%@ include file="footer.jsp" %>
+
 </footer>
 </html>

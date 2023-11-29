@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>Réinitialisation du Mot de Passe</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 
     <!-- Ajoutez ici votre CSS et autres en-têtes si nécessaire -->
@@ -23,7 +22,6 @@
         }
     </script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
-    <%@ include file="header.jsp" %>
 </head>
 <body>
     <div class="container" id="container">
@@ -31,8 +29,8 @@
             <form action="${pageContext.request.contextPath}/reset-password-servlet" method="POST" onsubmit="return validatePassword()">
                 <h1>Réinitialisation du Mot de Passe</h1>
                 <input type="hidden" name="email" value="${email}"/>
-                <input type="password" id="newPassword" name="newPassword" placeholder="Nouveau mot de passe" required>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmation" required>
+                <input type="password" id="newPassword" name="newPassword"  placeholder="Nouveau mot de passe" required>
+                <input type="password" id="confirmPassword" name="confirmPassword"  placeholder="Confirmation" required>
                 <div id="error" style="color: red;"></div>
                 <button class="lien" type="submit" >Réinitialiser le Mot de Passe</button>
             </form>
@@ -47,7 +45,4 @@
     </div>
 
 </body>
-<footer>
-    <%@ include file="footer.jsp" %>
-</footer>
 </html>

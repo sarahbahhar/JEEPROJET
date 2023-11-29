@@ -1,6 +1,5 @@
 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous">
@@ -40,8 +39,7 @@
 
 
             <li class="nav-item ">
-                <form class='style' action="${pageContext.request.contextPath}/redirect-servlet" method="get">
-                    <input type="hidden" name="path" value="loading.jsp" />
+                <form class='style' action="${pageContext.request.contextPath}/#" method="get">
                     <button type="submit"><a class="nav-link">Accueil</a></button>
                 </form>
             </li>
