@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="./img/logo2.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-KPx5sYzNlKDziuAx9nu7ZW9z0H73i1zYAM+QRVOGLsQVtThxdhZL0DO0Qe2UJbVsd0LooUrF9PsFyqU/Z2N5Ug==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-KPx5sYzNlKDziuAx9nu7ZW9z0H73i1zYAM+QRVOGLsQVtThxdhZL0DO0Qe2UJbVsd0LooUrF9PsFyqU/Z2N5Ug==" crossorigin="anonymous" />
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 <c:choose>
@@ -126,4 +127,5 @@
     </c:otherwise>
 </c:choose>
 </body>
+<%@ include file="footer.jsp" %>
 </html>
