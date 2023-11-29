@@ -26,7 +26,7 @@ public class MySalesController {
 
     @PostMapping
     public String listSales(@Param("email") String email, Model model) {
-        
+
         if (email != null) {
             List<Commande> salesList = commandeService.getListOrderByEmailSeller(email);
             List<Produitcommande> listProduitCommande = produitCommandeService.getListProduitCommande();
