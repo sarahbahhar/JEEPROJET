@@ -1,16 +1,17 @@
 package com.example.projectspring.Controller;
 
 import com.example.projectspring.Entity.Commande;
+import com.example.projectspring.Entity.Produitcommande;
 import com.example.projectspring.Service.CommandeService;
+import com.example.projectspring.Service.ProduitCommandeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -20,26 +21,23 @@ public class MySalesController {
     @Autowired
     private CommandeService commandeService;
 
-    @GetMapping
-    public String mySales() {
-        return "mySales"; // Assurez-vous que "mySales" est le nom de la vue appropriée
-    }
+    @Autowired
+    private ProduitCommandeService produitCommandeService;
 
     @PostMapping
-    public String listMySales(@RequestParam("email") String email, Model model) {
-        try {
+    public String listSales(@Param("email") String email, Model model) {
+        
+        if (email != null) {
             List<Commande> salesList = commandeService.getListOrderByEmailSeller(email);
+            List<Produitcommande> listProduitCommande = produitCommandeService.getListProduitCommande();
 
-            // Ajouter la liste des ventes au modèle
-            model.addAttribute("commandes", salesList); // recalculer le total
+            model.addAttribute("commandes", salesList);
+            model.addAttribute("produitcommandes", listProduitCommande);
             model.addAttribute("type", "pageMySales");
 
-            return "mesCommandes"; // Assurez-vous que "mesCommandes" est le nom de la vue appropriée
-        } catch (Exception e) {
-            // Gérer les erreurs ici
-            e.printStackTrace();
-            // Rediriger vers la page d'erreur en cas d'erreur
-            return "error"; // Page d'erreur
+            return "mesCommandes";
+        } else {
+            return "redirect:/error";
         }
     }
 }
