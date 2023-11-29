@@ -26,12 +26,13 @@ public class PasswordForgetController {
 
     @GetMapping
     public ModelAndView showResetPasswordForm(@RequestParam String resetToken, @RequestParam String email) {
+        System.out.println("Voici le resetToken : " + resetToken +"et Voic l'email : " + email);
         ModelAndView modelAndView = new ModelAndView();
         if (tokenService.isValidToken(email, resetToken)) {
             modelAndView.addObject("email", email);
             modelAndView.setViewName("resetPassword");
         } else {
-            modelAndView.setViewName("lienExpire"); // Replace with your error page.
+            modelAndView.setViewName("lienExpire");
         }
         return modelAndView;
     }
