@@ -10,14 +10,22 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 @Controller
-@RequestMapping("/home")
+
 public class homeController {
 
-    @GetMapping
+    @GetMapping("/home")
     public String home(){
 
 
 
         return "home";
+    }
+
+    @GetMapping("/home1")
+    public String home1(){
+
+
+
+        return "loading";
     }
 }
