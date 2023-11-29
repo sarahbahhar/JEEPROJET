@@ -42,8 +42,8 @@
                                         <div class="stock">
                                             <label >Quantité :</label>
                                             <input style="width: 30%" type="number" id="kactane" name="quantite"  min="1" max="${produit.stock}" value="1">
-                                        </div>
-                                        <button type="submit" class="lien" name="ajouter_au_panier" >Ajouter au panier</button>
+
+                                        <button style="margin-left: 5px" type="submit" class="lien" name="ajouter_au_panier" >Ajouter au panier</button></div>
                                     </c:if>
                                 </form>
                             </c:when>
@@ -59,8 +59,8 @@
                                         <div class="stock">
                                             <label >Quantité :</label>
                                             <input style="width: 30%" type="number" name="quantite"  min="1" max="${produit.stock}" value="1">
-                                        </div>
-                                        <button class="lien" type="submit" name="ajouter_au_panier">Ajouter au panier</button>
+
+                                        <button style="margin-left: 5px"  class="lien" type="submit" name="ajouter_au_panier">Ajouter au panier</button></div>
                                     </c:if>
                                     <c:if test="${isModBanned}">
                                         <p>Produit momentanément indisponible</p>
@@ -89,8 +89,8 @@
 
                     <h3>Laissez un commentaire : </h3>
                     <form method="post" action="<%=request.getContextPath()%>/commentaire-servlet">
-                        <label for="comment">Your Comment</label>
-                        <textarea id="comment" type="text" placeholder="Comment" required name="commentaire"></textarea><br>
+                        <label for="comment">Votre commentaire</label>
+                        <textarea id="comment" type="text" placeholder="Commentaire" required name="commentaire"></textarea><br>
                         <label for="rating">Note :</label>
                         <div class="etoiles" id="userRatingStars" data-rating="0">
                             <c:forEach var="i" begin="1" end="5">

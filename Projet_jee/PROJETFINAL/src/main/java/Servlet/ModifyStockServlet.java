@@ -30,13 +30,7 @@ public class ModifyStockServlet extends HttpServlet {
                 produit.setStock(newStock);
                 ProduitDAO.updateProduct(produit);
 
-                // Redirection vers la page de gestion des produits
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/gererProduit.jsp");
-                try {
-                    dispatcher.forward(request, response);
-                } catch (ServletException e) {
-                    throw new RuntimeException(e);
-                }
+                response.sendRedirect(request.getContextPath()+"/product-details?type=pageProduitVendeur&produit_id="+produitId);
             }
         } catch (Exception e) {
             // rediriger vers la page d'erreur
