@@ -32,7 +32,7 @@
                                 <img style="width: 63px;height: 33px;" src="./img/${produit.nomImage2}">
                             </span>
                                 <h3>
-                                        <strong></strong><p></p>
+                                        <strong>${produit.titre}</strong><p></p>
                                 </h3>
                                 <span> ${produit.prix} € x
                                         </c:if>

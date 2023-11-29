@@ -29,8 +29,8 @@
             <form action="${pageContext.request.contextPath}/reset-password-servlet" method="POST" onsubmit="return validatePassword()">
                 <h1>Réinitialisation du Mot de Passe</h1>
                 <input type="hidden" name="email" value="${email}"/>
-                <input type="password" id="newPassword" name="newPassword" pattern="(?=.*[A-Z])(?=.*[!@#$&*]).{6,} placeholder="Nouveau mot de passe" required>
-                <input type="password" id="confirmPassword" name="confirmPassword" pattern="(?=.*[A-Z])(?=.*[!@#$&*]).{6,} placeholder="Confirmation" required>
+                <input type="password" id="newPassword" name="newPassword"  placeholder="Nouveau mot de passe" required>
+                <input type="password" id="confirmPassword" name="confirmPassword"  placeholder="Confirmation" required>
                 <div id="error" style="color: red;"></div>
                 <button class="lien" type="submit" >Réinitialiser le Mot de Passe</button>
             </form>
