@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/table.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-0mUGoUp9ORxY3d5ZKJywuPjr5JP0iKEJhcJRBHIoikqQoRgPdz5VcHcWI1aEjRRW2pSNzNeVbWxgA5eZ3ozGbQA==" crossorigin="anonymous" />
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 <c:choose>
@@ -57,4 +58,7 @@
 
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

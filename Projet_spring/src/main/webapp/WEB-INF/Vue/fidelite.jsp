@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/singIn.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
     <title>Fidélité</title>
+    <%@ include file="header.jsp" %>
 </head>
     <body>
     <div class="container" id="container">
@@ -39,4 +40,7 @@
             </div>
         </div>
     </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

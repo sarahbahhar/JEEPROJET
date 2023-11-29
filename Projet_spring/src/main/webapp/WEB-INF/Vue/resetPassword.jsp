@@ -22,6 +22,7 @@
         }
     </script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
     <div class="container" id="container">
@@ -45,4 +46,7 @@
     </div>
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

@@ -5,6 +5,7 @@
     <title>Confirmation d'envoi d'e-mail</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 </head>
 
 <body>
@@ -13,5 +14,8 @@
     <p style="margin-left: 35%;">Un e-mail a été envoyé à l'administrateur du site.</p>
 </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
-</html>
+

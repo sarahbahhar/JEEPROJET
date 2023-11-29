@@ -80,9 +80,18 @@ p{
     top: 50%;
     margin-top:5%;
  margin-left:35%;
-    background: #f7f6f2;
+    background: #fff;
+    border-radius: 20px;
     border: 1px;
     text-align: center;
+}
+.container-left td{
+    color: #3c424f;
+    text-align: justify;
+}
+.container-left th{
+    padding: 3px;
+    text-align: initial;
 }
 .img-home button{
     border:none;
@@ -98,7 +107,14 @@ p{
 }
 .img-home img {
 
-    margin-top: 5%;
+
     width: 90%;
     height: 90%;
+    border-radius: 20px;
 }
+.carte{
+    border: 2px;
+    border-radius: 15px;
+    margin: auto;
+    width: 367px;
+    background: #fff;}

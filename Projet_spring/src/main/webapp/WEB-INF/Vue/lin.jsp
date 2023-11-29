@@ -14,6 +14,7 @@
     <title>Produits Lin</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/productList.css">
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 
@@ -49,6 +50,9 @@
     </table>
 </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
 
 

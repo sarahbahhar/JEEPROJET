@@ -5,6 +5,7 @@
     <title>Réinitialisation du mot de passe</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 
@@ -31,4 +32,7 @@
 </div>
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

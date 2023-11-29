@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/commande.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 <c:choose>
@@ -76,4 +77,7 @@
     </c:otherwise>
 </c:choose>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

@@ -10,6 +10,7 @@
 <head>
     <title>Produit Supprimer</title>
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 
 </head>
 <body>
@@ -17,4 +18,7 @@
 <h1 style="margin:auto">Le produit a ete supprime</h1>
 
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

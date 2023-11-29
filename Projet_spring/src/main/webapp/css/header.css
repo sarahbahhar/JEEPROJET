@@ -17,7 +17,7 @@ header {
 .header-nav ul {
     list-style: none;
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     margin: 0;
     padding: 0;
 }
@@ -27,7 +27,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 15px;
+
 
 }
 
@@ -36,7 +36,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 15px;
+
 }
 
 .style {
@@ -45,16 +45,18 @@ header {
     text-decoration: none;
     padding: 3px 4px;
 
+
+
 }
 .lienG{
     padding: 15px;
+    font-size:20px ;
     color: #0d6735;
     font-family: Helvetica,sans-serif;
     border-radius: 30px;
     border: none;
     background-color: transparent;
     background: none;
-    font-size: 15px;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
@@ -67,7 +69,7 @@ header {
     border: none;
     background-color: transparent;
     background: none;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 
@@ -175,6 +177,7 @@ header {
 .menu-deroulant form {
     display: block;
     margin-left: 0;
+    margin-top: 13px;
 }
 
 .menu-deroulant form button {
@@ -190,6 +193,7 @@ header {
 
 .menu-deroulant form button:hover {
     background-color: #0d6735;
+    font-size:20px ;
 }
 .menu-deroulant:hover .sous-menu {
     display: block;
@@ -197,9 +201,10 @@ header {
     width: 100%; /* Ajoutez cette ligne pour ajuster la largeur */
 }
 .navbar-nav li > form > button a {
-    color: #0d6735;
+    color: #acc4ad;
     text-align: center;
     display: block;
+    font-size:20px ;
     padding: 10px;
     position: relative;
 }
@@ -240,7 +245,6 @@ header {
     background: none;
     padding: 0;
     margin: 0;
-    font-size: inherit;
     color: inherit;
     cursor: pointer;
 }

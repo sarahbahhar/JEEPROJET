@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 
@@ -71,4 +72,7 @@
 </div>
 <script src="${pageContext.request.contextPath}/js/signIn.js"></script>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

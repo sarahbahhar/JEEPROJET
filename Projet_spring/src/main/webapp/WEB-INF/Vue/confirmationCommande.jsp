@@ -10,6 +10,7 @@
 <head>
     <title>Confirmation de la commande</title>
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 <div>
@@ -18,4 +19,7 @@
 
 </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>

@@ -9,7 +9,8 @@
 <html>
 <head>
     <title>A propos</title>
-    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon"
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 <div class="container-left" style="background:transparent;width:50%;margin-left:25%;margin-top:0;">
@@ -36,4 +37,7 @@
     </div>
 </div>
 </body>
+<footer>
+    <%@ include file="footer.jsp" %>
+</footer>
 </html>
