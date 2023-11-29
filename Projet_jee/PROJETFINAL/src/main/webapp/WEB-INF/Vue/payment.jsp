@@ -14,15 +14,14 @@
     <title>Paiement</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/myCard.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/creditcardlist.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
     <script src="<%=request.getContextPath()%>/js/myCard.js"></script>
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/logo_onglet.ico" type="image/x-icon">
 </head>
 <body>
 
-<div>
-
-
+<div class="carte">
     <c:if test="${empty cartesBancaires}">
         <h1>Vous n'avez pas de carte enregistrée sur votre compte. Merci d'en saisir une.</h1>
     </c:if>
@@ -33,7 +32,6 @@
             <div id="error-message" style="display: none; color: red;"></div>
             <table>
                 <c:forEach items="${cartesBancaires}" var="carte">
-
                     <tr>
                         <td>
                             <input type="radio" name="carteId" value="${carte.numero}">
@@ -43,7 +41,6 @@
                             <input type="hidden" name="cvv" value="${carte.cvv}" />
                             <input type="hidden" name="date" value="${carte.date}" />
                             <input type="hidden" name="id" value="${carte.id}" />
-
                         ${carte.nom}
                         </td>
                         <td>
@@ -52,12 +49,13 @@
                     </tr>
                 </c:forEach>
             </table>
-            <input class="bouton-golden" type="submit"  value="Valider">
+            <button style="margin-left:35%" class="lien" type="submit">Valider</button>
         </form>
     </c:if>
-
 </div>
-<button class="bouton-golden" onclick="toggleAddCardForm()">Ajouter Carte</button>
+<br>
+<button style="width: 10%;margin-left:43%;" class="lien" onclick="toggleAddCardForm()">Ajouter Carte</button>
+
 <div id="addCardForm">
 
         <div class="container" id="container">
