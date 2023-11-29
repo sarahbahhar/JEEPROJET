@@ -100,7 +100,7 @@
                         <input type="hidden" id="hiddenUserRating" name="rating" value="0" />
 
                         <input type="hidden" name="produit_id" value="${produit.id}">
-                        <button type="submit" style="width: 400px;">Soumettre</button>
+                        <button type="submit" class="lien" style=" width: 130px;;margin-left: 44%;">Commenter</button>
                     </form>
 
                 </c:if>

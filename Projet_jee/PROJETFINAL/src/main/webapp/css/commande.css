@@ -50,7 +50,7 @@ h2 {
 
 /* Styles pour les détails avec la balise summary */
 summary {
-    background-color: #fff;
+    background-color: #f7f6f2;
     position: relative;
     cursor: pointer;
     padding: 1em .5em;
@@ -61,7 +61,7 @@ summary {
     }
 
     &:hover {
-        background-color: #f2f5f9;
+        background-color: #f7f6f2;
     }
 
     & div {
@@ -153,15 +153,15 @@ dl {
 .command { /* Ajustez la marge pour placer la section en dessous de l'en-tête */
     width: 64%;
     margin-left: auto;
-    background-color: #fff;
+    background-color: #f7f6f2;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25);
     margin-right: auto;
     border-radius: 20px;
 }
 select {
-    background-color: #eee;
+    background-color: #f7f6f2;
     border: none;
     padding: 12px 15px;
     margin: 8px 0;

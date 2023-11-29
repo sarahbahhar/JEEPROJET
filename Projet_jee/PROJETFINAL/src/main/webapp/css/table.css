@@ -31,7 +31,7 @@ body {
     line-height: 2rem;
     letter-spacing: 0.01rem;
     color: #212121;
-    background-color: #f5f5f5;
+    background-color: #f7f6f2;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -70,7 +70,7 @@ body {
     width: 100%;
     max-width: 100%;
     margin-bottom: 2rem;
-    background-color: #ffffff;
+    background-color: #f7f6f2;
 }
 .table > thead > tr,
 .table > tbody > tr,
@@ -111,7 +111,7 @@ body {
     border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 .table .table {
-    background-color: #ffffff;
+    background-color: #f7f6f2;
 }
 .table .no-border {
     border: 0;
@@ -142,7 +142,7 @@ body {
 }
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-    background-color: #f5f5f5;
+    background-color: #f7f6f2;
 }
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
@@ -162,12 +162,12 @@ body {
     }
     .table-responsive-vertical > .table > tbody > tr {
         display: block;
-        border: 1px solid #e0e0e0;
+        border: 1px solid #f7f6f2;
         border-radius: 2px;
         margin-bottom: 1.6rem;
     }
     .table-responsive-vertical > .table > tbody > tr > td {
-        background-color: #ffffff;
+        background-color: #f7f6f2;
         display: block;
         vertical-align: middle;
         text-align: right;
@@ -186,16 +186,16 @@ body {
     }
     .table-responsive-vertical.shadow-z-1 > .table > tbody > tr {
         border: none;
-        -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-        -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+        -webkit-box-shadow:  0 14px 28px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25);
     }
     .table-responsive-vertical > .table-bordered {
         border: 0;
     }
     .table-responsive-vertical > .table-bordered > tbody > tr > td {
         border: 0;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid #f7f6f2;
     }
     .table-responsive-vertical > .table-bordered > tbody > tr > td:last-child {
         border-bottom: 0;

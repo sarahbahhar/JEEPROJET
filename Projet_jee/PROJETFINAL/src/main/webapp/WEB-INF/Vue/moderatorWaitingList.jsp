@@ -10,7 +10,7 @@
 <body>
 <c:choose>
     <c:when test="${empty moderators}">
-        <div class="message"><h1>Toute les demandes ont été traitées</h1></div>
+        <div class="message"><h1 style="margin-left: 451px;>Toute les demandes ont été traitées</h1></div>
     </c:when>
             <c:otherwise>
                 <div id="demo" style="border-radius: 20px;">
