@@ -4,6 +4,7 @@
     <title>Modifier Mon Profil</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
     <link rel="shortcut icon" href="./img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 

@@ -8,6 +8,7 @@
     <title>Produit</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/prod.css">
     <link rel="shortcut icon"  href="./img/logo_onglet.ico" type="image/x-icon">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 

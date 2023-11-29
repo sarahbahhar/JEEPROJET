@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="Model.Moderateur" %>
-<%@ page import="java.util.List" %>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
@@ -11,6 +10,7 @@
     <title>Mes Produits</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/productList.css">
     <link rel="icon" type="image/png" href="./img/logo2.png">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 

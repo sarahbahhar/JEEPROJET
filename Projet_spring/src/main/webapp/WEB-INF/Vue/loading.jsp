@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/loading.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/loading.js"></script>
+    <%@ include file="header.jsp" %>
 </head>
 <body>
     <div class="container">

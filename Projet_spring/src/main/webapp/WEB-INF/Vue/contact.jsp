@@ -4,6 +4,7 @@
 <head>
     <title>Contact</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/singIn.css">
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 

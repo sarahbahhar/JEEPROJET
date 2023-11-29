@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="Model.Moderateur" %>
-<%@ page import="java.math.BigDecimal" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Liste des modérateurs</title>
     <link rel="stylesheet" href="./css/style.css">
+    <%@ include file="header.jsp" %>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/table.css">
 </head>
 <body>
