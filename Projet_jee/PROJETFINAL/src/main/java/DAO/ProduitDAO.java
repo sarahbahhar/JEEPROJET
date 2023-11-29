@@ -105,19 +105,24 @@ public class ProduitDAO
     }
 
     public static List<Produit> getProductsByCategory(String categorie) {
-        List<Produit> produit = null;
+        List<Produit> allProducts = null;
 
+        List<Produit> filteredProducts = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
-            produit = session.createQuery("FROM Produit P WHERE  P.categorie = :categorie")
+            allProducts = session.createQuery("FROM Produit P WHERE  P.categorie = :categorie")
                     .setParameter("categorie", categorie)
                     .list();
+
+            filteredProducts = allProducts.stream()
+                    .filter(p -> !isModerateurBanni(p))
+                    .collect(Collectors.toList());
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return produit;
+        return filteredProducts;
     }
 
     public static boolean isModerateurBanni(Produit produit) {

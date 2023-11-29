@@ -38,7 +38,8 @@ public class PasswordForgetServlet extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
             // Si le token n'est pas valide, afficher un message d'erreur ou rediriger vers une page d'erreur.
-            response.sendRedirect("errorPage.jsp"); // Remplacer par votre page d'erreur.
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/lienExpire.jsp");
+            dispatcher.forward(request, response); // Remplacer par votre page d'erreur.
         }
     }
 
