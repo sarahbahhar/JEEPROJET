@@ -7,22 +7,13 @@ import Model.Infocompte;
 import org.hibernate.Transaction;
 import org.hibernate.Session;
 import Model.Commande;
-public class CommandeDAO
+public class CommandeDAO {
 
-{
-
-/*
-    public static void addProduct(Produit p)
-    {
-        Session session= HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        session.save(p);
-        session.getTransaction().commit();
-        session.close();
-    }
-    */
-
-
+    /**
+     * getListProduitByEmail
+     * @param email
+     * @return result
+     */
     public static List<Commande> getListProduitByEmail(String email)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -33,6 +24,12 @@ public class CommandeDAO
         session.close();
         return result;
     }
+
+    /**
+     * getListOrderByEmailSeller
+     * @param email
+     * @return
+     */
     public static List<Commande> getListOrderByEmailSeller(String email) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -47,7 +44,11 @@ public class CommandeDAO
         return result;
     }
 
-
+    /**
+     * addCommande
+     * @param c
+     * @throws SQLException
+     */
     public static void addCommande(Commande c) throws SQLException
     {
 
@@ -59,6 +60,11 @@ public class CommandeDAO
         session.close();
     }
 
+    /**
+     * getLastCommandeIdByEmail
+     * @param email
+     * @return nCommande
+     */
     public int getLastCommandeIdByEmail(String email) {
         int nCommande=-1;
         Commande c= null;
@@ -84,8 +90,10 @@ public class CommandeDAO
     }
 
 
-
-
+    /**
+     * getListCompte
+     * @return result
+     */
     public List<Commande> getListCompte() {
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();

@@ -13,6 +13,11 @@ import org.hibernate.Transaction;
 
 public class ComptebancaireDAO
 {
+
+    /**
+     * addComptebancaire
+     * @param cb
+     */
     public static void addComptebancaire(Model.Comptebancaire cb)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -21,6 +26,12 @@ public class ComptebancaireDAO
         session.getTransaction().commit();
         session.close();
     }
+
+    /**
+     * deleteComptebancaire
+     * @param email
+     * @param id
+     */
     public void deleteComptebancaire(String email,String id){
         Comptebancaire cb;
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -30,6 +41,12 @@ public class ComptebancaireDAO
         session.getTransaction().commit();
         session.close();
     }
+
+    /**
+     * getListCBByEmail
+     * @param email
+     * @return result
+     */
     public static List<Comptebancaire> getListCBByEmail(String email)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -40,6 +57,14 @@ public class ComptebancaireDAO
         return result;
     }
 
+    /**
+     * validate
+     * @param numero
+     * @param cvv
+     * @param date
+     * @param id
+     * @return boolean
+     */
 
     public boolean validate(String numero, String cvv, String date, int id) {
 

@@ -10,6 +10,10 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class CommentairesDAO {
+    /**
+     * addCommentaire
+     * @param commentaire
+     */
     public static void addCommentaire(Commentaires commentaire) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
@@ -20,6 +24,12 @@ public class CommentairesDAO {
 
         }
     }
+
+    /**
+     * getCommentairesByProduitId
+     * @param produitId
+     * @return arraylist
+     */
     public static List<Commentaires> getCommentairesByProduitId(int produitId) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("FROM Commentaires WHERE idProduit = :produitId", Commentaires.class)
@@ -30,6 +40,12 @@ public class CommentairesDAO {
             return new ArrayList<>(); // Gérer les erreurs
         }
     }
+
+    /**
+     * getNoteMoyenneProduit
+     * @param produitId
+     * @return bigdecimal.zero
+     */
 
     public static BigDecimal getNoteMoyenneProduit(int produitId) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -57,6 +73,11 @@ public class CommentairesDAO {
             return BigDecimal.ZERO;
         }
     }
+
+    /**
+     * getBestNotedIdProduct
+     * @return null
+     */
     public List<Integer> getBestNotedIdProduct(){
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -67,6 +88,13 @@ public class CommentairesDAO {
         session.close();
         return null;
     }
+
+    /**
+     * hasCommented
+     * @param produitId
+     * @param email
+     * @return hascommented
+     */
 
     public static boolean hasCommented(int produitId, String email) {
         Session session = HibernateUtil.getSessionFactory().openSession();

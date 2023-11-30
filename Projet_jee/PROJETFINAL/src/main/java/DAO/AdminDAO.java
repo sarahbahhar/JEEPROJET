@@ -7,8 +7,11 @@ import org.hibernate.Transaction;
 public class AdminDAO {
 
 
-
-    // Generic method to check if an email exists in a specified table
+    /**
+     *emailExists
+     * @param email
+     * @return
+     */
     public static boolean emailExists(String email) {
         Transaction transaction = null;
         Admin admin = null;
@@ -29,12 +32,17 @@ public class AdminDAO {
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
-                // En cas d'erreur, vous pouvez effectuer un rollback de la transaction ici si nécessaire
             }
             e.printStackTrace();
         }
         return false;
     }
+
+
+    /**
+     *getAdminEmail
+     * @return adminEmail
+     */
     public static String getAdminEmail() {
         Transaction transaction = null;
         String adminEmail = null;
@@ -55,8 +63,4 @@ public class AdminDAO {
         }
         return adminEmail;
     }
-
-
-
-    // Other generic DAO methods to manage entities
 }
