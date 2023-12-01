@@ -36,7 +36,13 @@ import jakarta.servlet.http.Part;
 
 @WebServlet(name = "BannirModeratorServlet", value = "/bannir-moderator-servlet")
 public class BannirModeratorServlet extends HttpServlet {
-
+    /**
+     * get information form a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String motifCourt = request.getParameter("motifCourt");
@@ -46,7 +52,6 @@ public class BannirModeratorServlet extends HttpServlet {
 
         ModeratorDAO.bannirByEmail(email, motifCourt, motifLong,dateFinBan);
 
-        // Redirection ou gestion de la réponse après le bannissement
 
         response.sendRedirect(request.getContextPath()+"/moderator-servlet"); // changer type=page  produti et idproduit s'inspirer de produitCommande
 

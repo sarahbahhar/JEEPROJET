@@ -17,7 +17,13 @@ package Servlet;
 
 @WebServlet(name = "BankAccountServlet", value = "/bank-account-servlet")
 public class BankAccountServlet extends HttpServlet {
-
+    /**
+     * get information form a get
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String userEmail = (String) session.getAttribute("email");

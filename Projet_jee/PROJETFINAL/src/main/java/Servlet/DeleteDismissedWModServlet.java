@@ -15,9 +15,25 @@ import java.io.IOException;
 @WebServlet(name = "DeleteDismissedWModServlet", value = "/delete-dismissed-mod-servlet")
 public class DeleteDismissedWModServlet extends HttpServlet {
     private DemandeModerateurDAO DModeratorDAO=new DemandeModerateurDAO();
+
+    /**
+     * get information form a get
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("moderatorWaitingList.jsp");
     }
+
+    /**
+     * get information form a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String email=request.getParameter("email");

@@ -19,9 +19,24 @@ public class DeleteProductServlet extends HttpServlet {
 
     private ProduitDAO ProDAO=new ProduitDAO();
 
+    /**
+     * get information from a get
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }
+
+    /**
+     * get information from a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email=request.getParameter("email");
         try {

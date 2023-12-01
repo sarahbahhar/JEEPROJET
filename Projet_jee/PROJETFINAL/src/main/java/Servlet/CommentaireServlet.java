@@ -17,7 +17,13 @@ import java.io.IOException;
 
 @WebServlet(name = "CommentaireServlet", value = "/commentaire-servlet")
 public class CommentaireServlet extends HttpServlet {
-
+    /**
+     * get information form a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session= request.getSession();
         String commentaire = request.getParameter("commentaire");
@@ -27,9 +33,7 @@ public class CommentaireServlet extends HttpServlet {
         int rating = Integer.parseInt(request.getParameter("rating"));
         Infocompte ic=(Infocompte) session.getAttribute("InfoCompte");
         String emailAcheteur = ic.getEmail(); // Récupération de l'email de l'acheteur
-         // Récupération de l'email de l'utilisateur connecté
 
-        // Validation des données (vérification des plages, nettoyage des entrées, etc.)
 
         Commentaires newComment = new Commentaires();
         newComment.setIdProduit(Integer.parseInt(request.getParameter("produit_id")));

@@ -19,6 +19,14 @@ public class AddModeratorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("moderatorWaitingList.jsp");
     }
+
+    /**
+     * get information form a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String email=request.getParameter("email");

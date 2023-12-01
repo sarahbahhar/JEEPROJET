@@ -28,6 +28,13 @@ public class CreateCommandeServlet  extends HttpServlet{
 
     }
 
+    /**
+     * get information form a get
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //response.sendRedirect("WEB-INF/Vue/payment.jsp");
@@ -48,9 +55,6 @@ public class CreateCommandeServlet  extends HttpServlet{
             int nCommande=commandeDAO.getLastCommandeIdByEmail(email);
 
             request.setAttribute("nCommande", nCommande);
-            /*PrintWriter out=response.getWriter();
-            out.println(nCommande);
-            out.close();*/
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("AddProductCommandeServlet");///WEB-INF/Vue/confirmationCommande.jsp
             dispatcher.forward(request, response);
@@ -65,8 +69,6 @@ public class CreateCommandeServlet  extends HttpServlet{
             throws ServletException, IOException {
 
     }
-
-
 
 
 }
