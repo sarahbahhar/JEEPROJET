@@ -12,8 +12,11 @@ import java.util.List;
 public class CustomerDAO {
 
 
-
-    // Generic method to check if an email exists in a specified table
+    /**
+     * verify if emailExists
+     * @param email
+     * @return boolean
+     */
     public static boolean emailExists(String email) {
         Transaction transaction = null;
         Client client = null;
@@ -40,6 +43,11 @@ public class CustomerDAO {
         }
         return false;
     }
+
+    /**
+     * removeCustomer
+     * @param email
+     */
     public static void removeCustomer(String email)
     {
         Client c;
@@ -52,6 +60,10 @@ public class CustomerDAO {
         session.close();
     }
 
+    /**
+     * addCustomer
+     * @param c
+     */
     public static void addCustomer(Model.Client c)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -61,6 +73,11 @@ public class CustomerDAO {
         session.close();
     }
 
+    /**
+     * addPointFidelite
+     * @param email
+     * @param point
+     */
     public static void addPointFidelite(String email, int point){
         Transaction transaction = null;
         Client client = null;
@@ -82,6 +99,11 @@ public class CustomerDAO {
         }
     }
 
+    /**
+     * getClient
+     * @param email
+     * @return Client
+     */
     public static Client getClient(String email){
         Client c= null;
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -103,6 +125,11 @@ public class CustomerDAO {
         return c;
     }
 
+    /**
+     * updateClient
+     * @param email
+     * @param updated
+     */
     public static void updateClient(String email, Client updated) {
         Session session = null;
         Transaction transaction = null;

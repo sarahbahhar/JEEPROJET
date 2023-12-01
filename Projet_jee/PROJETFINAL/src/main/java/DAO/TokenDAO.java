@@ -15,6 +15,11 @@ public class TokenDAO
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     private static final int LENGTH = 10;
     private static SecureRandom random = new SecureRandom();
+
+    /**
+     * addToken
+     * @param email
+     */
     public static void addToken(String email)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -26,6 +31,12 @@ public class TokenDAO
         session.getTransaction().commit();
         session.close();
     }
+
+    /**
+     * changeTokenByEmail
+     * @param email
+     * @param tokenValue
+     */
     public static void changeTokenByEmail(String email, String tokenValue) {
         Token token = null;
 
@@ -40,6 +51,12 @@ public class TokenDAO
         }
 
     }
+
+    /**
+     * getTokenValueByEmail
+     * @param email
+     * @return String
+     */
 
     public static String getTokenValueByEmail(String email) {
             Token token = null;
@@ -56,9 +73,11 @@ public class TokenDAO
             return "error";
         }
 
-
-
-        public static String generateResetToken() {
+    /**
+     * generateResetToken
+     * @return String
+     */
+    public static String generateResetToken() {
             StringBuilder token = new StringBuilder(LENGTH);
             for (int i = 0; i < LENGTH; i++) {
                 token.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));

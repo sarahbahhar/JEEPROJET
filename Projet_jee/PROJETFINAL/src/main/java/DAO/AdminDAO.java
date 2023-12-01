@@ -8,9 +8,9 @@ public class AdminDAO {
 
 
     /**
-     *emailExists
+     *check if the email exists
      * @param email
-     * @return
+     * @return boolean
      */
     public static boolean emailExists(String email) {
         Transaction transaction = null;
@@ -40,7 +40,7 @@ public class AdminDAO {
 
 
     /**
-     *getAdminEmail
+     *retrieve administrator email
      * @return adminEmail
      */
     public static String getAdminEmail() {

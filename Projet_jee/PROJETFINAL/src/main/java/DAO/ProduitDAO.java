@@ -13,6 +13,10 @@ public class ProduitDAO
 {
     public static final String PATH_IMAGE = "/src/main/webapp/img/";
 
+    /**
+     * addProduct
+     * @param p
+     */
     public static void addProduct(Produit p)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -21,6 +25,11 @@ public class ProduitDAO
         session.getTransaction().commit();
         session.close();
     }
+
+    /**
+     * get list of products
+     * @return
+     */
     public static List<Produit> getListProduit()
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -35,6 +44,12 @@ public class ProduitDAO
         return filteredProducts;
 
     }
+
+    /**
+     * getListProduitByEmail
+     * @param email
+     * @return
+     */
     public static List<Produit> getListProduitByEmail(String email)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -45,6 +60,10 @@ public class ProduitDAO
         return result;
     }
 
+    /**
+     * removeProductByIdOfTable
+     * @param id
+     */
     public static void removeProductByIdOfTable(int id)
     {
         Produit p;
@@ -60,6 +79,12 @@ public class ProduitDAO
         session.getTransaction().commit();
         session.close();
     }
+
+    /**
+     * getListProductByTitre
+     * @param titre
+     * @return list of product
+     */
     public static List<Produit> getListProductByTitre(String titre) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -75,7 +100,11 @@ public class ProduitDAO
     }
 
 
-//
+    /**
+     * get a proudct by id
+     * @param produitId
+     * @return product
+     */
     public static Produit getProduitById(int produitId) {
         Produit produit = null;
 
@@ -90,8 +119,10 @@ public class ProduitDAO
         return produit;
     }
 
-
-
+    /**
+     * update a product
+     * @param produit
+     */
     public static void updateProduct(Produit produit) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
@@ -104,6 +135,11 @@ public class ProduitDAO
         }
     }
 
+    /**
+     * getProductsByCategory
+     * @param categorie
+     * @return list of products
+     */
     public static List<Produit> getProductsByCategory(String categorie) {
         List<Produit> allProducts = null;
 
@@ -125,6 +161,11 @@ public class ProduitDAO
         return filteredProducts;
     }
 
+    /**
+     * verify if the moderator is banned
+     * @param produit
+     * @return boolean
+     */
     public static boolean isModerateurBanni(Produit produit) {
         boolean isBanned = false;
 
@@ -148,16 +189,20 @@ public class ProduitDAO
         return isBanned;
     }
 
+    /**
+     * removeProductById
+     * @param p
+     * @param fileName1
+     * @param fileName2
+     * @param id
+     */
     public static void removeProductById(String p,String fileName1,String fileName2,int id) {
 
-        // Obtenez le chemin réel à partir du chemin relatif
         String absolutePath = p+"../../" + PATH_IMAGE;
 
-        // Assurez-vous que le répertoire existe, sinon créez-le
         File imageDir = new File(absolutePath);
 
 
-        // Maintenant, utilisez le chemin absolu pour écrire le fichier
         File file = new File(imageDir, fileName1);
         File file2 = new File(imageDir, fileName2);
 
@@ -174,6 +219,12 @@ public class ProduitDAO
         removeProductByIdOfTable(id);
 
     }
+
+    /**
+     * removeProductByModerator
+     * @param localisation
+     * @param email
+     */
     public static void removeProductByModerator(String localisation,String email) {
         List<Produit> produits =  getListProduitByEmail(email);
         for(Produit produit : produits){

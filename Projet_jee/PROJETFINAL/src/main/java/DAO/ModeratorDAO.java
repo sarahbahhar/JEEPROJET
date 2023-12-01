@@ -14,6 +14,10 @@ import DAO.ProduitDAO;
 
 
 public class ModeratorDAO {
+    /**
+     * getListModerateur
+     * @return list of moderator
+     */
     public List<Moderateur> getListModerateur() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -22,6 +26,11 @@ public class ModeratorDAO {
         return result;
     }
 
+    /**
+     * getModeratorByEmail
+     * @param email
+     * @return moderateur
+     */
     public static Moderateur getModeratorByEmail(String email) {
         Moderateur moderator = null;
 
@@ -33,6 +42,11 @@ public class ModeratorDAO {
 
     }
 
+    /**
+     * addModerator
+     * @param m
+     */
+
     public static void addModerator(Model.Moderateur m) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -41,6 +55,11 @@ public class ModeratorDAO {
         session.close();
     }
 
+    /**
+     * verify if emailExists
+     * @param email
+     * @return boolean
+     */
     public static boolean emailExists(String email) {
         Transaction transaction = null;
         Moderateur moderator = null;
@@ -68,6 +87,11 @@ public class ModeratorDAO {
         return false;
     }
 
+    /**
+     * removeModerator
+     * @param localisation
+     * @param email
+     */
     public static void removeModerator(String  localisation,String email) {
         Transaction transaction = null;
 
@@ -89,6 +113,10 @@ public class ModeratorDAO {
     }
 
 
+    /**
+     * updateModerator
+     * @param updated
+     */
     public void updateModerator(Moderateur updated) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
@@ -126,6 +154,12 @@ public class ModeratorDAO {
         }
     }
 
+    /**
+     * getAverageRatingByEmail
+     * @param email
+     * @return bigdecimal
+     */
+
     public BigDecimal getAverageRatingByEmail(String email) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Query query = session.createQuery("SELECT AVG(c.note) FROM Commentaires c WHERE c.emailVendeur = :email");
@@ -143,6 +177,13 @@ public class ModeratorDAO {
         }
     }
 
+    /**
+     * bannirByEmail
+     * @param email
+     * @param motifCourt
+     * @param motifLong
+     * @param dateStr
+     */
     public static void bannirByEmail(String email, String motifCourt, String motifLong, String dateStr) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -169,6 +210,11 @@ public class ModeratorDAO {
             e.printStackTrace();
         }
     }
+
+    /**
+     * unbanByEmail
+     * @param email
+     */
     public static void unbanByEmail(String email) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -204,6 +250,11 @@ public class ModeratorDAO {
         }
     }
 
+    /**
+     * updateDateBanni
+     * @param moderator
+     * @param dateStr
+     */
     private static void updateDateBanni(Moderateur moderator, String dateStr) {
         LocalDate localDate = LocalDate.parse(dateStr); // Conversion de la chaîne de caractères en LocalDate
         Date date = Date.valueOf(localDate); // Conversion de LocalDate en java.sql.Date

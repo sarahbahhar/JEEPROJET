@@ -17,6 +17,12 @@ public class ProduitCommandeDAO {
     public ProduitCommandeDAO() {
         this.connection = connection;
     }
+
+    /**
+     * getList of order products
+     * @param idCommande
+     * @return list of order product
+     */
     public static List<Produitcommande> getListProduitCommande(int idCommande) {
 
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -26,6 +32,11 @@ public class ProduitCommandeDAO {
         session.close();
         return result;
     }
+
+    /**
+     * getList of order products
+     * @return list of ordfer product
+     */
     public static List<Produitcommande> getListProduitCommand() {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -35,16 +46,12 @@ public class ProduitCommandeDAO {
         return result;
     }
 
-
+    /**
+     * insert product to an order
+     * @param produitCommande
+     * @throws SQLException
+     */
     public void insertProduitCommande(Produitcommande produitCommande) throws SQLException {
-        /*String query = "INSERT INTO produit_commande (produit_id, commande_numero, quantite) VALUES (?, ?, ?)";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setInt(1, produitCommande.getId());
-            preparedStatement.setInt(2, produitCommande.getCommandeNumero());
-            preparedStatement.setInt(3, produitCommande.getQuantite());
-
-            preparedStatement.executeUpdate();
-        }*/
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();

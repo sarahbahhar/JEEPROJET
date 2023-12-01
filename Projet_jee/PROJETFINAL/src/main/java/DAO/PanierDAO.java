@@ -9,6 +9,10 @@ import org.hibernate.query.Query;
 
 public class PanierDAO {
 
+    /**
+     * create a Cart
+     * @param p
+     */
     public static void createPanier(Panier p)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -18,6 +22,11 @@ public class PanierDAO {
         session.close();
     }
 
+    /**
+     * update a cart
+     * @param email
+     * @param updated
+     */
     public static void updatePanier(String email, Panier updated){
         Session session = null;
         Transaction transaction = null;
@@ -27,7 +36,6 @@ public class PanierDAO {
             transaction = session.beginTransaction();
             Panier toChange = (Panier) session.get(Panier.class, email);
 
-            // Mettre à jour les champs de le panier existant avec les nouvelles valeurs
 
             toChange.setHt(updated.getHt());
             toChange.setTva(updated.getTva());
@@ -48,7 +56,11 @@ public class PanierDAO {
         }
     }
 
-    // Méthode pour récupérer les produits du panier
+    /**
+     * getListProduitpanier
+     * @param email
+     * @return
+     */
     public static List<Produitpanier> getListProduitpanier(String email) {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -59,7 +71,12 @@ public class PanierDAO {
         return result;
     }
 
-
+    /**
+     * add a product to the cart
+     * @param email
+     * @param produitId
+     * @param quantite
+     */
     public static void ajouterProduitAuPanier(String email, int produitId, int quantite) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
@@ -68,7 +85,7 @@ public class PanierDAO {
 
 
             if (produit != null && produit.getStock() >= quantite) {
-                //produit.setStock(produit.getStock() - quantite);
+
                 Produitpanier produitPanier = produitPanierExists(produit.getId(), email);
 
                 if (produitPanier == null) {
@@ -93,7 +110,12 @@ public class PanierDAO {
         }
     }
 
-
+    /**
+     * verify if a product Cart exist
+     * @param produitId
+     * @param email
+     * @return ProduitPanier
+     */
     public static Produitpanier produitPanierExists(Integer produitId, String email) {
 
         Transaction transaction = null;
@@ -118,29 +140,10 @@ public class PanierDAO {
         return produitpanier;
     }
 
-/*
-    public static void passerCommande(Commande commande, List<Produitcommande> produitsCommandes) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            Transaction transaction = session.beginTransaction();
-
-            // Enregistrez la commande dans la table Commande
-            session.save(commande);
-
-            // Associez les produits à la commande dans la table ProduitCommande
-            for (Produitcommande produitCommande : produitsCommandes) {
-                produitCommande.setCommande(commande);
-                session.update(produitCommande);
-            }
-
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-*/
-    // Pouvoir supprimer des produits du panier regarder ModeratorDAO
-
-
+    /**
+     * reset cart
+     * @param email
+     */
     public static void resetPanier(String email) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
@@ -161,7 +164,7 @@ public class PanierDAO {
             session.update(p);
             transaction.commit();
 
-            //le panier doit exister pour tous les utilisateurs
+
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -173,6 +176,11 @@ public class PanierDAO {
             }
         }
     }
+
+    /**
+     * remove product to a cart
+     * @param email
+     */
 
     public static void removeProduitPanier(String email) {
 
@@ -191,6 +199,11 @@ public class PanierDAO {
 
 
     }
+
+    /**
+     * remove a cart product ById
+     * @param id
+     */
     public static void removeProduitPanierById(int id) {
 
 
@@ -209,6 +222,12 @@ public class PanierDAO {
 
     }
 
+    /**
+     * changeQuantityById
+     * @param email
+     * @param produitId
+     * @param newQuantity
+     */
     public static void changeQuantityById(String email, int produitId, int newQuantity) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             session.beginTransaction();
