@@ -17,7 +17,7 @@ public class TokenDAO
     private static SecureRandom random = new SecureRandom();
 
     /**
-     * addToken
+     * Add a new token to the database
      * @param email
      */
     public static void addToken(String email)
@@ -33,7 +33,7 @@ public class TokenDAO
     }
 
     /**
-     * changeTokenByEmail
+     * Change a token by an email
      * @param email
      * @param tokenValue
      */
@@ -53,7 +53,7 @@ public class TokenDAO
     }
 
     /**
-     * getTokenValueByEmail
+     * get the token value by an email
      * @param email
      * @return String
      */
@@ -74,7 +74,7 @@ public class TokenDAO
         }
 
     /**
-     * generateResetToken
+     * Generate a new reset token
      * @return String
      */
     public static String generateResetToken() {

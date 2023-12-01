@@ -57,7 +57,7 @@ public class PanierDAO {
     }
 
     /**
-     * getListProduitpanier
+     * Get the list of the cart product
      * @param email
      * @return
      */
@@ -111,7 +111,7 @@ public class PanierDAO {
     }
 
     /**
-     * verify if a product Cart exist
+     * Verify if a product Cart already exist
      * @param produitId
      * @param email
      * @return ProduitPanier
@@ -133,7 +133,6 @@ public class PanierDAO {
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
-                // En cas d'erreur, vous pouvez effectuer un rollback de la transaction ici si nécessaire
             }
             e.printStackTrace();
         }
@@ -141,7 +140,7 @@ public class PanierDAO {
     }
 
     /**
-     * reset cart
+     * Reset a cart ( useful after an order )
      * @param email
      */
     public static void resetPanier(String email) {
@@ -178,7 +177,7 @@ public class PanierDAO {
     }
 
     /**
-     * remove product to a cart
+     * Remove product to a cart
      * @param email
      */
 
@@ -201,7 +200,7 @@ public class PanierDAO {
     }
 
     /**
-     * remove a cart product ById
+     * Remove a cart product by the id
      * @param id
      */
     public static void removeProduitPanierById(int id) {
@@ -223,7 +222,7 @@ public class PanierDAO {
     }
 
     /**
-     * changeQuantityById
+     * Change a product quantity
      * @param email
      * @param produitId
      * @param newQuantity

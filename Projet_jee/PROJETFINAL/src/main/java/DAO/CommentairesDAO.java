@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
 
 public class CommentairesDAO {
     /**
-     * addCommentaire
+     * add a new comment to the database
      * @param commentaire
      */
     public static void addCommentaire(Commentaires commentaire) {
@@ -26,7 +26,7 @@ public class CommentairesDAO {
     }
 
     /**
-     * getCommentairesByProduitId
+     * Get the comments for a sprecific product
      * @param produitId
      * @return arraylist
      */
@@ -42,7 +42,7 @@ public class CommentairesDAO {
     }
 
     /**
-     * getNoteMoyenneProduit
+     * Get the average note for a product
      * @param produitId
      * @return bigdecimal.zero
      */
@@ -75,7 +75,7 @@ public class CommentairesDAO {
     }
 
     /**
-     * getBestNotedIdProduct
+     * Get the best note for a product by the id
      * @return null
      */
     public List<Integer> getBestNotedIdProduct(){
@@ -90,10 +90,10 @@ public class CommentairesDAO {
     }
 
     /**
-     * hasCommented
+     * Verify if an email has commented previously
      * @param produitId
      * @param email
-     * @return hascommented
+     * @return boolean
      */
 
     public static boolean hasCommented(int produitId, String email) {

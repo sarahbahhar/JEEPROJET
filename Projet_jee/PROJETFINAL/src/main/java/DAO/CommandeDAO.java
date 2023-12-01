@@ -10,7 +10,7 @@ import Model.Commande;
 public class CommandeDAO {
 
     /**
-     * getListProduitByEmail
+     * Get a list of products by an email
      * @param email
      * @return result
      */
@@ -26,9 +26,9 @@ public class CommandeDAO {
     }
 
     /**
-     * getListOrderByEmailSeller
+     * Get a list of order by a seller's Email
      * @param email
-     * @return
+     * @return a list
      */
     public static List<Commande> getListOrderByEmailSeller(String email) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -45,7 +45,7 @@ public class CommandeDAO {
     }
 
     /**
-     * addCommande
+     * Add an order to the database
      * @param c
      * @throws SQLException
      */
@@ -61,7 +61,7 @@ public class CommandeDAO {
     }
 
     /**
-     * getLastCommandeIdByEmail
+     * Get the last order by the id for an email
      * @param email
      * @return nCommande
      */
@@ -91,7 +91,7 @@ public class CommandeDAO {
 
 
     /**
-     * getListCompte
+     * get a list of account
      * @return result
      */
     public List<Commande> getListCompte() {

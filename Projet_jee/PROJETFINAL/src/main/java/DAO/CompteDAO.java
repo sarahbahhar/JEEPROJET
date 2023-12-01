@@ -13,7 +13,7 @@ import org.hibernate.Transaction;
 public class CompteDAO
 {
     /**
-     * addCompte
+     * Add an account to the database
      * @param c
      */
     public static void addCompte(Compte c)
@@ -26,7 +26,7 @@ public class CompteDAO
     }
 
     /**
-     * changePasswordByEmail
+     * Change the password for an account by the email
      * @param email
      * @param password
      */
@@ -46,7 +46,7 @@ public class CompteDAO
     }
 
     /**
-     * removeFirstCompte
+     * Remove the first account in a list
      */
 
     public static void removeFirstCompte()
@@ -63,7 +63,7 @@ public class CompteDAO
     }
 
     /**
-     * isUniqueEmail
+     * Verify if an email is unique
      * @param email
      * @return boolean
      */
@@ -92,7 +92,7 @@ public class CompteDAO
     }
 
     /**
-     * validate transaction
+     * validate an account
      * @param email
      * @param password
      * @return boolean
@@ -121,8 +121,8 @@ public class CompteDAO
     }
 
     /**
-     * getListCompte
-     * @return List
+     * Get a list of account
+     * @return a list
      */
     public List<Compte> getListCompte() {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -133,7 +133,7 @@ public class CompteDAO
     }
 
     /**
-     * verify if emailExists
+     * verify if an email exist for account
      * @param email
      * @return boolean
      */
@@ -158,7 +158,7 @@ public class CompteDAO
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
-                // En cas d'erreur, vous pouvez effectuer un rollback de la transaction ici si nécessaire
+
             }
             e.printStackTrace();
         }

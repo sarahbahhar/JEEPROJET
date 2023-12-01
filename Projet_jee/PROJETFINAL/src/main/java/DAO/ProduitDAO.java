@@ -14,7 +14,7 @@ public class ProduitDAO
     public static final String PATH_IMAGE = "/src/main/webapp/img/";
 
     /**
-     * addProduct
+     * Add a new product in the database
      * @param p
      */
     public static void addProduct(Produit p)
@@ -27,7 +27,7 @@ public class ProduitDAO
     }
 
     /**
-     * get list of products
+     * Get the list of the product
      * @return
      */
     public static List<Produit> getListProduit()
@@ -46,7 +46,7 @@ public class ProduitDAO
     }
 
     /**
-     * getListProduitByEmail
+     * Get the list of a product by an account email
      * @param email
      * @return
      */
@@ -61,7 +61,7 @@ public class ProduitDAO
     }
 
     /**
-     * removeProductByIdOfTable
+     * Remove a product by the id if table in the database
      * @param id
      */
     public static void removeProductByIdOfTable(int id)
@@ -81,7 +81,7 @@ public class ProduitDAO
     }
 
     /**
-     * getListProductByTitre
+     * Get the list of the product by the title
      * @param titre
      * @return list of product
      */
@@ -101,7 +101,7 @@ public class ProduitDAO
 
 
     /**
-     * get a proudct by id
+     * Get a product by the id
      * @param produitId
      * @return product
      */
@@ -120,7 +120,7 @@ public class ProduitDAO
     }
 
     /**
-     * update a product
+     * Update the information of a product in the database
      * @param produit
      */
     public static void updateProduct(Produit produit) {
@@ -136,7 +136,7 @@ public class ProduitDAO
     }
 
     /**
-     * getProductsByCategory
+     * Get the list of product by the category
      * @param categorie
      * @return list of products
      */
@@ -162,7 +162,7 @@ public class ProduitDAO
     }
 
     /**
-     * verify if the moderator is banned
+     * Verify if the moderator is banned
      * @param produit
      * @return boolean
      */
@@ -190,7 +190,7 @@ public class ProduitDAO
     }
 
     /**
-     * removeProductById
+     * Remove a product in the database by the id in the database
      * @param p
      * @param fileName1
      * @param fileName2
@@ -221,7 +221,7 @@ public class ProduitDAO
     }
 
     /**
-     * removeProductByModerator
+     * Remove a Moderator's product
      * @param localisation
      * @param email
      */

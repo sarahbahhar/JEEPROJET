@@ -19,7 +19,7 @@ public class ProduitCommandeDAO {
     }
 
     /**
-     * getList of order products
+     * Get the list of order products
      * @param idCommande
      * @return list of order product
      */
@@ -34,7 +34,7 @@ public class ProduitCommandeDAO {
     }
 
     /**
-     * getList of order products
+     * get the list of order products
      * @return list of ordfer product
      */
     public static List<Produitcommande> getListProduitCommand() {
@@ -47,7 +47,7 @@ public class ProduitCommandeDAO {
     }
 
     /**
-     * insert product to an order
+     * Insert a product to an order
      * @param produitCommande
      * @throws SQLException
      */

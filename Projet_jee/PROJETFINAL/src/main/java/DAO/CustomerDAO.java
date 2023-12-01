@@ -13,7 +13,7 @@ public class CustomerDAO {
 
 
     /**
-     * verify if emailExists
+     * verify if email exist for a customer
      * @param email
      * @return boolean
      */
@@ -37,7 +37,7 @@ public class CustomerDAO {
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
-                // En cas d'erreur, vous pouvez effectuer un rollback de la transaction ici si nécessaire
+
             }
             e.printStackTrace();
         }
@@ -45,7 +45,7 @@ public class CustomerDAO {
     }
 
     /**
-     * removeCustomer
+     * Remove a customer in the database
      * @param email
      */
     public static void removeCustomer(String email)
@@ -61,7 +61,7 @@ public class CustomerDAO {
     }
 
     /**
-     * addCustomer
+     * Add a new customer to the database
      * @param c
      */
     public static void addCustomer(Model.Client c)
@@ -74,7 +74,7 @@ public class CustomerDAO {
     }
 
     /**
-     * addPointFidelite
+     * Add fidelity point to a customer
      * @param email
      * @param point
      */
@@ -100,7 +100,7 @@ public class CustomerDAO {
     }
 
     /**
-     * getClient
+     * Get a customer in the database
      * @param email
      * @return Client
      */
@@ -126,7 +126,7 @@ public class CustomerDAO {
     }
 
     /**
-     * updateClient
+     * Update the information for an account
      * @param email
      * @param updated
      */

@@ -9,7 +9,7 @@ import java.util.List;
 public class DemandeModerateurDAO {
 
     /**
-     * addModerator
+     * Add moderator to the database
      * @param dM
      */
     public static void addModerator(Model.Demandemoderateur dM)
@@ -22,7 +22,7 @@ public class DemandeModerateurDAO {
     }
 
     /**
-     * getListModerateurWaiting
+     * Get a list of waiting moderator
      * @return List of moderator
      */
     public List<Demandemoderateur> getListModerateurWaiting() {
@@ -34,7 +34,7 @@ public class DemandeModerateurDAO {
     }
 
     /**
-     * removeDissmissedModerator
+     * Remove dissmissedModerator to the database
      * @param email
      */
     public static void removeDissmissedModerator(String email)
@@ -51,7 +51,7 @@ public class DemandeModerateurDAO {
     }
 
     /**
-     * verify if isEmailInModeratorRequests
+     * verify if Email is in the moderator requests
      * @param email
      * @return boolean
      */

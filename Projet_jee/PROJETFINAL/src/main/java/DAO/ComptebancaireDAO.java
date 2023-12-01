@@ -15,7 +15,7 @@ public class ComptebancaireDAO
 {
 
     /**
-     * addComptebancaire
+     * Add a bank account in the database
      * @param cb
      */
     public static void addComptebancaire(Model.Comptebancaire cb)
@@ -28,7 +28,7 @@ public class ComptebancaireDAO
     }
 
     /**
-     * deleteComptebancaire
+     * Delete a bank account in the database
      * @param email
      * @param id
      */
@@ -43,7 +43,7 @@ public class ComptebancaireDAO
     }
 
     /**
-     * getListCBByEmail
+     * Get a list of bank card by an email
      * @param email
      * @return result
      */
@@ -58,7 +58,7 @@ public class ComptebancaireDAO
     }
 
     /**
-     * validate
+     * validate a purchase
      * @param numero
      * @param cvv
      * @param date

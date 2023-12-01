@@ -8,7 +8,7 @@ public class AdminDAO {
 
 
     /**
-     *check if the email exists
+     *Check if the email exists
      * @param email
      * @return boolean
      */

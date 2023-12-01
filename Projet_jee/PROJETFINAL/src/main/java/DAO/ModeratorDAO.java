@@ -15,7 +15,7 @@ import DAO.ProduitDAO;
 
 public class ModeratorDAO {
     /**
-     * getListModerateur
+     * Get the list of the moderators
      * @return list of moderator
      */
     public List<Moderateur> getListModerateur() {
@@ -27,7 +27,7 @@ public class ModeratorDAO {
     }
 
     /**
-     * getModeratorByEmail
+     * Get a moderator by his email
      * @param email
      * @return moderateur
      */
@@ -43,7 +43,7 @@ public class ModeratorDAO {
     }
 
     /**
-     * addModerator
+     * Add a new moderator in the databse
      * @param m
      */
 
@@ -56,7 +56,7 @@ public class ModeratorDAO {
     }
 
     /**
-     * verify if emailExists
+     * verify if email of a moderator account already exist
      * @param email
      * @return boolean
      */
@@ -80,7 +80,6 @@ public class ModeratorDAO {
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
-                // En cas d'erreur, vous pouvez effectuer un rollback de la transaction ici si nécessaire
             }
             e.printStackTrace();
         }
@@ -88,7 +87,7 @@ public class ModeratorDAO {
     }
 
     /**
-     * removeModerator
+     * Remove a moderator in the database
      * @param localisation
      * @param email
      */
@@ -114,7 +113,7 @@ public class ModeratorDAO {
 
 
     /**
-     * updateModerator
+     * Update the information for a moderator
      * @param updated
      */
     public void updateModerator(Moderateur updated) {
@@ -123,7 +122,7 @@ public class ModeratorDAO {
         String email = updated.getEmail();
         try {
 
-            // Exécuter la requête pour obtenir l'objet Moderateur
+
             Moderateur moderator = (Moderateur) session.createQuery("FROM Moderateur M WHERE M.email = :email")
                     .setParameter("email", email)
                     .uniqueResult();
@@ -155,7 +154,7 @@ public class ModeratorDAO {
     }
 
     /**
-     * getAverageRatingByEmail
+     * Get the moderator average rating
      * @param email
      * @return bigdecimal
      */
@@ -178,7 +177,7 @@ public class ModeratorDAO {
     }
 
     /**
-     * bannirByEmail
+     * Banish a moderator by his email
      * @param email
      * @param motifCourt
      * @param motifLong
@@ -251,7 +250,7 @@ public class ModeratorDAO {
     }
 
     /**
-     * updateDateBanni
+     * update the date of the ban for a moderator
      * @param moderator
      * @param dateStr
      */

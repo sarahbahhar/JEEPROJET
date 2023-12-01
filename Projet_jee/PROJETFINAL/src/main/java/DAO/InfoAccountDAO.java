@@ -10,7 +10,7 @@ import java.util.List;
 
 public class InfoAccountDAO {
     /**
-     * getFullNameByEmail
+     * Get the fullname for an account by the email
      * @param email
      * @return string
      */
@@ -56,7 +56,7 @@ public class InfoAccountDAO {
     }
 
     /**
-     * getInfo for an account
+     * Get information for an account
      * @param email
      * @return InfoCompte
      */
@@ -82,12 +82,12 @@ public class InfoAccountDAO {
     }
 
     /**
-     * updateInfoCompte
+     * Update the information for an account
      * @param email
      * @param updated
      */
     public void updateInfoCompte(String email, Infocompte updated) {
-        //Session session = HibernateUtil.getSessionFactory().openSession();;
+
         Session session = null;
         Transaction transaction = null;
 
@@ -95,7 +95,7 @@ public class InfoAccountDAO {
             session = HibernateUtil.getSessionFactory().openSession();
             transaction = session.beginTransaction();
 
-            /
+
             Infocompte toChange = (Infocompte) session.get(Infocompte.class, email);
 
 
