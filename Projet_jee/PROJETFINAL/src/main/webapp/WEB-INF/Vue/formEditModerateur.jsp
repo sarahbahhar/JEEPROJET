@@ -20,14 +20,17 @@
         <form action="${pageContext.request.contextPath}/edit-moderator-servlet" method="post">
             <h1>Modifier les droits</h1>
             <p>Email du modérateur : ${moderator.email}</p>
+            <label> Droit ajout produit</label>
             <select id="addP" name="addP">
                 <option value="1" ${moderator.peutAjouterProduit==1 ? 'selected' : ''}>Oui</option>
                 <option value="0" ${moderator.peutAjouterProduit!=1 ? 'selected' : ''}>Non</option>
             </select>
+            <label> Droit suppression produit</label>
             <select id="deleteP" name="deleteP">
                 <option value="1" ${moderator.peutSupprimerProduit==1 ? 'selected' : ''}>Oui</option>
                 <option value="0" ${moderator.peutSupprimerProduit!=1 ? 'selected' : ''}>Non</option>
             </select>
+            <label>Max produit</label>
             <input type="number" id="maxProd" name="maxProd" value="${moderator.maxProduitsLigne}" />
             <input type="hidden" name="email" value="${moderator.email}" />
             <button class="lien" type="submit" >Modifier</button>
