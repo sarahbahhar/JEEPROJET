@@ -27,8 +27,6 @@ public class VerifyStockServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //response.sendRedirect("WEB-INF/Vue/payment.jsp");
-
 
     }
 

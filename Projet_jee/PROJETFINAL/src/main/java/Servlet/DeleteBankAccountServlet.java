@@ -12,9 +12,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+
 @WebServlet(name = "DeleteBankAccountServlet", value = "/delete-bank-account-servlet")
 public class DeleteBankAccountServlet extends HttpServlet {
     private ComptebancaireDAO CBDAO=new ComptebancaireDAO();
+
+    /**
+     * get information form a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String email=request.getParameter("email");

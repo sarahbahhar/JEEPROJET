@@ -27,16 +27,22 @@ public class AddProductCommandeServlet extends HttpServlet {
     private ProduitCommandeDAO produitCommandeDAO;
 
 
-
     public void init(){
         produitCommandeDAO =new ProduitCommandeDAO();
         panierDAO=new PanierDAO();
 
     }
 
+    /**
+     * get information form a get
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //response.sendRedirect("WEB-INF/Vue/payment.jsp");
+
         try {
             init();
             HttpSession session = request.getSession();
@@ -84,6 +90,13 @@ public class AddProductCommandeServlet extends HttpServlet {
         }
     }
 
+    /**
+     * get information form a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

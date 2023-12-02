@@ -20,6 +20,13 @@ public class DemandeModerateurServlet extends HttpServlet {
         response.sendRedirect("WEB-INF/Vue/formAddModerator.jsp");
     }
 
+    /**
+     * get information from a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String email=request.getParameter("email");

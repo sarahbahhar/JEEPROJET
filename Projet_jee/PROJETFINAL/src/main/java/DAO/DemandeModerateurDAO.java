@@ -7,6 +7,11 @@ import org.hibernate.Session;
 import java.util.List;
 
 public class DemandeModerateurDAO {
+
+    /**
+     * Add moderator to the database
+     * @param dM
+     */
     public static void addModerator(Model.Demandemoderateur dM)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -15,6 +20,11 @@ public class DemandeModerateurDAO {
         session.getTransaction().commit();
         session.close();
     }
+
+    /**
+     * Get a list of waiting moderator
+     * @return List of moderator
+     */
     public List<Demandemoderateur> getListModerateurWaiting() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -22,6 +32,11 @@ public class DemandeModerateurDAO {
         session.close();
         return result;
     }
+
+    /**
+     * Remove dissmissedModerator to the database
+     * @param email
+     */
     public static void removeDissmissedModerator(String email)
     {
         Demandemoderateur dM;
@@ -34,17 +49,23 @@ public class DemandeModerateurDAO {
         session.close();
 
     }
+
+    /**
+     * verify if Email is in the moderator requests
+     * @param email
+     * @return boolean
+     */
     public static boolean isEmailInModeratorRequests(String email) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             session.beginTransaction();
-            // Requête pour vérifier si l'email est présent
+
             String hql = "SELECT count(*) FROM Demandemoderateur WHERE email = :email";
             Long count = (Long) session.createQuery(hql)
                     .setParameter("email", email)
                     .uniqueResult();
             session.getTransaction().commit();
-            // Renvoie true si le nombre d'entrées est supérieur à 0
+
             return count != null && count > 0;
         } catch (Exception e) {
             if (session.getTransaction() != null) {

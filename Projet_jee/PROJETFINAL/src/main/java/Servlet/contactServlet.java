@@ -23,12 +23,25 @@ import jakarta.servlet.http.*;
 @WebServlet(name = "contactServlet", value = "/contact-servlet")
 public class contactServlet extends HttpServlet {
 
-
+    /**
+     * get information form a get
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doPost(request,response);
     }
 
+    /**
+     * get information form a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -57,7 +70,13 @@ public class contactServlet extends HttpServlet {
     }
 
 
-
+    /**
+     * sendEmailWithHTML
+     * @param recipientEmail
+     * @param subject
+     * @param content
+     * @throws ServletException
+     */
     void sendEmailWithHTML(String recipientEmail,String subject, String content) throws ServletException {
         final String username = "projetjee.cytech@gmail.com";
         final String myPassword = "idgz udpj wywr dfpn ";//code d'application
@@ -68,7 +87,7 @@ public class contactServlet extends HttpServlet {
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
 
-        // Créer une session de messagerie avec les propriétés configurées
+
         Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(username, myPassword);

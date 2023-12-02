@@ -12,6 +12,10 @@ import org.hibernate.Transaction;
 
 public class CompteDAO
 {
+    /**
+     * Add an account to the database
+     * @param c
+     */
     public static void addCompte(Compte c)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -20,6 +24,12 @@ public class CompteDAO
         session.getTransaction().commit();
         session.close();
     }
+
+    /**
+     * Change the password for an account by the email
+     * @param email
+     * @param password
+     */
     public static void changePasswordByEmail(String email, String password) {
         Compte compte = null;
 
@@ -35,6 +45,10 @@ public class CompteDAO
 
     }
 
+    /**
+     * Remove the first account in a list
+     */
+
     public static void removeFirstCompte()
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -48,14 +62,11 @@ public class CompteDAO
 
     }
 
-    /*public static List<Compte> getListCompte()
-    {
-        Session session= HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        List<Compte> result = session.createQuery("from Compte").list();
-        session.close();
-        return result;
-    }*/
+    /**
+     * Verify if an email is unique
+     * @param email
+     * @return boolean
+     */
     public static boolean isUniqueEmail(String email){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction=null;
@@ -79,6 +90,13 @@ public class CompteDAO
         return unique;
 
     }
+
+    /**
+     * validate an account
+     * @param email
+     * @param password
+     * @return boolean
+     */
     public static boolean validate(String email, String password) {
 
         Transaction transaction = null;
@@ -92,8 +110,7 @@ public class CompteDAO
             if (compte != null && compte.isMotDePasseCorrect(password)) {
                 return true;
             }
-            // commit transaction
-            //transaction.commit();
+
         } catch (Exception e) {
             if (transaction != null) {
                 //transaction.rollback();
@@ -103,7 +120,10 @@ public class CompteDAO
         return false;
     }
 
-
+    /**
+     * Get a list of account
+     * @return a list
+     */
     public List<Compte> getListCompte() {
         Session session= HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -111,6 +131,12 @@ public class CompteDAO
         session.close();
         return result;
     }
+
+    /**
+     * verify if an email exist for account
+     * @param email
+     * @return boolean
+     */
 
     public static boolean emailExists(String email) {
         Transaction transaction = null;
@@ -132,7 +158,7 @@ public class CompteDAO
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
-                // En cas d'erreur, vous pouvez effectuer un rollback de la transaction ici si nécessaire
+
             }
             e.printStackTrace();
         }

@@ -12,8 +12,11 @@ import java.util.List;
 public class CustomerDAO {
 
 
-
-    // Generic method to check if an email exists in a specified table
+    /**
+     * verify if email exist for a customer
+     * @param email
+     * @return boolean
+     */
     public static boolean emailExists(String email) {
         Transaction transaction = null;
         Client client = null;
@@ -34,12 +37,17 @@ public class CustomerDAO {
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
-                // En cas d'erreur, vous pouvez effectuer un rollback de la transaction ici si nécessaire
+
             }
             e.printStackTrace();
         }
         return false;
     }
+
+    /**
+     * Remove a customer in the database
+     * @param email
+     */
     public static void removeCustomer(String email)
     {
         Client c;
@@ -52,6 +60,10 @@ public class CustomerDAO {
         session.close();
     }
 
+    /**
+     * Add a new customer to the database
+     * @param c
+     */
     public static void addCustomer(Model.Client c)
     {
         Session session= HibernateUtil.getSessionFactory().openSession();
@@ -61,6 +73,11 @@ public class CustomerDAO {
         session.close();
     }
 
+    /**
+     * Add fidelity point to a customer
+     * @param email
+     * @param point
+     */
     public static void addPointFidelite(String email, int point){
         Transaction transaction = null;
         Client client = null;
@@ -82,6 +99,11 @@ public class CustomerDAO {
         }
     }
 
+    /**
+     * Get a customer in the database
+     * @param email
+     * @return Client
+     */
     public static Client getClient(String email){
         Client c= null;
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -103,6 +125,11 @@ public class CustomerDAO {
         return c;
     }
 
+    /**
+     * Update the information for an account
+     * @param email
+     * @param updated
+     */
     public static void updateClient(String email, Client updated) {
         Session session = null;
         Transaction transaction = null;

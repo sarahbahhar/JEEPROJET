@@ -52,6 +52,13 @@ public class AddProductServlet extends HttpServlet {
             throw new RuntimeException(e);
         }    }
 
+    /**
+     * get information form a post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             Produit p = new Produit();
@@ -65,8 +72,6 @@ public class AddProductServlet extends HttpServlet {
                 try {
                     price = new BigDecimal(priceParameter);
                 } catch (NumberFormatException e) {
-                    // Gérer l'erreur si la chaîne n'est pas un nombre valide
-                    // Vous pouvez loguer l'erreur ou prendre une autre action appropriée.
                 }
             }
 
@@ -91,7 +96,7 @@ public class AddProductServlet extends HttpServlet {
                 writeFile(filePart, fileName2, "img/");
             }
             if (true) {
-                // Créez d'abord un objet Produit en utilisant le constructeur vide
+
 
                 p.setTitre(request.getParameter("titre"));
                 p.setNomImage(fileName);
@@ -104,7 +109,7 @@ public class AddProductServlet extends HttpServlet {
                 p.setEmail(request.getParameter("email"));
 
 
-// Vous avez maintenant un objet Produit (p) avec tous les attributs remplis.
+
 
                 ProduitDAO.addProduct(p);
 
@@ -126,11 +131,16 @@ public class AddProductServlet extends HttpServlet {
 
     }
 
+    /**
+     * getNameFile
+     * @param part
+     * @return string
+     */
     private static String getNameFile(Part part) {
         for (String contentDisposition : part.getHeader("content-disposition").split(";")) {
             if (contentDisposition.trim().startsWith("filename")) {
                 String originalFileName = contentDisposition.substring(contentDisposition.indexOf('=') + 1).trim().replace("\"", "");
-                // Générer un identifiant unique
+
                 String uniqueID = UUID.randomUUID().toString();
                 return uniqueID + "_" + originalFileName;
             }
@@ -138,17 +148,22 @@ public class AddProductServlet extends HttpServlet {
         return null;
     }
 
+    /**
+     * writeFile
+     * @param part
+     * @param fileName
+     * @param path
+     * @throws IOException
+     */
     private void writeFile(Part part, String fileName, String path) throws IOException {
-            // Obtenez le chemin réel à partir du chemin relatif
+
             String absolutePath = getServletContext().getRealPath("/")  + path;
 
-            // Assurez-vous que le répertoire existe, sinon créez-le
             File imageDir = new File(absolutePath);
             if (!imageDir.exists()) {
                 imageDir.mkdirs();
             }
 
-            // Maintenant, utilisez le chemin absolu pour écrire le fichier
             File outputFile = new File(imageDir, fileName);
             try (BufferedOutputStream exit = new BufferedOutputStream(new FileOutputStream(outputFile), SIZE_BUFFER)) {
                 BufferedInputStream entrance = new BufferedInputStream(part.getInputStream(), SIZE_BUFFER);

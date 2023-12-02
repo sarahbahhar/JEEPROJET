@@ -16,6 +16,13 @@ import java.util.List;
 public class BancProductsServlet extends HttpServlet {
     private final ProduitDAO productDAO = new ProduitDAO();
 
+    /**
+     * get information form a get
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Produit> bancProducts = productDAO.getProductsByCategory("Banc");
         request.setAttribute("bancProducts", bancProducts);
