@@ -10,10 +10,10 @@
 <body>
 <c:choose>
     <c:when test="${empty moderators}">
-        <div class="message"><h1 style="margin-left: 451px;>Toute les demandes ont été traitées</h1></div>
+        <h1 style="margin-left: 451px;">Toute les demandes ont été traitées</h1>
     </c:when>
             <c:otherwise>
-                <div id="demo" style="border-radius: 20px;">
+                <div id="demo" style= "border-radius: 20px;" >
         <div style="border-radius: 20px;" class="table-responsive-vertical shadow-z-1">
                 <table style="border-radius: 20px;" id="table" class="table table-hover table-mc-light-blue">
                     <thead>
