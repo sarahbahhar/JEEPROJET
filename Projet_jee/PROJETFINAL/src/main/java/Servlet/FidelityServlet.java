@@ -47,6 +47,7 @@ public class FidelityServlet extends HttpServlet {
                 int pf=(int)session.getAttribute("pointFidelite");
                 c.setPointsFidelite(pf-100);
                 CustomerDAO.updateClient(ic.getEmail(), c);
+                session.setAttribute("pointFidelite", pf-100);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Vue/payment.jsp");
                 dispatcher.forward(request, response);
             }
